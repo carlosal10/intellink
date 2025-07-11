@@ -12,6 +12,7 @@ export default function Navbar() {
 
   return (
     <nav className={`navbar ${menuOpen ? 'show' : ''}`}>
+
       <Link to="/" className="logo" onClick={closeMenu}>Intellink Nippon</Link>
 
       {/* Hamburger button */}
