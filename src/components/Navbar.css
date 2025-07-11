@@ -50,22 +50,7 @@
   background-color: #eef6ff;
 }
 
-.hamburger {
-  display: none;
-  font-size: 1.6rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* Mobile menu styles */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    color: #003366;
-  }
-
-  .nav-links {
+ .nav-links {
     flex-direction: column;
     align-items: flex-start;
     background: #fff;
@@ -110,7 +95,7 @@
   cursor: pointer;
   padding: 0;
   z-index: 1001;
-  color: #000000;
+  color: #003366;
 }
 
 .hamburger span {
@@ -140,6 +125,5 @@
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
-    color: #000000;
   }
 }
