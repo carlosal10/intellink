@@ -39,8 +39,8 @@ export default function Navbar() {
         aria-label="Toggle menu"
       >
         <span>☰</span>
-        <span>☰</span>
-        <span>☰</span>
+        <span></span>
+        <span></span>
       </button>
 
       <div className="nav-links">
