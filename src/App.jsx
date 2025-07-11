@@ -6,6 +6,8 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Insights from './pages/Insights';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+
 
 function App() {
   return (
