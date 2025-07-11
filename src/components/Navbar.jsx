@@ -16,9 +16,12 @@ export default function Navbar() {
       <Link to="/" className="logo" onClick={closeMenu}>Intellink Nippon</Link>
 
       {/* Hamburger button */}
-      <button className="hamburger" onClick={toggleMenu}>
-        ☰
-      </button>
+      <button className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu} aria-label="Toggle menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
 
       <div className="nav-links">
         <Link to="/" onClick={closeMenu}>{language === 'en' ? 'Home' : 'ホーム'}</Link>
