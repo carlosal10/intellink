@@ -3,11 +3,10 @@
   color: white;
   text-align: center;
   position: fixed;
-  margin-bottom: 0;
+  bottom: 0;
   width: 100%;
 }
 
 .footer p {
-  margin: 5px 0;
   font-size: 0.95rem;
 }
