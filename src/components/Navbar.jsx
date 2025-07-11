@@ -38,9 +38,9 @@ export default function Navbar() {
         onClick={toggleMenu}
         aria-label="Toggle menu"
       >
-        <span></span>
-        <span></span>
-        <span></span>
+        <span>☰</span>
+        <span>☰</span>
+        <span>☰</span>
       </button>
 
       <div className="nav-links">
