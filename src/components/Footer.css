@@ -12,3 +12,33 @@
   font-size: 0.95rem;
   margin: 4px 0;
 }
+.social-icons {
+  margin: 12px 0;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 8px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00aced;
+}
+
+.footer-lang {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.footer-lang:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
