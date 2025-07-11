@@ -1,27 +1,48 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './Navbar.css';
 
 export default function Navbar() {
   const { language, toggleLanguage } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef();
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
   const closeMenu = () => setMenuOpen(false);
 
-  return (
-    <nav className={`navbar ${menuOpen ? 'show' : ''}`}>
+  // ✅ Click outside to close
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        closeMenu();
+      }
+    };
 
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // ✅ Lock body scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
+    return () => { document.body.style.overflow = 'auto'; };
+  }, [menuOpen]);
+
+  return (
+    <nav className={`navbar ${menuOpen ? 'show' : ''}`} ref={navRef}>
       <Link to="/" className="logo" onClick={closeMenu}>Intellink Nippon</Link>
 
-      {/* Hamburger button */}
-      <button className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu} aria-label="Toggle menu">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
-
+      {/* Hamburger */}
+      <button
+        className={`hamburger ${menuOpen ? 'open' : ''}`}
+        onClick={toggleMenu}
+        aria-label="Toggle menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
       <div className="nav-links">
         <Link to="/" onClick={closeMenu}>{language === 'en' ? 'Home' : 'ホーム'}</Link>
