@@ -8,10 +8,10 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef();
 
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
+  const toggleMenu = () => setMenuOpen(prev => !prev);
   const closeMenu = () => setMenuOpen(false);
 
-  // ✅ Click outside to close
+  // Close menu if clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -23,7 +23,7 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // ✅ Lock body scroll when menu is open
+  // Lock scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
     return () => { document.body.style.overflow = 'auto'; };
@@ -33,7 +33,6 @@ export default function Navbar() {
     <nav className={`navbar ${menuOpen ? 'show' : ''}`} ref={navRef}>
       <Link to="/" className="logo" onClick={closeMenu}>Intellink Nippon</Link>
 
-      {/* Hamburger */}
       <button
         className={`hamburger ${menuOpen ? 'open' : ''}`}
         onClick={toggleMenu}
