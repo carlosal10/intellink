@@ -2,11 +2,12 @@
   background-color: #003366;
   color: white;
   text-align: center;
-  position: fixed;
-  bottom: 0;
+  padding: 20px 16px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .footer p {
   font-size: 0.95rem;
+  margin: 4px 0;
 }
