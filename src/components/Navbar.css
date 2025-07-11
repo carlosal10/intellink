@@ -110,6 +110,7 @@
   cursor: pointer;
   padding: 0;
   z-index: 1001;
+  color: #000000;
 }
 
 .hamburger span {
@@ -139,5 +140,6 @@
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
+    color: #000000;
   }
 }
