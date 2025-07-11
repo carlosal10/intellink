@@ -14,6 +14,7 @@ function App() {
         <Navbar />
         <main className="main-content">
           <Routes>
+            <Route path="*" element={<Navigate to="/" />} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
