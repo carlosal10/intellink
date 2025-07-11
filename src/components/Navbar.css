@@ -17,6 +17,7 @@
   text-decoration: none;
 }
 
+/* Desktop Nav Links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -49,27 +50,44 @@
   background-color: #eef6ff;
 }
 
-/* Mobile responsiveness */
+/* Hamburger button (mobile only) */
+.hamburger {
+  display: none;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive menu */
 @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    color: #003366;
+  }
+
   .nav-links {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-    background-color: #fff;
     position: absolute;
     top: 60px;
-    right: 24px;
-    padding: 12px;
+    right: 20px;
+    flex-direction: column;
+    background: white;
+    padding: 16px;
     border: 1px solid #ddd;
     border-radius: 6px;
     display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 200;
   }
 
   .navbar.show .nav-links {
     display: flex;
   }
 
+  .nav-links a,
   .lang-toggle {
-    align-self: flex-end;
+    width: 100%;
+    text-align: left;
+    padding: 6px 0;
   }
 }
