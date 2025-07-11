@@ -16,12 +16,12 @@ function App() {
         <Navbar />
         <main className="main-content">
           <Routes>
-            <Route path="*" element={<Navigate to="/" />} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/insights" element={<Insights />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>
         <Footer />
