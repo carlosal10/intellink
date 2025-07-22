@@ -1,7 +1,14 @@
+/* Global container setup */
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #333333; /* Text/Dark Grey */
 }
 
+/* Optional animated logo (if still in use) */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,21 +20,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +27,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Header if needed (usually removed in production) */
+.App-header {
+  background-color: #0B2545; /* Navy Blue */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 20px;
+}
+
+/* Link styling override (used sparingly) */
+.App-link {
+  color: #E63946; /* Accent Red */
+  text-decoration: none;
+}
+
+.App-link:hover {
+  text-decoration: underline;
+}
+
+/* Main content layout */
+.main-content {
+  flex: 1;
+  padding: 40px 20px;
 }

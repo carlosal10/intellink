@@ -1,58 +1,59 @@
 .about {
   padding: 60px 20px;
-  background: #fff;
+  background-color: #ffffff;
 }
 
 .about-container {
   max-width: 900px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .about-section {
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
 .about-section h2 {
   font-size: 1.8rem;
-  color: #003366;
-  margin-bottom: 10px;
+  color: #0B2545; /* Navy Blue */
+  margin-bottom: 12px;
 }
 
 .about-section p {
   color: #444;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .highlight {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1.1rem;
-  color: #0055a5;
+  color: #0055a5; /* Slightly softer than primary navy */
 }
 
 .values-list {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
+  margin: 0;
 }
 
 .values-list li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   font-size: 1rem;
   color: #444;
 }
 
 .leader-profile {
   display: flex;
-  gap: 20px;
+  gap: 24px;
   align-items: flex-start;
-  margin-top: 20px;
   flex-wrap: wrap;
+  margin-top: 24px;
 }
 
 .photo-placeholder {
   width: 100px;
   height: 100px;
-  background: #0055a5;
+  background-color: #0055a5;
   color: white;
   font-size: 2rem;
   display: flex;
@@ -65,16 +66,16 @@
 .leader-profile h3 {
   margin: 0;
   font-size: 1.2rem;
-  color: #003366;
+  color: #0B2545;
 }
 
 .leader-profile p {
-  margin-top: 5px;
+  margin-top: 6px;
   font-size: 0.95rem;
   color: #555;
 }
 
-/* Mobile Styles */
+/* Responsive (Mobile) */
 @media (max-width: 768px) {
   .leader-profile {
     flex-direction: column;
@@ -83,6 +84,6 @@
   }
 
   .photo-placeholder {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 }

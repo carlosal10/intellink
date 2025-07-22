@@ -14,6 +14,56 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "homepage": ".",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/user/intellink.git"
+  },
+  "keywords": [
+    "react",
+    "intellink",
+    "web"
+  ],
+  "author": "Timon Owuor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/user/intellink/issues"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-react": "^7.28.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "files": [
+    "build",
+    "public",
+    "src"
+  ],
+ 
+  "jest": {
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "ts",
+      "tsx",
+      "json",
+      "node"
+    ],
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ]
+  },
+
+  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
