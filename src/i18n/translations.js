@@ -23,22 +23,38 @@ const translations = {
     "ctaExploreServices": "Explore Our Services",
     "ctaContactUs": "Get in Touch"
     },
+     en: {
     about: {
       mission: "Mission",
-      missionText: "To be a trusted link between Japan and emerging markets — advancing sustainable growth, innovation, and inclusive prosperity.",
+      missionText:
+        "To be a trusted link between Japan and emerging markets — advancing sustainable growth, innovation, and inclusive prosperity.",
       vision: "Vision",
-      visionText: "We envision a world where cross-border collaboration fuels inclusive development, and intelligent solutions unlock shared progress for all.",
-      values: "Values",
+      visionText:
+        "We envision a world where cross-border collaboration fuels inclusive development, and intelligent solutions unlock shared progress for all.",
+      philosophy: "Our Philosophy",
+      philosophyText:
+        "We believe that business thrives on understanding, trust, and shared purpose. At Intellink, we approach every engagement with empathy, professionalism, and a long-term mindset. Our work is grounded in listening first, acting with integrity, and delivering value that endures.",
+      values: "Our Core Values",
       valuesList: [
-        ['Integrity', 'We uphold honesty and transparency in every engagement.'],
-        ['Inclusivity', 'We bridge cultures and create access for all stakeholders.'],
-        ['Sustainability', 'We commit to long-term solutions with real impact.']
+        ["Kaizen Mindset", "We embrace continuous learning and improvement for ourselves and our clients."],
+        ["Partnership Beyond Projects", "We build lasting relationships that generate value beyond transactions."],
+        ["Responsible Growth", "We promote sustainable business that benefits all stakeholders: clients, communities, and the environment."]
       ],
+      whoWeAre: "Who We Are",
+      whoWeAreText:
+        "We are a team of professionals with deep experience in international consulting, trade development, and cross-cultural engagement. Our backgrounds span Japan, Africa, and beyond — enabling us to offer informed, localized, and high-impact support to our clients.",
+      whatWeDo: "What We Do",
+      whatWeDoText:
+        "We provide advisory and facilitation services that support market entry, trade, investment, and business development between Japan and emerging economies. Our services are designed to simplify complex business environments, reduce risk, and help organizations capture new opportunities.",
+      ourStory: "Our Story",
+      ourStoryText:
+        "Intellink Nippon Consulting GK was established in Tokyo in 2025 with a clear goal: to close the gap between Japan’s innovative economy and the potential-rich markets of Africa and other emerging regions. Having witnessed the challenges that businesses face — from language and regulatory barriers to a lack of trusted partners — we created Intellink to be a reliable bridge. Today, we continue this mission by supporting companies on both sides to engage, grow, and thrive together.",
       leadership: "Leadership",
       name: "Geoffrey Owuor",
-      title: "Founder & Africa-Japan Markets Consultant",
+      title: "Founder & Africa–Japan Markets Consultant",
       bio: "Geoffrey brings a unique blend of market insight, strategic clarity, and cultural fluency to help Japanese and emerging market partners connect and grow together."
-    },
+    }
+  },
     services: {
     marketLink: {
     title: "MarketLink™",
@@ -79,19 +95,24 @@ contact: {
     submit: "Schedule a Consultation"
   }
 },
-insights: {
-  successTitle: "Success Stories",
-  successText: "We supported a Japanese agritech firm in establishing partnerships with local distributors in East Africa, resulting in a successful pilot launch and full-scale market entry within 9 months.",
-  feedbackTitle: "Featured Client Feedback",
-  feedbackText: "“Intellink Nippon helped us understand complex regulatory landscapes in record time. Their precision and cross-cultural fluency gave us a confident edge.”",
-  feedbackClient: "— Japanese SME Executive, Manufacturing Sector",
-  articlesTitle: "Thought Leadership",
-  articles: [
-    "Why Japan-Africa Trade Needs More Than Capital: The Role of Cultural Brokers",
-    "Navigating Market Compliance Across Borders: A Practical Framework",
-    "From Opportunity to Action: Building Trust in Emerging Markets"
-  ]
-},
+ insights: {
+      successTitle: "Success Stories",
+      successText: "We supported a Japanese agritech firm in establishing partnerships with local distributors in East Africa, resulting in a successful pilot launch and full-scale market entry within 9 months.",
+      feedbackTitle: "Featured Client Feedback",
+      feedbackText: "“Intellink Nippon helped us understand complex regulatory landscapes in record time. Their precision and cross-cultural fluency gave us a confident edge.”",
+      feedbackClient: "— Japanese SME Executive, Manufacturing Sector",
+      articlesTitle: "Thought Leadership",
+      articles: [
+        "Why Japan-Africa Trade Needs More Than Capital: The Role of Cultural Brokers",
+        "Navigating Market Compliance Across Borders: A Practical Framework",
+        "From Opportunity to Action: Building Trust in Emerging Markets"
+      ],
+      download: "Download Article",
+      subscribeCTA: "Subscribe to Access",
+      subscribePrompt: "Please log in and subscribe to access this article."
+    }
+
+
   },
 
   jp: {
@@ -117,21 +138,38 @@ insights: {
   },
 
   about: {
-    mission: "ミッション",
-    missionText: "日本と新興市場の信頼ある架け橋として、持続可能な成長、イノベーション、包括的な繁栄を推進します。",
-    vision: "ビジョン",
-    visionText: "国境を超えた連携が包括的な発展を促し、インテリジェントなソリューションが共有された進歩を実現する世界を目指します。",
-    values: "価値観",
-    valuesList: [
-      ['誠実性', 'すべての関係において、誠実さと透明性を大切にします。'],
-      ['包括性', '文化をつなぎ、すべての関係者に平等な機会を提供します。'],
-      ['持続可能性', '長期的で本質的な成果をもたらすソリューションに注力します。']
-    ],
-    leadership: "リーダーシップ",
-    name: "ジェフリー・オウオル",
-    title: "創業者・アフリカ-日本市場コンサルタント",
-    bio: "ジェフリーは市場インサイト、戦略的視点、文化的理解を兼ね備え、日本と新興市場の成長を支援しています。"
-  },  // ✅ ← COMMA here
+      mission: "ミッション",
+      missionText:
+        "日本と新興市場の信頼ある架け橋として、持続可能な成長、イノベーション、包括的な繁栄を推進します。",
+      vision: "ビジョン",
+      visionText:
+        "国境を超えた連携が包括的な発展を促し、インテリジェントなソリューションが共有された進歩を実現する世界を目指します。",
+      philosophy: "私たちの理念",
+      philosophyText:
+        "ビジネスは理解、信頼、そして共有された目的によって成長します。私たちは常に共感と誠実さ、そして長期的視点を持って取り組み、クライアントに持続的な価値を提供します。",
+      values: "私たちの価値観",
+      valuesList: [
+        ["改善マインドセット", "私たち自身とクライアントのために、継続的な学習と改善を追求します。"],
+        ["プロジェクトを超えたパートナーシップ", "一時的な成果にとどまらず、持続可能な関係を築きます。"],
+        ["責任ある成長", "クライアント、地域社会、環境を尊重した持続可能な成長を推進します。"]
+      ],
+      whoWeAre: "私たちについて",
+      whoWeAreText:
+        "私たちは国際コンサルティング、貿易開発、異文化理解に深い経験を持つ専門家チームです。日本、アフリカ、その他の地域にまたがる多様な背景を持ち、地域に根ざした効果的な支援を提供します。",
+      whatWeDo: "提供するサービス",
+      whatWeDoText:
+        "日本と新興経済圏との間での市場参入、貿易、投資、事業開発を支援するアドバイザリーとファシリテーションサービスを提供します。複雑な市場環境を簡素化し、リスクを軽減し、新たな機会の獲得を支援します。",
+      ourStory: "私たちの歩み",
+      ourStoryText:
+        "Intellink Nippon Consulting GKは2025年、東京で設立されました。日本の革新的な経済とアフリカをはじめとする新興地域の可能性豊かな市場との間に存在するギャップを埋めるという明確な目的のもとに誕生しました。言語や規制の壁、信頼できるパートナーの欠如など、多くの課題に直面してきた経験から、信頼できる架け橋となるべく立ち上がりました。現在もその使命のもと、日本と新興市場の企業が共に成長し、発展できるようサポートを続けています。",
+      leadership: "リーダーシップ",
+      name: "ジェフリー・オウオル",
+      title: "創業者・アフリカ-日本市場コンサルタント",
+      bio: "ジェフリーは市場インサイト、戦略的視点、文化的理解を兼ね備え、日本と新興市場の成長を支援しています。"
+    }
+  },
+  // ✅ ← COMMA here
+
 
   services: {
     marketLink: {
@@ -175,19 +213,23 @@ insights: {
   },  // ✅ ← COMMA here
 
   insights: {
-    successTitle: "成功事例",
-    successText: "私たちは日本のアグリテック企業が東アフリカで現地パートナーを確立し、9ヶ月以内にパイロットから本格的市場参入を成功させるのを支援しました。",
-    feedbackTitle: "クライアントの声",
-    feedbackText: "「Intellink Nipponは複雑な規制環境の理解を迅速に支援してくれました。正確さと文化的理解が当社に自信を与えてくれました。」",
-    feedbackClient: "— 日本の中小企業・製造業エグゼクティブ",
-    articlesTitle: "リーダーシップ記事",
-    articles: [
-      "日本・アフリカ貿易に資本以上のものが必要な理由：文化仲介者の役割",
-      "国境を超えたコンプライアンスの実践フレームワーク",
-      "チャンスを行動へ：新興市場で信頼を築く方法"
-    ]
-  }  // ✅ last one = no comma needed
-}
-} 
+      successTitle: "成功事例",
+      successText: "私たちは日本のアグリテック企業が東アフリカで現地パートナーを確立し、9ヶ月以内にパイロットから本格的市場参入を成功させるのを支援しました。",
+      feedbackTitle: "クライアントの声",
+      feedbackText: "「Intellink Nipponは複雑な規制環境の理解を迅速に支援してくれました。正確さと文化的理解が当社に自信を与えてくれました。」",
+      feedbackClient: "— 日本の中小企業・製造業エグゼクティブ",
+      articlesTitle: "リーダーシップ記事",
+      articles: [
+        "日本・アフリカ貿易に資本以上のものが必要な理由：文化仲介者の役割",
+        "国境を超えたコンプライアンスの実践フレームワーク",
+        "チャンスを行動へ：新興市場で信頼を築く方法"
+      ],
+      download: "記事をダウンロード",
+      subscribeCTA: "購読してアクセス",
+      subscribePrompt: "記事にアクセスするには、ログインして購読してください。"
+    }
+  }
+
+
 
 export default translations;
