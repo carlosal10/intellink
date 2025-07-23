@@ -8,16 +8,20 @@ const translations = {
       contact: "Contact",
     },
     home: {
-      hero: "Linking Japan with Emerging Markets Through Intelligent, Client-Centric Solutions",
-      intro: "Intellink Nippon Consulting helps you navigate complex markets and unlock new trade opportunities with precision and purpose.",
-      marketLink: "MarketLink™",
-      expertConnect: "ExpertConnect™",
-      tradeLink: "TradeLink™",
-      marketDesc: "Feasibility studies, regulatory guidance, local partnership development, and entry strategies.",
-      expertDesc: "Access our network of sector experts, knowledge hubs, and tailored advisory support.",
-      tradeDesc: "End-to-end sourcing, compliance assistance, and international trade logistics solutions.",
-      explore: "Explore Our Solutions",
-      contact: "Get in Touch",
+       "welcomeTitle": "Welcome to Intellink Nippon Consulting GK",
+    "welcomeIntro": "We connect Japan with Africa and other emerging markets through strategic consulting, trusted partnerships, and expert-led solutions.",
+    
+    "marketIntelligenceTitle": "Market Intelligence",
+    "marketIntelligenceDesc": "We deliver research, feasibility studies, and risk insights to support data-driven decisions in new markets.",
+
+    "expertConnectTitle": "ExpertConnect™ Solutions",
+    "expertConnectDesc": "Access our expert-matching platform to connect with qualified professionals for your market expansion goals.",
+
+    "tradeLinksTitle": "Trade Links",
+    "tradeLinksDesc": "We support procurement from Japan to Africa, offering supplier identification, negotiation, and logistics coordination.",
+
+    "ctaExploreServices": "Explore Our Services",
+    "ctaContactUs": "Get in Touch"
     },
     about: {
       mission: "Mission",
