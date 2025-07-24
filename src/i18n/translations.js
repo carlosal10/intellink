@@ -8,32 +8,24 @@ const translations = {
       contact: "Contact",
     },
     home: {
-       "welcomeTitle": "Welcome to Intellink Nippon Consulting GK",
-    "welcomeIntro": "We connect Japan with Africa and other emerging markets through strategic consulting, trusted partnerships, and expert-led solutions.",
-    
-    "marketIntelligenceTitle": "Market Intelligence",
-    "marketIntelligenceDesc": "We deliver research, feasibility studies, and risk insights to support data-driven decisions in new markets.",
-
-    "expertConnectTitle": "ExpertConnect™ Solutions",
-    "expertConnectDesc": "Access our expert-matching platform to connect with qualified professionals for your market expansion goals.",
-
-    "tradeLinksTitle": "Trade Links",
-    "tradeLinksDesc": "We support procurement from Japan to Africa, offering supplier identification, negotiation, and logistics coordination.",
-
-    "ctaExploreServices": "Explore Our Services",
-    "ctaContactUs": "Get in Touch"
+      welcomeTitle: "Welcome to Intellink Nippon Consulting GK",
+      welcomeIntro: "We connect Japan with Africa and other emerging markets through strategic consulting, trusted partnerships, and expert-led solutions.",
+      marketIntelligenceTitle: "Market Intelligence",
+      marketIntelligenceDesc: "We deliver research, feasibility studies, and risk insights to support data-driven decisions in new markets.",
+      expertConnectTitle: "ExpertConnect™ Solutions",
+      expertConnectDesc: "Access our expert-matching platform to connect with qualified professionals for your market expansion goals.",
+      tradeLinksTitle: "Trade Links",
+      tradeLinksDesc: "We support procurement from Japan to Africa, offering supplier identification, negotiation, and logistics coordination.",
+      ctaExploreServices: "Explore Our Services",
+      ctaContactUs: "Get in Touch"
     },
-     en: {
     about: {
       mission: "Mission",
-      missionText:
-        "To be a trusted link between Japan and emerging markets — advancing sustainable growth, innovation, and inclusive prosperity.",
+      missionText: "To be a trusted link between Japan and emerging markets — advancing sustainable growth, innovation, and inclusive prosperity.",
       vision: "Vision",
-      visionText:
-        "We envision a world where cross-border collaboration fuels inclusive development, and intelligent solutions unlock shared progress for all.",
+      visionText: "We envision a world where cross-border collaboration fuels inclusive development, and intelligent solutions unlock shared progress for all.",
       philosophy: "Our Philosophy",
-      philosophyText:
-        "We believe that business thrives on understanding, trust, and shared purpose. At Intellink, we approach every engagement with empathy, professionalism, and a long-term mindset. Our work is grounded in listening first, acting with integrity, and delivering value that endures.",
+      philosophyText: "We believe that business thrives on understanding, trust, and shared purpose. At Intellink, we approach every engagement with empathy, professionalism, and a long-term mindset. Our work is grounded in listening first, acting with integrity, and delivering value that endures.",
       values: "Our Core Values",
       valuesList: [
         ["Kaizen Mindset", "We embrace continuous learning and improvement for ourselves and our clients."],
@@ -41,61 +33,56 @@ const translations = {
         ["Responsible Growth", "We promote sustainable business that benefits all stakeholders: clients, communities, and the environment."]
       ],
       whoWeAre: "Who We Are",
-      whoWeAreText:
-        "We are a team of professionals with deep experience in international consulting, trade development, and cross-cultural engagement. Our backgrounds span Japan, Africa, and beyond — enabling us to offer informed, localized, and high-impact support to our clients.",
+      whoWeAreText: "We are a team of professionals with deep experience in international consulting, trade development, and cross-cultural engagement. Our backgrounds span Japan, Africa, and beyond — enabling us to offer informed, localized, and high-impact support to our clients.",
       whatWeDo: "What We Do",
-      whatWeDoText:
-        "We provide advisory and facilitation services that support market entry, trade, investment, and business development between Japan and emerging economies. Our services are designed to simplify complex business environments, reduce risk, and help organizations capture new opportunities.",
+      whatWeDoText: "We provide advisory and facilitation services that support market entry, trade, investment, and business development between Japan and emerging economies. Our services are designed to simplify complex business environments, reduce risk, and help organizations capture new opportunities.",
       ourStory: "Our Story",
-      ourStoryText:
-        "Intellink Nippon Consulting GK was established in Tokyo in 2025 with a clear goal: to close the gap between Japan’s innovative economy and the potential-rich markets of Africa and other emerging regions. Having witnessed the challenges that businesses face — from language and regulatory barriers to a lack of trusted partners — we created Intellink to be a reliable bridge. Today, we continue this mission by supporting companies on both sides to engage, grow, and thrive together.",
+      ourStoryText: "Intellink Nippon Consulting GK was established in Tokyo in 2025 with a clear goal: to close the gap between Japan’s innovative economy and the potential-rich markets of Africa and other emerging regions. Having witnessed the challenges that businesses face — from language and regulatory barriers to a lack of trusted partners — we created Intellink to be a reliable bridge. Today, we continue this mission by supporting companies on both sides to engage, grow, and thrive together.",
       leadership: "Leadership",
       name: "Geoffrey Owuor",
       title: "Founder & Africa–Japan Markets Consultant",
       bio: "Geoffrey brings a unique blend of market insight, strategic clarity, and cultural fluency to help Japanese and emerging market partners connect and grow together."
-    }
-  },
+    },
     services: {
-    marketLink: {
-    title: "MarketLink™",
-    points: [
-      "Feasibility Studies",
-      "Regulatory Guidance",
-      "Market Entry Strategy",
-      "Local Partnership Development"
-    ]
-  },
-  expertConnect: {
-    title: "ExpertConnect™",
-    points: [
-      "Expert Knowledge Bank",
-      "Sector Specialist Matching",
-      "Custom Advisory Projects"
-    ]
-  },
-  tradeLink: {
-    title: "TradeLink™",
-    points: [
-      "Supplier Identification",
-      "Compliance Guidance",
-      "Trade Logistics Support"
-    ]
-  }
-},
-
-contact: {
-  title: "Contact Us",
-  subtitle: "Let’s start a conversation. Reach out directly or leave us a message.",
-  form: {
-    name: "Your Name",
-    email: "Your Email",
-    phone: "Your Phone Number",
-    location: "Your Location / Address",
-    message: "Your Message",
-    submit: "Schedule a Consultation"
-  }
-},
- insights: {
+      marketLink: {
+        title: "MarketLink™",
+        points: [
+          "Feasibility Studies",
+          "Regulatory Guidance",
+          "Market Entry Strategy",
+          "Local Partnership Development"
+        ]
+      },
+      expertConnect: {
+        title: "ExpertConnect™",
+        points: [
+          "Expert Knowledge Bank",
+          "Sector Specialist Matching",
+          "Custom Advisory Projects"
+        ]
+      },
+      tradeLink: {
+        title: "TradeLink™",
+        points: [
+          "Supplier Identification",
+          "Compliance Guidance",
+          "Trade Logistics Support"
+        ]
+      }
+    },
+    contact: {
+      title: "Contact Us",
+      subtitle: "Let’s start a conversation. Reach out directly or leave us a message.",
+      form: {
+        name: "Your Name",
+        email: "Your Email",
+        phone: "Your Phone Number",
+        location: "Your Location / Address",
+        message: "Your Message",
+        submit: "Schedule a Consultation"
+      }
+    },
+    insights: {
       successTitle: "Success Stories",
       successText: "We supported a Japanese agritech firm in establishing partnerships with local distributors in East Africa, resulting in a successful pilot launch and full-scale market entry within 9 months.",
       feedbackTitle: "Featured Client Feedback",
@@ -111,108 +98,92 @@ contact: {
       subscribeCTA: "Subscribe to Access",
       subscribePrompt: "Please log in and subscribe to access this article."
     }
-
-
   },
 
   jp: {
-  navbar: {
-    home: "ホーム",
-    about: "会社情報",
-    services: "サービス",
-    insights: "知見",
-    contact: "お問い合わせ",
-  },
-
-  home: {
-    hero: "日本と新興市場をつなぐ、インテリジェントで顧客中心のソリューション",
-    intro: "Intellink Nippon Consultingは、市場参入や貿易機会を的確にサポートします。",
-    marketLink: "マーケットリンク™",
-    expertConnect: "エキスパートコネクト™",
-    tradeLink: "トレードリンク™",
-    marketDesc: "実現可能性調査、規制ガイド、現地パートナー開拓、市場戦略の策定。",
-    expertDesc: "専門家ネットワークと知識バンクによるアドバイザリー支援。",
-    tradeDesc: "仕入先選定、コンプライアンス支援、貿易物流までを一貫して提供。",
-    explore: "ソリューションを見る",
-    contact: "お問い合わせ"
-  },
-
-  about: {
+    navbar: {
+      home: "ホーム",
+      about: "会社情報",
+      services: "サービス",
+      insights: "知見",
+      contact: "お問い合わせ",
+    },
+    home: {
+      welcomeTitle: "Intellink Nippon Consulting GK へようこそ",
+      welcomeIntro: "Intellinkは、日本とアフリカやその他の新興市場をつなぐ、信頼できるパートナーです。戦略的コンサルティングと専門的支援を提供します。",
+      marketIntelligenceTitle: "マーケットインテリジェンス",
+      marketIntelligenceDesc: "新市場における意思決定を支援するため、調査、実現可能性分析、リスク評価を提供します。",
+      expertConnectTitle: "エキスパートコネクト™",
+      expertConnectDesc: "専門家マッチングプラットフォームを通じて、市場拡大のためのプロフェッショナルとつながりましょう。",
+      tradeLinksTitle: "トレードリンク",
+      tradeLinksDesc: "日本からアフリカへの調達をサポートし、サプライヤー選定、交渉、物流調整を行います。",
+      ctaExploreServices: "サービスを見る",
+      ctaContactUs: "お問い合わせ"
+    },
+    about: {
       mission: "ミッション",
-      missionText:
-        "日本と新興市場の信頼ある架け橋として、持続可能な成長、イノベーション、包括的な繁栄を推進します。",
+      missionText: "日本と新興市場の信頼ある架け橋として、持続可能な成長、イノベーション、包括的な繁栄を推進します。",
       vision: "ビジョン",
-      visionText:
-        "国境を超えた連携が包括的な発展を促し、インテリジェントなソリューションが共有された進歩を実現する世界を目指します。",
+      visionText: "国境を超えた連携が包括的な発展を促し、インテリジェントなソリューションが共有された進歩を実現する世界を目指します。",
       philosophy: "私たちの理念",
-      philosophyText:
-        "ビジネスは理解、信頼、そして共有された目的によって成長します。私たちは常に共感と誠実さ、そして長期的視点を持って取り組み、クライアントに持続的な価値を提供します。",
+      philosophyText: "ビジネスは理解、信頼、そして共有された目的によって成長します。私たちは常に共感と誠実さ、そして長期的視点を持って取り組み、クライアントに持続的な価値を提供します。",
       values: "私たちの価値観",
       valuesList: [
-        ["改善マインドセット", "私たち自身とクライアントのために、継続的な学習と改善を追求します。"],
+        ["改善マインドセット", "継続的な学習と改善を通じて成果を高めます。"],
         ["プロジェクトを超えたパートナーシップ", "一時的な成果にとどまらず、持続可能な関係を築きます。"],
-        ["責任ある成長", "クライアント、地域社会、環境を尊重した持続可能な成長を推進します。"]
+        ["責任ある成長", "全てのステークホルダーに配慮した持続可能なビジネスを推進します。"]
       ],
       whoWeAre: "私たちについて",
-      whoWeAreText:
-        "私たちは国際コンサルティング、貿易開発、異文化理解に深い経験を持つ専門家チームです。日本、アフリカ、その他の地域にまたがる多様な背景を持ち、地域に根ざした効果的な支援を提供します。",
+      whoWeAreText: "私たちは国際コンサルティング、貿易開発、異文化理解に深い経験を持つ専門家チームです。日本、アフリカ、その他の地域にまたがる多様な背景を持ち、地域に根ざした効果的な支援を提供します。",
       whatWeDo: "提供するサービス",
-      whatWeDoText:
-        "日本と新興経済圏との間での市場参入、貿易、投資、事業開発を支援するアドバイザリーとファシリテーションサービスを提供します。複雑な市場環境を簡素化し、リスクを軽減し、新たな機会の獲得を支援します。",
-      ourStory: "私たちの歩み",
-      ourStoryText:
-        "Intellink Nippon Consulting GKは2025年、東京で設立されました。日本の革新的な経済とアフリカをはじめとする新興地域の可能性豊かな市場との間に存在するギャップを埋めるという明確な目的のもとに誕生しました。言語や規制の壁、信頼できるパートナーの欠如など、多くの課題に直面してきた経験から、信頼できる架け橋となるべく立ち上がりました。現在もその使命のもと、日本と新興市場の企業が共に成長し、発展できるようサポートを続けています。",
+      whatWeDoText: "市場参入、貿易、投資、事業開発を支援するためのアドバイザリーとファシリテーションサービスを提供しています。複雑な市場環境を簡素化し、リスクを軽減し、新たな機会を捉える支援を行います。",
+      ourStory: "設立の背景",
+      ourStoryText: "Intellink Nippon Consulting GKは2025年に東京で設立されました。日本の革新的経済とアフリカを含む新興市場の間にある課題を埋めるために誕生し、現在も信頼される橋渡し役として企業の成長を支援し続けています。",
       leadership: "リーダーシップ",
       name: "ジェフリー・オウオル",
       title: "創業者・アフリカ-日本市場コンサルタント",
       bio: "ジェフリーは市場インサイト、戦略的視点、文化的理解を兼ね備え、日本と新興市場の成長を支援しています。"
-    }
-  },
-  // ✅ ← COMMA here
-
-
-  services: {
-    marketLink: {
-      title: "マーケットリンク™",
-      points: [
-        "実現可能性調査",
-        "規制ガイダンス",
-        "市場参入戦略",
-        "現地パートナー開拓"
-      ]
     },
-    expertConnect: {
-      title: "エキスパートコネクト™",
-      points: [
-        "専門知識バンク",
-        "業界スペシャリストのマッチング",
-        "カスタムアドバイザリープロジェクト"
-      ]
+    services: {
+      marketLink: {
+        title: "マーケットリンク™",
+        points: [
+          "実現可能性調査",
+          "規制ガイダンス",
+          "市場参入戦略",
+          "現地パートナー開拓"
+        ]
+      },
+      expertConnect: {
+        title: "エキスパートコネクト™",
+        points: [
+          "専門知識バンク",
+          "業界スペシャリストのマッチング",
+          "カスタムアドバイザリープロジェクト"
+        ]
+      },
+      tradeLink: {
+        title: "トレードリンク™",
+        points: [
+          "仕入先の特定",
+          "コンプライアンスガイダンス",
+          "貿易物流サポート"
+        ]
+      }
     },
-    tradeLink: {
-      title: "トレードリンク™",
-      points: [
-        "仕入先の特定",
-        "コンプライアンスガイダンス",
-        "貿易物流サポート"
-      ]
-    }
-  },  // ✅ ← COMMA here
-
-  contact: {
-    title: "お問い合わせ",
-    subtitle: "お気軽にご連絡ください。下記のフォームよりメッセージをお送りいただけます。",
-    form: {
-      name: "お名前",
-      email: "メールアドレス",
-      phone: "電話番号",
-      location: "所在地 / 住所",
-      message: "メッセージ",
-      submit: "ご相談の予約"
-    }
-  },  // ✅ ← COMMA here
-
-  insights: {
+    contact: {
+      title: "お問い合わせ",
+      subtitle: "お気軽にご連絡ください。下記のフォームよりメッセージをお送りいただけます。",
+      form: {
+        name: "お名前",
+        email: "メールアドレス",
+        phone: "電話番号",
+        location: "所在地 / 住所",
+        message: "メッセージ",
+        submit: "ご相談の予約"
+      }
+    },
+    insights: {
       successTitle: "成功事例",
       successText: "私たちは日本のアグリテック企業が東アフリカで現地パートナーを確立し、9ヶ月以内にパイロットから本格的市場参入を成功させるのを支援しました。",
       feedbackTitle: "クライアントの声",
@@ -229,7 +200,6 @@ contact: {
       subscribePrompt: "記事にアクセスするには、ログインして購読してください。"
     }
   }
-
-
+};
 
 export default translations;
