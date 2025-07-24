@@ -6,6 +6,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Insights from './pages/Insights';
+import { AuthProvider } from './context/AuthContext';
 
 
 
@@ -29,5 +30,7 @@ function App() {
     </Router>
   );
 }
-
+<AuthProvider>
+  <App />
+</AuthProvider>
 export default App;
