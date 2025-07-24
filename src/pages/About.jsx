@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section className="about">
       <div className="about-container">
-
+        
         {/* Mission */}
         <section className="about-section">
           <h2>{t('about.mission')}</h2>
@@ -20,7 +20,31 @@ export default function About() {
           <p>{t('about.visionText')}</p>
         </section>
 
-        {/* Values */}
+        {/* About Us */}
+        <section className="about-section">
+          <h2>{t('about.aboutUs')}</h2>
+          <p>{t('about.aboutText')}</p>
+        </section>
+
+        {/* Who We Are */}
+        <section className="about-section">
+          <h2>{t('about.whoWeAre')}</h2>
+          <p>{t('about.whoWeAreText')}</p>
+        </section>
+
+        {/* What We Do */}
+        <section className="about-section">
+          <h2>{t('about.whatWeDo')}</h2>
+          <p>{t('about.whatWeDoText')}</p>
+        </section>
+
+        {/* Philosophy */}
+        <section className="about-section">
+          <h2>{t('about.philosophy')}</h2>
+          <p>{t('about.philosophyText')}</p>
+        </section>
+
+        {/* Core Values */}
         <section className="about-section">
           <h2>{t('about.values')}</h2>
           <ul className="values-list">
@@ -30,17 +54,10 @@ export default function About() {
           </ul>
         </section>
 
-        {/* Leadership */}
+        {/* Our Story */}
         <section className="about-section">
-          <h2>{t('about.leadership')}</h2>
-          <div className="leader-profile">
-            <div className="photo-placeholder">{t('about.name').charAt(0)}</div>
-            <div>
-              <h3>{t('about.name')}</h3>
-              <p>{t('about.title')}</p>
-              <p>{t('about.bio')}</p>
-            </div>
-          </div>
+          <h2>{t('about.ourStory')}</h2>
+          <p>{t('about.ourStoryText')}</p>
         </section>
 
       </div>

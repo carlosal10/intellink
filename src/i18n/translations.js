@@ -19,30 +19,37 @@ const translations = {
       ctaExploreServices: "Explore Our Services",
       ctaContactUs: "Get in Touch"
     },
-    about: {
+  about: {
       mission: "Mission",
-      missionText: "To be a trusted link between Japan and emerging markets — advancing sustainable growth, innovation, and inclusive prosperity.",
+      missionText:
+        "Our mission is to make international business between Japan and emerging markets accessible, effective, and sustainable — by fostering trusted partnerships and delivering strategic solutions that support growth and shared value creation.",
       vision: "Vision",
-      visionText: "We envision a world where cross-border collaboration fuels inclusive development, and intelligent solutions unlock shared progress for all.",
+      visionText:
+        "To be the foremost facilitator of impactful cross-border business between Japan and frontier markets, helping solve global challenges through collaboration, knowledge exchange, and responsible enterprise.",
+      aboutUs: "About Us",
+      aboutText:
+        "Intellink Nippon Consulting GK is a Japan-based consulting firm focused on empowering businesses to successfully explore and engage with emerging market opportunities — especially in Africa. We simplify complex market landscapes, connect you with verified local partners, and support sustainable expansion with expertise and integrity.",
+      whoWeAre: "Who We Are",
+      whoWeAreText:
+        "We are a team of professionals with deep experience in international consulting, trade development, and cross-cultural engagement. Our backgrounds span Japan, Africa, and beyond — enabling us to offer informed, localized, and high-impact support to our clients.",
+      whatWeDo: "What We Do",
+      whatWeDoText:
+        "We provide advisory and facilitation services that support market entry, trade, investment, and business development between Japan and emerging economies. Our services are designed to simplify complex business environments, reduce risk, and help organizations capture new opportunities.",
       philosophy: "Our Philosophy",
-      philosophyText: "We believe that business thrives on understanding, trust, and shared purpose. At Intellink, we approach every engagement with empathy, professionalism, and a long-term mindset. Our work is grounded in listening first, acting with integrity, and delivering value that endures.",
+      philosophyText:
+        "We believe that business thrives on understanding, trust, and shared purpose. At Intellink, we approach every engagement with empathy, professionalism, and a long-term mindset. Our work is grounded in listening first, acting with integrity, and delivering value that endures.",
       values: "Our Core Values",
       valuesList: [
         ["Kaizen Mindset", "We embrace continuous learning and improvement for ourselves and our clients."],
         ["Partnership Beyond Projects", "We build lasting relationships that generate value beyond transactions."],
         ["Responsible Growth", "We promote sustainable business that benefits all stakeholders: clients, communities, and the environment."]
       ],
-      whoWeAre: "Who We Are",
-      whoWeAreText: "We are a team of professionals with deep experience in international consulting, trade development, and cross-cultural engagement. Our backgrounds span Japan, Africa, and beyond — enabling us to offer informed, localized, and high-impact support to our clients.",
-      whatWeDo: "What We Do",
-      whatWeDoText: "We provide advisory and facilitation services that support market entry, trade, investment, and business development between Japan and emerging economies. Our services are designed to simplify complex business environments, reduce risk, and help organizations capture new opportunities.",
       ourStory: "Our Story",
-      ourStoryText: "Intellink Nippon Consulting GK was established in Tokyo in 2025 with a clear goal: to close the gap between Japan’s innovative economy and the potential-rich markets of Africa and other emerging regions. Having witnessed the challenges that businesses face — from language and regulatory barriers to a lack of trusted partners — we created Intellink to be a reliable bridge. Today, we continue this mission by supporting companies on both sides to engage, grow, and thrive together.",
-      leadership: "Leadership",
-      name: "Geoffrey Owuor",
-      title: "Founder & Africa–Japan Markets Consultant",
-      bio: "Geoffrey brings a unique blend of market insight, strategic clarity, and cultural fluency to help Japanese and emerging market partners connect and grow together."
+      ourStoryText:
+        "Intellink Nippon Consulting GK was established in Tokyo in 2025 with a clear goal: to close the gap between Japan’s innovative economy and the potential-rich markets of Africa and other emerging regions. Having witnessed the challenges that businesses face — from language and regulatory barriers to a lack of trusted partners — we created Intellink to be a reliable bridge. Today, we continue this mission by supporting companies on both sides to engage, grow, and thrive together.",
     },
+    // ... other sections like services, contact, insights
+  
     services: {
       marketLink: {
         title: "MarketLink™",
@@ -122,28 +129,27 @@ const translations = {
     },
     about: {
       mission: "ミッション",
-      missionText: "日本と新興市場の信頼ある架け橋として、持続可能な成長、イノベーション、包括的な繁栄を推進します。",
+      missionText: "日本と新興市場間の国際ビジネスを、信頼できるパートナーシップと戦略的ソリューションを通じて、アクセス可能で効果的かつ持続可能なものにすること。",
       vision: "ビジョン",
-      visionText: "国境を超えた連携が包括的な発展を促し、インテリジェントなソリューションが共有された進歩を実現する世界を目指します。",
-      philosophy: "私たちの理念",
-      philosophyText: "ビジネスは理解、信頼、そして共有された目的によって成長します。私たちは常に共感と誠実さ、そして長期的視点を持って取り組み、クライアントに持続的な価値を提供します。",
-      values: "私たちの価値観",
-      valuesList: [
-        ["改善マインドセット", "継続的な学習と改善を通じて成果を高めます。"],
-        ["プロジェクトを超えたパートナーシップ", "一時的な成果にとどまらず、持続可能な関係を築きます。"],
-        ["責任ある成長", "全てのステークホルダーに配慮した持続可能なビジネスを推進します。"]
-      ],
+      visionText: "国境を越えたビジネスを推進する主要なファシリテーターとして、協力、知識交換、責任ある企業活動を通じて、世界的課題の解決に貢献する。",
+      aboutUs: "会社概要",
+      aboutText: "Intellink Nippon Consulting GKは、日本を拠点に、アフリカを中心とする新興市場へのビジネス展開を支援するコンサルティング会社です。複雑な市場をシンプルにし、信頼できる現地パートナーとつなぎ、専門性と誠実さをもって持続可能な成長を後押しします。",
       whoWeAre: "私たちについて",
-      whoWeAreText: "私たちは国際コンサルティング、貿易開発、異文化理解に深い経験を持つ専門家チームです。日本、アフリカ、その他の地域にまたがる多様な背景を持ち、地域に根ざした効果的な支援を提供します。",
+      whoWeAreText: "私たちは国際コンサルティング、貿易支援、異文化コミュニケーションに深い知見を持つ専門家チームです。日本、アフリカをはじめとする多様な地域に根差し、地域に適した高いインパクトを生み出す支援を提供しています。",
       whatWeDo: "提供するサービス",
-      whatWeDoText: "市場参入、貿易、投資、事業開発を支援するためのアドバイザリーとファシリテーションサービスを提供しています。複雑な市場環境を簡素化し、リスクを軽減し、新たな機会を捉える支援を行います。",
-      ourStory: "設立の背景",
-      ourStoryText: "Intellink Nippon Consulting GKは2025年に東京で設立されました。日本の革新的経済とアフリカを含む新興市場の間にある課題を埋めるために誕生し、現在も信頼される橋渡し役として企業の成長を支援し続けています。",
-      leadership: "リーダーシップ",
-      name: "ジェフリー・オウオル",
-      title: "創業者・アフリカ-日本市場コンサルタント",
-      bio: "ジェフリーは市場インサイト、戦略的視点、文化的理解を兼ね備え、日本と新興市場の成長を支援しています。"
+      whatWeDoText: "日本と新興国間の市場参入、貿易、投資、事業開発を支援するアドバイザリーおよびファシリテーションサービスを提供しています。市場環境の複雑さを軽減し、リスクを抑え、新たなビジネス機会の獲得を可能にします。",
+      philosophy: "私たちの理念",
+      philosophyText: "ビジネスは理解、信頼、そして共通の目的の上に成り立ちます。私たちは共感と誠実さ、長期的な視点を大切にし、まず耳を傾け、価値ある支援を持続的に提供することを心がけています。",
+      values: "価値観",
+      valuesList: [
+        ["カイゼンマインドセット", "継続的な学びと改善を自らとクライアントのために追求します。"],
+        ["プロジェクトを超えるパートナーシップ", "一過性ではなく、長期的な価値を生む関係を築きます。"],
+        ["責任ある成長", "クライアント、地域社会、環境すべてに貢献するビジネスを推進します。"]
+      ],
+      ourStory: "私たちの歩み",
+      ourStoryText: "Intellink Nippon Consulting GKは2025年に東京で設立されました。日本の先進的な経済とアフリカをはじめとする有望な新興市場の間にあるギャップを埋めるために誕生しました。言語や制度面の障壁、信頼できるパートナーの不足といった課題を目の当たりにし、信頼の架け橋となることを使命に掲げています。現在も、両地域の企業が共に成長し続けられるよう支援を行っています。"
     },
+    // ... (services, contact, insights should follow)
     services: {
       marketLink: {
         title: "マーケットリンク™",
