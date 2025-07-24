@@ -51,31 +51,47 @@ const translations = {
     // ... other sections like services, contact, insights
   
     services: {
-      marketLink: {
-        title: "MarketLink™",
-        points: [
-          "Feasibility Studies",
-          "Regulatory Guidance",
-          "Market Entry Strategy",
-          "Local Partnership Development"
-        ]
-      },
-      expertConnect: {
-        title: "ExpertConnect™",
-        points: [
-          "Expert Knowledge Bank",
-          "Sector Specialist Matching",
-          "Custom Advisory Projects"
-        ]
-      },
-      tradeLink: {
-        title: "TradeLink™",
-        points: [
-          "Supplier Identification",
-          "Compliance Guidance",
-          "Trade Logistics Support"
-        ]
-      }
+  marketIntelligence: {
+    title: "Market Intelligence",
+    desc: "We provide timely and accurate insights through research, feasibility studies, and regulatory analysis. Our reports help businesses make informed decisions and reduce risk when entering new markets.",
+    points: [
+      "Market Research & Insights",
+      "Feasibility Studies",
+      "Regulatory Affairs Support",
+      "Risk Analysis & Forecasting",
+      "Publishing (e.g. Kenya energy reports)"
+    ]
+  },
+  businessMatch: {
+    title: "Market Links (Business Matchmaking)",
+    desc: "We connect Japanese businesses with vetted African partners — and vice versa — ensuring each match supports long-term collaboration and business success.",
+    points: [
+      "B2B Matchmaking",
+      "Partner Verification",
+      "Government & Liaison Support",
+      "Cultural & Business Etiquette Training"
+    ]
+  },
+  expertConnect: {
+    title: "ExpertConnect™ Solutions",
+    desc: "Through our proprietary expert-matching platform, we connect organizations with specialized industry professionals, ensuring access to critical knowledge when and where it is needed.",
+    points: [
+      "Expert Database Access",
+      "Talent Matching for Japan–Africa Setup",
+      "Custom Sector Advisory",
+      "Knowledge Bank Access"
+    ]
+  },
+  tradeLink: {
+    title: "Trade Links",
+    desc: "We support businesses — especially in Africa — to source high-quality goods from Japan. Our services include supplier identification, verification, negotiation support, and coordination of logistics.",
+    points: [
+      "Japan Product Sourcing",
+      "Seller Identification & Verification",
+      "Procurement Negotiation",
+      "Logistics Coordination"
+    ]
+  }
     },
     contact: {
       title: "Contact Us",
@@ -151,31 +167,48 @@ const translations = {
     },
     // ... (services, contact, insights should follow)
     services: {
-      marketLink: {
-        title: "マーケットリンク™",
-        points: [
-          "実現可能性調査",
-          "規制ガイダンス",
-          "市場参入戦略",
-          "現地パートナー開拓"
-        ]
-      },
-      expertConnect: {
-        title: "エキスパートコネクト™",
-        points: [
-          "専門知識バンク",
-          "業界スペシャリストのマッチング",
-          "カスタムアドバイザリープロジェクト"
-        ]
-      },
-      tradeLink: {
-        title: "トレードリンク™",
-        points: [
-          "仕入先の特定",
-          "コンプライアンスガイダンス",
-          "貿易物流サポート"
-        ]
-      }
+  marketIntelligence: {
+    title: "市場インテリジェンス",
+    desc: "市場調査、実現可能性調査、規制分析を通じて、正確でタイムリーなインサイトを提供します。当社のレポートは、新規市場参入時の意思決定を支援し、リスクを軽減します。",
+    points: [
+      "市場調査とインサイト分析",
+      "実現可能性調査",
+      "規制関連のサポート",
+      "リスク分析と将来予測",
+      "出版（例：ケニアのエネルギーレポート）"
+    ]
+  },
+  businessMatch: {
+    title: "マーケットリンク（ビジネスマッチング）",
+    desc: "日本とアフリカの信頼できるビジネスパートナーを結びつけ、長期的な協力関係とビジネスの成功を支援します。",
+    points: [
+      "B2Bマッチング",
+      "パートナーの検証",
+      "政府・関係機関とのリエゾン支援",
+      "文化・ビジネスマナー研修"
+    ]
+  },
+  expertConnect: {
+    title: "エキスパートコネクト™ソリューション",
+    desc: "独自の専門家マッチングプラットフォームを通じて、必要な知見を持つ業界の専門家と組織をつなぎます。",
+    points: [
+      "専門家データベースへのアクセス",
+      "日ア間での人材マッチング支援",
+      "分野別のカスタムアドバイザリー",
+      "ナレッジバンクへのアクセス"
+    ]
+  },
+  tradeLink: {
+    title: "トレードリンク",
+    desc: "特にアフリカの企業が日本から高品質な商品を調達するための支援を行います。仕入先の特定から交渉、物流までを包括的にサポートします。",
+    points: [
+      "日本製品の調達支援",
+      "売り手の特定と検証",
+      "調達交渉の支援",
+      "物流の調整"
+    ]
+  }
+
     },
     contact: {
       title: "お問い合わせ",
