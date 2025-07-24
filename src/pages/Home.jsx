@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import useTranslate from '../hooks/useTranslate';
 import './Home.css';
 
@@ -27,8 +28,8 @@ export default function Home() {
       </div>
 
       <div className="cta-buttons">
-        <a href="/services" className="btn primary">{t('home.ctaExploreServices')}</a>
-        <a href="/contact" className="btn secondary">{t('home.ctaContactUs')}</a>
+        <Link to="/services" className="btn primary">{t('home.ctaExploreServices')}</Link>
+        <Link to="/contact" className="btn secondary">{t('home.ctaContactUs')}</Link>
       </div>
     </section>
   );
