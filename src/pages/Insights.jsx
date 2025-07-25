@@ -1,18 +1,15 @@
 import './Insights.css';
 import useTranslate from '../hooks/useTranslate';
-import { useAuth } from '../context/AuthContext'; // Assuming you use auth
+import { useAuth } from '../context/AuthContext';
+import { redirectToCheckout } from '../api/checkout';
 import { useState } from 'react';
 
 export default function Insights() {
   const t = useTranslate();
-  const { isLoggedIn, hasSubscription } = useAuth(); // Custom logic for auth/sub
+  const { isLoggedIn, hasSubscription } = useAuth();
   const [unlockedArticles, setUnlockedArticles] = useState([]);
 
-  const handleAccess = (index) => {
-    if (!isLoggedIn || !hasSubscription) {
-      alert(t('insights.subscribePrompt')); // Or redirect to paywall
-      return;
-    }
+  const grantAccess = (index) => {
     setUnlockedArticles([...unlockedArticles, index]);
   };
 
@@ -30,7 +27,8 @@ export default function Insights() {
         <section className="insight-section">
           <h2>{t('insights.feedbackTitle')}</h2>
           <p>
-            {t('insights.feedbackText')}<br />
+            {t('insights.feedbackText')}
+            <br />
             <em>{t('insights.feedbackClient')}</em>
           </p>
         </section>
@@ -42,12 +40,28 @@ export default function Insights() {
             {t('insights.articles')?.map((article, index) => (
               <li key={index}>
                 <span>{article}</span><br />
+
                 {unlockedArticles.includes(index) ? (
-                  <a href={`/downloads/article-${index + 1}.pdf`} target="_blank" rel="noopener noreferrer" className="btn primary">
+                  <a
+                    href={`/downloads/article-${index + 1}.pdf`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn primary"
+                  >
                     {t('insights.download')}
                   </a>
                 ) : (
-                  <button onClick={() => handleAccess(index)} className="btn secondary">
+                  <button
+                    className="btn secondary"
+                    onClick={() => {
+                      if (isLoggedIn && hasSubscription) {
+                        grantAccess(index);
+                      } else {
+                        // Initiate Stripe Checkout
+                        redirectToCheckout(index, 500); // $5.00 in cents
+                      }
+                    }}
+                  >
                     {t('insights.subscribeCTA')}
                   </button>
                 )}
@@ -55,7 +69,6 @@ export default function Insights() {
             ))}
           </ul>
         </section>
-
       </div>
     </section>
   );

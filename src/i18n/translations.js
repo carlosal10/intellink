@@ -8,7 +8,7 @@ const translations = {
       contact: "Contact",
     },
     home: {
-      welcomeTitle: "Welcome to Intellink Nippon Consulting GK",
+      welcomeTitle: "Welcome to Intellink Nippon Consulting LLC",
       welcomeIntro: "We connect Japan with Africa and other emerging markets through strategic consulting, trusted partnerships, and expert-led solutions.",
       marketIntelligenceTitle: "Market Intelligence",
       marketIntelligenceDesc: "We deliver research, feasibility studies, and risk insights to support data-driven decisions in new markets.",

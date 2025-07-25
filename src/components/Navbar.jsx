@@ -31,7 +31,7 @@ export default function Navbar() {
 
   return (
     <nav className={`navbar ${menuOpen ? 'show' : ''}`} ref={navRef}>
-      <Link to="/" className="logo" onClick={closeMenu}>Intellink Nippon</Link>
+      <Link to="/" className="logo" onClick={closeMenu}>Intellink Nippon Consulting LLC</Link>
 
       <button
         className={`hamburger ${menuOpen ? 'open' : ''}`}
