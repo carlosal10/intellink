@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { useState, useRef, useEffect } from 'react';
 import './Navbar.css';
+// Optional: import logo if inside src/assets
+// import logo from '../assets/logo.png';
 
 export default function Navbar() {
   const { language, toggleLanguage } = useLanguage();
@@ -11,7 +13,6 @@ export default function Navbar() {
   const toggleMenu = () => setMenuOpen(prev => !prev);
   const closeMenu = () => setMenuOpen(false);
 
-  // Close menu if clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -23,7 +24,6 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Lock scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
     return () => { document.body.style.overflow = 'auto'; };
@@ -31,14 +31,17 @@ export default function Navbar() {
 
   return (
     <nav className={`navbar ${menuOpen ? 'show' : ''}`} ref={navRef}>
-      <Link to="/" className="logo" onClick={closeMenu}>Intellink Nippon Consulting LLC</Link>
+      <Link to="/" className="logo" onClick={closeMenu}>
+        <img src="/images/logo.png" alt="Intellink Nippon Logo" className="logo-img" />
+        <span className="logo-text">Intellink Nippon</span>
+      </Link>
 
       <button
         className={`hamburger ${menuOpen ? 'open' : ''}`}
         onClick={toggleMenu}
         aria-label="Toggle menu"
       >
-        <span>☰</span>
+        <span></span>
         <span></span>
         <span></span>
       </button>
