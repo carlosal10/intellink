@@ -4,7 +4,7 @@ const router = express.Router();
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-router.post('/create-checkout-session', async (req, res) => {
+router.post('https://intellink-8w9t.onrender.com/create-checkout-session', async (req, res) => {
   try {
     const { articleId, price } = req.body;
 
