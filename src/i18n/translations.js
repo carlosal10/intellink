@@ -17,7 +17,8 @@ const translations = {
       tradeLinksTitle: "Trade Links",
       tradeLinksDesc: "We support procurement from Japan to Africa, offering supplier identification, negotiation, and logistics coordination.",
       ctaExploreServices: "Explore Our Services",
-      ctaContactUs: "Get in Touch"
+      ctaContactUs: "Get in Touch",
+      ctaAboutUs: "Learn More About Us",
     },
   about: {
       mission: "Mission",
