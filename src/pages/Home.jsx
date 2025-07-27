@@ -16,14 +16,14 @@ export default function Home() {
           <Link to="/services" className="btn primary">{t('home.ctaExploreServices')}</Link>
         </div>
         <div className="hero-image">
-          <img src="/images/hero-business-meeting.jpg" alt="Hero" />
+          <img src="/public/hero-business-meeting.jpg" alt="Hero" />
         </div>
       </div>
 
       {/* Highlights Section */}
       <div className="highlight-section">
         <div className="highlight-image">
-          <img src="/images/strategic-meeting.jpg" alt="Strategic Meeting" />
+          <img src="/public/strategic-meeting.jpg" alt="Strategic Meeting" />
         </div>
         <div className="highlight-text">
           <h2>{t('about.whoWeAre')}</h2>
@@ -35,17 +35,17 @@ export default function Home() {
       {/* Service Features */}
       <div className="services-overview">
         <div className="service-box">
-          <img src="/images/forecasting.png" alt="Forecasting" />
+          <img src="/public/forecasting.png" alt="Forecasting" />
           <h3>{t('home.marketIntelligenceTitle')}</h3>
           <p>{t('home.marketIntelligenceDesc')}</p>
         </div>
         <div className="service-box">
-          <img src="/images/expert-connect.png" alt="Expert Connect" />
+          <img src="/public/expert-connect.png" alt="Expert Connect" />
           <h3>{t('home.expertConnectTitle')}</h3>
           <p>{t('home.expertConnectDesc')}</p>
         </div>
         <div className="service-box">
-          <img src="/images/trade-links.png" alt="Trade Links" />
+          <img src="/public/trade-links.png" alt="Trade Links" />
           <h3>{t('home.tradeLinksTitle')}</h3>
           <p>{t('home.tradeLinksDesc')}</p>
         </div>
@@ -59,7 +59,7 @@ export default function Home() {
           <Link to="/contact" className="btn primary">{t('home.ctaContactUs')}</Link>
         </div>
         <div className="philosophy-image">
-          <img src="/images/team-discussion.jpg" alt="Philosophy" />
+          <img src="/public/team-discussion.jpg" alt="Philosophy" />
         </div>
       </div>
 
