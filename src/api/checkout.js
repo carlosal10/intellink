@@ -1,4 +1,4 @@
-import stripePromise from '../server/utils/stripe';
+//import stripePromise from '../server/utils/stripe';
 
 export async function redirectToCheckout(articleId, price) {
   const stripe = await stripePromise;
