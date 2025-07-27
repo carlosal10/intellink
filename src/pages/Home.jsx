@@ -16,9 +16,7 @@ export default function Home() {
           <Link to="/services" className="btn primary">{t('home.ctaExploreServices')}</Link>
         </div>
         <div className="hero-image">
-          <img src="/images/hero-business-meeting.jpg" alt="Business Meeting" >
-            Your browser does not support the video tag.
-          </img>
+          <img src="/images/hero-business-meeting.jpg" alt="Business Meeting" />
         </div>
       </div>
 
