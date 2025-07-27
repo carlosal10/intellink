@@ -27,9 +27,28 @@ export default function Home() {
         </div>
       </div>
 
+       {/* Who We Are */}
+        <section className="about-section">
+          <h2>{t('about.whoWeAre')}</h2>
+          <p>{t('about.whoWeAreText')}</p>
+        </section>
+
+        {/* What We Do */}
+        <section className="about-section">
+          <h2>{t('about.whatWeDo')}</h2>
+          <p>{t('about.whatWeDoText')}</p>
+        </section>
+
+        {/* Philosophy */}
+        <section className="about-section">
+          <h2>{t('about.philosophy')}</h2>
+          <p>{t('about.philosophyText')}</p>
+        </section>
+
       <div className="cta-buttons">
         <Link to="/services" className="btn primary">{t('home.ctaExploreServices')}</Link>
         <Link to="/contact" className="btn secondary">{t('home.ctaContactUs')}</Link>
+        <Link to="/about" className="btn secondary">{t('home.ctaAboutUs2')}</Link>
       </div>
     </section>
   );

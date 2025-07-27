@@ -8,6 +8,12 @@ export default function About() {
     <section className="about">
       <div className="about-container">
         
+        {/* About Us */}
+        <section className="about-section">
+          <h2>{t('about.aboutUs')}</h2>
+          <p>{t('about.aboutText')}</p>
+        </section>
+
         {/* Mission */}
         <section className="about-section">
           <h2>{t('about.mission')}</h2>
@@ -18,31 +24,13 @@ export default function About() {
         <section className="about-section">
           <h2>{t('about.vision')}</h2>
           <p>{t('about.visionText')}</p>
-        </section>
-
-        {/* About Us */}
-        <section className="about-section">
-          <h2>{t('about.aboutUs')}</h2>
-          <p>{t('about.aboutText')}</p>
-        </section>
+        </section>      
 
         {/* Who We Are */}
         <section className="about-section">
           <h2>{t('about.whoWeAre')}</h2>
           <p>{t('about.whoWeAreText')}</p>
-        </section>
-
-        {/* What We Do */}
-        <section className="about-section">
-          <h2>{t('about.whatWeDo')}</h2>
-          <p>{t('about.whatWeDoText')}</p>
-        </section>
-
-        {/* Philosophy */}
-        <section className="about-section">
-          <h2>{t('about.philosophy')}</h2>
-          <p>{t('about.philosophyText')}</p>
-        </section>
+        </section>      
 
         {/* Core Values */}
         <section className="about-section">
