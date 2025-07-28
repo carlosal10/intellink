@@ -1,6 +1,6 @@
 /* Base Navbar Styles */
 .navbar {
-  background-color: #ffffff;
+  background-color: #0B2545;
   border-bottom: 1px solid #ddd;
   padding: 16px 24px;
   display: flex;
@@ -14,7 +14,7 @@
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #0B2545; /* Navy Blue */
+  color: #ffffff; /* Navy Blue */
   text-decoration: none;
 }
 
@@ -27,13 +27,13 @@
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color: #F1C40F;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #0055a5; /* Soft Blue Hover */
+  color: #ffffff; /* Soft Blue Hover */
 }
 
 /* Language Switch Button */
