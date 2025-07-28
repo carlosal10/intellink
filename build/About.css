@@ -1,0 +1,146 @@
+.about {
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.about-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Base section style */
+.about-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 20px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Overlay for readability */
+.about-section .overlay {
+  background: rgba(11, 37, 69, 0.6); /* Navy blue transparent */
+  padding: 40px 24px;
+  max-width: 960px;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.about-section h2 {
+  font-size: 1.8rem;
+  color: #F1C40F; /* Light Gold */
+  margin-bottom: 16px;
+}
+
+.about-section p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #f5f5f5;
+}
+
+.highlight {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #F1C40F;
+}
+
+/* Values list inside overlay */
+.values-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.values-list li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #f5f5f5;
+}
+
+/* Leadership profile */
+.leader-profile {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.photo-placeholder {
+  width: 100px;
+  height: 100px;
+  background-color: #0055a5;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.leader-profile h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #f5f5f5;
+}
+
+.leader-profile p {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: #f5f5f5;
+}
+
+/* Background image classes */
+.bg-about {
+  background-image: url('/images/about-background.jpg');
+}
+
+.bg-mission {
+  background-image: url('/images/mission.jpg');
+}
+
+.bg-vision {
+  background-image: url('/images/vision.jpg');
+}
+
+.bg-whoweare {
+  background-image: url('/images/team.jpg');
+}
+
+.bg-values {
+  background-image: url('/images/values.jpg');
+}
+
+.bg-story {
+  background-image: url('/images/our-story.jpg');
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 60px 16px;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-section p,
+  .values-list {
+    font-size: 0.95rem;
+  }
+
+  .leader-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .photo-placeholder {
+    margin-bottom: 12px;
+  }
+}
