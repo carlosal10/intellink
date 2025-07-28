@@ -48,46 +48,71 @@
   object-fit: cover;
 }
 
-/* Highlight Section */
-.highlight-section {
+/* Modern Overlapping Section */
+.modern-section {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 40px;
-  margin-bottom: 60px;
+  justify-content: flex-start;
+  min-height: 400px;
+  margin-bottom: 80px;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
 }
 
-.highlight-image,
-.philosophy-image {
-  flex: 1 1 400px;
+.modern-section.reverse {
+  flex-direction: row-reverse;
 }
 
-.highlight-image img,
-.philosophy-image img {
+.image-wrapper {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-wrapper img {
   width: 100%;
-  border-radius: 8px;
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-.highlight-text {
-  flex: 1 1 400px;
+.text-box {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  max-width: 500px;
+  margin-left: 5%;
+  z-index: 2;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-.highlight-text h2,
-.philosophy-text h2 {
+.modern-section.reverse .text-box {
+  margin-left: auto;
+  margin-right: 5%;
+}
+
+.text-box h2 {
   color: #0B2545;
   font-size: 1.75rem;
   margin-bottom: 16px;
 }
 
-.highlight-text p,
-.philosophy-text p {
+.text-box p {
   font-size: 1rem;
   color: #444;
   line-height: 1.75;
 }
 
-/* Service Boxes */
+.text-box .btn {
+  margin-top: 16px;
+}
+
+/* Services Section */
 .services-overview {
   display: flex;
   flex-wrap: wrap;
@@ -128,19 +153,6 @@
 
 .service-box:hover {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-}
-
-/* Philosophy Section */
-.philosophy-section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
-  margin-bottom: 60px;
-}
-
-.philosophy-text {
-  flex: 1 1 400px;
 }
 
 /* CTA Buttons */
@@ -184,21 +196,37 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-section,
-  .highlight-section,
-  .philosophy-section {
+  .hero-section {
     flex-direction: column;
     text-align: center;
   }
 
-  .hero-text,
-  .highlight-text,
-  .philosophy-text {
+  .hero-image img {
+    max-width: 90%;
+  }
+
+  .modern-section,
+  .modern-section.reverse {
+    flex-direction: column;
+  }
+
+  .text-box {
+    position: static;
+    margin: 0;
+    padding: 24px;
     max-width: 100%;
+    background: #ffffff;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .image-wrapper {
+    height: 250px;
   }
 
   .service-box {
-    width: 90%;
+    width: 100%;
+    max-width: 90%;
   }
 
   .btn {

@@ -20,12 +20,12 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Highlights Section */}
-      <div className="highlight-section">
-        <div className="highlight-image">
+      {/* Highlight Section - Text Over Image */}
+      <div className="modern-section">
+        <div className="image-wrapper">
           <img src="/images/strategic-meeting.jpg" alt="Strategic Meeting" />
         </div>
-        <div className="highlight-text">
+        <div className="text-box">
           <h2>{t('about.whoWeAre')}</h2>
           <p>{t('about.whoWeAreText')}</p>
           <Link to="/about" className="btn secondary">{t('home.ctaAboutUs')}</Link>
@@ -51,15 +51,15 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Philosophy */}
-      <div className="philosophy-section">
-        <div className="philosophy-text">
+      {/* Philosophy Section - Text Over Image */}
+      <div className="modern-section reverse">
+        <div className="image-wrapper">
+          <img src="/images/team-discussion.jpg" alt="Team Discussion" />
+        </div>
+        <div className="text-box">
           <h2>{t('about.philosophy')}</h2>
           <p>{t('about.philosophyText')}</p>
           <Link to="/contact" className="btn primary">{t('home.ctaContactUs')}</Link>
-        </div>
-        <div className="philosophy-image">
-          <img src="/images/team-discussion.jpg" alt="Philosophy" />
         </div>
       </div>
 
