@@ -30,7 +30,7 @@ export default function Navbar() {
   }, [menuOpen]);
 
   return (
-    <nav className={`navbar ${menuOpen ? 'show' : ''}`} ref={navRef}>
+    <nav HDclassName={`navbar ${menuOpen ? 'show' : ''}`} ref={navRef}>
       <Link to="/" className="logo" onClick={closeMenu}>
         <img src="/images/android-chrome-512x512.png" alt="Intellink Nippon Logo" className="logo-img" />
 
@@ -41,7 +41,7 @@ export default function Navbar() {
         onClick={toggleMenu}
         aria-label="Toggle menu"
       >
-        <span></span>
+        <span><FontAwesomeIcon icon={byPrefixAndName.fas['bars']} /></span>
         <span></span>
         <span></span>
       </button>
