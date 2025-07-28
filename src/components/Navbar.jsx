@@ -32,8 +32,8 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${menuOpen ? 'show' : ''}`} ref={navRef}>
       <Link to="/" className="logo" onClick={closeMenu}>
-        <img src="/images/favicon-32x32.png" alt="Intellink Nippon Logo" className="logo-img" />
-      
+        <img src="/images/android-chrome-512x512.png" alt="Intellink Nippon Logo" className="logo-img" />
+
       </Link>
 
       <button
