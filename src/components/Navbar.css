@@ -9,6 +9,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  height: 30%;
 }
 
 .logo {
@@ -41,15 +42,16 @@
   padding: 6px 12px;
   font-size: 0.9rem;
   background-color: transparent;
-  border: 1px solid #0055a5;
+  border: 1px solid #ffffff;
   border-radius: 4px;
-  color: #0055a5;
+  color: #E63946;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .lang-toggle:hover {
   background-color: #eef6ff;
+  border-color: #E63946;
 }
 
 /* Hamburger Button (hidden on desktop) */
