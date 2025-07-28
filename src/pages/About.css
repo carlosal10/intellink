@@ -96,27 +96,27 @@
 
 /* Background image classes */
 .bg-about {
-  background-image: url('/images/about-background.jpg');
+  background-image: url('../images/about-background.jpg');
 }
 
 .bg-mission {
-  background-image: url('/images/mission.jpg');
+  background-image: url('../images/mission.jpg');
 }
 
 .bg-vision {
-  background-image: url('/images/vision.jpg');
+  background-image: url('../images/vision.jpg');
 }
 
 .bg-whoweare {
-  background-image: url('/images/team.jpg');
+  background-image: url('../images/team.jpg');
 }
 
 .bg-values {
-  background-image: url('/images/values.jpg');
+  background-image: url('../images/values.jpg');
 }
 
 .bg-story {
-  background-image: url('/images/our-story.jpg');
+  background-image: url('../images/our-story.jpg');
 }
 
 /* Mobile Responsive */
