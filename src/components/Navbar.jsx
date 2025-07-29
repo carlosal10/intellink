@@ -1,16 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { useState, useRef, useEffect } from 'react';
+import Hamburger from 'hamburger-react'; // ✅ You're importing this
 import './Navbar.css';
-// Optional: import logo if inside src/assets
-// import logo from '../assets/logo.png';
 
 export default function Navbar() {
   const { language, toggleLanguage } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef();
 
-  const toggleMenu = () => setMenuOpen(prev => !prev);
   const closeMenu = () => setMenuOpen(false);
 
   useEffect(() => {
@@ -19,7 +17,6 @@ export default function Navbar() {
         closeMenu();
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
@@ -30,23 +27,21 @@ export default function Navbar() {
   }, [menuOpen]);
 
   return (
-    <nav HDclassName={`navbar ${menuOpen ? 'show' : ''}`} ref={navRef}>
+    <nav className={`navbar ${menuOpen ? 'show' : ''}`} ref={navRef}>
       <Link to="/" className="logo" onClick={closeMenu}>
-        <img src="/images/android-chrome-512x512.png" alt="Intellink Nippon Logo" className="logo-img" />
-
+        <img
+          src="/images/android-chrome-512x512.png"
+          alt="Intellink Nippon Logo"
+          className="logo-img"
+        />
       </Link>
 
-      <button
-        className={`hamburger ${menuOpen ? 'open' : ''}`}
-        onClick={toggleMenu}
-        aria-label="Toggle menu"
-      >
-        <span><FontAwesomeIcon icon={byPrefixAndName.fas['bars']} /></span>
-        <span></span>
-        <span></span>
-      </button>
+      {/* ✅ Modern Hamburger */}
+      <div className="hamburger-wrapper">
+        <Hamburger toggled={menuOpen} toggle={setMenuOpen} size={24} color="#F1C40F" />
+      </div>
 
-      <div className="nav-links">
+      <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
         <Link to="/" onClick={closeMenu}>{language === 'en' ? 'Home' : 'ホーム'}</Link>
         <Link to="/about" onClick={closeMenu}>{language === 'en' ? 'About' : '会社情報'}</Link>
         <Link to="/services" onClick={closeMenu}>{language === 'en' ? 'Services' : 'サービス'}</Link>
