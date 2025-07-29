@@ -1,12 +1,12 @@
 /* Base Navbar Styles */
 .navbar {
-  background-color: #003366;
+  background-color: #002346ff;
   border-bottom: 1px solid #ddd;
   padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 1000;
   height: 30%;
