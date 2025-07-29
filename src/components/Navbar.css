@@ -1,29 +1,44 @@
 /* Base Navbar Styles */
 .navbar {
-  background-color: #002346ff;
+  background-color: rgb(15, 50, 85);
   border-bottom: 1px solid #ddd;
   padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: sticky;
   top: 0;
   z-index: 1000;
-  height: 30%;
 }
 
+/* Logo */
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffffff; /* Navy Blue */
+  display: flex;
+  align-items: center;
+  gap: 12px;
   text-decoration: none;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
 }
 
 /* Navigation Links */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
 }
 
 .nav-links a {
@@ -34,7 +49,7 @@
 }
 
 .nav-links a:hover {
-  color: #ffffff; /* Soft Blue Hover */
+  color: #ffffff;
 }
 
 /* Language Switch Button */
@@ -54,48 +69,16 @@
   border-color: #E63946;
 }
 
-/* Hamburger Button (hidden on desktop) */
-.hamburger {
+/* Hamburger (wrapper for hamburger-react) */
+.hamburger-wrapper {
   display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 28px;
-  height: 24px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 1001;
-}
-
-.hamburger span {
-  display: block;
-  width: 24px;
-  height: 3px;
-  margin: 4px 0;
-  background-color: #ffffff;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Hamburger open animation */
-.hamburger.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
+  .hamburger-wrapper {
+    display: block;
+    z-index: 1001;
   }
 
   .nav-links {
@@ -103,12 +86,12 @@
     align-items: flex-start;
     background: #fff;
     position: absolute;
-    top: 60px;
+    top: 72px;
     right: 20px;
     padding: 0;
     border: 1px solid #ddd;
     border-radius: 6px;
-    width: 200px;
+    width: 220px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     max-height: 0;
     overflow: hidden;
@@ -117,7 +100,7 @@
     transition: all 0.3s ease-in-out;
   }
 
-  .navbar.show .nav-links {
+  .nav-links.open {
     padding: 16px;
     max-height: 500px;
     opacity: 1;
@@ -131,30 +114,12 @@
     padding: 8px 0;
     color: #0B2545;
   }
+
   .logo-img {
-    height: 36px;
+    height: 48px;
+  }
+
+  .logo-text {
+    font-size: 1.4rem;
   }
 }
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: #ffffff;
-  flex-shrink: 0;
-}
-
-.logo-img {
-  height: 150px; /* Adjust as needed */
-  width: 200px; /* Adjust as needed */
-  object-fit: contain;
-}
-
-.logo-text {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.2;
-}
-
