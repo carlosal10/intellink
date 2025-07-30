@@ -188,6 +188,7 @@
     flex-direction: column;
     min-height: unset;
     margin-bottom: 40px;
+    overflow-x: hidden;
   }
 
   .angled-panel {
@@ -195,6 +196,7 @@
     width: 100%;
     padding: 40px 20px;
     background: #0B2545;
+    opacity: 0.8;
   }
 
   .modern-overlay {
