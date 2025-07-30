@@ -84,7 +84,7 @@
 
 .leader-profile h3 {
   margin: 0;
-  font-size: 4rem;
+  font-size: 2rem;
   color: #f5f5f5;
 }
 
@@ -132,7 +132,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: stretch;
   margin-bottom: 80px; /* Gap between sections */
@@ -161,7 +161,7 @@
 
 .modern-overlay p {
   font-size: 1
-  2.5rem;
+  2rem;
   line-height: 1.75;
   color: #f5f5f5;
 }
