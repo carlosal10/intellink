@@ -30,7 +30,7 @@
 }
 
 .about-section h2 {
-  font-size: 1.8rem;
+  font-size: 4rem;
   color: #F1C40F; /* Light Gold */
   margin-bottom: 16px;
 }
@@ -43,7 +43,7 @@
 
 .highlight {
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 4rem;
   color: #F1C40F;
 }
 
@@ -160,7 +160,7 @@
 }
 
 .modern-overlay p {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   line-height: 1.75;
   color: #f5f5f5;
 }
