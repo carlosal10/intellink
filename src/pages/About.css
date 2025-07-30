@@ -43,7 +43,7 @@
 
 .highlight {
   font-weight: 600;
-  font-size: 4rem;
+  font-size: 2rem;
   color: #F1C40F;
 }
 
@@ -103,7 +103,7 @@
   }
 
   .about-section h2 {
-    font-size: 5rem;
+    font-size: 3rem;
   }
 
   .about-section p,
@@ -160,8 +160,7 @@
 }
 
 .modern-overlay p {
-  font-size: 1
-  2rem;
+  font-size: 2rem;
   line-height: 1.75;
   color: #f5f5f5;
 }
