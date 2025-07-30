@@ -14,12 +14,10 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-    padding: 80px 20px;
-    width: 100%;
-    margin-bottom: 40px;
-    border-radius: 8px;
+  padding: 80px 20px;
+  margin-bottom: 40px;
+  border-radius: 8px;
   overflow: hidden;
-
 }
 
 /* Overlay for readability */
@@ -134,11 +132,10 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 500px;
   display: flex;
   align-items: stretch;
   margin-bottom: 80px; /* Gap between sections */
-  width: 100%;
 }
 
 .angled-panel {

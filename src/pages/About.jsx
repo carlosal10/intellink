@@ -1,57 +1,67 @@
-import { useEffect } from 'react';
 import useTranslate from '../hooks/useTranslate';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import './About.css';
 
 export default function About() {
   const t = useTranslate();
 
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
-
-  const bg = (img) => ({
-    backgroundImage: `url(/images/${img})`,
-  });
-
-  const renderSection = (img, titleKey, textKey, isList = false) => (
-    <section
-      className="about-modern-section full-screen-section"
-      style={bg(img)}
-      data-aos="fade-up"
-    >
-      <div className="angled-panel">
-        <div className="modern-overlay">
-          <h2>{t(titleKey)}</h2>
-          {isList ? (
-            <ul className="values-list">
-              {t(textKey).map(([title, desc], idx) => (
-                <li key={idx}>
-                  <strong>{title}</strong> — {desc}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className={titleKey === 'about.mission' ? 'highlight' : ''}>
-              {t(textKey)}
-            </p>
-          )}
-        </div>
-      </div>
-    </section>
-  );
+  const panels = [
+    {
+      bg: 'about-background.jpg',
+      title: t('about.aboutUs'),
+      text: t('about.aboutText'),
+    },
+    {
+      bg: 'mission.jpg',
+      title: t('about.mission'),
+      text: t('about.missionText'),
+      highlight: true,
+    },
+    {
+      bg: 'vision.jpg',
+      title: t('about.vision'),
+      text: t('about.visionText'),
+    },
+    {
+      bg: 'team.jpg',
+      title: t('about.whoWeAre'),
+      text: t('about.whoWeAreText'),
+    },
+    {
+      bg: 'values.jpg',
+      title: t('about.values'),
+      valuesList: t('about.valuesList'),
+    },
+    {
+      bg: 'our-story.jpg',
+      title: t('about.ourStory'),
+      text: t('about.ourStoryText'),
+    },
+  ];
 
   return (
-    <section className="about about-modern">
-      <div className="about-container">
-        {renderSection('about-background.jpg', 'about.aboutUs', 'about.aboutText')}
-        {renderSection('mission.jpg', 'about.mission', 'about.missionText')}
-        {renderSection('vision.jpg', 'about.vision', 'about.visionText')}
-        {renderSection('team.jpg', 'about.whoWeAre', 'about.whoWeAreText')}
-        {renderSection('values.jpg', 'about.values', 'about.valuesList', true)}
-        {renderSection('our-story.jpg', 'about.ourStory', 'about.ourStoryText')}
-      </div>
+    <section className="about-modern">
+      {panels.map((panel, i) => (
+        <div
+          className="about-modern-section"
+          key={i}
+          style={{ backgroundImage: `url(/images/${panel.bg})` }}
+        >
+          <div className="angled-panel">
+            <div className="modern-overlay">
+              <h2>{panel.title}</h2>
+              {panel.valuesList ? (
+                <ul className="values-list">
+                  {panel.valuesList.map(([title, desc], idx) => (
+                    <li key={idx}><strong>{title}</strong> — {desc}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className={panel.highlight ? 'highlight' : ''}>{panel.text}</p>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
     </section>
   );
 }
