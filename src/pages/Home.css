@@ -124,6 +124,8 @@
 .service-box {
   background: #ffffff;
   border: 1px solid #ddd;
+  flex: 1 1 calc(33.333% - 48px);
+  border-bottom: none;
   padding: 24px;
   width: 300px;
   border-radius: 45px 0 45px 0;
