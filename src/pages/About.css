@@ -132,7 +132,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 500px;
+  min-height: 100vh;
   display: flex;
   align-items: stretch;
   margin-bottom: 80px; /* Gap between sections */
