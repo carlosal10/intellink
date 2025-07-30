@@ -136,6 +136,7 @@
   display: flex;
   align-items: stretch;
   margin-bottom: 80px; /* Gap between sections */
+  width: 100%;
 }
 
 .angled-panel {
