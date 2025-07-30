@@ -22,6 +22,7 @@ function App() {
               <Route path="/insights" element={<Insights />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<Navigate to="/" />} />
+              <Route path="/sectors" element={<Sectors />} />
             </Routes>
           </main>
           <Footer />

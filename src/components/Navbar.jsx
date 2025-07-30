@@ -45,6 +45,7 @@ export default function Navbar() {
         <Link to="/" onClick={closeMenu}>{language === 'en' ? 'Home' : 'ホーム'}</Link>
         <Link to="/about" onClick={closeMenu}>{language === 'en' ? 'About' : '会社情報'}</Link>
         <Link to="/services" onClick={closeMenu}>{language === 'en' ? 'Services' : 'サービス'}</Link>
+        <Link to="/sectors" onClick={closeMenu}>{language === 'en' ? 'Sectors' : 'セクター'}</Link>
         <Link to="/insights" onClick={closeMenu}>{language === 'en' ? 'Insights' : '知見'}</Link>
         <Link to="/contact" onClick={closeMenu}>{language === 'en' ? 'Contact' : 'お問い合わせ'}</Link>
         <button onClick={() => { toggleLanguage(); closeMenu(); }} className="lang-toggle">
