@@ -41,29 +41,25 @@ export default function About() {
   return (
     <section className="about-modern">
       {panels.map((panel, i) => (
-        <div className="about-modern-section" key={i}>
-          <div className="modern-left">
-            <div className="angled-background">
-              <div className="modern-overlay">
-                <h2>{panel.title}</h2>
-                {panel.valuesList ? (
-                  <ul className="values-list">
-                    {panel.valuesList.map(([title, desc], idx) => (
-                      <li key={idx}><strong>{title}</strong> — {desc}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className={panel.highlight ? 'highlight' : ''}>{panel.text}</p>
-                )}
-              </div>
+        <div
+          className="about-modern-section"
+          key={i}
+          style={{ backgroundImage: `url(/images/${panel.bg})` }}
+        >
+          <div className="angled-panel">
+            <div className="modern-overlay">
+              <h2>{panel.title}</h2>
+              {panel.valuesList ? (
+                <ul className="values-list">
+                  {panel.valuesList.map(([title, desc], idx) => (
+                    <li key={idx}><strong>{title}</strong> — {desc}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className={panel.highlight ? 'highlight' : ''}>{panel.text}</p>
+              )}
             </div>
           </div>
-          <div
-            className="modern-right"
-            style={{
-              backgroundImage: `url(/images/${panel.bg})`,
-            }}
-          ></div>
         </div>
       ))}
     </section>
