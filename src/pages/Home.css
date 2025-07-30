@@ -60,6 +60,7 @@
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+  border-bottom: none;
 }
 
 .modern-section.reverse {
@@ -123,9 +124,7 @@
 
 .service-box {
   background: #ffffff;
-  border: 1px solid #ddd;
-  flex: 1 1 calc(33.333% - 48px);
-  border-bottom: none;
+  border: 1px solid #ddd;  
   padding: 24px;
   width: 300px;
   border-radius: 45px 0 45px 0;
