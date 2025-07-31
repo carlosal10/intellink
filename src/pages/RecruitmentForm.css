@@ -1,0 +1,78 @@
+.recruitment-form-wrapper {
+  padding: 40px 16px;
+  background: #f5f5f5;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.recruitment-form {
+  background: #fff;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.recruitment-form h1 {
+  color: #0B2545;
+  margin-bottom: 12px;
+  font-size: 2rem;
+}
+
+.recruitment-form p.intro {
+  margin-bottom: 32px;
+  font-size: 1rem;
+  color: #555;
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 32px;
+}
+
+legend {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+  color: #0B2545;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+.submit-btn {
+  background-color: #0B2545;
+  color: #fff;
+  padding: 14px 28px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #06172d;
+}

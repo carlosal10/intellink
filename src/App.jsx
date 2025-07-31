@@ -7,6 +7,7 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Insights from './pages/Insights';
 import Sectors from './pages/Sectors';
+import RecruitmentForm from './pages/RecruitmentForm';
 import { AuthProvider } from './context/AuthContext';
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<Navigate to="/" />} />
               <Route path="/sectors" element={<Sectors />} />
+              <Route path="/recruitment" element={<RecruitmentForm />} />
+              <Route path="/recruitment/:id" element={<RecruitmentForm />} />
             </Routes>
           </main>
           <Footer />
