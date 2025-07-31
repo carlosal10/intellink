@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import checkoutRoutes from './routes/checkout.js';
+import recruitmentRoutes from './routes/recruitment.js'; // Assuming you have a recruitment route
 
 dotenv.config();
 const app = express();
@@ -13,6 +14,7 @@ app.use(express.json());
 connectDB();
 
 app.use('/api/payment', checkoutRoutes);
+app.use('/api/recruitment', recruitmentRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
