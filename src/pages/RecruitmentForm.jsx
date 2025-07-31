@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaUserAlt, FaBriefcase, FaGlobe, FaBullseye, FaHandshake, FaPaperclip, FaLock } from 'react-icons/fa';
 import './RecruitmentForm.css';
 
 export default function RecruitmentForm() {
@@ -19,21 +20,18 @@ export default function RecruitmentForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Submit logic goes here (e.g. API call)
     alert('Application submitted successfully!');
   };
 
   return (
     <div className="recruitment-form-wrapper">
       <form onSubmit={handleSubmit} className="recruitment-form">
-        <h1>🌍 Intellink Nippon Consulting — Recruitment Form</h1>
-        <p className="intro">
-          Join our global mission. Help shape impactful cross-border business.
-        </p>
+        <h1><FaGlobe style={{ marginRight: '8px' }} />Intellink Nippon Consulting — Recruitment Form</h1>
+        <p className="intro">Join our global mission. Help shape impactful cross-border business.</p>
 
         {/* Section 1: Personal Information */}
         <fieldset>
-          <legend>🧾 Personal Information</legend>
+          <legend><FaUserAlt /> Personal Information</legend>
           <input name="fullName" placeholder="Full Name" required onChange={handleChange} />
           <input type="date" name="dob" placeholder="Date of Birth" required onChange={handleChange} />
           <input name="nationality" placeholder="Nationality" required onChange={handleChange} />
@@ -45,7 +43,7 @@ export default function RecruitmentForm() {
 
         {/* Section 2: Professional Background */}
         <fieldset>
-          <legend>💼 Professional Background</legend>
+          <legend><FaBriefcase /> Professional Background</legend>
           <input name="currentEmployer" placeholder="Current Employer & Position" onChange={handleChange} />
           <input name="yearsExperience" placeholder="Total Years of Experience" onChange={handleChange} />
           <input name="industry" placeholder="Industry Expertise" onChange={handleChange} />
@@ -56,7 +54,7 @@ export default function RecruitmentForm() {
 
         {/* Section 3: Role Interest & Availability */}
         <fieldset>
-          <legend>🌐 Role Interest & Availability</legend>
+          <legend><FaGlobe /> Role Interest & Availability</legend>
           <input name="position" placeholder="Position Applying For" onChange={handleChange} />
           <select name="arrangement" onChange={handleChange}>
             <option value="">Preferred Work Arrangement</option>
@@ -76,7 +74,7 @@ export default function RecruitmentForm() {
 
         {/* Section 4: Skills & Capabilities */}
         <fieldset>
-          <legend>🎯 Skills & Capabilities</legend>
+          <legend><FaBullseye /> Skills & Capabilities</legend>
           <textarea name="expertise" placeholder="Key Areas of Expertise" onChange={handleChange} />
           <input name="tools" placeholder="Software / Tools Familiarity" onChange={handleChange} />
           <textarea name="projects" placeholder="Relevant Projects or Achievements" onChange={handleChange} />
@@ -85,23 +83,23 @@ export default function RecruitmentForm() {
 
         {/* Section 5: Mission Alignment */}
         <fieldset>
-          <legend>🤝 Alignment with Intellink’s Mission</legend>
+          <legend><FaHandshake /> Alignment with Intellink’s Mission</legend>
           <textarea name="missionInterest" placeholder="What interests you about Intellink’s mission?" onChange={handleChange} />
           <textarea name="valueAlignment" placeholder="How do your values align with ours?" onChange={handleChange} />
           <textarea name="crossCultureExperience" placeholder="Share a cross-cultural experience" onChange={handleChange} />
         </fieldset>
 
-        {/* Section 6: Documents */}
+        {/* Section 6: Supporting Documents */}
         <fieldset>
-          <legend>📎 Supporting Documents</legend>
+          <legend><FaPaperclip /> Supporting Documents</legend>
           <label>Upload CV/Resume <input type="file" accept=".pdf,.doc,.docx" required /></label>
           <label>Upload Cover Letter <input type="file" accept=".pdf,.doc,.docx" /></label>
           <textarea name="references" placeholder="References (optional)" />
         </fieldset>
 
-        {/* Section 7: Consent */}
+        {/* Section 7: Consent & Declaration */}
         <fieldset className="consent-section">
-          <legend>🔐 Consent & Declaration</legend>
+          <legend><FaLock /> Consent & Declaration</legend>
           <label>
             <input type="checkbox" name="declaration" required onChange={handleChange} />
             I confirm that all provided information is accurate and truthful.
