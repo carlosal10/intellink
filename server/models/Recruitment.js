@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const RecruitmentSchema = new mongoose.Schema({
   personal: {
@@ -50,4 +50,4 @@ const RecruitmentSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Recruitment', RecruitmentSchema);
+export default mongoose.model('Recruitment', RecruitmentSchema);
