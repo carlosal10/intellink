@@ -6,18 +6,18 @@ import Recruitment from '../models/Recruitment.js';
 
 const router = express.Router();
 
-// Multer config
+// Configure Multer for file uploads
 const storage = multer.diskStorage({
   destination: (_, __, cb) => cb(null, 'uploads/'),
   filename: (_, file, cb) => cb(null, Date.now() + '-' + file.originalname),
 });
-
 const upload = multer({ storage });
 
+// Nodemailer transporter
 const transporter = nodemailer.createTransport({
-  service: 'Gmail', // or your SMTP provider
+  service: 'Gmail',
   auth: {
-    user: process.env.MAIL_USER, // set in .env
+    user: process.env.MAIL_USER,
     pass: process.env.MAIL_PASS,
   },
 });
@@ -31,9 +31,10 @@ router.post(
   async (req, res) => {
     try {
       const body = req.body;
-      const cvFile = req.files['cv']?.[0];
-      const coverLetterFile = req.files['coverLetter']?.[0];
+      const cvFile = req.files?.['cv']?.[0] || null;
+      const coverLetterFile = req.files?.['coverLetter']?.[0] || null;
 
+      // Create and save new recruitment document
       const doc = new Recruitment({
         personal: {
           fullName: body.fullName,
@@ -83,20 +84,21 @@ router.post(
       await doc.save();
 
       // Send email to admin
-      const mailOptions = {
+      const adminMailOptions = {
         from: process.env.MAIL_USER,
-        to: 'admin@intellink-nippon.co.jp', // Replace with actual admin email
-        subject: `New Recruitment Application from ${body.fullName}`,
-        text: `
-A new candidate has submitted their application.
-
-Name: ${body.fullName}
-Email: ${body.email}
-Phone: ${body.phone}
-Position Interested: ${body.position}
-Experience: ${body.yearsExperience} years
-
-View full record in the admin panel.
+        to: 'admin@intellink-nippon.co.jp',
+        subject: `New Recruitment Application: ${body.fullName}`,
+        html: `
+          <p>A new candidate has applied.</p>
+          <ul>
+            <li><strong>Name:</strong> ${body.fullName}</li>
+            <li><strong>Email:</strong> ${body.email}</li>
+            <li><strong>Phone:</strong> ${body.phone}</li>
+            <li><strong>Position:</strong> ${body.position}</li>
+            <li><strong>Experience:</strong> ${body.yearsExperience} years</li>
+          </ul>
+          <p><strong>CV:</strong> ${cvFile ? `<a href="https://yourdomain.com/uploads/${cvFile.filename}">Download CV</a>` : 'Not uploaded'}</p>
+          <p><strong>Cover Letter:</strong> ${coverLetterFile ? `<a href="https://yourdomain.com/uploads/${coverLetterFile.filename}">Download Cover Letter</a>` : 'Not uploaded'}</p>
         `,
         attachments: [
           ...(cvFile ? [{ filename: cvFile.originalname, path: cvFile.path }] : []),
@@ -104,27 +106,27 @@ View full record in the admin panel.
         ],
       };
 
-      await transporter.sendMail(mailOptions);
+      await transporter.sendMail(adminMailOptions);
 
-      // Optionally, confirmation email to applicant
-      const confirmationMail = {
-        from: 'Intellink Recruitment <' + process.env.MAIL_USER + '>',
+      // Confirmation email to applicant
+      const confirmationEmail = {
+        from: `Intellink Recruitment <${process.env.MAIL_USER}>`,
         to: body.email,
         subject: 'Application Received — Intellink Nippon Consulting',
         html: `
-<p>Dear ${body.fullName},</p>
-<p>Thank you for your interest in joining Intellink Nippon Consulting. We have received your application and our team will review it shortly.</p>
-<p>We appreciate your time and will contact you if your profile matches our current needs.</p>
-<p>Sincerely,<br/>Intellink Recruitment Team</p>
+          <p>Dear ${body.fullName},</p>
+          <p>Thank you for applying to Intellink Nippon Consulting.</p>
+          <p>Your application has been received. Our team will review it and get back to you if you're shortlisted.</p>
+          <p>Warm regards,<br/>Intellink Recruitment Team</p>
         `,
       };
 
-      await transporter.sendMail(confirmationMail);
+      await transporter.sendMail(confirmationEmail);
 
-      return res.status(200).json({ message: 'Application submitted and email sent.' });
+      return res.status(200).json({ message: 'Application submitted and emails sent successfully.' });
     } catch (error) {
-      console.error('Submission error:', error);
-      return res.status(500).json({ message: 'Server error. Please try again.' });
+      console.error('Error during submission:', error);
+      return res.status(500).json({ message: 'Internal server error. Please try again later.' });
     }
   }
 );
