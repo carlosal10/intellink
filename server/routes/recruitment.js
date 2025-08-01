@@ -2,7 +2,7 @@ import express from 'express';
 import multer from 'multer';
 import path from 'path';
 import nodemailer from 'nodemailer';
-import Recruitment from '../models/Recruitment';
+import Recruitment from '../models/Recruitment.js';
 
 const router = express.Router();
 
