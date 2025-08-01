@@ -1,5 +1,5 @@
-const express = require('express');
-const Stripe = require('stripe');
+import express from 'express';
+import Stripe from 'stripe';
 const router = express.Router();
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
@@ -32,4 +32,4 @@ router.post('https://intellink-8w9t.onrender.com/create-checkout-session', async
   }
 });
 
-module.exports = router;
+export default router;
