@@ -1,3 +1,4 @@
+// server/routes/checkout.js
 import express from 'express';
 import { createCheckoutSession } from '../controllers/checkoutController.js';
 
