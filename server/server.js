@@ -16,6 +16,10 @@ connectDB();
 app.use('/api/payment', checkoutRoutes);
 app.use('/api/recruitment', recruitmentRoutes);
 
+// server/testEnv.js
+console.log('STRIPE KEY:', process.env.STRIPE_SECRET_KEY);
+console.log('MONGODB URI:', process.env.MONGODB_URI);
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
