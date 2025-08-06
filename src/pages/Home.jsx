@@ -11,7 +11,7 @@ export default function Home() {
   style={{
     backgroundImage: "url('/images/to-12.jpg')",
     backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    backgroundPosition: 'sticky',
     backgroundRepeat: 'no-repeat',
   }}
 >
