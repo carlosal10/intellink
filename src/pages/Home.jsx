@@ -68,6 +68,7 @@ export default function Home() {
     
 
       {/* Philosophy */}
+      <div className="services-section" data-aos="fade-up">
       <div className="modern-section reverse philosophy" data-aos="fade-left">
         <div className="image-wrapper">
           <img src="/images/1p.jpg" alt="Team Discussion" />
@@ -78,8 +79,10 @@ export default function Home() {
           <Link to="/contact" className="btn primary">{t('home.ctaContactUs')}</Link>
         </div>
       </div>
+      </div>
 
       {/* Teaser Blog */}
+      <div className="services-section" data-aos="fade-up">
       <div className="blog-teaser" data-aos="fade-up">
         <h2>{t('home.blogTitle') || 'Insights & Updates'}</h2>
         <div className="blog-preview">
@@ -96,7 +99,11 @@ export default function Home() {
             <Link to="/insights" className="read-more">Read More →</Link>
           </div>
         </div>
+
       </div>
+      </div>
+
+      {/* Call to Action */}
     </section>
   );
 }

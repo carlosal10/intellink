@@ -2,7 +2,6 @@ import './Footer.css';
 import { useLanguage } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
 
-
 export default function Footer() {
   const { language, toggleLanguage } = useLanguage();
 
@@ -17,35 +16,29 @@ export default function Footer() {
           <p><strong>Address:</strong><br /> Intellink Nippon Consulting LLC, Tokyo</p>
         </div>
 
-        {/* Column 2: Social Icons + Labels */}
+        {/* Column 2: Social Links */}
         <div className="footer-column social-icons">
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-linkedin"></i>
-            <span>LinkedIn</span>
+            <i className="fab fa-linkedin"></i><span>LinkedIn</span>
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-twitter"></i>
-            <span>Twitter</span>
+            <i className="fab fa-twitter"></i><span>Twitter</span>
           </a>
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-facebook"></i>
-            <span>Facebook</span>
+            <i className="fab fa-facebook"></i><span>Facebook</span>
           </a>
           <a href="https://wa.me/818056431501" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-whatsapp"></i>
-            <span>WhatsApp</span>
+            <i className="fab fa-whatsapp"></i><span>WhatsApp</span>
           </a>
           <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-github"></i>
-            <span>GitHub</span>
+            <i className="fab fa-github"></i><span>GitHub</span>
           </a>
           <a href="mailto:g-owuor@intellink-nippon.co.jp">
-            <i className="fas fa-envelope"></i>
-            <span>Email</span>
+            <i className="fas fa-envelope"></i><span>Email</span>
           </a>
         </div>
 
-        {/* Column 3: Language Switch & Copyright */}
+        {/* Column 3: Language & Copyright */}
         <div className="footer-column">
           <button onClick={toggleLanguage} className="footer-lang">
             {language === 'en' ? '日本語' : 'EN'}
@@ -55,13 +48,17 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <Link to="/" className="logo" onClick={() => window.scrollTo(0, 0)} >
-        <img
-          src="/images/android-chrome-512x512.png"
-          alt="Intellink Nippon Logo"
-          className="logo-img"
-        />
-      </Link>
+
+      {/* Centered Logo */}
+      <div className="footer-logo-wrapper">
+        <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+          <img
+            src="/images/android-chrome-512x512.png"
+            alt="Intellink Nippon Logo"
+            className="footer-logo"
+          />
+        </Link>
+      </div>
     </footer>
   );
 }
