@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import useTranslate from '../hooks/useTranslate';
 import './Home.css';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Home() {
   const t = useTranslate();
@@ -13,79 +13,71 @@ export default function Home() {
   }, []);
 
   return (
-    <section className="home">
-
-      {/* Hero Section with background image and overlay */}
-      <div
-        className="hero-section"
-        style={{
-          backgroundImage: `linear-gradient(to bottom right, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('/images/to-12.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          color: '#fff'
-        }}
-        data-aos="fade-up"
-      >
+    <section
+      className="home"
+      style={{
+        backgroundImage: "url('/images/to-12.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      {/* Hero Section */}
+      <div className="hero-section" data-aos="fade-up">
         <div className="hero-text">
           <h1>{t('home.welcomeTitle')}</h1>
           <p>{t('home.welcomeIntro')}</p>
-          <Link to="/services" className="btn primary">
-            {t('home.ctaExploreServices')}
-          </Link>
+          <Link to="/services" className="btn primary">{t('home.ctaExploreServices')}</Link>
         </div>
         <div className="hero-image">
           <img src="/images/ist612.jpg" alt="Business Meeting" />
         </div>
       </div>
 
-      {/* Highlight Section */}
-      <div className="modern-section" data-aos="fade-left">
+      {/* Who We Are */}
+      <div className="modern-section who-we-are" data-aos="fade-right">
         <div className="image-wrapper">
-          <img src="/images/istockphoto-4.avif" alt="Strategic Meeting" />
+          <img src="/images/strategic-meeting.jpg" alt="Strategic Meeting" />
         </div>
         <div className="text-box">
           <h2>{t('about.whoWeAre')}</h2>
           <p>{t('about.whoWeAreText')}</p>
-          <Link to="/about" className="btn secondary">
-            {t('home.ctaAboutUs')}
-          </Link>
+          <Link to="/about" className="btn secondary">{t('home.ctaAboutUs')}</Link>
         </div>
       </div>
 
-      {/* Services Overview */}
-      <div className="services-overview" data-aos="zoom-in">
+      {/* Services */}
+      <div className="services-overview" data-aos="fade-up">
         <div className="service-box">
-          <img src="/images/ist12.jpg" alt="Forecasting" />
+          <img src="/images/forecasting.png" alt="Forecasting" />
           <h3>{t('home.marketIntelligenceTitle')}</h3>
           <p>{t('home.marketIntelligenceDesc')}</p>
         </div>
         <div className="service-box">
-          <img src="/images/i12.jpg" alt="Expert Connect" />
+          <img src="/images/expert-connect.png" alt="Expert Connect" />
           <h3>{t('home.expertConnectTitle')}</h3>
           <p>{t('home.expertConnectDesc')}</p>
         </div>
         <div className="service-box">
-          <img src="/images/isto-88.jpg" alt="Trade Links" />
+          <img src="/images/trade-links.png" alt="Trade Links" />
           <h3>{t('home.tradeLinksTitle')}</h3>
           <p>{t('home.tradeLinksDesc')}</p>
         </div>
       </div>
 
-      {/* Philosophy Section */}
-      <div className="modern-section reverse" data-aos="fade-right">
+      {/* Philosophy */}
+      <div className="modern-section reverse philosophy" data-aos="fade-left">
         <div className="image-wrapper">
-          <img src="/images/istockphoto-1.jpg" alt="Team Discussion" />
+          <img src="/images/team-discussion.jpg" alt="Team Discussion" />
         </div>
         <div className="text-box">
           <h2>{t('about.philosophy')}</h2>
           <p>{t('about.philosophyText')}</p>
-          <Link to="/contact" className="btn primary">
-            {t('home.ctaContactUs')}
-          </Link>
+          <Link to="/contact" className="btn primary">{t('home.ctaContactUs')}</Link>
         </div>
       </div>
 
-      {/* Teaser Blog Section */}
+      {/* Teaser Blog */}
       <div className="blog-teaser" data-aos="fade-up">
         <h2>{t('home.blogTitle') || 'Insights & Updates'}</h2>
         <div className="blog-preview">
@@ -103,7 +95,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
     </section>
   );
 }

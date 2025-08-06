@@ -55,13 +55,24 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  min-height: 400px;
   margin-bottom: 80px;
   overflow: hidden;
   background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
   border-bottom: none;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 60vh;
+}
+
+.modern-section.who-we-are {
+  height: 60vh;
+}
+
+.modern-section.philosophy {
+  height: 60vh;
 }
 
 .modern-section.reverse {
@@ -70,14 +81,14 @@
 
 .image-wrapper {
   flex: 1;
-  height: 70%;
+  height: 100%;
   position: relative;
   overflow: hidden;
 }
 
 .image-wrapper img {
   width: 100%;
-  height: 60%;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -87,10 +98,12 @@
   background: rgba(255, 255, 255, 0.95);
   padding: 40px;
   max-width: 500px;
-  margin-left: 5%;
   z-index: 2;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 5%;
 }
 
 .modern-section.reverse .text-box {
@@ -196,47 +209,6 @@
   background-color: #eef6ff;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-image img {
-    max-width: 90%;
-  }
-
-  .modern-section,
-  .modern-section.reverse {
-    flex-direction: column;
-  }
-
-  .text-box {
-    position: static;
-    margin: 0;
-    padding: 24px;
-    max-width: 100%;
-    background: #ffffff;
-    box-shadow: none;
-    border-radius: 0;
-  }
-
-  .image-wrapper {
-    height: 250px;
-  }
-
-  .service-box {
-    width: 100%;
-    max-width: 90%;
-  }
-
-  .btn {
-    width: 100%;
-    max-width: 280px;
-  }
-}
-
 /* Blog Teaser Section */
 .blog-teaser {
   padding: 60px 20px;
@@ -303,4 +275,49 @@
 
 .blog-card .read-more:hover {
   text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-width: 90%;
+  }
+
+  .modern-section,
+  .modern-section.reverse {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .text-box {
+    position: static;
+    margin: 0;
+    padding: 24px;
+    max-width: 100%;
+    background: #ffffff;
+    box-shadow: none;
+    border-radius: 0;
+    transform: none;
+    top: auto;
+  }
+
+  .image-wrapper {
+    height: 250px;
+  }
+
+  .service-box {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+  }
 }
