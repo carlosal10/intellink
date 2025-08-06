@@ -6,7 +6,7 @@ export default function Home() {
   const t = useTranslate();
 
   return (
-    <section className="home">
+    <section className="home background-wrapper">
 
       {/* Hero Section */}
       <div className="hero-section">
@@ -20,7 +20,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Highlight Section - Text Over Image */}
+      {/* Highlight Section */}
       <div className="modern-section">
         <div className="image-wrapper">
           <img src="/images/strategic-meeting.jpg" alt="Strategic Meeting" />
@@ -32,7 +32,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Service Features */}
+      {/* Services */}
       <div className="services-overview">
         <div className="service-box">
           <img src="/images/forecasting.png" alt="Forecasting" />
@@ -51,7 +51,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Philosophy Section - Text Over Image */}
+      {/* Philosophy */}
       <div className="modern-section reverse">
         <div className="image-wrapper">
           <img src="/images/team-discussion.jpg" alt="Team Discussion" />
@@ -60,6 +60,25 @@ export default function Home() {
           <h2>{t('about.philosophy')}</h2>
           <p>{t('about.philosophyText')}</p>
           <Link to="/contact" className="btn primary">{t('home.ctaContactUs')}</Link>
+        </div>
+      </div>
+
+      {/* 🔥 Teaser Blog Section */}
+      <div className="blog-teaser">
+        <h2>{t('home.blogTitle') || 'Insights & Updates'}</h2>
+        <div className="blog-preview">
+          <div className="blog-card">
+            <img src="/images/blog-1.jpg" alt="Blog 1" />
+            <h4>Unlocking Opportunities in Emerging Markets</h4>
+            <p>Why Japan–Africa trade partnerships are gaining momentum in 2025.</p>
+            <Link to="/insights" className="read-more">Read More →</Link>
+          </div>
+          <div className="blog-card">
+            <img src="/images/blog-2.jpg" alt="Blog 2" />
+            <h4>Building Trust Across Cultures</h4>
+            <p>How cross-cultural strategy gives businesses a global edge.</p>
+            <Link to="/insights" className="read-more">Read More →</Link>
+          </div>
         </div>
       </div>
 
