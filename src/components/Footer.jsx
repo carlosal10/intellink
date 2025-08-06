@@ -53,6 +53,13 @@ export default function Footer() {
           </p>
         </div>
       </div>
+      <Link to="/" className="logo" onClick={closeMenu}>
+        <img
+          src="/images/android-chrome-512x512.png"
+          alt="Intellink Nippon Logo"
+          className="logo-img"
+        />
+      </Link>
     </footer>
   );
 }

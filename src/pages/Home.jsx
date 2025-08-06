@@ -16,7 +16,7 @@ export default function Home() {
     <section
       className="home"
       style={{
-        backgroundImage: "url('/images/4p.jpg')",
+        backgroundImage: "url('/images/ist2.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -37,7 +37,7 @@ export default function Home() {
       {/* Who We Are */}
       <div className="modern-section who-we-are" data-aos="fade-right">
         <div className="image-wrapper">
-          <img src="/images/istockphoto-10.jpg" alt="Strategic Meeting" />
+          <img src="/images/istockphoto-10.avif" alt="Strategic Meeting" />
         </div>
         <div className="text-box">
           <h2>{t('about.whoWeAre')}</h2>
@@ -47,9 +47,10 @@ export default function Home() {
       </div>
 
       {/* Services */}
-      <div className="services-overview" data-aos="fade-up">
+    
+      <div className="services-section" data-aos="fade-up">
         <div className="service-box">
-          <img src="/images/istockphoto-9.jpg" alt="Forecasting" />
+          <img src="/images/ist12.jpg" alt="Forecasting" />
           <h3>{t('home.marketIntelligenceTitle')}</h3>
           <p>{t('home.marketIntelligenceDesc')}</p>
         </div>
@@ -64,11 +65,12 @@ export default function Home() {
           <p>{t('home.tradeLinksDesc')}</p>
         </div>
       </div>
+    
 
       {/* Philosophy */}
       <div className="modern-section reverse philosophy" data-aos="fade-left">
         <div className="image-wrapper">
-          <img src="/images/team-discussion.jpg" alt="Team Discussion" />
+          <img src="/images/1p.jpg" alt="Team Discussion" />
         </div>
         <div className="text-box">
           <h2>{t('about.philosophy')}</h2>

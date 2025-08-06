@@ -136,6 +136,14 @@
   margin-bottom: 60px;
 }
 
+.services-section {
+  display: flex;
+  background: #eef6ff;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 60px;
+}
 .service-box {
   background: #ffffff;
   border: 1px solid #ddd;  
