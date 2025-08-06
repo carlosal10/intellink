@@ -55,7 +55,7 @@ export default function Home() {
       {/* Services Overview */}
       <div className="services-overview" data-aos="zoom-in">
         <div className="service-box">
-          <img src="/images/ist12j.jpg" alt="Forecasting" />
+          <img src="/images/ist12.jpg" alt="Forecasting" />
           <h3>{t('home.marketIntelligenceTitle')}</h3>
           <p>{t('home.marketIntelligenceDesc')}</p>
         </div>
