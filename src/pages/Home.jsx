@@ -35,7 +35,7 @@ export default function Home() {
       </div>
 
       {/* Who We Are */}
-      <div className="services-section" data-aos="fade-up">
+      <div className="services-section-who-we-are" data-aos="fade-up">
       <div className="modern-section who-we-are" data-aos="fade-right">
         <div className="image-wrapper">
           <img src="/images/istockphoto-10.avif" alt="Strategic Meeting" />
@@ -49,8 +49,8 @@ export default function Home() {
       </div>
 
       {/* Services */}
-    
-      <div className="services-section" data-aos="fade-up">
+
+      <div className="services-section-service-box" data-aos="fade-up">
         <div className="service-box">
           <img src="/images/ist12.jpg" alt="Forecasting" />
           <h3>{t('home.marketIntelligenceTitle')}</h3>
@@ -70,7 +70,7 @@ export default function Home() {
     
 
       {/* Philosophy */}
-      <div className="services-section" data-aos="fade-up">
+      <div className="services-section-philosophy" data-aos="fade-up">
       <div className="modern-section reverse philosophy" data-aos="fade-left">
         <div className="image-wrapper">
           <img src="/images/1p.jpg" alt="Team Discussion" />
@@ -84,7 +84,7 @@ export default function Home() {
       </div>
 
       {/* Teaser Blog */}
-      <div className="services-section" data-aos="fade-up">
+      <div className="services-section-blog-teaser" data-aos="fade-up">
       <div className="blog-teaser" data-aos="fade-up">
         <h2>{t('home.blogTitle') || 'Insights & Updates'}</h2>
         <div className="blog-preview">

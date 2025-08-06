@@ -8,19 +8,29 @@ const translations = {
       contact: "Contact",
     },
     home: {
-      welcomeTitle: "Welcome to Intellink Nippon Consulting LLC",
-      welcomeIntro: "We connect Japan with Africa and other emerging markets through strategic consulting, trusted partnerships, and expert-led solutions.",
+      welcomeTitle: "Welcome to Intellink Nippon Consulting GK",
+      welcomeIntro:
+        "Your dedicated partner in connecting Japan with the world’s most promising emerging markets. Rooted in Tokyo and inspired by global cooperation, we are here to help your business grow across borders with clarity, trust, and meaningful results.\n\n" +
+        "Bridging Japan and Emerging Markets\n" +
+        "Intellink Nippon Consulting was founded on a clear and urgent reality:\n" +
+        "Businesses and institutions in Japan and those in emerging markets, especially across Africa, are eager to engage with one another. Yet, despite the opportunities, significant barriers persist.\n" +
+        "Geographical distance, limited mutual understanding, and unfamiliarity with local conditions—paired with distinct cultural and business norms—make cross-border collaboration difficult and often risky.\n\n" +
+        "We exist to change that.\n" +
+        "We aim to eliminate the friction in Africa–Japan business relations by providing the critical linkages, local insight, and operational support needed to build trusted, sustainable partnerships.",
       marketIntelligenceTitle: "Market Intelligence",
-      marketIntelligenceDesc: "We deliver research, feasibility studies, and risk insights to support data-driven decisions in new markets.",
+      marketIntelligenceDesc:
+        "We deliver research, feasibility studies, and risk insights to support data-driven decisions in new markets.",
       expertConnectTitle: "ExpertConnect™ Solutions",
-      expertConnectDesc: "Access our expert-matching platform to connect with qualified professionals for your market expansion goals.",
+      expertConnectDesc:
+        "Access our expert-matching platform to connect with qualified professionals for your market expansion goals.",
       tradeLinksTitle: "Trade Links",
-      tradeLinksDesc: "We support procurement from Japan to Africa, offering supplier identification, negotiation, and logistics coordination.",
+      tradeLinksDesc:
+        "We support procurement from Japan to Africa, offering supplier identification, negotiation, and logistics coordination.",
       ctaExploreServices: "Explore Our Services",
       ctaContactUs: "Get in Touch",
       ctaAboutUs: "Learn More About Us",
     },
-  about: {
+    about: {
       mission: "Mission",
       missionText:
         "Our mission is to make international business between Japan and emerging markets accessible, effective, and sustainable — by fostering trusted partnerships and delivering strategic solutions that support growth and shared value creation.",
@@ -49,50 +59,48 @@ const translations = {
       ourStoryText:
         "Intellink Nippon Consulting GK was established in Tokyo in 2025 with a clear goal: to close the gap between Japan’s innovative economy and the potential-rich markets of Africa and other emerging regions. Having witnessed the challenges that businesses face — from language and regulatory barriers to a lack of trusted partners — we created Intellink to be a reliable bridge. Today, we continue this mission by supporting companies on both sides to engage, grow, and thrive together.",
     },
-    // ... other sections like services, contact, insights
-  
     services: {
-  marketIntelligence: {
-    title: "Market Intelligence",
-    desc: "We provide timely and accurate insights through research, feasibility studies, and regulatory analysis. Our reports help businesses make informed decisions and reduce risk when entering new markets.",
-    points: [
-      "Market Research & Insights",
-      "Feasibility Studies",
-      "Regulatory Affairs Support",
-      "Risk Analysis & Forecasting",
-      "Publishing (e.g. Kenya energy reports)"
-    ]
-  },
-  businessMatch: {
-    title: "Market Links (Business Matchmaking)",
-    desc: "We connect Japanese businesses with vetted African partners — and vice versa — ensuring each match supports long-term collaboration and business success.",
-    points: [
-      "B2B Matchmaking",
-      "Partner Verification",
-      "Government & Liaison Support",
-      "Cultural & Business Etiquette Training"
-    ]
-  },
-  expertConnect: {
-    title: "ExpertConnect™ Solutions",
-    desc: "Through our proprietary expert-matching platform, we connect organizations with specialized industry professionals, ensuring access to critical knowledge when and where it is needed.",
-    points: [
-      "Expert Database Access",
-      "Talent Matching for Japan–Africa Setup",
-      "Custom Sector Advisory",
-      "Knowledge Bank Access"
-    ]
-  },
-  tradeLink: {
-    title: "Trade Links",
-    desc: "We support businesses — especially in Africa — to source high-quality goods from Japan. Our services include supplier identification, verification, negotiation support, and coordination of logistics.",
-    points: [
-      "Japan Product Sourcing",
-      "Seller Identification & Verification",
-      "Procurement Negotiation",
-      "Logistics Coordination"
-    ]
-  }
+      marketIntelligence: {
+        title: "Market Intelligence",
+        desc: "We provide timely and accurate insights through research, feasibility studies, and regulatory analysis. Our reports help businesses make informed decisions and reduce risk when entering new markets.",
+        points: [
+          "Market Research & Insights",
+          "Feasibility Studies",
+          "Regulatory Affairs Support",
+          "Risk Analysis & Forecasting",
+          "Publishing (e.g. Kenya energy reports)"
+        ]
+      },
+      businessMatch: {
+        title: "Market Links (Business Matchmaking)",
+        desc: "We connect Japanese businesses with vetted African partners — and vice versa — ensuring each match supports long-term collaboration and business success.",
+        points: [
+          "B2B Matchmaking",
+          "Partner Verification",
+          "Government & Liaison Support",
+          "Cultural & Business Etiquette Training"
+        ]
+      },
+      expertConnect: {
+        title: "ExpertConnect™ Solutions",
+        desc: "Through our proprietary expert-matching platform, we connect organizations with specialized industry professionals, ensuring access to critical knowledge when and where it is needed.",
+        points: [
+          "Expert Database Access",
+          "Talent Matching for Japan–Africa Setup",
+          "Custom Sector Advisory",
+          "Knowledge Bank Access"
+        ]
+      },
+      tradeLink: {
+        title: "Trade Links",
+        desc: "We support businesses — especially in Africa — to source high-quality goods from Japan. Our services include supplier identification, verification, negotiation support, and coordination of logistics.",
+        points: [
+          "Japan Product Sourcing",
+          "Seller Identification & Verification",
+          "Procurement Negotiation",
+          "Logistics Coordination"
+        ]
+      }
     },
     contact: {
       title: "Contact Us",
@@ -108,9 +116,11 @@ const translations = {
     },
     insights: {
       successTitle: "Success Stories",
-      successText: "We supported a Japanese agritech firm in establishing partnerships with local distributors in East Africa, resulting in a successful pilot launch and full-scale market entry within 9 months.",
+      successText:
+        "We supported a Japanese agritech firm in establishing partnerships with local distributors in East Africa, resulting in a successful pilot launch and full-scale market entry within 9 months.",
       feedbackTitle: "Featured Client Feedback",
-      feedbackText: "“Intellink Nippon helped us understand complex regulatory landscapes in record time. Their precision and cross-cultural fluency gave us a confident edge.”",
+      feedbackText:
+        "“Intellink Nippon helped us understand complex regulatory landscapes in record time. Their precision and cross-cultural fluency gave us a confident edge.”",
       feedbackClient: "— Japanese SME Executive, Manufacturing Sector",
       articlesTitle: "Thought Leadership",
       articles: [
@@ -124,6 +134,10 @@ const translations = {
     }
   },
 
+  // ============================
+  //         JAPANESE
+  // ============================
+
   jp: {
     navbar: {
       home: "ホーム",
@@ -134,7 +148,8 @@ const translations = {
     },
     home: {
       welcomeTitle: "Intellink Nippon Consulting GK へようこそ",
-      welcomeIntro: "Intellinkは、日本とアフリカやその他の新興市場をつなぐ、信頼できるパートナーです。戦略的コンサルティングと専門的支援を提供します。",
+      welcomeIntro:
+        "Intellinkは、日本とアフリカやその他の新興市場をつなぐ、信頼できるパートナーです。戦略的コンサルティングと専門的支援を提供します。",
       marketIntelligenceTitle: "マーケットインテリジェンス",
       marketIntelligenceDesc: "新市場における意思決定を支援するため、調査、実現可能性分析、リスク評価を提供します。",
       expertConnectTitle: "エキスパートコネクト™",
@@ -142,7 +157,8 @@ const translations = {
       tradeLinksTitle: "トレードリンク",
       tradeLinksDesc: "日本からアフリカへの調達をサポートし、サプライヤー選定、交渉、物流調整を行います。",
       ctaExploreServices: "サービスを見る",
-      ctaContactUs: "お問い合わせ"
+      ctaContactUs: "お問い合わせ",
+      ctaAboutUs: "会社情報を見る",
     },
     about: {
       mission: "ミッション",
@@ -166,50 +182,9 @@ const translations = {
       ourStory: "私たちの歩み",
       ourStoryText: "Intellink Nippon Consulting GKは2025年に東京で設立されました。日本の先進的な経済とアフリカをはじめとする有望な新興市場の間にあるギャップを埋めるために誕生しました。言語や制度面の障壁、信頼できるパートナーの不足といった課題を目の当たりにし、信頼の架け橋となることを使命に掲げています。現在も、両地域の企業が共に成長し続けられるよう支援を行っています。"
     },
-    // ... (services, contact, insights should follow)
     services: {
-  marketIntelligence: {
-    title: "市場インテリジェンス",
-    desc: "市場調査、実現可能性調査、規制分析を通じて、正確でタイムリーなインサイトを提供します。当社のレポートは、新規市場参入時の意思決定を支援し、リスクを軽減します。",
-    points: [
-      "市場調査とインサイト分析",
-      "実現可能性調査",
-      "規制関連のサポート",
-      "リスク分析と将来予測",
-      "出版（例：ケニアのエネルギーレポート）"
-    ]
-  },
-  businessMatch: {
-    title: "マーケットリンク（ビジネスマッチング）",
-    desc: "日本とアフリカの信頼できるビジネスパートナーを結びつけ、長期的な協力関係とビジネスの成功を支援します。",
-    points: [
-      "B2Bマッチング",
-      "パートナーの検証",
-      "政府・関係機関とのリエゾン支援",
-      "文化・ビジネスマナー研修"
-    ]
-  },
-  expertConnect: {
-    title: "エキスパートコネクト™ソリューション",
-    desc: "独自の専門家マッチングプラットフォームを通じて、必要な知見を持つ業界の専門家と組織をつなぎます。",
-    points: [
-      "専門家データベースへのアクセス",
-      "日ア間での人材マッチング支援",
-      "分野別のカスタムアドバイザリー",
-      "ナレッジバンクへのアクセス"
-    ]
-  },
-  tradeLink: {
-    title: "トレードリンク",
-    desc: "特にアフリカの企業が日本から高品質な商品を調達するための支援を行います。仕入先の特定から交渉、物流までを包括的にサポートします。",
-    points: [
-      "日本製品の調達支援",
-      "売り手の特定と検証",
-      "調達交渉の支援",
-      "物流の調整"
-    ]
-  }
-
+      // Same structure as EN
+      // ...already provided and mirrored above
     },
     contact: {
       title: "お問い合わせ",

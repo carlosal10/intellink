@@ -12,21 +12,56 @@ export default function Sectors() {
   }, []);
 
   const industries = [
-    'Agribusiness & Horticulture',
-    'Energy & Sustainable Infrastructure',
-    'Healthcare & Life Sciences',
-    'Education, Skills & Workforce Development',
-    'Information & Communication Technology (ICT)',
-    'Consumer Goods & Retail',
-    'Textiles, Crafts & Cultural Products',
+    {
+      title: "Agriculture & Agri-tech",
+      description: "Boosting productivity, market access, and sustainability across borders.",
+      image: "/images/sectors/agriculture.jpg"
+    },
+    {
+      title: "Renewable Energy & Infrastructure",
+      description: "Supporting energy and infrastructure firms with partnerships and regulation.",
+      image: "/images/sectors/energy.jpg"
+    },
+    {
+      title: "Healthcare & Pharmaceuticals",
+      description: "Improving medical product access, compliance, and innovation.",
+      image: "/images/sectors/healthcare.jpg"
+    },
+    {
+      title: "Manufacturing & Industrial Goods",
+      description: "Linking Japanese industrial suppliers with high-growth markets.",
+      image: "/images/sectors/manufacturing.jpg"
+    },
+    {
+      title: "ICT & Innovation",
+      description: "Enabling digital transformation and scalable tech partnerships.",
+      image: "/images/sectors/ict.jpg"
+    },
+    {
+      title: "Consumer Goods & Retail",
+      description: "Guiding brands with market entry, branding, and distribution.",
+      image: "/images/sectors/consumer.jpg"
+    },
+    {
+      title: "Education & Skills Training",
+      description: "Promoting global knowledge exchange through EdTech and partnerships.",
+      image: "/images/sectors/education.jpg"
+    },
+    {
+      title: "Tourism & Creative Economy",
+      description: "Fostering cultural exchange and creative industry growth.",
+      image: "/images/sectors/tourism.jpg"
+    }
   ];
 
   const clients = [
-    'Japanese SMEs and large corporations',
-    'African exporters and manufacturers',
-    'Government agencies and development partners',
-    'International NGOs and trade organizations',
-    'Chambers of commerce and diaspora business networks',
+    'Japanese companies exploring trade or expansion in Africa',
+    'African SMEs seeking access to the Japanese market',
+    'Development agencies and NGOs working on trade facilitation',
+    'Importers, exporters, and distributors',
+    'Investment promotion agencies and trade missions',
+    'Investors and VCs scouting frontier opportunities',
+    'Startups and social enterprises scaling globally'
   ];
 
   return (
@@ -34,15 +69,18 @@ export default function Sectors() {
       <div className="sectors-hero">
         <h1 data-aos="fade-up">Industries We Serve</h1>
         <p data-aos="fade-up" data-aos-delay="100">
-          We work across diverse sectors with high growth and partnership potential:
+          We work across sectors where Japan–Africa collaboration creates social, economic, and technological impact.
         </p>
       </div>
 
       <div className="industries-section">
         {industries.map((sector, idx) => (
           <div className="industry-box" key={idx} data-aos="fade-up" data-aos-delay={100 * idx}>
-            <span className="sector-icon">✔</span>
-            <p>{sector}</p>
+            <img src={sector.image} alt={sector.title} className="sector-image" />
+            <div className="sector-content">
+              <h3>{sector.title}</h3>
+              <p>{sector.description}</p>
+            </div>
           </div>
         ))}
       </div>

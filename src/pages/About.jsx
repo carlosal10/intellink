@@ -1,8 +1,15 @@
 import useTranslate from '../hooks/useTranslate';
 import './About.css';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function About() {
   const t = useTranslate();
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   const panels = [
     {
@@ -46,13 +53,15 @@ export default function About() {
           key={i}
           style={{ backgroundImage: `url(/images/${panel.bg})` }}
         >
-          <div className="angled-panel">
-            <div className="modern-overlay">
+          <div className="glass-overlay" data-aos="fade-up">
+            <div className="content-wrapper">
               <h2>{panel.title}</h2>
               {panel.valuesList ? (
                 <ul className="values-list">
                   {panel.valuesList.map(([title, desc], idx) => (
-                    <li key={idx}><strong>{title}</strong> — {desc}</li>
+                    <li key={idx}>
+                      <strong>{title}</strong> — {desc}
+                    </li>
                   ))}
                 </ul>
               ) : (

@@ -144,6 +144,35 @@
   justify-content: center;
   gap: 4px;
 }
+
+.services-section-who-we-are {
+  display: flex;
+  background: gray;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+}
+.services-section-service-box {
+  display: flex;
+  background: #eef6ff;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+}
+.services-section-philosophy {
+  display: flex;
+  background: #d2e0f0;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+}
+.services-section-blog-teaser {
+  display: flex;
+  background: #eef6ff;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+}
 .service-box {
   background: #ffffff;
   border: 1px solid #ddd;  

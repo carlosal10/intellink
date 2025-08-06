@@ -19,41 +19,59 @@
 .sectors-hero p {
   font-size: 1.2rem;
   color: #555;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 .industries-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  gap: 32px;
+  margin-top: 40px;
   margin-bottom: 80px;
 }
 
 .industry-box {
-  background-color: #f5f5f5;
-  padding: 24px;
-  border-left: 6px solid #E63946;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease-in-out;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  flex-direction: column;
 }
 
 .industry-box:hover {
-  background-color: #eef6ff;
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
 
-.sector-icon {
+.sector-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.industry-box:hover .sector-image {
+  transform: scale(1.03);
+}
+
+.sector-content {
+  padding: 20px;
+}
+
+.sector-content h3 {
+  font-size: 1.3rem;
   color: #0B2545;
-  font-size: 1.4rem;
-  margin-top: 4px;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
-.industry-box p {
-  font-size: 1.1rem;
-  color: #222;
+.sector-content p {
+  font-size: 1rem;
+  color: #444;
+  margin: 0;
 }
 
 .clients-section {
@@ -88,4 +106,6 @@
   position: absolute;
   left: 0;
   top: 0;
+  font-size: 1.2rem;
+  line-height: 1;
 }
