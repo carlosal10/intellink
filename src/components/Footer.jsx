@@ -55,7 +55,7 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <Link to="/" className="logo" onClick={closeMenu}>
+      <Link to="/" className="logo" onClick={() => window.scrollTo(0, 0)} >
         <img
           src="/images/android-chrome-512x512.png"
           alt="Intellink Nippon Logo"
