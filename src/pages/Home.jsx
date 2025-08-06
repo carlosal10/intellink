@@ -6,7 +6,16 @@ export default function Home() {
   const t = useTranslate();
 
   return (
-    <section className="home background-wrapper">
+  <section
+  className="home"
+  style={{
+    backgroundImage: "url('/images/to-12.jpg')",
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  }}
+>
+
 
       {/* Hero Section */}
       <div className="hero-section">

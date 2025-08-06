@@ -235,11 +235,7 @@
     max-width: 280px;
   }
 }
-.background-wrapper {
-  background: url('/images/to-12.jpg') no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed;
-}
+
 /* Blog Teaser Section */
 .blog-teaser {
   padding: 60px 20px;
