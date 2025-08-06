@@ -13,33 +13,29 @@ export default function About() {
 
   const panels = [
     {
-      bg: 'about-background.jpg',
+      bg: '1st612 copy.jpg',
       title: t('about.aboutUs'),
       text: t('about.aboutText'),
     },
     {
-      bg: 'mission.jpg',
+      bg: 'istockphoto-16.jpg',
       title: t('about.mission'),
       text: t('about.missionText'),
       highlight: true,
     },
     {
-      bg: 'vision.jpg',
+      bg: 'istockphoto-4.avif',
       title: t('about.vision'),
       text: t('about.visionText'),
     },
+    
     {
-      bg: 'team.jpg',
-      title: t('about.whoWeAre'),
-      text: t('about.whoWeAreText'),
-    },
-    {
-      bg: 'values.jpg',
+      bg: 'corporate culture.jpg',
       title: t('about.values'),
       valuesList: t('about.valuesList'),
     },
     {
-      bg: 'our-story.jpg',
+      bg: 'istockphoto-1369212121-640x640.avif',
       title: t('about.ourStory'),
       text: t('about.ourStoryText'),
     },
