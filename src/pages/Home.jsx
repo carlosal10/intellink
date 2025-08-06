@@ -41,7 +41,7 @@ export default function Home() {
       {/* Highlight Section */}
       <div className="modern-section" data-aos="fade-left">
         <div className="image-wrapper">
-          <img src="/images/strategic-meeting.jpg" alt="Strategic Meeting" />
+          <img src="/images/istockphoto-4.avif" alt="Strategic Meeting" />
         </div>
         <div className="text-box">
           <h2>{t('about.whoWeAre')}</h2>
@@ -55,17 +55,17 @@ export default function Home() {
       {/* Services Overview */}
       <div className="services-overview" data-aos="zoom-in">
         <div className="service-box">
-          <img src="/images/forecasting.png" alt="Forecasting" />
+          <img src="/images/ist12j.jpg" alt="Forecasting" />
           <h3>{t('home.marketIntelligenceTitle')}</h3>
           <p>{t('home.marketIntelligenceDesc')}</p>
         </div>
         <div className="service-box">
-          <img src="/images/expert-connect.png" alt="Expert Connect" />
+          <img src="/images/i12.jpg" alt="Expert Connect" />
           <h3>{t('home.expertConnectTitle')}</h3>
           <p>{t('home.expertConnectDesc')}</p>
         </div>
         <div className="service-box">
-          <img src="/images/trade-links.png" alt="Trade Links" />
+          <img src="/images/isto-88.jpg" alt="Trade Links" />
           <h3>{t('home.tradeLinksTitle')}</h3>
           <p>{t('home.tradeLinksDesc')}</p>
         </div>
@@ -74,7 +74,7 @@ export default function Home() {
       {/* Philosophy Section */}
       <div className="modern-section reverse" data-aos="fade-right">
         <div className="image-wrapper">
-          <img src="/images/team-discussion.jpg" alt="Team Discussion" />
+          <img src="/images/istockphoto-1.jpg" alt="Team Discussion" />
         </div>
         <div className="text-box">
           <h2>{t('about.philosophy')}</h2>
