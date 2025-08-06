@@ -30,14 +30,14 @@ export default function Home() {
           <Link to="/services" className="btn primary">{t('home.ctaExploreServices')}</Link>
         </div>
         <div className="hero-image">
-          <img src="/images/ist612.jpg" alt="Business Meeting" />
+          <img src="/images/4p.jpg" alt="Business Meeting" />
         </div>
       </div>
 
       {/* Who We Are */}
       <div className="modern-section who-we-are" data-aos="fade-right">
         <div className="image-wrapper">
-          <img src="/images/strategic-meeting.jpg" alt="Strategic Meeting" />
+          <img src="/images/istockphoto-10.jpg" alt="Strategic Meeting" />
         </div>
         <div className="text-box">
           <h2>{t('about.whoWeAre')}</h2>
@@ -49,17 +49,17 @@ export default function Home() {
       {/* Services */}
       <div className="services-overview" data-aos="fade-up">
         <div className="service-box">
-          <img src="/images/forecasting.png" alt="Forecasting" />
+          <img src="/images/istockphoto-9.jpg" alt="Forecasting" />
           <h3>{t('home.marketIntelligenceTitle')}</h3>
           <p>{t('home.marketIntelligenceDesc')}</p>
         </div>
         <div className="service-box">
-          <img src="/images/expert-connect.png" alt="Expert Connect" />
+          <img src="/images/i12.jpg" alt="Expert Connect" />
           <h3>{t('home.expertConnectTitle')}</h3>
           <p>{t('home.expertConnectDesc')}</p>
         </div>
         <div className="service-box">
-          <img src="/images/trade-links.png" alt="Trade Links" />
+          <img src="/images/istockphoto-3.jpg" alt="Trade Links" />
           <h3>{t('home.tradeLinksTitle')}</h3>
           <p>{t('home.tradeLinksDesc')}</p>
         </div>
