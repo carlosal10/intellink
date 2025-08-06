@@ -1,5 +1,7 @@
 import './Footer.css';
 import { useLanguage } from '../context/LanguageContext';
+import { Link } from 'react-router-dom';
+
 
 export default function Footer() {
   const { language, toggleLanguage } = useLanguage();
