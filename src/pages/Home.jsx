@@ -16,7 +16,7 @@ export default function Home() {
     <section
       className="home"
       style={{
-        backgroundImage: "url('/images/to-12.jpg')",
+        backgroundImage: "url('/images/4p.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -30,7 +30,7 @@ export default function Home() {
           <Link to="/services" className="btn primary">{t('home.ctaExploreServices')}</Link>
         </div>
         <div className="hero-image">
-          <img src="/images/4p.jpg" alt="Business Meeting" />
+          <img src="/images/ist612.jpg" alt="Business Meeting" />
         </div>
       </div>
 
