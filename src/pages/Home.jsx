@@ -35,6 +35,7 @@ export default function Home() {
       </div>
 
       {/* Who We Are */}
+      <div className="services-section" data-aos="fade-up">
       <div className="modern-section who-we-are" data-aos="fade-right">
         <div className="image-wrapper">
           <img src="/images/istockphoto-10.avif" alt="Strategic Meeting" />
@@ -44,6 +45,7 @@ export default function Home() {
           <p>{t('about.whoWeAreText')}</p>
           <Link to="/about" className="btn secondary">{t('home.ctaAboutUs')}</Link>
         </div>
+      </div>
       </div>
 
       {/* Services */}
