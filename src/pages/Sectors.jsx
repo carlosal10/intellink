@@ -15,17 +15,17 @@ export default function Sectors() {
     {
       title: "Agriculture & Agri-tech",
       description: "Boosting productivity, market access, and sustainability across borders.",
-      image: "/images/sectors/agriculture.jpg"
+      image: "/images/istockphoto-6.jpg"
     },
     {
       title: "Renewable Energy & Infrastructure",
       description: "Supporting energy and infrastructure firms with partnerships and regulation.",
-      image: "/images/sectors/energy.jpg"
+      image: "/images/istockphoto-5.jpg"
     },
     {
       title: "Healthcare & Pharmaceuticals",
       description: "Improving medical product access, compliance, and innovation.",
-      image: "/images/sectors/healthcare.jpg"
+      image: "/images/istockphoto-12.jpg"
     },
     {
       title: "Manufacturing & Industrial Goods",
