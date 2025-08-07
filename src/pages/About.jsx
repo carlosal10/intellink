@@ -13,7 +13,7 @@ export default function About() {
 
   const panels = [
     {
-      bg: '1st612 copy.jpg',
+      bg: 'ist612copy.jpg',
       title: t('about.aboutUs'),
       text: t('about.aboutText'),
     },
@@ -30,7 +30,7 @@ export default function About() {
     },
     
     {
-      bg: 'corporate culture.jpg',
+      bg: 'corporateculture.jpg',
       title: t('about.values'),
       valuesList: t('about.valuesList'),
     },

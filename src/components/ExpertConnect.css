@@ -1,0 +1,44 @@
+.expert-connect {
+  background-color: #f9f9f9;
+  padding: 80px 24px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #0B2545;
+}
+
+.expert-connect h2 {
+  font-size: 3rem;
+  color: #E63946;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.expert-connect .intro {
+  font-size: 1.2rem;
+  color: #444;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.expert-section {
+  max-width: 960px;
+  margin: auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.expert-section h3 {
+  font-size: 1.5rem;
+  margin-top: 32px;
+  color: #0B2545;
+}
+
+.expert-section ul, .expert-section ol {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.expert-section a {
+  color: #E63946;
+  text-decoration: underline;
+}
