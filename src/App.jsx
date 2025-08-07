@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import ExpertConnect from './pages/ExpertConnect';
 import Insights from './pages/Insights';
 import Sectors from './pages/Sectors';
 import RecruitmentForm from './pages/RecruitmentForm';
@@ -27,6 +28,8 @@ function App() {
               <Route path="/sectors" element={<Sectors />} />
               <Route path="/recruitment" element={<RecruitmentForm />} />
               <Route path="/recruitment/:id" element={<RecruitmentForm />} />
+              <Route path="/expertconnect" element={<ExpertConnect />} />
+              <Route path="/expertconnect/:id" element={<ExpertConnect />} />
             </Routes>
           </main>
           <Footer />

@@ -5,7 +5,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import './Home.css';
-import ExpertConnect from '../components/ExpertConnect'; // ✅ Your long-form Expert section
 
 
 export default function Home() {
@@ -74,7 +73,7 @@ export default function Home() {
           <img src="/images/i12.jpg" alt="Expert Connect" />
           <h3>{t('home.expertConnectTitle')}</h3>
           <p>{t('home.expertConnectDesc')}</p>
-          <button onClick={() => handleClick('expertConnect')} className="cta-button">Discover Experts</button>
+          <Link to="/expertconnect" className="btn secondary">{t('home.ctaAboutUs')} Discover Experts</Link>
         </div>
         <div className="service-box">
           <img src="/images/istockphoto-3.jpg" alt="Trade Links" />
@@ -84,11 +83,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Conditional Section Reveal */}
-      <div ref={sectionRef}>
-        
-        {activeSection === 'expertConnect' && <ExpertConnect />}
-      </div>
 
       {/* Philosophy */}
       <div className="services-section-philosophy" data-aos="fade-up">
