@@ -37,6 +37,7 @@ export default function Home() {
       }}
     >
       {/* Hero Section */}
+      <div className="glass-overlay" data-aos="fade-up">
       <div className="hero-section" data-aos="fade-up">
         <div className="hero-text">
           <h1>{t('home.welcomeTitle')}</h1>
@@ -46,6 +47,7 @@ export default function Home() {
         <div className="hero-image">
           <img src="/images/ist612.jpg" alt="Business Meeting" />
         </div>
+      </div>
       </div>
 
       {/* Who We Are Section */}

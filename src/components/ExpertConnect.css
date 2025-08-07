@@ -1,44 +1,86 @@
+
 .expert-connect {
-  background-color: #f9f9f9;
   padding: 80px 24px;
+  background-color: #ffffff;
   font-family: 'Segoe UI', sans-serif;
-  color: #0B2545;
+  color: #333;
+  line-height: 1.8;
 }
 
 .expert-connect h2 {
   font-size: 3rem;
-  color: #E63946;
+  color: #0B2545;
   margin-bottom: 24px;
-  text-align: center;
 }
 
-.expert-connect .intro {
-  font-size: 1.2rem;
-  color: #444;
-  max-width: 720px;
-  margin: 0 auto 40px;
-  text-align: center;
+.expert-connect h3 {
+  font-size: 2rem;
+  margin-top: 40px;
+  color: #E63946;
 }
 
-.expert-section {
-  max-width: 960px;
-  margin: auto;
+.expert-connect p {
   font-size: 1.1rem;
-  line-height: 1.8;
+  color: #444;
+  margin-bottom: 16px;
 }
 
-.expert-section h3 {
-  font-size: 1.5rem;
-  margin-top: 32px;
+.expert-connect ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 32px;
+}
+
+.expert-connect li {
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+.expert-connect .highlight-box {
+  background-color: #f5f5f5;
+  padding: 24px;
+  border-left: 6px solid #F1C40F;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.expert-connect .steps {
+  background-color: #eef6ff;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 40px;
+}
+
+.expert-connect .steps h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
   color: #0B2545;
 }
 
-.expert-section ul, .expert-section ol {
-  padding-left: 20px;
-  margin-top: 10px;
+.expert-connect .cta {
+  background-color: #E63946;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 6px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
-.expert-section a {
-  color: #E63946;
-  text-decoration: underline;
+.expert-connect .cta:hover {
+  background-color: #c2273c;
+}
+
+.expert-connect .section {
+  margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+  .expert-connect h2 {
+    font-size: 2rem;
+  }
+  .expert-connect h3 {
+    font-size: 1.6rem;
+  }
 }
