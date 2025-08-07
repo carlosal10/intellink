@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import useTranslate from '../hooks/useTranslate';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
+import './Home.css';
 import ExpertConnect from '../components/ExpertConnect'; // ✅ Your long-form Expert section
 
 
@@ -35,7 +37,6 @@ export default function Home() {
       }}
     >
       {/* Hero Section */}
-      <div className="glass-overlay" data-aos="fade-up">
       <div className="hero-section" data-aos="fade-up">
         <div className="hero-text">
           <h1>{t('home.welcomeTitle')}</h1>
@@ -45,7 +46,6 @@ export default function Home() {
         <div className="hero-image">
           <img src="/images/ist612.jpg" alt="Business Meeting" />
         </div>
-      </div>
       </div>
 
       {/* Who We Are Section */}
