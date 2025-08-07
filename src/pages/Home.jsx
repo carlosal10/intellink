@@ -3,8 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import useTranslate from '../hooks/useTranslate';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-import './Home.css';
 import ExpertConnect from '../components/ExpertConnect'; // ✅ Your long-form Expert section
 
 
