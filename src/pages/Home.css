@@ -30,6 +30,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   margin-left: 0; /* Removed fixed left margin */
   box-sizing: border-box;
+  padding: 10px;
 }
 
 .hero-text h1 {
