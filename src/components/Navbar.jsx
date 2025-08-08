@@ -35,7 +35,7 @@ export default function Navbar() {
           alt="Intellink Nippon Logo"
           className="logo-img"
         />
-        <span className="logo-text">Intellink Nippon</span>
+        
       </Link>
 
       {/* Hamburger Menu */}
