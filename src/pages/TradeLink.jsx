@@ -118,7 +118,7 @@ const TradeLink = () => {
           or exploring partnerships, TradeLink ensures you're never navigating
           blindly.
         </p>
-        <button className="cta-btn">Contact Us</button>
+        <Link to="/contact" className="cta-btn">Contact Us</Link>
       </section>
     </div>
   );

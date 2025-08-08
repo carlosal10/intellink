@@ -86,6 +86,19 @@ ul li {
   padding: 3rem 1rem;
   border-radius: 8px;
 }
+.trade-link-cta h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #F1C40F;
+}
+.trade-link-cta p {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  color: #fefefe;
+  
+}
 
 .cta-btn {
   background-color: #E63946;

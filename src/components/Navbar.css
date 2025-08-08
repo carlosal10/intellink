@@ -1,7 +1,7 @@
 .navbar {
   position: relative;
   top: 0;
-  z-index: 1000;
+  z-index: 1001;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -88,14 +88,13 @@
     top: 0;
     right: -100%;
     height: fit-content;
-    width: 270px;
+    width: 200px;
     background: rgba(11, 37, 69, 0.98);
     backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: flex-start;
     padding: 4rem 1.5rem;
-    gap: 1.5rem;
-    overflow-y: auto;
+    gap: 1.5rem;  
     transition: right 0.3s ease-in-out;
     box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
   }

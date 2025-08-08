@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 80px 20px;
+  padding: 20px 5px;
   margin-bottom: 60px;
   overflow: hidden;
   box-sizing: border-box;
@@ -26,7 +26,7 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-radius: 16px;
-  padding: 60px;
+  padding: 20px;
   max-width: 720px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   margin-left: 0; /* Removed fixed left margin */
@@ -76,13 +76,13 @@
 /* Responsive */
 @media (max-width: 768px) {
   .about-modern-section {
-    padding: 40px 16px;
+    padding: 5px 2px;
     margin-bottom: 40px;
     min-height: unset;
   }
 
   .glass-overlay {
-    padding: 40px 20px;
+    padding: 5px 2px;
     margin: 0 auto; /* Centered on small screens */
     width: 100%;
     border-radius: 12px;

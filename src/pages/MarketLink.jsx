@@ -11,7 +11,7 @@ const MarketLink = () => {
         <div className="hero-overlay">
           <h1>MarketIntellink</h1>
           <p>Start with certainty — connect to new markets with confidence and clarity.</p>
-          <a href="/contact" className="hero-cta">Get Started</a>
+          <Link to="/contact" className="hero-cta">Get Started</Link>
         </div>
       </section>
 
@@ -99,7 +99,7 @@ const MarketLink = () => {
         <p>
           Partner with <strong>MarketIntellink</strong> and open the door to opportunity with confidence.
         </p>
-        <a href="/contact" className="final-cta-btn">Talk to Us</a>
+        <Link to="/contact" className="final-cta-btn">Talk to Us</Link>
       </section>
     </div>
   );
