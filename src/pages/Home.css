@@ -23,6 +23,14 @@
 .hero-text {
   flex: 1 1 400px;
   max-width: 500px;
+  background: rgba(11, 37, 69, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px;
+  padding: 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-left: 0; /* Removed fixed left margin */
+  box-sizing: border-box;
 }
 
 .hero-text h1 {
