@@ -30,27 +30,27 @@ export default function Sectors() {
     {
       title: "Manufacturing & Industrial Goods",
       description: "Linking Japanese industrial suppliers with high-growth markets.",
-      image: "/images/sectors/manufacturing.jpg"
+      image: "/images/industrial.jpg"
     },
     {
       title: "ICT & Innovation",
       description: "Enabling digital transformation and scalable tech partnerships.",
-      image: "/images/sectors/ict.jpg"
+      image: "/images/ict.jpg"
     },
     {
       title: "Consumer Goods & Retail",
       description: "Guiding brands with market entry, branding, and distribution.",
-      image: "/images/sectors/consumer.jpg"
+      image: "/images/retail.jpg"
     },
     {
       title: "Education & Skills Training",
       description: "Promoting global knowledge exchange through EdTech and partnerships.",
-      image: "/images/sectors/education.jpg"
+      image: "/images/education.jpg"
     },
     {
       title: "Tourism & Creative Economy",
       description: "Fostering cultural exchange and creative industry growth.",
-      image: "/images/sectors/tourism.jpg"
+      image: "/images/tourism.jpg"
     }
   ];
 
