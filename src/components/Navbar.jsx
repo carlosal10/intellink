@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { useState, useRef, useEffect } from 'react';
-import Hamburger from 'hamburger-react'; // ✅ You're importing this
+import Hamburger from 'hamburger-react';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -27,20 +27,23 @@ export default function Navbar() {
   }, [menuOpen]);
 
   return (
-    <nav className={`navbar ${menuOpen? 'show' : ''}`} ref={navRef}>
+    <nav className="navbar" ref={navRef}>
+      {/* Logo */}
       <Link to="/" className="logo" onClick={closeMenu}>
         <img
           src="/images/android-chrome-512x512.png"
           alt="Intellink Nippon Logo"
           className="logo-img"
         />
+        <span className="logo-text">Intellink Nippon</span>
       </Link>
 
-      {/* ✅ Modern Hamburger */}
+      {/* Hamburger Menu */}
       <div className="hamburger-wrapper">
         <Hamburger toggled={menuOpen} toggle={setMenuOpen} size={24} color="#F1C40F" />
       </div>
 
+      {/* Desktop Nav */}
       <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
         <Link to="/" onClick={closeMenu}>{language === 'en' ? 'Home' : 'ホーム'}</Link>
         <Link to="/about" onClick={closeMenu}>{language === 'en' ? 'About' : '会社情報'}</Link>
@@ -52,7 +55,12 @@ export default function Navbar() {
         <Link to="/marketlink" onClick={closeMenu}>{language === 'en' ? 'MarketLink' : 'マーケットリンク'}</Link>
         <Link to="/insights" onClick={closeMenu}>{language === 'en' ? 'Insights' : '知見'}</Link>
         <Link to="/contact" onClick={closeMenu}>{language === 'en' ? 'Contact' : 'お問い合わせ'}</Link>
-        <button onClick={() => { toggleLanguage(); closeMenu(); }} className="lang-toggle">
+
+        {/* Language Toggle */}
+        <button
+          onClick={() => { toggleLanguage(); closeMenu(); }}
+          className="lang-toggle"
+        >
           {language === 'en' ? '日本語' : 'EN'}
         </button>
       </div>

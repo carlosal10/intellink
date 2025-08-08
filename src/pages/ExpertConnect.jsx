@@ -1,21 +1,30 @@
 import React from 'react';
-import { FaGlobe, FaUsers, FaHandshake, FaSearch, FaClipboardCheck, FaRocket } from 'react-icons/fa';
+import { FaGlobe, FaClipboardCheck, FaRocket } from 'react-icons/fa';
 import './ExpertConnect.css';
 
 export default function ExpertConnect() {
   return (
     <section className="expert-connect-section">
-      <div className="ec-hero">
-        <div className="ec-hero-content">
-          <h1><FaGlobe /> ExpertConnect</h1>
-          <h2>Local Experts. Global Insight.</h2>
-          <p>
-            Many Japanese companies considering overseas expansion—especially into African markets—
-            face a critical challenge: finding trustworthy, experienced local talent.
-          </p>
+      {/* Hero Section */}
+      <div
+        className="ec-hero"
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1950&q=80')`
+        }}
+      >
+        <div className="ec-hero-overlay">
+          <div className="ec-hero-content">
+            <h1><FaGlobe /> ExpertConnect</h1>
+            <h2>Local Experts. Global Insight.</h2>
+            <p>
+              Many Japanese companies considering overseas expansion—especially into African markets—face
+              a critical challenge: finding trustworthy, experienced local talent.
+            </p>
+          </div>
         </div>
       </div>
 
+      {/* Main Content */}
       <div className="ec-container">
         <section className="ec-intro">
           <p>

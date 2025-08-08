@@ -1,14 +1,14 @@
-/* Base Navbar Styles */
 .navbar {
-  background-color: rgb(0, 51, 102);
-  border-bottom: 1px solid #ddd;
-  padding: 16px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
+  position: sticky;
   top: 0;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1.2rem;
+  background: rgba(11, 37, 69, 0.85); /* navy with transparency */
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 /* Logo */
@@ -34,34 +34,37 @@
   line-height: 1.2;
 }
 
-/* Navigation Links */
+
+.hamburger-wrapper {
+  display: none;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 1rem;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #F1C40F;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #ffffff;
-}
-
-/* Language Switch Button */
+.nav-links a,
 .lang-toggle {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.nav-links a:hover,
+.lang-toggle:hover {
+  color: #F1C40F;
+  transform: translateY(-1px);
+}
+
+.lang-toggle {
+  background: #E63946;
+  border: none;
   padding: 6px 12px;
-  font-size: 0.9rem;
-  background-color: transparent;
-  border: 1px solid #ffffff;
-  border-radius: 4px;
-  color: #E63946;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .lang-toggle:hover {
@@ -74,45 +77,34 @@
   display: none;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .hamburger-wrapper {
     display: block;
-    z-index: 1001;
   }
 
   .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 270px;
+    background: rgba(11, 37, 69, 0.98);
+    backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: flex-start;
-    background: #fff;
-    position: absolute;
-    top: 72px;
-    right: 20px;
-    padding: 0;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    width: 220px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease-in-out;
+    padding: 4rem 1.5rem;
+    gap: 1.5rem;
+    overflow-y: auto;
+    transition: right 0.3s ease-in-out;
   }
 
   .nav-links.open {
-    padding: 16px;
-    max-height: 500px;
-    opacity: 1;
-    transform: translateY(0);
+    right: 0;
   }
 
   .nav-links a,
   .lang-toggle {
-    width: 100%;
-    text-align: left;
-    padding: 8px 0;
-    color: #0B2545;
+    font-size: 1.05rem;
   }
 
   .logo-img {

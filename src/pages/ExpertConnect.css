@@ -1,59 +1,69 @@
-
 .expert-connect-section {
   font-family: 'Inter', sans-serif;
-  background-color: #f8fafc;
-  color: #1a202c;
-  line-height: 1.7;
+  color: #0b2545;
 }
 
+/* Hero Section */
 .ec-hero {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
-  padding: 4rem 2rem;
-  text-align: center;
-  color: #fff;
+  position: relative;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
 }
 
-.ec-hero h1 {
+.ec-hero-overlay {
+  background: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.ec-hero-content {
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.ec-hero-content h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
 
-.ec-hero h2 {
+.ec-hero-content h2 {
   font-weight: 400;
-  font-size: 1.4rem;
-  opacity: 0.9;
-}
-
-.ec-hero p {
-  max-width: 700px;
-  margin: 1rem auto 0;
-  font-size: 1.1rem;
-}
-
-.ec-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-}
-
-.ec-block {
-  background: #fff;
-  border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.ec-block h3 {
-  font-size: 1.6rem;
-  color: #0f172a;
   margin-bottom: 1rem;
 }
 
-.ec-block h4 {
-  margin-top: 1.2rem;
-  font-size: 1.2rem;
-  color: #334155;
+.ec-hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Content Sections */
+.ec-container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.ec-intro {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.ec-block {
+  margin-bottom: 2.5rem;
+}
+
+.ec-block h3 {
+  margin-bottom: 1rem;
+  color: #09357b;
 }
 
 .ec-list {
@@ -62,8 +72,8 @@
 }
 
 .ec-list li {
+  margin-bottom: 0.6rem;
   padding-left: 1.5rem;
-  margin-bottom: 0.5rem;
   position: relative;
 }
 
@@ -71,7 +81,7 @@
   content: "•";
   position: absolute;
   left: 0;
-  color: #3b82f6;
+  color: #e63946;
   font-weight: bold;
 }
 
@@ -79,23 +89,21 @@
   padding-left: 1.2rem;
 }
 
+.ec-steps li {
+  margin-bottom: 0.6rem;
+}
+
+/* Call to Action */
 .ec-cta {
+  background: #09357b;
+  color: white;
   text-align: center;
-  background: #3b82f6;
-  color: #fff;
-  padding: 2.5rem 1.5rem;
-  border-radius: 12px;
+  padding: 2rem 1rem;
+  border-radius: 8px;
 }
 
 .ec-cta h3 {
-  font-size: 1.6rem;
-  margin: 1rem 0;
-}
-
-.ec-cta p {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
+  margin: 0.5rem 0;
 }
 
 /* Responsive */
