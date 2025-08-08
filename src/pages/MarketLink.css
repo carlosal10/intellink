@@ -1,0 +1,185 @@
+.marketlink-page {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+/* HERO */
+.marketlink-hero {
+  background: url("https://images.unsplash.com/photo-1521791136064-7986c2920216") center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-overlay {
+  background: rgba(11, 37, 69, 0.7);
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  background: #E63946;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero-cta:hover {
+  background: #c12f3a;
+}
+
+/* INTRO */
+.marketlink-intro {
+  padding: 3rem 15%;
+  background: #F5F5F5;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* ABOUT */
+.marketlink-about {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem 10%;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* SERVICES */
+.marketlink-services {
+  padding: 3rem 10%;
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #E63946;
+  margin-bottom: 1rem;
+}
+
+/* WHY */
+.marketlink-why {
+  background: #0B2545;
+  color: white;
+  padding: 3rem 15%;
+}
+
+.marketlink-why ul {
+  list-style: none;
+  padding: 0;
+}
+
+.marketlink-why li {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.marketlink-why li svg {
+  margin-right: 0.5rem;
+  color: #F1C40F;
+}
+
+/* IDEAL FOR */
+.marketlink-ideal {
+  padding: 3rem 10%;
+  text-align: center;
+}
+
+.ideal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.ideal-tags span {
+  background: #E63946;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+/* FINAL CTA */
+.marketlink-finalcta {
+  background: #F5F5F5;
+  text-align: center;
+  padding: 3rem 10%;
+}
+
+.final-cta-btn {
+  background: #0B2545;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.final-cta-btn:hover {
+  background: #081a32;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+  .marketlink-about {
+    flex-direction: column;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+}

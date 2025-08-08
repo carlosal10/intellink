@@ -73,7 +73,7 @@ export default function Home() {
           <img src="/images/i12.jpg" alt="Expert Connect" />
           <h3>{t('home.expertConnectTitle')}</h3>
           <p>{t('home.expertConnectDesc')}</p>
-          <Link to="/expertconnect" className="btn secondary">{t('home.ctaAboutUs')} Discover Experts</Link>
+          <Link to="/expertconnect" className="btn secondary"> Discover Experts</Link>
         </div>
         <div className="service-box">
           <img src="/images/istockphoto-3.jpg" alt="Trade Links" />

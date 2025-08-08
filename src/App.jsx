@@ -6,6 +6,8 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import ExpertConnect from './pages/ExpertConnect';
+import TradeLink from './pages/TradeLink';
+import MarketLink from './pages/MarketLink';
 import Insights from './pages/Insights';
 import Sectors from './pages/Sectors';
 import RecruitmentForm from './pages/RecruitmentForm';
@@ -30,6 +32,11 @@ function App() {
               <Route path="/recruitment/:id" element={<RecruitmentForm />} />
               <Route path="/expertconnect" element={<ExpertConnect />} />
               <Route path="/expertconnect/:id" element={<ExpertConnect />} />
+              <Route path="/tradelink" element={<TradeLink />} />
+              <Route path="/tradelink/:id" element={<TradeLink />} />
+              <Route path="/marketlink" element={<MarketLink />} />
+              <Route path="/marketlink/:id" element={<MarketLink />} />
+
             </Routes>
           </main>
           <Footer />

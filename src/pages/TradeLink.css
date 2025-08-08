@@ -1,0 +1,91 @@
+.trade-link-container {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  line-height: 1.7;
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Hero */
+.trade-link-hero {
+  background: linear-gradient(to right, #0b2545, #19376d);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+.trade-link-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.trade-link-hero p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Sections */
+.trade-link-intro,
+.trade-link-offer,
+.trade-link-benefits,
+.trade-link-cases {
+  margin: 2rem 0;
+}
+
+.trade-link-intro h2,
+.trade-link-offer h2,
+.trade-link-benefits h2,
+.trade-link-cases h2,
+.trade-link-cta h2 {
+  font-size: 1.8rem;
+  color: #0b2545;
+  margin-bottom: 1rem;
+}
+
+.trade-link-offer ul,
+.trade-link-benefits ul,
+.trade-link-cases ul {
+  list-style: none;
+  padding-left: 0;
+}
+.trade-link-offer li,
+.trade-link-benefits li,
+.trade-link-cases li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+.trade-link-offer li strong {
+  color: #e63946;
+}
+
+/* CTA */
+.trade-link-cta {
+  text-align: center;
+  background: #f5f5f5;
+  padding: 2rem;
+  border-radius: 10px;
+}
+.trade-link-cta button {
+  padding: 0.8rem 1.5rem;
+  background: #e63946;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.trade-link-cta button:hover {
+  background: #c32f39;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .trade-link-hero h1 {
+    font-size: 2rem;
+  }
+  .trade-link-hero p {
+    font-size: 1rem;
+  }
+}
