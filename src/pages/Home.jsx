@@ -67,7 +67,7 @@ export default function Home() {
           <img src="/images/ist12.jpg" alt="Forecasting" />
           <h3>{t('home.marketIntelligenceTitle')}</h3>
           <p>{t('home.marketIntelligenceDesc')}</p>
-          <button onClick={() => handleClick('capabilities')} className="cta-button">Learn More</button>
+          <Link to="/marketintellink" className="btn secondary">Learn More</Link>
         </div>
         <div className="service-box">
           <img src="/images/i12.jpg" alt="Expert Connect" />
@@ -79,7 +79,7 @@ export default function Home() {
           <img src="/images/istockphoto-3.jpg" alt="Trade Links" />
           <h3>{t('home.tradeLinksTitle')}</h3>
           <p>{t('home.tradeLinksDesc')}</p>
-          <button onClick={() => handleClick('capabilities')} className="cta-button">Explore Support</button>
+          <Link to="/tradelinks" className="btn secondary">Explore Trade Links</Link>
         </div>
       </div>
 

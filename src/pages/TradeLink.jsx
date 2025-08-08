@@ -73,7 +73,7 @@ const TradeLink = () => {
       <section className="trade-link-benefits">
         <div className="benefits-image">
           <img
-            src="https://unsplash.com/photos/three-men-sitting-while-using-laptops-and-watching-man-beside-whiteboard-wD1LRb9OeEo"
+            src="/images/photo-15.avif"
             alt="Why Choose TradeLink"
           />
         </div>

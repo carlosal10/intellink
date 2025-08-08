@@ -96,6 +96,16 @@ input[type="checkbox"] {
   border-radius: 8px;
   text-align: center;
 }
+.aj-hero-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #f1c40f;
+}
+.aj-hero-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #fefefe;
+}
 
 .aj-overview, .aj-why, .aj-services, .aj-beneficiaries, .aj-recruitment {
   padding: 2rem 10%;
