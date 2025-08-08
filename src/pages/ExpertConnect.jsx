@@ -1,74 +1,107 @@
+import React from 'react';
+import { FaGlobe, FaUsers, FaHandshake, FaSearch, FaClipboardCheck, FaRocket } from 'react-icons/fa';
 import './ExpertConnect.css';
 
 export default function ExpertConnect() {
   return (
     <section className="expert-connect-section">
-      <div className="container">
-        <h1>ExpertConnect</h1>
-        <h2>Local Experts. Global Insight.</h2>
-        <p>Many Japanese companies considering overseas expansion—especially into African markets—face a critical challenge: finding trustworthy, experienced local talent. Without direct market knowledge or local networks, decision-making becomes slow, risky, and uncertain.</p>
-        <p>As a workaround, some firms rely on third-country personnel, especially from Asia, due to perceived similarities with African markets. But this often leads to gaps in local relevance and on-the-ground agility.</p>
-        <p>At Intellink Nippon Consulting, we offer a better approach.</p>
-        
-        <h3>What is ExpertConnect?</h3>
-        <p>ExpertConnect is our proprietary platform designed to bridge this gap by connecting Japanese companies with highly skilled, globally-minded professionals based in their target markets. Many of our experts have studied or worked in Japan and possess both the local insight and global perspective needed to drive success.</p>
-        <p>Through ExpertConnect, you gain access to:</p>
-        <ul>
-          <li>Proven sector specialists with deep local knowledge</li>
-          <li>Trusted professionals with strong in-country networks</li>
-          <li>Experts who understand Japanese business expectations and culture</li>
-          <li>Flexible support for short-term, project-based, or long-term engagements</li>
-        </ul>
+      <div className="ec-hero">
+        <div className="ec-hero-content">
+          <h1><FaGlobe /> ExpertConnect</h1>
+          <h2>Local Experts. Global Insight.</h2>
+          <p>
+            Many Japanese companies considering overseas expansion—especially into African markets—
+            face a critical challenge: finding trustworthy, experienced local talent.
+          </p>
+        </div>
+      </div>
 
-        <h3>What You Can Expect</h3>
-        <ul>
-          <li>Custom Sector Advisory: Engage experts for deep-dive support in sectors such as agriculture, healthcare, energy, ICT, manufacturing, and more.</li>
-          <li>Short-Term or Long-Term Engagements: Choose between one-time consultations, project-based inputs, or ongoing advisory relationships.</li>
-          <li>Decision-Making Support: Access reliable, localized expert opinion to guide your market entry, partnerships, compliance, or operational strategy.</li>
-          <li>Bespoke Matching: We work closely with you to understand your goals, then match you with the most relevant experts in our extensive database.</li>
-        </ul>
+      <div className="ec-container">
+        <section className="ec-intro">
+          <p>
+            Without direct market knowledge or local networks, decision-making becomes slow, risky, and uncertain.
+            Some firms rely on third-country personnel, but this often leads to gaps in local relevance and agility.
+            At Intellink Nippon Consulting, we offer a better approach.
+          </p>
+        </section>
 
-        <h3>How It Works</h3>
-        <ol>
-          <li><strong>Submit Your Request:</strong> Tell us about your business, sector, and specific needs via our intake form or direct contact.</li>
-          <li><strong>Expert Matching:</strong> We screen and match you with vetted experts based on your industry, market, and objectives.</li>
-          <li><strong>Initial Consultation:</strong> Meet your expert(s) in a virtual or in-person session to clarify the scope and goals.</li>
-          <li><strong>Engagement Launch:</strong> We formalize the collaboration—whether it's a one-time advisory session or an extended engagement.</li>
-          <li><strong>Ongoing Support:</strong> Our team provides coordination, feedback support, and ensures value delivery throughout the engagement.</li>
-        </ol>
+        <section className="ec-block">
+          <h3>What is ExpertConnect?</h3>
+          <p>
+            ExpertConnect is our proprietary platform connecting Japanese companies with highly skilled, globally-minded professionals
+            based in their target markets. Many of our experts have studied or worked in Japan, giving them the perfect blend of
+            local insight and global perspective.
+          </p>
+          <ul className="ec-list">
+            <li>Proven sector specialists with deep local knowledge</li>
+            <li>Trusted professionals with strong in-country networks</li>
+            <li>Experts who understand Japanese business culture</li>
+            <li>Flexible support for short-term or long-term needs</li>
+          </ul>
+        </section>
 
-        <h3>Why It Matters</h3>
-        <ul>
-          <li>Accelerate your understanding of the local market</li>
-          <li>Avoid costly missteps and delays</li>
-          <li>Build meaningful partnerships</li>
-          <li>Receive advice tailored to your goals and sector</li>
-          <li>Move faster with clarity and context</li>
-        </ul>
+        <section className="ec-block">
+          <h3>What You Can Expect</h3>
+          <ul className="ec-list">
+            <li><FaClipboardCheck /> Custom Sector Advisory</li>
+            <li><FaClipboardCheck /> Short or Long-Term Engagements</li>
+            <li><FaClipboardCheck /> Decision-Making Support</li>
+            <li><FaClipboardCheck /> Bespoke Expert Matching</li>
+          </ul>
+        </section>
 
-        <h3>Register as an Expert</h3>
-        <p>Are you a sector professional with deep local knowledge and international exposure?<br/>
-        Do you want to help global companies enter and succeed in your market?</p>
-        <p>Join the ExpertConnect network and collaborate with Japanese and international firms through paid engagements.</p>
+        <section className="ec-block">
+          <h3>How It Works</h3>
+          <ol className="ec-steps">
+            <li><strong>Submit Your Request:</strong> Tell us about your needs.</li>
+            <li><strong>Expert Matching:</strong> We connect you with vetted professionals.</li>
+            <li><strong>Initial Consultation:</strong> Define scope and goals.</li>
+            <li><strong>Engagement Launch:</strong> Formalize collaboration.</li>
+            <li><strong>Ongoing Support:</strong> We ensure value delivery.</li>
+          </ol>
+        </section>
 
-        <h4>✔ Who Can Apply?</h4>
-        <ul>
-          <li>Sector specialists (agriculture, energy, healthcare, ICT, etc.)</li>
-          <li>Business consultants and regulatory advisors</li>
-          <li>Market researchers and data analysts</li>
-          <li>Entrepreneurs, academics, and trade professionals</li>
-          <li>Individuals with experience studying or working in Japan (preferred but not required)</li>
-        </ul>
+        <section className="ec-block">
+          <h3>Why It Matters</h3>
+          <ul className="ec-list">
+            <li>Accelerate market understanding</li>
+            <li>Avoid costly mistakes</li>
+            <li>Build meaningful partnerships</li>
+            <li>Receive context-driven advice</li>
+            <li>Move faster with clarity</li>
+          </ul>
+        </section>
 
-        <h4>How to Apply</h4>
-        <p>Send us your CV or LinkedIn profile along with a short cover note introducing your expertise, country/sector focus, and experience in international collaboration.</p>
-        <p>Email your application to:<br/>
-        <strong>experts@intellinknippon.com</strong><br/>
-        Subject line: <em>ExpertConnect Application – [Your Name]</em></p>
-        <p>Shortlisted candidates will be contacted for an onboarding interview.</p>
+        <section className="ec-block">
+          <h3>Register as an Expert</h3>
+          <p>
+            Are you a professional with deep local knowledge and international exposure?  
+            Join the ExpertConnect network and collaborate with global firms through paid engagements.
+          </p>
 
-        <h3>Ready to Get Started?</h3>
-        <p>Let ExpertConnect support your business with the local insight it needs—or help you share your expertise with the world.</p>
+          <h4>✔ Who Can Apply?</h4>
+          <ul className="ec-list">
+            <li>Sector specialists (agriculture, energy, healthcare, ICT, etc.)</li>
+            <li>Business consultants and regulatory advisors</li>
+            <li>Market researchers and analysts</li>
+            <li>Entrepreneurs, academics, and trade professionals</li>
+            <li>Professionals with Japan experience (preferred)</li>
+          </ul>
+
+          <h4>How to Apply</h4>
+          <p>
+            Send your CV or LinkedIn profile and a short cover note to  
+            <strong> experts@intellinknippon.com</strong>  
+            Subject line: <em>ExpertConnect Application – [Your Name]</em>
+          </p>
+          <p>Shortlisted candidates will be contacted for an onboarding interview.</p>
+        </section>
+
+        <div className="ec-cta">
+          <FaRocket />
+          <h3>Ready to Get Started?</h3>
+          <p>Let ExpertConnect give your business the local insight it needs—or help you share your expertise globally.</p>
+        </div>
       </div>
     </section>
   );

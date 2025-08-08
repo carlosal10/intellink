@@ -4,54 +4,55 @@ import useTranslate from '../hooks/useTranslate';
 export default function Services() {
   const t = useTranslate();
 
+  const services = [
+    {
+      title: t('services.marketIntelligence.title'),
+      desc: t('services.marketIntelligence.desc'),
+      points: t('services.marketIntelligence.points'),
+      icon: '/images/icons/market-intel.svg',
+    },
+    {
+      title: t('services.businessMatch.title'),
+      desc: t('services.businessMatch.desc'),
+      points: t('services.businessMatch.points'),
+      icon: '/images/icons/matchmaking.svg',
+    },
+    {
+      title: t('services.expertConnect.title'),
+      desc: t('services.expertConnect.desc'),
+      points: t('services.expertConnect.points'),
+      icon: '/images/icons/expertconnect.svg',
+    },
+    {
+      title: t('services.tradeLink.title'),
+      desc: t('services.tradeLink.desc'),
+      points: t('services.tradeLink.points'),
+      icon: '/images/icons/tradelink.svg',
+    }
+  ];
+
   return (
     <section className="services">
-      <div className="services-container">
+      <div className="services-header">
+        <h1>{t('services.headerTitle')}</h1>
+        <p>{t('services.headerDesc')}</p>
+      </div>
 
-        {/* Market Intelligence */}
-        <section className="service-section">
-          <h2>{t('services.marketIntelligence.title')}</h2>
-          <p>{t('services.marketIntelligence.desc')}</p>
-          <ul>
-            {t('services.marketIntelligence.points').map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </section>
-
-        {/* Business Matchmaking */}
-        <section className="service-section">
-          <h2>{t('services.businessMatch.title')}</h2>
-          <p>{t('services.businessMatch.desc')}</p>
-          <ul>
-            {t('services.businessMatch.points').map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </section>
-
-        {/* ExpertConnect™ */}
-        <section className="service-section">
-          <h2>{t('services.expertConnect.title')}</h2>
-          <p>{t('services.expertConnect.desc')}</p>
-          <ul>
-            {t('services.expertConnect.points').map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </section>
-
-        {/* Trade Links */}
-        <section className="service-section">
-          <h2>{t('services.tradeLink.title')}</h2>
-          <p>{t('services.tradeLink.desc')}</p>
-          <ul>
-            {t('services.tradeLink.points').map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </section>
-
+      <div className="services-grid">
+        {services.map((service, idx) => (
+          <div className="service-card" key={idx}>
+            <div className="service-icon">
+              <img src={service.icon} alt={service.title} />
+            </div>
+            <h2>{service.title}</h2>
+            <p className="service-desc">{service.desc}</p>
+            <ul>
+              {service.points.map((point, i) => (
+                <li key={i}>{point}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   );

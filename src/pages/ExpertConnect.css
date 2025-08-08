@@ -1,96 +1,101 @@
 
-/* ExpertConnect.css – Modern and Emotionally Captivating */
-
 .expert-connect-section {
-  background: linear-gradient(to right, #fdfbfb, #ebedee);
-  padding: 80px 20px;
-  font-family: 'Segoe UI', sans-serif;
-  color: #333;
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+  color: #1a202c;
+  line-height: 1.7;
 }
 
-.expert-connect-section .container {
-  max-width: 960px;
+.ec-hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.ec-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.ec-hero h2 {
+  font-weight: 400;
+  font-size: 1.4rem;
+  opacity: 0.9;
+}
+
+.ec-hero p {
+  max-width: 700px;
+  margin: 1rem auto 0;
+  font-size: 1.1rem;
+}
+
+.ec-container {
+  max-width: 1100px;
   margin: 0 auto;
-  background: #ffffff;
-  padding: 40px 32px;
+  padding: 3rem 2rem;
+}
+
+.ec-block {
+  background: #fff;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-.expert-connect-section h1 {
-  font-size: 3.5rem;
-  color: #0B2545;
-  margin-bottom: 16px;
-  text-align: center;
+.ec-block h3 {
+  font-size: 1.6rem;
+  color: #0f172a;
+  margin-bottom: 1rem;
 }
 
-.expert-connect-section h2 {
-  font-size: 2rem;
-  color: #E63946;
-  margin-bottom: 24px;
-  text-align: center;
-  font-style: italic;
+.ec-block h4 {
+  margin-top: 1.2rem;
+  font-size: 1.2rem;
+  color: #334155;
 }
 
-.expert-connect-section h3 {
-  font-size: 1.8rem;
-  color: #0B2545;
-  margin-top: 40px;
-  margin-bottom: 16px;
+.ec-list {
+  list-style: none;
+  padding: 0;
 }
 
-.expert-connect-section h4 {
-  font-size: 1.5rem;
-  color: #E63946;
-  margin-top: 32px;
-  margin-bottom: 12px;
+.ec-list li {
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
 }
 
-.expert-connect-section p {
-  font-size: 1.1rem;
-  line-height: 1.75;
-  margin-bottom: 20px;
-  color: #444;
-}
-
-.expert-connect-section ul,
-.expert-connect-section ol {
-  padding-left: 20px;
-  margin-bottom: 24px;
-}
-
-.expert-connect-section ul li,
-.expert-connect-section ol li {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-
-.expert-connect-section ul li::marker {
-  color: #F1C40F;
-}
-
-.expert-connect-section ol li::marker {
-  color: #0B2545;
+.ec-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
   font-weight: bold;
 }
 
-.expert-connect-section strong {
-  color: #0B2545;
+.ec-steps {
+  padding-left: 1.2rem;
 }
 
-.expert-connect-section em {
-  color: #333;
-  font-style: italic;
+.ec-cta {
+  text-align: center;
+  background: #3b82f6;
+  color: #fff;
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
 }
 
-.expert-connect-section a {
-  color: #E63946;
-  text-decoration: none;
+.ec-cta h3 {
+  font-size: 1.6rem;
+  margin: 1rem 0;
 }
 
-.expert-connect-section a:hover {
-  text-decoration: underline;
+.ec-cta p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Responsive */
