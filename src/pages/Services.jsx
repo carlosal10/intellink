@@ -1,59 +1,55 @@
 import './Services.css';
 import useTranslate from '../hooks/useTranslate';
+import { FaChartLine, FaHandshake, FaUserTie, FaGlobe } from 'react-icons/fa';
 
 export default function Services() {
   const t = useTranslate();
 
   const services = [
     {
+      icon: <FaChartLine />,
       title: t('services.marketIntelligence.title'),
-      desc: t('services.marketIntelligence.desc'),
-      points: t('services.marketIntelligence.points'),
-      icon: '/images/icons/market-intel.svg',
+      description: t('services.marketIntelligence.description'),
     },
     {
-      title: t('services.businessMatch.title'),
-      desc: t('services.businessMatch.desc'),
-      points: t('services.businessMatch.points'),
-      icon: '/images/icons/matchmaking.svg',
+      icon: <FaHandshake />,
+      title: t('services.matchmaking.title'),
+      description: t('services.matchmaking.description'),
     },
     {
+      icon: <FaUserTie />,
       title: t('services.expertConnect.title'),
-      desc: t('services.expertConnect.desc'),
-      points: t('services.expertConnect.points'),
-      icon: '/images/icons/expertconnect.svg',
+      description: t('services.expertConnect.description'),
     },
     {
-      title: t('services.tradeLink.title'),
-      desc: t('services.tradeLink.desc'),
-      points: t('services.tradeLink.points'),
-      icon: '/images/icons/tradelink.svg',
-    }
+      icon: <FaGlobe />,
+      title: t('services.tradeLinks.title'),
+      description: t('services.tradeLinks.description'),
+    },
   ];
 
   return (
     <section className="services">
-      <div className="services-header">
-        <h1>{t('services.headerTitle')}</h1>
-        <p>{t('services.headerDesc')}</p>
-      </div>
+      <div className="services-container">
+        <h2 className="services-heading">{t('services.heading')}</h2>
+        <p className="services-subheading">{t('services.intro')}</p>
 
-      <div className="services-grid">
-        {services.map((service, idx) => (
-          <div className="service-card" key={idx}>
-            <div className="service-icon">
-              <img src={service.icon} alt={service.title} />
-            </div>
-            <h2>{service.title}</h2>
-            <p className="service-desc">{service.desc}</p>
-            <ul>
-              {service.points.map((point, i) => (
-                <li key={i}>{point}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        <div className="services-grid">
+          {services.map((service, idx) => (
+            <ServiceCard key={idx} icon={service.icon} title={service.title} description={service.description} />
+          ))}
+        </div>
       </div>
     </section>
+  );
+}
+
+function ServiceCard({ icon, title, description }) {
+  return (
+    <div className="service-card">
+      <div className="service-icon">{icon}</div>
+      <h3 className="service-title">{title}</h3>
+      <p className="service-description">{description}</p>
+    </div>
   );
 }
