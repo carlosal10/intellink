@@ -1,6 +1,6 @@
 .home {
   background-color: #f9f9f9;
-  padding: 60px 20px;
+  padding: 10px 4px;
   font-family: 'Segoe UI', sans-serif;
   color: #333;
   background-attachment: fixed;
@@ -368,7 +368,7 @@
   .text-box {
     position: static;
     margin: 0;
-    padding: 24px;
+    padding: 10px;
     max-width: 100%;
     background: #ffffff;
     box-shadow: none;
