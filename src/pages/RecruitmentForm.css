@@ -76,3 +76,87 @@ input[type="checkbox"] {
 .submit-btn:hover {
   background-color: #06172d;
 }
+.africa-japan-page {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.aj-hero {
+  background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') center/cover no-repeat;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aj-hero-overlay {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.aj-overview, .aj-why, .aj-services, .aj-beneficiaries, .aj-recruitment {
+  padding: 2rem 10%;
+}
+
+.aj-why ul, .aj-recruitment ul {
+  list-style: none;
+  padding: 0;
+}
+
+.aj-why li::before {
+  content: "• ";
+  color: #E63946;
+  font-weight: bold;
+}
+
+.aj-service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.aj-service-grid div {
+  background: #f8f8f8;
+  padding: 1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.recruitment-form {
+  padding: 2rem 10%;
+  background: #F5F5F5;
+  margin-top: 2rem;
+  border-radius: 8px;
+}
+
+.recruitment-form fieldset {
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+.recruitment-form input, 
+.recruitment-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.4rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-btn {
+  background: #0B2545;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #081a32;
+}
