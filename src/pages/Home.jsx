@@ -16,15 +16,6 @@ export default function Home() {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-  const handleClick = (section) => {
-    setActiveSection(section);
-
-    // Scroll into view after short delay to ensure render
-    setTimeout(() => {
-      sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
-  };
-
   return (
     <section
       className="home"
