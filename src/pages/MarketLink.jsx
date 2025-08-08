@@ -1,6 +1,7 @@
 import React from "react";
 import { FaChartLine, FaHandshake, FaGlobeAfrica, FaLightbulb, FaCheckCircle } from "react-icons/fa";
 import "./MarketLink.css";
+import { Link } from "react-router-dom";
 
 const MarketLink = () => {
   return (

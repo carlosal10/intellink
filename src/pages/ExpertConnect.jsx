@@ -2,6 +2,7 @@ import React from 'react';
 import { FaGlobe, FaClipboardCheck, FaRocket } from 'react-icons/fa';
 import './ExpertConnect.css';
 
+
 export default function ExpertConnect() {
   return (
     <section className="expert-connect-section">
