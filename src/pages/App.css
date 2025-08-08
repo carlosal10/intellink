@@ -6,6 +6,7 @@
   min-height: 100vh;
   background-color: #ffffff;
   color: #333333; /* Text/Dark Grey */
+  overflow-x: hidden;
 }
 
 /* Optional animated logo (if still in use) */

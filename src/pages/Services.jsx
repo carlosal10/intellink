@@ -1,55 +1,55 @@
+import React from 'react';
 import './Services.css';
-import useTranslate from '../hooks/useTranslate';
-import { FaChartLine, FaHandshake, FaUserTie, FaGlobe } from 'react-icons/fa';
 
 export default function Services() {
-  const t = useTranslate();
-
-  const services = [
-    {
-      icon: <FaChartLine />,
-      title: t('services.marketIntelligence.title'),
-      description: t('services.marketIntelligence.description'),
-    },
-    {
-      icon: <FaHandshake />,
-      title: t('services.matchmaking.title'),
-      description: t('services.matchmaking.description'),
-    },
-    {
-      icon: <FaUserTie />,
-      title: t('services.expertConnect.title'),
-      description: t('services.expertConnect.description'),
-    },
-    {
-      icon: <FaGlobe />,
-      title: t('services.tradeLinks.title'),
-      description: t('services.tradeLinks.description'),
-    },
-  ];
-
   return (
-    <section className="services">
-      <div className="services-container">
-        <h2 className="services-heading">{t('services.heading')}</h2>
-        <p className="services-subheading">{t('services.intro')}</p>
+    <div className="services-page">
+      <header className="services-header">
+        <h1>Our Services</h1>
+        <p>
+          We provide solutions that bridge Japan and emerging markets — delivering insights, 
+          connections, and trade opportunities that enable sustainable business growth.
+        </p>
+      </header>
 
-        <div className="services-grid">
-          {services.map((service, idx) => (
-            <ServiceCard key={idx} icon={service.icon} title={service.title} description={service.description} />
-          ))}
+      <div className="services-grid">
+        
+        <div className="service-card">
+          <h2>Market Intelligence</h2>
+          <p>
+            We provide timely and accurate insights through research, feasibility studies, 
+            and regulatory analysis. Our reports help businesses make informed decisions 
+            and reduce risk when entering new markets.
+          </p>
         </div>
-      </div>
-    </section>
-  );
-}
 
-function ServiceCard({ icon, title, description }) {
-  return (
-    <div className="service-card">
-      <div className="service-icon">{icon}</div>
-      <h3 className="service-title">{title}</h3>
-      <p className="service-description">{description}</p>
+        <div className="service-card">
+          <h2>Market Links (Business Matchmaking)</h2>
+          <p>
+            We connect Japanese businesses with vetted African partners — and vice versa — 
+            ensuring each match supports long-term collaboration and business success.
+          </p>
+        </div>
+
+        <div className="service-card">
+          <h2>ExpertConnect™ Solutions</h2>
+          <p>
+            Through our proprietary expert-matching platform, we connect organizations with 
+            specialized industry professionals, ensuring access to critical knowledge when 
+            and where it is needed.
+          </p>
+        </div>
+
+        <div className="service-card">
+          <h2>Trade Links</h2>
+          <p>
+            We support businesses — especially in Africa — to source high-quality goods 
+            from Japan. Our services include supplier identification, verification, 
+            negotiation support, and coordination of logistics.
+          </p>
+        </div>
+
+      </div>
     </div>
   );
 }

@@ -24,11 +24,13 @@
 .hero-overlay h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color:#F1C40F;
 }
 
 .hero-overlay p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  color: #fefefe;
 }
 
 .hero-cta {
