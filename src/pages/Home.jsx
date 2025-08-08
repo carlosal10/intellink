@@ -31,7 +31,7 @@ export default function Home() {
         <div className="hero-text">
           <h1>{t('home.welcomeTitle')}</h1>
           <p>{t('home.welcomeIntro')}</p>
-          <Link to="/services" className="btn primary">{t('home.ctaExploreServices')}</Link>
+          <Link to="/services" className="btn-services">{t('home.ctaExploreServices')}</Link>
         </div>
         <div className="hero-image">
           <img src="/images/ist612.jpg" alt="Business Meeting" />

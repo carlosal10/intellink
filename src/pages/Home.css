@@ -22,12 +22,11 @@
 
 .hero-text {
   flex: 1 1 400px;
-  max-width: 500px;
+  max-width: 600px;
   background: rgba(11, 37, 69, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-radius: 16px;
-  padding: 60px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   margin-left: 0; /* Removed fixed left margin */
   box-sizing: border-box;
@@ -57,7 +56,20 @@
   border-radius: 8px;
   object-fit: cover;
 }
-
+.btn-services:hover {
+  background-color: #06172d;
+  color: #ffffff;
+}
+.btn-services {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #E63946;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 /* Modern Overlapping Section */
 .modern-section {
   position: relative;
