@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 100%;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .about-modern-section {
@@ -17,6 +18,7 @@
   padding: 80px 20px;
   margin-bottom: 60px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .glass-overlay {
@@ -27,7 +29,8 @@
   padding: 60px;
   max-width: 720px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  margin-left: 40px;
+  margin-left: 0; /* Removed fixed left margin */
+  box-sizing: border-box;
 }
 
 .content-wrapper {
@@ -80,7 +83,7 @@
 
   .glass-overlay {
     padding: 40px 20px;
-    margin: 0;
+    margin: 0 auto; /* Centered on small screens */
     width: 100%;
     border-radius: 12px;
   }
