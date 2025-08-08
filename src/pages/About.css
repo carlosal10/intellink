@@ -76,7 +76,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .about-modern-section {
-    padding: 5px 2px;
+    padding: 10px 2px;
     margin-bottom: 40px;
     min-height: unset;
   }
