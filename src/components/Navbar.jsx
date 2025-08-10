@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { useState, useRef, useEffect } from 'react';
 import Hamburger from 'hamburger-react';
+import './Navbar.css'; // Assuming you have a CSS file for Navbar styles
 
 export default function Navbar() {
   const { language, toggleLanguage } = useLanguage();
