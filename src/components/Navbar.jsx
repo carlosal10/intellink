@@ -27,7 +27,7 @@ export default function Navbar() {
       ref={navRef}
       style={{
         position: 'relative',
-        backgroundImage: "url('/images/navbar-bg.jpg')",
+        backgroundImage: "url('/4p.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
