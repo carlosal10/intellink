@@ -1,3 +1,16 @@
+import React from "react";
+import { FaGlobe, FaClipboardCheck, FaRocket } from "react-icons/fa";
+import useTranslate from "../hooks/useTranslate"; // adjust the path if needed
+import "./ExpertConnect.css";
+
+// Re-add Section component (it was defined inline before)
+const Section = ({ title, children }) => (
+  <section className="ec-section">
+    {title && <h3 className="ec-section-title">{title}</h3>}
+    {children}
+  </section>
+);
+
 export default function ExpertConnect({ lang = "en" }) {
   const t = useTranslate(lang, "expertConnect") || {};
 
