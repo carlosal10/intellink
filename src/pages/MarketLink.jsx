@@ -9,7 +9,7 @@ const MarketLink = () => {
 
       {/* HERO SECTION */}
       <section className="marketlink-hero">
-        <div className="hero-overlay">
+        <div>
           <h1>MarketIntellink</h1>
           <p>Start with certainty — connect to new markets with confidence and clarity.</p>
           <Link to="/contact" className="hero-cta">Get Started</Link>

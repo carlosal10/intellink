@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 
+/* Each section with a gradient overlay in the background */
 .about-modern-section {
   position: relative;
   background-size: cover;
@@ -14,22 +15,21 @@
   min-height: 90vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 20px 5px;
+  padding: 40px 20px;
   margin-bottom: 60px;
-  overflow: hidden;
   box-sizing: border-box;
+  color: #fff;
 }
 
 .glass-overlay {
-  background: rgba(11, 37, 69, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-radius: 16px;
-  padding: 20px;
-  max-width: 720px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  margin-left: 0; /* Removed fixed left margin */
+  background: rgba(11, 37, 69, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 800px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+  margin-left: 0;
   box-sizing: border-box;
 }
 
@@ -37,62 +37,69 @@
   color: #f5f5f5;
 }
 
-.content-wrapper h2 {
-  font-size: 3.2rem;
+.about-title {
+  font-size: 3rem;
   margin-bottom: 20px;
   color: #F1C40F;
   font-weight: 700;
+  line-height: 1.2;
 }
 
-.content-wrapper p {
-  font-size: 1.2rem;
+.about-text {
+  font-size: 1.25rem;
   line-height: 1.8;
   color: #fefefe;
 }
 
-.content-wrapper .highlight {
+.about-text.highlight {
   color: #F1C40F;
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
 }
 
 .values-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 1.1rem;
-  color: #fefefe;
+  font-size: 1.15rem;
 }
 
-.values-list li {
+.value-item {
   margin-bottom: 16px;
+  line-height: 1.6;
 }
 
-.values-list strong {
+.value-item strong {
   color: #F1C40F;
   font-weight: 600;
 }
 
-/* Responsive */
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .about-title {
+    font-size: 2.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .about-modern-section {
-    padding: 10px 2px;
+    padding: 20px 10px;
+    min-height: auto;
     margin-bottom: 40px;
-    min-height: unset;
   }
 
   .glass-overlay {
-    padding: 5px 2px;
-    margin: 0 auto; /* Centered on small screens */
+    padding: 15px 10px;
+    margin: 0 auto;
     width: 100%;
-    border-radius: 12px;
+    border-radius: 14px;
   }
 
-  .content-wrapper h2 {
-    font-size: 2.4rem;
+  .about-title {
+    font-size: 2rem;
   }
 
-  .content-wrapper p,
+  .about-text,
   .values-list {
     font-size: 1rem;
   }

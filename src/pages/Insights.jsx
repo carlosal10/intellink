@@ -14,91 +14,78 @@ export default function Insights() {
   };
 
   return (
-    <section className="insights">
-      <div className="insights-container">
+    <div className="insights-container">
 
-        {/* Success Stories */}
-        <section 
-          className="insight-section fade-in" 
-          style={{
-            backgroundImage: 'url("https://source.unsplash.com/1600x900/?success,business")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        >
-          <div className="overlay">
-            <h2 className="section-title">{t('insights.successTitle')}</h2>
-            <p className="section-text">{t('insights.successText')}</p>
-          </div>
-        </section>
+      {/* Success Stories */}
+      <section
+        className="insights-hero"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url("https://source.unsplash.com/1600x900/?success,business")`
+        }}
+      >
+        <div className="insights-hero-content">
+          <h2>{t('insights.successTitle')}</h2>
+          <p>{t('insights.successText')}</p>
+        </div>
+      </section>
 
-        {/* Client Feedback */}
-        <section 
-          className="insight-section fade-in"
-          style={{
-            backgroundImage: 'url("https://source.unsplash.com/1600x900/?feedback,teamwork")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        >
-          <div className="overlay">
-            <h2 className="section-title">{t('insights.feedbackTitle')}</h2>
-            <p className="section-text">
-              {t('insights.feedbackText')}
-              <br />
-              <em className="feedback-client">{t('insights.feedbackClient')}</em>
-            </p>
-          </div>
-        </section>
+      {/* Client Feedback */}
+      <section
+        className="insights-hero"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url("https://source.unsplash.com/1600x900/?feedback,teamwork")`
+        }}
+      >
+        <div className="insights-hero-content">
+          <h2>{t('insights.feedbackTitle')}</h2>
+          <p>
+            {t('insights.feedbackText')}
+            <br />
+            <em className="feedback-client">{t('insights.feedbackClient')}</em>
+          </p>
+        </div>
+      </section>
 
-        {/* Monetized Articles */}
-        <section 
-          className="insight-section fade-in"
-          style={{
-            backgroundImage: 'url("https://source.unsplash.com/1600x900/?news,report")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        >
-          <div className="overlay">
-            <h2 className="section-title">{t('insights.articlesTitle')}</h2>
-            <ul className="articles-list">
-              {t('insights.articles')?.map((article, index) => (
-                <li key={index} className="article-item">
-                  <div className="article-header">
-                    <span className="article-title">{article}</span>
-                  </div>
+      {/* Premium Articles */}
+      <section className="insights-articles">
+        <div className="articles-header">
+          <h2>{t('insights.articlesTitle')}</h2>
+        </div>
 
-                  {unlockedArticles.includes(index) ? (
-                    <a
-                      href={`/downloads/article-${index + 1}.pdf`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn primary"
-                    >
-                      {t('insights.download')}
-                    </a>
-                  ) : (
-                    <button
-                      className="btn secondary"
-                      onClick={() => {
-                        if (isLoggedIn && hasSubscription) {
-                          grantAccess(index);
-                        } else {
-                          redirectToCheckout(index, 500); // $5 in cents
-                        }
-                      }}
-                    >
-                      {t('insights.subscribeCTA')}
-                    </button>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+        <div className="articles-grid">
+          {t('insights.articles')?.map((article, index) => (
+            <div key={index} className="article-card">
+              <div className="article-info">
+                <span className="article-title">{article}</span>
+              </div>
 
-      </div>
-    </section>
+              {unlockedArticles.includes(index) ? (
+                <a
+                  href={`/downloads/article-${index + 1}.pdf`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-btn"
+                >
+                  {t('insights.download')}
+                </a>
+              ) : (
+                <button
+                  className="secondary-btn"
+                  onClick={() => {
+                    if (isLoggedIn && hasSubscription) {
+                      grantAccess(index);
+                    } else {
+                      redirectToCheckout(index, 500); // $5
+                    }
+                  }}
+                >
+                  {t('insights.subscribeCTA')}
+                </button>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }

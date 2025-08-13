@@ -1,25 +1,26 @@
-.trade-link-container {
+.trade-link {
   font-family: "Segoe UI", Roboto, sans-serif;
   color: #333;
   line-height: 1.6;
 }
 
-section {
+/* Sections */
+.tl-section {
   padding: 4rem 10%;
 }
 
-h1, h2 {
+.tl-section h2 {
   color: #0B2545;
   margin-bottom: 1rem;
 }
 
-p {
+.tl-section p {
   margin-bottom: 1rem;
   color: #555;
 }
 
-/* Hero Section */
-.trade-link-hero {
+/* Hero */
+.tl-hero {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -28,76 +29,93 @@ p {
   padding: 4rem 10%;
 }
 
-.hero-content {
+.tl-hero__content {
   flex: 1;
   min-width: 300px;
 }
 
-.hero-image {
+.tl-hero__content h1 {
+  color: #0B2545;
+  margin-bottom: 1rem;
+}
+
+.tl-hero__content p {
+  color: #555;
+}
+
+.tl-hero__image {
   flex: 1;
   min-width: 300px;
 }
 
-.hero-image img {
+.tl-hero__image img {
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
 }
 
-/* Offer & Benefits Sections */
-.trade-link-offer,
-.trade-link-benefits {
+/* Text + Image Blocks */
+.tl-block {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
+  padding: 4rem 10%;
 }
 
-.offer-text, .benefits-text {
+.tl-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.tl-block__text {
   flex: 1;
 }
 
-.offer-image, .benefits-image {
+.tl-block__text h2 {
+  color: #0B2545;
+}
+
+.tl-block__image {
   flex: 1;
 }
 
-.offer-image img,
-.benefits-image img {
+.tl-block__image img {
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
 }
 
-/* List Styling */
-ul {
+/* Lists */
+.tl-list {
   list-style: disc inside;
   padding-left: 0;
 }
 
-ul li {
+.tl-list li {
   margin-bottom: 0.75rem;
 }
 
-/* CTA Section */
-.trade-link-cta {
+/* CTA */
+.tl-cta {
   text-align: center;
   background: #0B2545;
   color: white;
   padding: 3rem 1rem;
   border-radius: 8px;
 }
-.trade-link-cta h2 {
+
+.tl-cta h2 {
   margin-bottom: 1rem;
   font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
   color: #F1C40F;
 }
-.trade-link-cta p {
+
+.tl-cta p {
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
   color: #fefefe;
-  
 }
 
 .cta-btn {
@@ -117,13 +135,13 @@ ul li {
 
 /* Responsive */
 @media (max-width: 768px) {
-  section {
+  .tl-section,
+  .tl-block {
     padding: 2rem 5%;
   }
 
-  .trade-link-hero,
-  .trade-link-offer,
-  .trade-link-benefits {
+  .tl-hero,
+  .tl-block {
     flex-direction: column;
   }
 }

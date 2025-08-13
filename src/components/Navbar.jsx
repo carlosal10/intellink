@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { useState, useRef, useEffect } from 'react';
 import Hamburger from 'hamburger-react';
-import './Navbar.css'; // Assuming you have a CSS file for Navbar styles
+import './Navbar.css';
 
 export default function Navbar() {
   const { language, toggleLanguage } = useLanguage();
@@ -22,31 +22,12 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
-      className="navbar"
-      ref={navRef}
-      style={{
-        position: 'relative',
-        backgroundImage: "url('/4p.jpg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
-      {/* Overlay for blur + transparency */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundColor: 'rgba(11, 37, 69, 0.65)', // navy tone, semi-transparent
-          backdropFilter: 'blur(8px)', // blur effect
-          WebkitBackdropFilter: 'blur(8px)',
-          zIndex: 0
-        }}
-      ></div>
+    <nav className="navbar" ref={navRef}>
+      {/* Overlay */}
+      <div className="navbar-overlay"></div>
 
       {/* Content */}
-      <div style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', width: '100%' }}>
+      <div className="navbar-content">
         {/* Logo */}
         <Link to="/" className="logo" onClick={closeMenu}>
           <img
@@ -56,7 +37,7 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Hamburger Menu */}
+        {/* Hamburger */}
         <div className="hamburger-wrapper">
           <Hamburger toggled={menuOpen} toggle={setMenuOpen} size={24} color="#F1C40F" />
         </div>

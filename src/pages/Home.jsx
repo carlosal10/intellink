@@ -20,7 +20,7 @@ export default function Home() {
     <section
       className="home"
       style={{
-        backgroundImage: "url('/images/ist2.jpg')",
+        backgroundImage: "url('/images/istockphoto-10.avif')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

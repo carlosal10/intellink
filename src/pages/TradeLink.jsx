@@ -1,129 +1,101 @@
 import React from "react";
-import "./TradeLink.css";
 import { Link } from "react-router-dom";
+import translations from "../translations";
+import "./TradeLink.css";
 
+// Reusable bits
+const Section = ({ title, children, className = "" }) => (
+  <section className={`tl-section ${className}`}>
+    {title && <h2>{title}</h2>}
+    {children}
+  </section>
+);
 
-const TradeLink = () => {
+const TextImageBlock = ({ title, children, image, reverse }) => (
+  <div className={`tl-block ${reverse ? "reverse" : ""}`}>
+    <div className="tl-block__text">
+      {title && <h2>{title}</h2>}
+      {children}
+    </div>
+    <div className="tl-block__image">
+      <img src={image.src} alt={image.alt} />
+    </div>
+  </div>
+);
+
+export default function TradeLink({ lang = "en" }) {
+  const locale = translations[lang] || translations.en;
+  const t = locale.tradeLink;
+
   return (
-    <div className="trade-link-container">
-      {/* Hero Section */}
-      <section className="trade-link-hero">
-        <div className="hero-content">
-          <h1>Cross-Border Trade Made Simple.</h1>
-          <p>
-            Doing business across borders can be complex — even overwhelming —
-            without deep local knowledge. TradeLink simplifies the process so
-            you can trade with confidence and clarity.
-          </p>
+    <div className="trade-link">
+      {/* Hero */}
+      <section className="tl-hero">
+        <div className="tl-hero__content">
+          <h1>{t.hero.title}</h1>
+          <p>{t.hero.desc}</p>
         </div>
-        <div className="hero-image">
+        <div className="tl-hero__image">
           <img
             src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
-            alt="Cross-Border Trade"
+            alt={t.hero.imgAlt}
           />
         </div>
       </section>
 
-      {/* Intro Section */}
-      <section className="trade-link-intro">
-        <h2>What is TradeLink?</h2>
-        <p>
-          TradeLink is our dedicated solution for facilitating secure, efficient,
-          and well-informed international trade — especially between Japan and
-          Africa/emerging markets. Whether you need a verified supplier, a
-          trustworthy distributor, or a route to market, we connect you with
-          intelligence-backed opportunities.
-        </p>
-      </section>
+      {/* Intro */}
+      <Section title={t.intro.title}>
+        <p>{t.intro.text}</p>
+      </Section>
 
       {/* What We Offer */}
-      <section className="trade-link-offer">
-        <div className="offer-text">
-          <h2>What We Offer</h2>
-          <ul>
-            <li>
-              <strong>Partner & Supplier Identification:</strong> Discover and
-              connect with reliable partners tailored to your needs.
+      <TextImageBlock
+        title={t.offer.title}
+        image={{
+          src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
+          alt: t.offer.imgAlt,
+        }}
+      >
+        <ul className="tl-list">
+          {t.offer.points.map((p, i) => (
+            <li key={i}>
+              <strong>{p.title}:</strong> {p.desc}
             </li>
-            <li>
-              <strong>Supplier & Product Verification:</strong> Background checks,
-              profiling, and reference verifications.
-            </li>
-            <li>
-              <strong>Negotiation & Communication Support:</strong> Bridge
-              language and cultural gaps during negotiations.
-            </li>
-            <li>
-              <strong>Market Entry & Sales Channel Strategy:</strong> Identify
-              the best entry routes and promotional opportunities.
-            </li>
-            <li>
-              <strong>Logistics Coordination:</strong> Ensure efficient,
-              compliant freight and customs processes.
-            </li>
-          </ul>
-        </div>
-        <div className="offer-image">
-          <img
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80"
-            alt="TradeLink Services"
-          />
-        </div>
-      </section>
+          ))}
+        </ul>
+      </TextImageBlock>
 
       {/* Why TradeLink */}
-      <section className="trade-link-benefits">
-        <div className="benefits-image">
-          <img
-            src="/images/photo-15.avif"
-            alt="Why Choose TradeLink"
-          />
-        </div>
-        <div className="benefits-text">
-          <h2>Why TradeLink?</h2>
-          <ul>
-            <li>Risk Mitigation — Avoid scams, misunderstandings, and delays</li>
-            <li>Local Knowledge — Navigate regulations and cultural norms</li>
-            <li>Reliable Network — Work only with vetted partners</li>
-            <li>Market Growth — Expand with purpose</li>
-            <li>End-to-End Support — From sourcing to delivery</li>
-          </ul>
-        </div>
-      </section>
+      <TextImageBlock
+        title={t.why.title}
+        reverse
+        image={{
+          src: "/images/photo-15.avif",
+          alt: t.why.imgAlt,
+        }}
+      >
+        <ul className="tl-list">
+          {t.why.points.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
+      </TextImageBlock>
 
       {/* Use Cases */}
-      <section className="trade-link-cases">
-        <h2>Use Cases</h2>
-        <ul>
-          <li>
-            Japanese company sourcing organic coffee beans from Uganda with no
-            starting point.
-          </li>
-          <li>
-            Ghanaian artisan brand selling handmade textiles in Japan.
-          </li>
-          <li>
-            Tokyo-based food company seeking verified Kenyan ingredient suppliers.
-          </li>
-          <li>
-            Wellness brand testing products in Japan via exhibitions and pop-up
-            stores.
-          </li>
+      <Section title={t.cases.title}>
+        <ul className="tl-list">
+          {t.cases.items.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
         </ul>
-      </section>
+      </Section>
 
       {/* CTA */}
-      <section className="trade-link-cta">
-        <h2>Get Started Today</h2>
-        <p>
-          Let us help you trade with confidence. Whether you’re buying, selling,
-          or exploring partnerships, TradeLink ensures you're never navigating
-          blindly.
-        </p>
-        <Link to="/contact" className="cta-btn">Contact Us</Link>
+      <section className="tl-cta">
+        <h2>{t.cta.title}</h2>
+        <p>{t.cta.desc}</p>
+        <Link to="/contact" className="cta-btn">{t.cta.button}</Link>
       </section>
     </div>
   );
-};
-
-export default TradeLink;
+}
