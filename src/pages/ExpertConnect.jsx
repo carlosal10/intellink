@@ -1,17 +1,14 @@
-import React from "react";
-import { FaGlobe, FaClipboardCheck, FaRocket } from "react-icons/fa";
-import useTranslate from "../hooks/useTranslate";
-import "./ExpertConnect.css";
-
-const Section = ({ title, children }) => (
-  <section className="ec-section">
-    {title && <h3 className="ec-section-title">{title}</h3>}
-    {children}
-  </section>
-);
-
 export default function ExpertConnect({ lang = "en" }) {
-  const t = useTranslate(lang, "expertConnect");
+  const t = useTranslate(lang, "expertConnect") || {};
+
+  // Early fallback if translations are missing
+  if (!t || Object.keys(t).length === 0) {
+    return (
+      <section className="expert-connect-section">
+        <p>Translations not available for "{lang}".</p>
+      </section>
+    );
+  }
 
   return (
     <section className="expert-connect-section">
@@ -25,10 +22,10 @@ export default function ExpertConnect({ lang = "en" }) {
         <div className="ec-hero-overlay">
           <div className="ec-hero-content">
             <h1>
-              <FaGlobe /> {t.title}
+              <FaGlobe /> {t.title || ""}
             </h1>
-            <h2>{t.tagline}</h2>
-            <p>{t.heroDescription}</p>
+            <h2>{t.tagline || ""}</h2>
+            <p>{t.heroDescription || ""}</p>
           </div>
         </div>
       </div>
@@ -36,21 +33,21 @@ export default function ExpertConnect({ lang = "en" }) {
       {/* Content */}
       <div className="ec-container">
         <Section>
-          <p>{t.intro}</p>
+          <p>{t.intro || ""}</p>
         </Section>
 
-        <Section title={t.whatIs.title}>
-          <p>{t.whatIs.description}</p>
+        <Section title={t.whatIs?.title}>
+          <p>{t.whatIs?.description}</p>
           <ul className="ec-list">
-            {t.whatIs.points.map((point, idx) => (
+            {t.whatIs?.points?.map((point, idx) => (
               <li key={idx}>{point}</li>
             ))}
           </ul>
         </Section>
 
-        <Section title={t.expect.title}>
+        <Section title={t.expect?.title}>
           <div className="ec-grid">
-            {t.expect.points.map((item, idx) => (
+            {t.expect?.points?.map((item, idx) => (
               <div key={idx} className="ec-card">
                 <FaClipboardCheck className="ec-icon" />
                 <p>{item}</p>
@@ -59,9 +56,9 @@ export default function ExpertConnect({ lang = "en" }) {
           </div>
         </Section>
 
-        <Section title={t.howItWorks.title}>
+        <Section title={t.howItWorks?.title}>
           <ol className="ec-steps">
-            {t.howItWorks.steps.map((step, idx) => (
+            {t.howItWorks?.steps?.map((step, idx) => (
               <li key={idx}>
                 <strong>{step.title}:</strong> {step.desc}
               </li>
@@ -69,9 +66,9 @@ export default function ExpertConnect({ lang = "en" }) {
           </ol>
         </Section>
 
-        <Section title={t.whyItMatters.title}>
+        <Section title={t.whyItMatters?.title}>
           <div className="ec-grid">
-            {t.whyItMatters.points.map((point, idx) => (
+            {t.whyItMatters?.points?.map((point, idx) => (
               <div key={idx} className="ec-card">
                 <p>{point}</p>
               </div>
@@ -79,24 +76,24 @@ export default function ExpertConnect({ lang = "en" }) {
           </div>
         </Section>
 
-        <Section title={t.register.title}>
-          <p>{t.register.description}</p>
-          <h4>{t.register.whoTitle}</h4>
+        <Section title={t.register?.title}>
+          <p>{t.register?.description}</p>
+          <h4>{t.register?.whoTitle}</h4>
           <ul className="ec-list">
-            {t.register.whoPoints.map((point, idx) => (
+            {t.register?.whoPoints?.map((point, idx) => (
               <li key={idx}>{point}</li>
             ))}
           </ul>
-          <h4>{t.register.howTitle}</h4>
-          <p>{t.register.howDescription}</p>
+          <h4>{t.register?.howTitle}</h4>
+          <p>{t.register?.howDescription}</p>
         </Section>
 
         {/* CTA */}
         <div className="ec-cta">
           <FaRocket className="ec-icon-large" />
-          <h3>{t.cta.title}</h3>
-          <p>{t.cta.text}</p>
-          <button className="ec-btn">{t.cta.button}</button>
+          <h3>{t.cta?.title}</h3>
+          <p>{t.cta?.text}</p>
+          <button className="ec-btn">{t.cta?.button}</button>
         </div>
       </div>
     </section>
