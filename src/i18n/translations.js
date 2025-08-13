@@ -39,7 +39,7 @@ const translations = {
         "To be the foremost facilitator of impactful cross-border business between Japan and frontier markets, helping solve global challenges through collaboration, knowledge exchange, and responsible enterprise.",
       aboutUs: "About Us",
       aboutText:
-        "Intellink Nippon Consulting GK is a Japan-based consulting firm focused on empowering businesses to successfully explore and engage with emerging market opportunities — especially in Africa. We simplify complex market landscapes, connect you with verified local partners, and support sustainable expansion with expertise and integrity.",
+        "Intellink Nippon Consulting LLC is a Japan-based consulting firm focused on empowering businesses to successfully explore and engage with emerging market opportunities — especially in Africa. We simplify complex market landscapes, connect you with verified local partners, and support sustainable expansion with expertise and integrity.",
       whoWeAre: "Who We Are",
       whoWeAreText:
         "We are a team of professionals with deep experience in international consulting, trade development, and cross-cultural engagement. Our backgrounds span Japan, Africa, and beyond — enabling us to offer informed, localized, and high-impact support to our clients.",
@@ -57,7 +57,7 @@ const translations = {
       ],
       ourStory: "Our Story",
       ourStoryText:
-        "Intellink Nippon Consulting GK was established in Tokyo in 2025 with a clear goal: to close the gap between Japan’s innovative economy and the potential-rich markets of Africa and other emerging regions. Having witnessed the challenges that businesses face — from language and regulatory barriers to a lack of trusted partners — we created Intellink to be a reliable bridge. Today, we continue this mission by supporting companies on both sides to engage, grow, and thrive together.",
+        "Intellink Nippon Consulting LLC was established in Tokyo in 2025 with a clear goal: to close the gap between Japan’s innovative economy and the potential-rich markets of Africa and other emerging regions. Having witnessed the challenges that businesses face — from language and regulatory barriers to a lack of trusted partners — we created Intellink to be a reliable bridge. Today, we continue this mission by supporting companies on both sides to engage, grow, and thrive together.",
     },
     services: {
       marketIntelligence: {

@@ -1,43 +1,77 @@
-// hooks/useTranslate.js
-import translations from "../translations"; // adjust path
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../i18n/translations';
 
-export default function useTranslate(lang = "en", section) {
-  const defaultLang = "en";
+export default function useTranslate() {
+  const { language } = useLanguage();
+  const fallbackLanguage = 'en';
 
-  // Ensure both current and default sections exist
-  const currentSection = translations[lang]?.[section] || {};
-  const defaultSection = translations[defaultLang]?.[section] || {};
-
-  // Merge current language over default language (fallback per key)
-  const merged = { ...defaultSection, ...currentSection };
-
-  // Optional: deep merge for nested objects
-  const deepMerge = (target, source) => {
-    const result = { ...target };
-    for (const key in source) {
-      if (typeof source[key] === "object" && !Array.isArray(source[key])) {
-        result[key] = deepMerge(target[key] || {}, source[key]);
-      } else {
-        result[key] = source[key] ?? target[key];
-      }
-    }
-    return result;
-  };
-
-  const finalTranslation = deepMerge(defaultSection, currentSection);
-
-  if (process.env.NODE_ENV === "development") {
-    Object.keys(defaultSection).forEach((key) => {
-      if (
-        currentSection[key] === undefined &&
-        typeof defaultSection[key] !== "object"
-      ) {
-        console.warn(
-          `[Translation Missing] ${lang}.${section}.${key} — falling back to English`
-        );
-      }
-    });
+  function getNestedValue(obj, path) {
+    return path.split('.').reduce((acc, key) => {
+      return acc && acc[key] !== undefined ? acc[key] : undefined;
+    }, obj);
   }
 
-  return finalTranslation;
+  function interpolate(str, values) {
+    if (!values) return str;
+    return str.replace(/\{(\w+)\}/g, (_, k) =>
+      values[k] !== undefined ? values[k] : `{${k}}`
+    );
+  }
+
+  function logMissingTranslation(keyPath) {
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn(`[i18n] Missing translation for "${keyPath}" in "${language}"`);
+    }
+  }
+
+  function checkAllLanguagesForKey(keyPath) {
+    if (process.env.NODE_ENV !== 'production') {
+      const missingIn = Object.keys(translations).filter(
+        (lang) => getNestedValue(translations[lang], keyPath) === undefined
+      );
+      if (missingIn.length) {
+        console.warn(`[i18n] Missing "${keyPath}" in: ${missingIn.join(', ')}`);
+      }
+    }
+  }
+
+  function deepMerge(fallback, current) {
+    if (Array.isArray(fallback) && Array.isArray(current)) {
+      return current.length ? current : fallback;
+    }
+    if (
+      typeof fallback === 'object' &&
+      fallback !== null &&
+      typeof current === 'object' &&
+      current !== null
+    ) {
+      const merged = { ...fallback };
+      for (const key in current) {
+        merged[key] = deepMerge(fallback[key], current[key]);
+      }
+      return merged;
+    }
+    return current !== undefined ? current : fallback;
+  }
+
+  function t(keyPath, values) {
+    const currentVal = getNestedValue(translations[language], keyPath);
+    const fallbackVal = getNestedValue(translations[fallbackLanguage], keyPath);
+
+    let value = deepMerge(fallbackVal, currentVal);
+
+    if (value === undefined) {
+      logMissingTranslation(keyPath);
+      checkAllLanguagesForKey(keyPath);
+      return keyPath; // Final fallback: show keyPath
+    }
+
+    if (typeof value === 'string') {
+      return interpolate(value, values);
+    }
+
+    return value;
+  }
+
+  return t;
 }
