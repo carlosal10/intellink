@@ -249,9 +249,51 @@ tradeLink: {
     "title": "Trade Links",
     "description": "We support businesses — especially in Africa — to source high-quality goods from Japan. Our services include supplier identification, verification, negotiation support, and coordination of logistics."
   }
-}
+},
+marketLink: {
+    hero: {
+      title: "MarketIntellink",
+      desc: "Start with certainty — connect to new markets with confidence and clarity.",
+      button: "Get Started"
+    },
+    intro: {
+      text: "Entering a new market is a bold move — but it shouldn’t be a blind one. MarketIntellink gives you the intelligence, insights, and trusted local connections you need to succeed from day one."
+    },
+    about: {
+      title: "What is MarketIntellink?",
+      text: "It’s our tailored market intelligence and facilitation service that helps international businesses understand, navigate, and thrive in new territories. From on-the-ground insights to finding the right local partners, we make your market entry smooth and strategic.",
+      imgAlt: "Market research"
+    },
+    services: {
+      title: "Our Services",
+      items: [
+        ["Market Research", "In-depth analysis of trends, competitors, and consumer behavior."],
+        ["Business Matchmaking", "Connect with verified local partners and suppliers."],
+        ["Local Navigation", "Guidance through legal, cultural, and operational landscapes."],
+        ["Strategic Advisory", "Custom market-entry plans built for your success."]
+      ]
+    },
+    why: {
+      title: "Why Choose MarketIntellink?",
+      points: [
+        "Deep local expertise in emerging markets.",
+        "Proven track record of successful market entries.",
+        "Trusted networks across multiple regions.",
+        "Data-driven strategies for long-term success."
+      ]
+    },
+    ideal: {
+      title: "Ideal For",
+      items: ["Exporters", "Investors", "Startups", "Trade Agencies", "Corporate Expansions"]
+    },
+    finalCTA: {
+      title: "Start with Certainty, Not Assumptions",
+      desc: "Partner with MarketIntellink and open the door to opportunity with confidence.",
+      button: "Talk to Us"
+    }
+  }
+},
 
- },
 },
 
   jp: {
@@ -330,6 +372,10 @@ tradeLink: {
       subscribeCTA: "購読してアクセス",
       subscribePrompt: "記事にアクセスするには、ログインして購読してください。",
     },
+
+
+  
+
     // JP
 tradeLink: {
   hero: {
@@ -382,28 +428,71 @@ tradeLink: {
   }
 },
 services: {
-  "headerTitle": "私たちのサービス",
-  "headerDescription": "私たちは、日本と新興市場をつなぐソリューションを提供し、持続可能なビジネス成長を可能にする洞察、つながり、貿易機会をお届けします。",
-  
-  "marketIntelligence": {
-    "title": "マーケットインテリジェンス",
-    "description": "調査、実現可能性調査、法規制分析を通じて、正確かつタイムリーな情報を提供します。当社のレポートは、新市場への参入時における意思決定を支援し、リスクを軽減します。"
-  },
-  "marketLinks": {
-    "title": "マーケットリンク（ビジネスマッチング）",
-    "description": "日本企業と信頼できるアフリカのパートナーをつなぎ、またその逆も行います。すべてのマッチングが長期的な協力とビジネスの成功につながるよう支援します。"
-  },
-  "expertConnect": {
-    "title": "エキスパートコネクト™ ソリューション",
-    "description": "独自の専門家マッチングプラットフォームを通じて、組織と業界の専門家を結びつけ、必要なときに必要な知識へ確実にアクセスできる環境を提供します。"
-  },
-  "tradeLinks": {
-    "title": "トレードリンク",
-    "description": "特にアフリカの企業が日本から高品質な商品を調達できるよう支援します。サービスには、サプライヤーの特定・確認、交渉サポート、物流の調整が含まれます。"
-  }
-}
+  headerTitle: "私たちのサービス",
+  headerDescription: "私たちは、日本と新興市場をつなぐソリューションを提供し、持続可能なビジネス成長を可能にする洞察、つながり、貿易機会をお届けします。",
 
+  marketIntelligence: {
+    title: "マーケットインテリジェンス",
+    description: "調査、実現可能性調査、法規制分析を通じて、正確かつタイムリーな情報を提供します。当社のレポートは、新市場への参入時における意思決定を支援し、リスクを軽減します。"
   },
+  marketLinks: {
+    title: "マーケットリンク（ビジネスマッチング）",
+    description: "日本企業と信頼できるアフリカのパートナーをつなぎ、またその逆も行います。すべてのマッチングが長期的な協力とビジネスの成功につながるよう支援します。"
+  },
+  expertConnect: {
+    title: "エキスパートコネクト™ ソリューション",
+    description: "独自の専門家マッチングプラットフォームを通じて、組織と業界の専門家を結びつけ、必要なときに必要な知識へ確実にアクセスできる環境を提供します。"
+  },
+  tradeLinks: {
+    title: "トレードリンク",
+    description: "特にアフリカの企業が日本から高品質な商品を調達できるよう支援します。サービスには、サプライヤーの特定・確認、交渉サポート、物流の調整が含まれます。"
+  }
+},
+
+  marketLink: {
+    hero: {
+      title: "マーケットインテリンク",
+      desc: "確信を持って始めよう — 自信と明確さをもって新しい市場へ。",
+      button: "今すぐ始める"
+    },
+    intro: {
+      text: "新しい市場への参入は大胆な一歩ですが、無謀な挑戦であってはなりません。マーケットインテリンクは、成功するために必要な情報、洞察、そして信頼できる現地ネットワークを初日から提供します。"
+    },
+    about: {
+      title: "マーケットインテリンクとは？",
+      text: "国際企業が新たな地域を理解し、適応し、成長するための、特別に設計された市場調査と支援サービスです。現地の最新情報から適切なパートナー探しまで、市場参入をスムーズかつ戦略的に実現します。",
+      imgAlt: "市場調査"
+    },
+    services: {
+      title: "提供サービス",
+      items: [
+        ["市場調査", "トレンド、競合、消費者行動の徹底分析。"],
+        ["ビジネスマッチメイキング", "信頼できる現地パートナーやサプライヤーと接続。"],
+        ["ローカルナビゲーション", "法務、文化、運営面でのガイド。"],
+        ["戦略アドバイザリー", "成功のために設計されたカスタム市場参入プラン。"]
+      ]
+    },
+    why: {
+      title: "マーケットインテリンクを選ぶ理由",
+      points: [
+        "新興市場での深い現地知識。",
+        "数多くの市場参入成功実績。",
+        "複数地域にわたる信頼できるネットワーク。",
+        "長期的成功のためのデータ主導型戦略。"
+      ]
+    },
+    ideal: {
+      title: "対象となるお客様",
+      items: ["輸出企業", "投資家", "スタートアップ", "貿易機関", "企業拡大"]
+    },
+    finalCTA: {
+      title: "仮説ではなく確信から始めよう",
+      desc: "マーケットインテリンクと提携し、自信をもって新たな機会の扉を開きましょう。",
+      button: "お問い合わせ"
+    }
+  }
+  },
+  
 };
 
 export default translations;

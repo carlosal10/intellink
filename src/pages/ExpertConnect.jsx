@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGlobe, FaClipboardCheck, FaRocket } from "react-icons/fa";
-import translations from "../translations";
+import useTranslate from '../hooks/useTranslate';
 import "./ExpertConnect.css";
 
 const Section = ({ title, children }) => (
@@ -11,7 +11,7 @@ const Section = ({ title, children }) => (
 );
 
 export default function ExpertConnect({ lang = "en" }) {
-  const t = translations[lang].expertConnect;
+  const t = useTranslate();
 
   return (
     <section className="expert-connect-section">

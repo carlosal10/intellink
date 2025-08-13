@@ -16,7 +16,7 @@
 .navbar-bg-element {
   position: absolute;
   inset: 0;
-  background: url("../assets/navbar-bg-shape.svg") no-repeat center / cover;
+  background: no-repeat center / cover;
   opacity: 0.1;
   z-index: -1;
   pointer-events: none;
