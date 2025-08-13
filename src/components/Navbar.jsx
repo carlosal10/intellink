@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { useState, useRef, useEffect } from 'react';
 import Hamburger from 'hamburger-react';
@@ -23,7 +23,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar" ref={navRef}>
-      {/* Overlay */}
+      {/* Background overlay */}
       <div className="navbar-overlay"></div>
 
       {/* Content */}
@@ -44,32 +44,31 @@ export default function Navbar() {
 
         {/* Nav Links */}
         <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          <Link to="/" onClick={closeMenu}>{language === 'en' ? 'Home' : 'ホーム'}</Link>
-          <Link to="/about" onClick={closeMenu}>{language === 'en' ? 'About' : '会社情報'}</Link>
-          <Link to="/services" onClick={closeMenu}>{language === 'en' ? 'Services' : 'サービス'}</Link>
-          <Link to="/sectors" onClick={closeMenu}>{language === 'en' ? 'Sectors' : 'セクター'}</Link>
-          <Link to="/recruitment" onClick={closeMenu}>{language === 'en' ? 'Careers' : '採用情報'}</Link>
-
-          {/* Dropdown for sub-links */}
+          <NavLink to="/" onClick={closeMenu}>{language === 'en' ? 'Home' : 'ホーム'}</NavLink>
+          <NavLink to="/about" onClick={closeMenu}>{language === 'en' ? 'About' : '会社情報'}</NavLink>
+          <NavLink to="/services" onClick={closeMenu}>{language === 'en' ? 'Services' : 'サービス'}</NavLink>
+          <NavLink to="/sectors" onClick={closeMenu}>{language === 'en' ? 'Sectors' : 'セクター'}</NavLink>
+          
+          {/* Dropdown styled like other nav links */}
           <div className="nav-dropdown">
-            <select
-              onChange={(e) => {
-                closeMenu();
-                window.location.href = e.target.value;
-              }}
-              defaultValue=""
-            >
-              <option value="" disabled>
-                {language === 'en' ? 'More' : 'もっと'}
-              </option>
-              <option value="/expertconnect">{language === 'en' ? 'Expert Connect' : 'エキスパートコネクト'}</option>
-              <option value="/tradelink">{language === 'en' ? 'TradeLink' : 'トレードリンク'}</option>
-              <option value="/marketlink">{language === 'en' ? 'MarketLink' : 'マーケットリンク'}</option>
-            </select>
+            <span>{language === 'en' ? 'Solutions' : 'もっと'}</span>
+            <div className="dropdown-menu">
+              <NavLink to="/expertconnect" onClick={closeMenu}>
+                {language === 'en' ? 'Expert Connect' : 'エキスパートコネクト'}
+              </NavLink>
+              <NavLink to="/tradelink" onClick={closeMenu}>
+                {language === 'en' ? 'TradeLink' : 'トレードリンク'}
+              </NavLink>
+              <NavLink to="/marketlink" onClick={closeMenu}>
+                {language === 'en' ? 'MarketLink' : 'マーケットリンク'}
+              </NavLink>
+            </div>
           </div>
 
-          <Link to="/insights" onClick={closeMenu}>{language === 'en' ? 'Insights' : '知見'}</Link>
-          <Link to="/contact" onClick={closeMenu}>{language === 'en' ? 'Contact' : 'お問い合わせ'}</Link>
+          <NavLink to="/insights" onClick={closeMenu}>{language === 'en' ? 'Insights' : '知見'}</NavLink>
+          <NavLink to="/contact" onClick={closeMenu}>{language === 'en' ? 'Contact' : 'お問い合わせ'}</NavLink>
+          <NavLink to="/recruitment" onClick={closeMenu}>{language === 'en' ? 'Careers' : '採用情報'}</NavLink>
+          <NavLink to="/blog" onClick={closeMenu}>{language === 'en' ? 'Blog' : 'ブログ'}</NavLink>
 
           {/* Language Toggle */}
           <button
