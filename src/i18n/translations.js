@@ -254,8 +254,9 @@ const translations = {
           "Let us help you trade with confidence. Whether you’re buying, selling, or exploring partnerships, TradeLink ensures you're never navigating blindly.",
         button: "Contact Us",
       },
-    },
-  },
+    },   
+
+      
 
 
  jp: {
@@ -465,8 +466,8 @@ const translations = {
       button: "お問い合わせ",
     },
   },
+ },
 }
-
   
 };
 
