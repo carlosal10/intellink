@@ -10,6 +10,7 @@
   backdrop-filter: blur(8px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* Decorative background element */
