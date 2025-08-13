@@ -59,14 +59,19 @@
 .nav-links a {
   color: #fff;
   font-weight: 500;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
   transition: color 0.3s ease, text-underline-offset 0.3s ease, transform 0.2s ease;
 }
 
 .nav-links a:hover {
   color: #F1C40F;
   text-underline-offset: 5px;
+  transform: translateY(-1px);
+}
+.nav-links a.active {
+  color: #F1C40F;
+  text-decoration: underline;
+  text-underline-offset: 4px;
   transform: translateY(-1px);
 }
 
