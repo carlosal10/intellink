@@ -49,9 +49,25 @@ export default function Navbar() {
           <Link to="/services" onClick={closeMenu}>{language === 'en' ? 'Services' : 'サービス'}</Link>
           <Link to="/sectors" onClick={closeMenu}>{language === 'en' ? 'Sectors' : 'セクター'}</Link>
           <Link to="/recruitment" onClick={closeMenu}>{language === 'en' ? 'Careers' : '採用情報'}</Link>
-          <Link to="/expertconnect" onClick={closeMenu}>{language === 'en' ? 'Expert Connect' : 'エキスパートコネクト'}</Link>
-          <Link to="/tradelink" onClick={closeMenu}>{language === 'en' ? 'TradeLink' : 'トレードリンク'}</Link>
-          <Link to="/marketlink" onClick={closeMenu}>{language === 'en' ? 'MarketLink' : 'マーケットリンク'}</Link>
+
+          {/* Dropdown for sub-links */}
+          <div className="nav-dropdown">
+            <select
+              onChange={(e) => {
+                closeMenu();
+                window.location.href = e.target.value;
+              }}
+              defaultValue=""
+            >
+              <option value="" disabled>
+                {language === 'en' ? 'More' : 'もっと'}
+              </option>
+              <option value="/expertconnect">{language === 'en' ? 'Expert Connect' : 'エキスパートコネクト'}</option>
+              <option value="/tradelink">{language === 'en' ? 'TradeLink' : 'トレードリンク'}</option>
+              <option value="/marketlink">{language === 'en' ? 'MarketLink' : 'マーケットリンク'}</option>
+            </select>
+          </div>
+
           <Link to="/insights" onClick={closeMenu}>{language === 'en' ? 'Insights' : '知見'}</Link>
           <Link to="/contact" onClick={closeMenu}>{language === 'en' ? 'Contact' : 'お問い合わせ'}</Link>
 
