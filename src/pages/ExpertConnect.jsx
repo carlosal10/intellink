@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { FaGlobe, FaClipboardCheck, FaRocket } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import useTranslate from "../hooks/useTranslate";
 import "./ExpertConnect.css";
 
@@ -11,50 +13,48 @@ const Section = ({ title, children }) => (
 );
 
 export default function ExpertConnect() {
+  const t = useTranslate("expertConnect") || {};
+  const isLoading = !t?.title && !t?.tagline;
+
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     expertise: "",
-    reason: "",
+    message: "",
   });
-  const [loading, setLoading] = useState(false);
-  const [successMsg, setSuccessMsg] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
-
-  const t = useTranslate("expertConnect") || {};
-  const isLoading = !t?.title && !t?.tagline;
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setErrorMsg("");
-    setSuccessMsg("");
-
     try {
-      const res = await fetch("https://intellink-8w9t.onrender.com/api/expert-connect", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      const res = await fetch(
+        "https://intellink-8w9t.onrender.com/api/expert-connect",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (!res.ok) throw new Error("Failed to submit form");
+
+      toast.success("Your application has been submitted successfully, we're reviewing it.", {
+        position: "top-right",
+        autoClose: 3000,
       });
 
-      if (!res.ok) throw new Error("Failed to submit application");
-
-      setSuccessMsg("✅ Application submitted successfully!");
-      setFormData({ name: "", email: "", expertise: "", reason: "" });
+      setFormData({ name: "", email: "", expertise: "", message: "" });
+      setTimeout(() => setShowForm(false), 500); // smooth close after toast
     } catch (err) {
-      setErrorMsg("❌ " + err.message);
-    } finally {
-      setLoading(false);
+      toast.error("Something went wrong. Please try again.", {
+        position: "top-right",
+        autoClose: 3000,
+      });
     }
   };
 
@@ -90,7 +90,57 @@ export default function ExpertConnect() {
           <p>{t?.intro || ""}</p>
         </Section>
 
-        {/* ... existing sections ... */}
+        <Section title={t?.whatIs?.title}>
+          <p>{t?.whatIs?.description}</p>
+          <ul className="ec-list">
+            {t?.whatIs?.points?.map((point, idx) => (
+              <li key={idx}>{point}</li>
+            ))}
+          </ul>
+        </Section>
+
+        <Section title={t?.expect?.title}>
+          <div className="ec-grid">
+            {t?.expect?.points?.map((item, idx) => (
+              <div key={idx} className="ec-card">
+                <FaClipboardCheck className="ec-icon" />
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section title={t?.howItWorks?.title}>
+          <ol className="ec-steps">
+            {t?.howItWorks?.steps?.map((step, idx) => (
+              <li key={idx}>
+                <strong>{step.title}:</strong> {step.desc}
+              </li>
+            ))}
+          </ol>
+        </Section>
+
+        <Section title={t?.whyItMatters?.title}>
+          <div className="ec-grid">
+            {t?.whyItMatters?.points?.map((point, idx) => (
+              <div key={idx} className="ec-card">
+                <p>{point}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section title={t?.register?.title}>
+          <p>{t?.register?.description}</p>
+          <h4>{t?.register?.whoTitle}</h4>
+          <ul className="ec-list">
+            {t?.register?.whoPoints?.map((point, idx) => (
+              <li key={idx}>{point}</li>
+            ))}
+          </ul>
+          <h4>{t?.register?.howTitle}</h4>
+          <p>{t?.register?.howDescription}</p>
+        </Section>
 
         {/* CTA */}
         <div className="ec-cta">
@@ -105,65 +155,51 @@ export default function ExpertConnect() {
           </button>
         </div>
 
-        {/* Application Form */}
-        <div className={`ec-form-wrapper ${showForm ? "show" : ""}`}>
-          {showForm && (
-            <div className="ec-form">
-              <form onSubmit={handleSubmit}>
-                <label>
-                  Full Name
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your full name"
-                    required
-                  />
-                </label>
-                <label>
-                  Email Address
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Your email"
-                    required
-                  />
-                </label>
-                <label>
-                  Expertise Area
-                  <input
-                    type="text"
-                    name="expertise"
-                    value={formData.expertise}
-                    onChange={handleChange}
-                    placeholder="Your expertise"
-                    required
-                  />
-                </label>
-                <label>
-                  Why do you want to join?
-                  <textarea
-                    name="reason"
-                    value={formData.reason}
-                    onChange={handleChange}
-                    placeholder="Tell us why"
-                    required
-                  ></textarea>
-                </label>
-                <button type="submit" className="ec-btn" disabled={loading}>
-                  {loading ? "Submitting..." : "Submit"}
-                </button>
-              </form>
-
-              {successMsg && <p className="ec-success">{successMsg}</p>}
-              {errorMsg && <p className="ec-error">{errorMsg}</p>}
-            </div>
-          )}
-        </div>
+        {/* Application Form - Animated */}
+        {showForm && (
+          <div className="ec-form-container slide-down">
+            <h3>Join Expert Connect</h3>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="expertise"
+                placeholder="Your Expertise"
+                value={formData.expertise}
+                onChange={handleChange}
+                required
+              />
+              <textarea
+                name="message"
+                placeholder="Tell us more..."
+                value={formData.message}
+                onChange={handleChange}
+              ></textarea>
+              <button type="submit" className="ec-btn-submit">
+                Submit Application
+              </button>
+            </form>
+          </div>
+        )}
       </div>
+
+      {/* Toast Notifications */}
+      <ToastContainer />
     </section>
   );
 }
