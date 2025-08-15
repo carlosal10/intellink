@@ -25,7 +25,7 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Lock body scroll when menu is open
+  // Lock page scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
   }, [menuOpen]);
@@ -44,18 +44,10 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <div className="desktop-links">
-          <NavLink to="/" onClick={closeMenu}>
-            {language === 'en' ? 'Home' : 'ホーム'}
-          </NavLink>
-          <NavLink to="/about" onClick={closeMenu}>
-            {language === 'en' ? 'About' : '会社情報'}
-          </NavLink>
-          <NavLink to="/services" onClick={closeMenu}>
-            {language === 'en' ? 'Services' : 'サービス'}
-          </NavLink>
-          <NavLink to="/sectors" onClick={closeMenu}>
-            {language === 'en' ? 'Sectors' : 'セクター'}
-          </NavLink>
+          <NavLink to="/" onClick={closeMenu}>{language === 'en' ? 'Home' : 'ホーム'}</NavLink>
+          <NavLink to="/about" onClick={closeMenu}>{language === 'en' ? 'About' : '会社情報'}</NavLink>
+          <NavLink to="/services" onClick={closeMenu}>{language === 'en' ? 'Services' : 'サービス'}</NavLink>
+          <NavLink to="/sectors" onClick={closeMenu}>{language === 'en' ? 'Sectors' : 'セクター'}</NavLink>
 
           {/* Dropdown */}
           <div className="nav-dropdown">
@@ -64,100 +56,58 @@ export default function Navbar() {
               <span className="dropdown-icon">▾</span>
             </button>
             <div className="dropdown-menu">
-              <NavLink to="/expertconnect" onClick={closeMenu}>
-                {language === 'en' ? 'Expert Connect' : 'エキスパートコネクト'}
-              </NavLink>
-              <NavLink to="/tradelink" onClick={closeMenu}>
-                {language === 'en' ? 'TradeLink' : 'トレードリンク'}
-              </NavLink>
-              <NavLink to="/marketlink" onClick={closeMenu}>
-                {language === 'en' ? 'MarketLink' : 'マーケットリンク'}
-              </NavLink>
+              <NavLink to="/expertconnect" onClick={closeMenu}>{language === 'en' ? 'Expert Connect' : 'エキスパートコネクト'}</NavLink>
+              <NavLink to="/tradelink" onClick={closeMenu}>{language === 'en' ? 'TradeLink' : 'トレードリンク'}</NavLink>
+              <NavLink to="/marketlink" onClick={closeMenu}>{language === 'en' ? 'MarketLink' : 'マーケットリンク'}</NavLink>
             </div>
           </div>
 
-          <NavLink to="/insights" onClick={closeMenu}>
-            {language === 'en' ? 'Insights' : '知見'}
-          </NavLink>
-          <NavLink to="/contact" onClick={closeMenu}>
-            {language === 'en' ? 'Contact' : 'お問い合わせ'}
-          </NavLink>
-          <NavLink to="/recruitment" onClick={closeMenu}>
-            {language === 'en' ? 'Careers' : '採用情報'}
-          </NavLink>
-          <NavLink to="/blog" onClick={closeMenu}>
-            {language === 'en' ? 'Blog' : 'ブログ'}
-          </NavLink>
+          <NavLink to="/insights" onClick={closeMenu}>{language === 'en' ? 'Insights' : '知見'}</NavLink>
+          <NavLink to="/contact" onClick={closeMenu}>{language === 'en' ? 'Contact' : 'お問い合わせ'}</NavLink>
+          <NavLink to="/recruitment" onClick={closeMenu}>{language === 'en' ? 'Careers' : '採用情報'}</NavLink>
+          <NavLink to="/blog" onClick={closeMenu}>{language === 'en' ? 'Blog' : 'ブログ'}</NavLink>
 
           {/* Language Switch */}
-          <button
-            onClick={() => {
-              toggleLanguage();
-              closeMenu();
-            }}
-            className="lang-toggle"
-          >
+          <button onClick={() => { toggleLanguage(); closeMenu(); }} className="lang-toggle">
             {language === 'en' ? '日本語' : 'EN'}
           </button>
         </div>
 
-        {/* Hamburger (mobile only) */}
+        {/* Hamburger */}
         <div className="hamburger-wrapper">
           <Hamburger toggled={menuOpen} toggle={setMenuOpen} size={24} color="#F1C40F" />
         </div>
       </nav>
 
-      {/* Sidebar Menu for mobile */}
+      {/* Mobile Menu */}
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
-        <NavLink to="/" onClick={closeMenu}>
-          {language === 'en' ? 'Home' : 'ホーム'}
-        </NavLink>
-        <NavLink to="/about" onClick={closeMenu}>
-          {language === 'en' ? 'About' : '会社情報'}
-        </NavLink>
-        <NavLink to="/services" onClick={closeMenu}>
-          {language === 'en' ? 'Services' : 'サービス'}
-        </NavLink>
-        <NavLink to="/sectors" onClick={closeMenu}>
-          {language === 'en' ? 'Sectors' : 'セクター'}
-        </NavLink>
+        <div className="mobile-menu-inner">
+          <NavLink to="/" onClick={closeMenu}>{language === 'en' ? 'Home' : 'ホーム'}</NavLink>
+          <NavLink to="/about" onClick={closeMenu}>{language === 'en' ? 'About' : '会社情報'}</NavLink>
+          <NavLink to="/services" onClick={closeMenu}>{language === 'en' ? 'Services' : 'サービス'}</NavLink>
+          <NavLink to="/sectors" onClick={closeMenu}>{language === 'en' ? 'Sectors' : 'セクター'}</NavLink>
 
-        {/* Mobile dropdown */}
-        <button
-          className="mobile-dropdown-toggle"
-          onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-        >
-          {language === 'en' ? 'Solutions' : 'もっと'}
-        </button>
-        {mobileDropdownOpen && (
-          <div className="mobile-dropdown">
-            <NavLink to="/expertconnect" onClick={closeMenu}>
-              {language === 'en' ? 'Expert Connect' : 'エキスパートコネクト'}
-            </NavLink>
-            <NavLink to="/tradelink" onClick={closeMenu}>
-              {language === 'en' ? 'TradeLink' : 'トレードリンク'}
-            </NavLink>
-            <NavLink to="/marketlink" onClick={closeMenu}>
-              {language === 'en' ? 'MarketLink' : 'マーケットリンク'}
-            </NavLink>
-          </div>
-        )}
+          {/* Mobile dropdown */}
+          <button className="mobile-dropdown-toggle" onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}>
+            {language === 'en' ? 'Solutions' : 'もっと'}
+          </button>
+          {mobileDropdownOpen && (
+            <div className="mobile-dropdown">
+              <NavLink to="/expertconnect" onClick={closeMenu}>{language === 'en' ? 'Expert Connect' : 'エキスパートコネクト'}</NavLink>
+              <NavLink to="/tradelink" onClick={closeMenu}>{language === 'en' ? 'TradeLink' : 'トレードリンク'}</NavLink>
+              <NavLink to="/marketlink" onClick={closeMenu}>{language === 'en' ? 'MarketLink' : 'マーケットリンク'}</NavLink>
+            </div>
+          )}
 
-        <NavLink to="/insights" onClick={closeMenu}>
-          {language === 'en' ? 'Insights' : '知見'}
-        </NavLink>
-        <NavLink to="/contact" onClick={closeMenu}>
-          {language === 'en' ? 'Contact' : 'お問い合わせ'}
-        </NavLink>
-        <NavLink to="/recruitment" onClick={closeMenu}>
-          {language === 'en' ? 'Careers' : '採用情報'}
-        </NavLink>
-        <NavLink to="/blog" onClick={closeMenu}>
-          {language === 'en' ? 'Blog' : 'ブログ'}
-        </NavLink>
-        <button onClick={() => { toggleLanguage(); closeMenu(); }} className="lang-toggle">
-          {language === 'en' ? '日本語' : 'EN'}
-        </button>
+          <NavLink to="/insights" onClick={closeMenu}>{language === 'en' ? 'Insights' : '知見'}</NavLink>
+          <NavLink to="/contact" onClick={closeMenu}>{language === 'en' ? 'Contact' : 'お問い合わせ'}</NavLink>
+          <NavLink to="/recruitment" onClick={closeMenu}>{language === 'en' ? 'Careers' : '採用情報'}</NavLink>
+          <NavLink to="/blog" onClick={closeMenu}>{language === 'en' ? 'Blog' : 'ブログ'}</NavLink>
+
+          <button onClick={() => { toggleLanguage(); closeMenu(); }} className="lang-toggle">
+            {language === 'en' ? '日本語' : 'EN'}
+          </button>
+        </div>
       </div>
     </>
   );
