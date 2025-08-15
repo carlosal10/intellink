@@ -43,7 +43,7 @@ export default function ExpertConnect() {
 
       {/* Content */}
       <div className="ec-container">
-        <Section>
+        <Section >
           <p>{t?.intro || ""}</p>
         </Section>
 

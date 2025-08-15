@@ -5,7 +5,7 @@
   color: #333;
   background-attachment: fixed;
   overflow-x: hidden;
-  margin-top: auto; /* Adjusted for fixed navbar */
+  margin-top: 20%; /* Adjusted for fixed navbar */
 }
 
 /* Hero Section */

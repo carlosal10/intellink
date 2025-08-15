@@ -1,7 +1,7 @@
 .marketlink-page {
   font-family: 'Segoe UI', sans-serif;
   color: #333;
-  margin-top: auto;
+  margin-top: 20%; /* Adjusted for fixed navbar */
 }
 
 /* HERO */
