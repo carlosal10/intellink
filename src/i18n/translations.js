@@ -204,49 +204,163 @@ services: {
     description: "We support businesses — especially in Africa — to source high-quality goods from Japan. Our services include supplier identification, verification, negotiation support, and coordination of logistics."
   }
 },
+marketLink: {
+  hero: {
+    title: "MarketLink",
+    desc: "Start with certainty — connect to new markets with confidence and clarity.",
+    button: "Get Started"
+  },
+  intro: {
+    text:
+      "Entering a new market is a bold move — but it shouldn’t be a blind one. MarketLink gives you the intelligence, insights, and trusted local connections you need to succeed from day one."
+  },
+  about: {
+    title: "What is MarketLink?",
+    text:
+      "MarketLink is our tailored market intelligence and facilitation service that helps international businesses understand, navigate, and thrive in new territories. From on-the-ground insights to finding the right local partners, we make your market entry smooth and strategic.",
+    imgAlt: "Market research"
+  },
+  services: {
+    title: "Our Services",
+    items: [
+      ["Market Research & Insights", "In-depth analysis of customer needs, competitor landscape, trends, and sector-specific opportunities."],
+      ["Feasibility Studies", "Assess commercial viability, regulatory constraints, and operational challenges before you invest."],
+      ["Regulatory Affairs Support", "Navigate licensing, permits, compliance requirements, and government regulations with clarity."],
+      ["Risk Analysis & Forecasting", "Structured assessments across political, economic, operational, and reputational risks with mitigation strategies."],
+      ["Cultural & Business Etiquette Training", "Equip your team to operate effectively with local norms and relationship-building know-how."],
+      ["Government Liaison & Public Affairs", "Engage the right government bodies, trade agencies, chambers, and diplomatic missions."]
+    ]
+  },
+  why: {
+    title: "Why Choose MarketLink?",
+    points: [
+      "Local intelligence from verified in-country sources.",
+      "Primary research first — not just desk reviews.",
+      "Contextual understanding of culture and politics.",
+      "Tailored reporting aligned to your goals and timeline.",
+      "Risk reduction so you decide with eyes wide open."
+    ]
+  },
+  ideal: {
+    title: "Ideal For",
+    items: [
+      "Japanese SMEs and corporations exploring Africa",
+      "Investment firms assessing new sectors and regions",
+      "Exporters and importers testing new markets",
+      "Public sector agencies and policy actors",
+      "NGOs and think tanks needing on-the-ground insight"
+    ]
+  },
 
-  marketLink: {
-    hero: {
-      title: "MarketIntellink",
-      desc: "Start with certainty — connect to new markets with confidence and clarity.",
-      button: "Get Started"
+  /* ---------------- Africa → Japan ---------------- */
+  africaJapan: {
+    header: "Africa to Japan",
+    title: "Enabling African Innovators to Access the Japanese Market",
+    p1: "While Japan is renowned for its technology, precision, and consumer trust, it remains largely untapped by many African producers, entrepreneurs, manufacturers, and innovators. Despite having high-impact solutions and valuable products, African businesses often struggle to reach Japanese partners, investors, and buyers due to structural, informational, and cultural barriers.",
+    p2: "At Intellink Nippon Consulting, we help African enterprises break through those barriers — with insight, access, and real partnership facilitation.",
+    why: {
+      title: "Why Japan Matters for African Enterprises",
+      points: [
+        "A high-income consumer market with a strong appetite for innovation and uniqueness",
+        "A long tradition of valuing quality, sustainability, and social impact",
+        "Advanced technology and manufacturing ecosystems for collaboration",
+        "Global networks for product acceleration — especially in green tech, health, food, and lifestyle sectors"
+      ]
     },
-    intro: {
-      text: "Entering a new market is a bold move — but it shouldn’t be a blind one. MarketIntellink gives you the intelligence, insights, and trusted local connections you need to succeed from day one."
-    },
-    about: {
-      title: "What is MarketIntellink?",
-      text: "It’s our tailored market intelligence and facilitation service that helps international businesses understand, navigate, and thrive in new territories. From on-the-ground insights to finding the right local partners, we make your market entry smooth and strategic.",
-      imgAlt: "Market research"
+    challenges: {
+      title: "Yet, many African enterprises face:",
+      points: [
+        "Lack of visibility in Japan",
+        "Difficulty navigating Japan’s complex business culture and buyer behavior",
+        "Language barriers and compliance requirements",
+        "Limited understanding of how to present value to Japanese partners"
+      ]
     },
     services: {
-      title: "Our Services",
+      title: "How We Help: Africa-to-Japan Support Services",
       items: [
-        ["Market Research", "In-depth analysis of trends, competitors, and consumer behavior."],
-        ["Business Matchmaking", "Connect with verified local partners and suppliers."],
-        ["Local Navigation", "Guidance through legal, cultural, and operational landscapes."],
-        ["Strategic Advisory", "Custom market-entry plans built for your success."]
+        ["Market Access & Opportunity Scouting", "Identify high-potential opportunities for your products, innovations, or services within Japan’s market landscape."],
+        ["Partner & Investor Matchmaking", "Connect with Japanese companies, distributors, buyers, and investors aligned to your mission and value proposition."],
+        ["Product Positioning & Compliance Support", "Adapt presentation, branding, packaging, and documentation to suit Japanese preferences and standards."],
+        ["Technology & Knowledge Exchange Facilitation", "Enable joint R&D, tech transfer, and innovation collaboration with Japanese counterparts."],
+        ["Trade Events & Showcases in Japan", "Organize or participate in pop-ups, trade fairs, and exhibitions to introduce your offering to Japanese consumers."],
+        ["Pitch & Investment Readiness Coaching", "Refine your pitch, improve investor materials, and align with Japanese business expectations."]
       ]
     },
-    why: {
-      title: "Why Choose MarketIntellink?",
-      points: [
-        "Deep local expertise in emerging markets.",
-        "Proven track record of successful market entries.",
-        "Trusted networks across multiple regions.",
-        "Data-driven strategies for long-term success."
+    who: {
+      title: "Who Can Benefit?",
+      items: [
+        "Agro-processors & food exporters",
+        "Fashion & textile designers",
+        "Beauty & wellness product manufacturers",
+        "Renewable energy and cleantech innovators",
+        "Creative entrepreneurs & artisan brands",
+        "EdTech, MedTech, and FinTech startups",
+        "Social enterprises with high-impact models"
       ]
     },
-    ideal: {
-      title: "Ideal For",
-      items: ["Exporters", "Investors", "Startups", "Trade Agencies", "Corporate Expansions"]
-    },
-    finalCTA: {
-      title: "Start with Certainty, Not Assumptions",
-      desc: "Partner with MarketIntellink and open the door to opportunity with confidence.",
+    cta: {
+      title: "Let Us Help You Access Japan",
+      text: "Whether you're ready to export, looking for a distributor, or seeking R&D or investment partnerships in Japan, we’re here to guide and connect you.",
       button: "Talk to Us"
     }
   },
+
+  /* ---------------- Careers / Join Our Team ---------------- */
+  careers: {
+    title: "Join Our Team",
+    subtitle: "Build Bridges. Drive Impact. Shape Global Business.",
+    intro1:
+      "At Intellink Nippon Consulting, we are on a mission to facilitate meaningful economic collaboration between Japan and emerging markets, particularly across Africa.",
+    intro2:
+      "We believe in the power of local insight, global vision, and human connection. As we grow, we’re constantly looking for passionate, competent, and culturally fluent professionals to join our dynamic team.",
+    whoWeLookFor: {
+      title: "Who We Look For",
+      items: [
+        "International Trade & Development",
+        "Market Research & Strategy",
+        "Regulatory Affairs",
+        "Sourcing & Supply Chain",
+        "Business Facilitation & Partnerships",
+        "Communications, Marketing, or Cross-Cultural Advisory",
+        "Sector experts (e.g., Agribusiness, Energy, Textiles, Fintech, etc.)"
+      ],
+      note:
+        "Whether you're a seasoned expert or early-career professional with passion and potential, we’d love to hear from you."
+    },
+    whatWeOffer: {
+      title: "What We Offer",
+      items: [
+        "A purpose-driven workplace focused on cross-border innovation",
+        "Opportunities to work on impactful projects with global relevance",
+        "Flexible work arrangements and hybrid collaboration models",
+        "A multicultural, respectful, and collaborative team culture",
+        "Exposure to government agencies, startups, corporations, and NGOs",
+        "Meaningful work that connects continents and communities"
+      ]
+    },
+    currentOpenings: {
+      title: "Current Openings",
+      items: [
+        "Market Research Associates (Tokyo / Remote)",
+        "B2B Matchmaking Consultants (Project-based, Africa or Japan-based)",
+        "Interns / Fellows – International Trade & Investment",
+        "Sector Experts (Freelance / Retainer Basis)"
+      ],
+      note:
+        "Even if there’s no listed role that matches your profile, we encourage you to send us an expression of interest."
+    }
+  },
+
+  /* ---------------- Final CTA ---------------- */
+  finalCTA: {
+    title: "Start with Certainty, Not Assumptions",
+    desc:
+      "Partner with MarketLink and open the door to opportunity with confidence, clarity, and credible, on-the-ground insight.",
+    button: "Talk to Us"
+  }
+},
+
   expertConnect: {
       title: "Expert Connect",
       tagline: "Where global expertise meets your vision",
@@ -475,48 +589,104 @@ services: {
   }
 },
 
-  marketLink: {
-    hero: {
-      title: "マーケットインテリンク",
-      desc: "確信を持って始めよう — 自信と明確さをもって新しい市場へ。",
-      button: "今すぐ始める"
-    },
-    intro: {
-      text: "新しい市場への参入は大胆な一歩ですが、無謀な挑戦であってはなりません。マーケットインテリンクは、成功するために必要な情報、洞察、そして信頼できる現地ネットワークを初日から提供します。"
-    },
-    about: {
-      title: "マーケットインテリンクとは？",
-      text: "国際企業が新たな地域を理解し、適応し、成長するための、特別に設計された市場調査と支援サービスです。現地の最新情報から適切なパートナー探しまで、市場参入をスムーズかつ戦略的に実現します。",
-      imgAlt: "市場調査"
-    },
-    services: {
-      title: "提供サービス",
-      items: [
-        ["市場調査", "トレンド、競合、消費者行動の徹底分析。"],
-        ["ビジネスマッチメイキング", "信頼できる現地パートナーやサプライヤーと接続。"],
-        ["ローカルナビゲーション", "法務、文化、運営面でのガイド。"],
-        ["戦略アドバイザリー", "成功のために設計されたカスタム市場参入プラン。"]
-      ]
-    },
-    why: {
-      title: "マーケットインテリンクを選ぶ理由",
-      points: [
-        "新興市場での深い現地知識。",
-        "数多くの市場参入成功実績。",
-        "複数地域にわたる信頼できるネットワーク。",
-        "長期的成功のためのデータ主導型戦略。"
-      ]
-    },
-    ideal: {
-      title: "対象となるお客様",
-      items: ["輸出企業", "投資家", "スタートアップ", "貿易機関", "企業拡大"]
-    },
-    finalCTA: {
-      title: "仮説ではなく確信から始めよう",
-      desc: "マーケットインテリンクと提携し、自信をもって新たな機会の扉を開きましょう。",
-      button: "お問い合わせ"
-    }
+ marketLink: {
+  hero: {
+    title: "マーケットインテリンク",
+    desc: "確信を持って始めよう — 自信と明確さをもって新しい市場へ。",
+    button: "今すぐ始める"
   },
+  intro: {
+    text: "新しい市場への参入は大胆な一歩ですが、無謀な挑戦であってはなりません。マーケットインテリンクは、成功するために必要な情報、洞察、そして信頼できる現地ネットワークを初日から提供します。"
+  },
+  about: {
+    title: "マーケットインテリンクとは？",
+    text: "国際企業が新たな地域を理解し、適応し、成長するための、特別に設計された市場調査と支援サービスです。現地の最新情報から適切なパートナー探しまで、市場参入をスムーズかつ戦略的に実現します。",
+    imgAlt: "市場調査"
+  },
+  services: {
+    title: "提供サービス",
+    items: [
+      ["市場調査", "トレンド、競合、消費者行動の徹底分析。"],
+      ["ビジネスマッチメイキング", "信頼できる現地パートナーやサプライヤーと接続。"],
+      ["ローカルナビゲーション", "法務、文化、運営面でのガイド。"],
+      ["戦略アドバイザリー", "成功のために設計されたカスタム市場参入プラン。"]
+    ]
+  },
+  why: {
+    title: "マーケットインテリンクを選ぶ理由",
+    points: [
+      "新興市場での深い現地知識。",
+      "数多くの市場参入成功実績。",
+      "複数地域にわたる信頼できるネットワーク。",
+      "長期的成功のためのデータ主導型戦略。"
+    ]
+  },
+  ideal: {
+    title: "対象となるお客様",
+    items: ["輸出企業", "投資家", "スタートアップ", "貿易機関", "企業拡大"]
+  },
+  africaJapan: {
+    title: "アフリカから日本へ — イノベーションの架け橋",
+    sections: [
+      {
+        heading: "日本市場へのアクセスを可能にする",
+        text: "日本は技術、精密さ、消費者信頼で知られていますが、多くのアフリカの生産者や起業家にとって未開拓の市場です。高い価値を持つ製品やソリューションを有していても、構造的・文化的障壁により日本市場への進出は困難です。"
+      },
+      {
+        heading: "日本市場がアフリカ企業にとって重要な理由",
+        list: [
+          "革新性と独自性を求める高所得消費者市場",
+          "品質、持続可能性、社会的インパクトを重視する長い伝統",
+          "高度な技術・製造エコシステムとの協業機会",
+          "特にグリーンテック、健康、食品、ライフスタイル分野でのグローバルな製品加速ネットワーク"
+        ]
+      },
+      {
+        heading: "アフリカ企業が直面する課題",
+        list: [
+          "日本での認知度不足",
+          "複雑なビジネス文化や購買行動の理解不足",
+          "言語障壁と規制遵守要件",
+          "日本のパートナーに価値を伝えるための戦略不足"
+        ]
+      },
+      {
+        heading: "私たちの支援サービス",
+        numbered: [
+          "市場アクセスと機会発掘 — 日本市場での高潜在力分野を特定",
+          "パートナー・投資家マッチメイキング — 志や価値観が一致する日本企業と接続",
+          "製品ポジショニングと規制対応 — 日本市場に適したブランディングとパッケージング支援",
+          "技術・知識交流促進 — 共同研究や技術移転の機会を創出",
+          "日本での展示・商談イベント — 販促のためのポップアップや展示会の企画",
+          "投資準備・ピッチコーチング — 日本の投資家向けプレゼン資料や戦略の最適化"
+        ]
+      },
+      {
+        heading: "対象企業",
+        list: [
+          "農産加工業者・食品輸出業者",
+          "ファッション・テキスタイルデザイナー",
+          "美容・ウェルネス製品メーカー",
+          "再生可能エネルギー・クリーンテック開発者",
+          "クリエイティブ企業・職人ブランド",
+          "EdTech, MedTech, FinTech スタートアップ",
+          "高い社会的インパクトを持つソーシャルビジネス"
+        ]
+      }
+    ],
+    image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022"
+  },
+  join: {
+    title: "チームに参加する",
+    desc: "私たちは、日本と新興市場、特にアフリカとの経済的架け橋を築く使命を持っています。"
+  },
+  finalCTA: {
+    title: "仮説ではなく確信から始めよう",
+    desc: "マーケットインテリンクと提携し、自信をもって新たな機会の扉を開きましょう。",
+    button: "お問い合わせ"
+  }
+},
+
   expertConnect: {
       title: "エキスパートコネクト",
       tagline: "世界の専門知識とあなたのビジョンをつなぐ場所",
