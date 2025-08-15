@@ -15,6 +15,7 @@
   min-height: 100vh;
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
+  margin-top: 10%; /* Adjusted for fixed navbar */
 }
 
 .services-header {

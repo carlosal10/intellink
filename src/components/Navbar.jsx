@@ -7,9 +7,13 @@ import './Navbar.css';
 export default function Navbar() {
   const { language, toggleLanguage } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false); // for mobile accordion
   const navRef = useRef();
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setDropdownOpen(false);
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -24,7 +28,7 @@ export default function Navbar() {
   return (
     <nav className="navbar" ref={navRef}>
       {/* Background overlay */}
-      <div className="navbar-overlay"></div>
+      <div className={`navbar-overlay ${menuOpen ? 'show' : ''}`}></div>
 
       {/* Content */}
       <div className="navbar-content">
@@ -44,14 +48,37 @@ export default function Navbar() {
 
         {/* Nav Links */}
         <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          <NavLink to="/" onClick={closeMenu}>{language === 'en' ? 'Home' : 'ホーム'}</NavLink>
-          <NavLink to="/about" onClick={closeMenu}>{language === 'en' ? 'About' : '会社情報'}</NavLink>
-          <NavLink to="/services" onClick={closeMenu}>{language === 'en' ? 'Services' : 'サービス'}</NavLink>
-          <NavLink to="/sectors" onClick={closeMenu}>{language === 'en' ? 'Sectors' : 'セクター'}</NavLink>
-          
-          {/* Dropdown styled like other nav links */}
-          <div className="nav-dropdown">
-            <span>{language === 'en' ? 'Solutions' : 'もっと'}</span>
+          <NavLink to="/" onClick={closeMenu}>
+            {language === 'en' ? 'Home' : 'ホーム'}
+          </NavLink>
+          <NavLink to="/about" onClick={closeMenu}>
+            {language === 'en' ? 'About' : '会社情報'}
+          </NavLink>
+          <NavLink to="/services" onClick={closeMenu}>
+            {language === 'en' ? 'Services' : 'サービス'}
+          </NavLink>
+          <NavLink to="/sectors" onClick={closeMenu}>
+            {language === 'en' ? 'Sectors' : 'セクター'}
+          </NavLink>
+
+          {/* Dropdown */}
+          <div
+            className={`nav-dropdown ${dropdownOpen ? 'mobile-open' : ''}`}
+            onMouseLeave={() => setDropdownOpen(false)}
+          >
+            {/* Desktop hover toggle */}
+            <button
+              className="nav-dropdown-toggle"
+              onClick={() => {
+                if (window.innerWidth <= 900) {
+                  setDropdownOpen(!dropdownOpen);
+                }
+              }}
+            >
+              {language === 'en' ? 'Solutions' : 'もっと'}
+              <span className="dropdown-icon">▾</span>
+            </button>
+
             <div className="dropdown-menu">
               <NavLink to="/expertconnect" onClick={closeMenu}>
                 {language === 'en' ? 'Expert Connect' : 'エキスパートコネクト'}
@@ -65,14 +92,25 @@ export default function Navbar() {
             </div>
           </div>
 
-          <NavLink to="/insights" onClick={closeMenu}>{language === 'en' ? 'Insights' : '知見'}</NavLink>
-          <NavLink to="/contact" onClick={closeMenu}>{language === 'en' ? 'Contact' : 'お問い合わせ'}</NavLink>
-          <NavLink to="/recruitment" onClick={closeMenu}>{language === 'en' ? 'Careers' : '採用情報'}</NavLink>
-          <NavLink to="/blog" onClick={closeMenu}>{language === 'en' ? 'Blog' : 'ブログ'}</NavLink>
+          <NavLink to="/insights" onClick={closeMenu}>
+            {language === 'en' ? 'Insights' : '知見'}
+          </NavLink>
+          <NavLink to="/contact" onClick={closeMenu}>
+            {language === 'en' ? 'Contact' : 'お問い合わせ'}
+          </NavLink>
+          <NavLink to="/recruitment" onClick={closeMenu}>
+            {language === 'en' ? 'Careers' : '採用情報'}
+          </NavLink>
+          <NavLink to="/blog" onClick={closeMenu}>
+            {language === 'en' ? 'Blog' : 'ブログ'}
+          </NavLink>
 
           {/* Language Toggle */}
           <button
-            onClick={() => { toggleLanguage(); closeMenu(); }}
+            onClick={() => {
+              toggleLanguage();
+              closeMenu();
+            }}
             className="lang-toggle"
           >
             {language === 'en' ? '日本語' : 'EN'}

@@ -80,7 +80,7 @@ input[type="checkbox"] {
 .africa-japan-page {
   font-family: 'Segoe UI', sans-serif;
   color: #333;
-  
+  margin-top: 10%; /* Adjusted for fixed navbar */
 }
 
 .aj-hero {
