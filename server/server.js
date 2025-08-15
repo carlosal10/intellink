@@ -5,7 +5,7 @@ import connectDB from './config/db.js';
 import checkoutRoutes from './routes/checkout.js';
 import recruitmentRoutes from './routes/recruitment.js'; // Assuming you have a recruitment route
 import expertConnectRoutes from "./routes/expertConnect.js";
-import marketLinkRoutes from "./routes/marketLink.js"; // Assuming you have a market link route
+import marketLinkRoutes from "./routes/marketLink.js";
 
 dotenv.config();
 const app = express();
