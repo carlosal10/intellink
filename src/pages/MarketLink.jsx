@@ -37,7 +37,6 @@ export default function MarketLink() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const res = await fetch(
         "https://intellink-8w9t.onrender.com/api/applications",
@@ -47,9 +46,7 @@ export default function MarketLink() {
           body: JSON.stringify(formData),
         }
       );
-
       if (!res.ok) throw new Error("Failed to submit application");
-
       toast.success("Application submitted successfully!");
       setFormData({
         firstName: "",
@@ -101,22 +98,24 @@ export default function MarketLink() {
       <section className="marketlink-services" data-aos="fade-up">
         <h2>{t("marketLink.services.title")}</h2>
         <div className="services-grid">
-          {t("marketLink.services.items").map((item, i) => {
-            const icons = [
-              FaChartLine,
-              FaHandshake,
-              FaGlobeAfrica,
-              FaLightbulb,
-            ];
-            const Icon = icons[i];
-            return (
-              <div className="service-card" key={i}>
-                <Icon className="service-icon" />
-                <h3>{item[0]}</h3>
-                <p>{item[1]}</p>
-              </div>
-            );
-          })}
+          {(t("marketLink.services.items", { returnObjects: true }) || []).map(
+            (item, i) => {
+              const icons = [
+                FaChartLine,
+                FaHandshake,
+                FaGlobeAfrica,
+                FaLightbulb,
+              ];
+              const Icon = icons[i];
+              return (
+                <div className="service-card" key={i}>
+                  <Icon className="service-icon" />
+                  <h3>{item[0]}</h3>
+                  <p>{item[1]}</p>
+                </div>
+              );
+            }
+          )}
         </div>
       </section>
 
@@ -124,11 +123,13 @@ export default function MarketLink() {
       <section className="marketlink-why" data-aos="fade-up">
         <h2>{t("marketLink.why.title")}</h2>
         <ul>
-          {t("marketLink.why.points").map((point, i) => (
-            <li key={i}>
-              <FaCheckCircle /> {point}
-            </li>
-          ))}
+          {(t("marketLink.why.points", { returnObjects: true }) || []).map(
+            (point, i) => (
+              <li key={i}>
+                <FaCheckCircle /> {point}
+              </li>
+            )
+          )}
         </ul>
       </section>
 
@@ -136,9 +137,11 @@ export default function MarketLink() {
       <section className="marketlink-ideal" data-aos="fade-up">
         <h2>{t("marketLink.ideal.title")}</h2>
         <div className="ideal-tags">
-          {t("marketLink.ideal.items").map((tag, i) => (
-            <span key={i}>{tag}</span>
-          ))}
+          {(t("marketLink.ideal.items", { returnObjects: true }) || []).map(
+            (tag, i) => (
+              <span key={i}>{tag}</span>
+            )
+          )}
         </div>
       </section>
 
@@ -149,72 +152,71 @@ export default function MarketLink() {
         <p>{t("marketLink.africaJapan.intro")}</p>
         <p className="mission">{t("marketLink.africaJapan.mission")}</p>
 
-        {/* Images */}
+        {/* Unsplash Images */}
         <div className="africa-japan-images">
-          {t("marketLink.africaJapan.images", { returnObjects: true }).map(
-            (src, i) => (
-              <img key={i} src={src} alt={`africa-japan-${i}`} />
-            )
-          )}
+          {[
+            "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+            "https://images.unsplash.com/photo-1529070538774-1843cb3265df",
+            "https://images.unsplash.com/photo-1533750349088-cd871a92f312",
+          ].map((src, i) => (
+            <img key={i} src={src} alt={`africa-japan-${i}`} />
+          ))}
         </div>
 
         {/* Why Japan */}
-        <div className="why-japan">
-          <div className="offers">
-            <h4>{t("marketLink.africaJapan.whyJapan.title")}</h4>
-            <h5>Japan offers:</h5>
-            <ul>
-              {t("marketLink.africaJapan.whyJapan.offers", {
-                returnObjects: true,
-              }).map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="challenges">
-            <h5>Yet many African enterprises face:</h5>
-            <ul>
-              {t("marketLink.africaJapan.whyJapan.challenges", {
-                returnObjects: true,
-              }).map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <section>
+          <h4>{t("marketLink.africaJapan.why.title")}</h4>
+          <ul>
+            {(t("marketLink.africaJapan.why.points", { returnObjects: true }) ||
+              []).map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Challenges */}
+        <section>
+          <h4>{t("marketLink.africaJapan.challenges.title")}</h4>
+          <ul>
+            {(t("marketLink.africaJapan.challenges.points", {
+              returnObjects: true,
+            }) || []).map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        </section>
 
         {/* Services */}
-        <div className="services-list">
+        <section>
           <h4>{t("marketLink.africaJapan.services.title")}</h4>
           <ol>
-            {t("marketLink.africaJapan.services.list", {
+            {(t("marketLink.africaJapan.services.items", {
               returnObjects: true,
-            }).map((service, i) => (
+            }) || []).map((service, i) => (
               <li key={i}>
                 <strong>{service[0]}</strong>
                 <p>{service[1]}</p>
               </li>
             ))}
           </ol>
-        </div>
+        </section>
 
         {/* Beneficiaries */}
-        <div className="beneficiaries">
-          <h4>{t("marketLink.africaJapan.beneficiaries.title")}</h4>
+        <section>
+          <h4>{t("marketLink.africaJapan.who.title")}</h4>
           <div className="tags">
-            {t("marketLink.africaJapan.beneficiaries.items", {
-              returnObjects: true,
-            }).map((b, i) => (
+            {(t("marketLink.africaJapan.who.items", { returnObjects: true }) ||
+              []).map((b, i) => (
               <span key={i}>{b}</span>
             ))}
           </div>
-        </div>
+        </section>
 
         {/* CTA */}
-        <div className="africa-japan-cta">
+        <section>
           <h4>{t("marketLink.africaJapan.cta.title")}</h4>
           <p>{t("marketLink.africaJapan.cta.text")}</p>
-        </div>
+        </section>
       </section>
 
       {/* APPLICATION FORM */}

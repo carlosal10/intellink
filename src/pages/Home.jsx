@@ -42,7 +42,7 @@ export default function Home() {
       <div className="services-section-who-we-are" data-aos="fade-up">
         <div className="modern-section who-we-are" data-aos="fade-right">
           <div className="image-wrapper">
-            <img src="/images/istockphoto-10.avif" alt="Strategic Meeting" />
+            <img src="/images/istockphoto-8.jpg" alt="Strategic Meeting" />
           </div>
           <div className="text-box">
             <h2>{t('about.whoWeAre')}</h2>
