@@ -308,7 +308,7 @@ marketLink : {
     cta: {
       title: "Let Us Help You Access Japan",
       text: "Whether you're ready to export, looking for a distributor, or seeking R&D or investment partnerships in Japan, we’re here to guide and connect you.",
-      button: "Talk to Us"
+      button: "Get Started"
     }
   },
 

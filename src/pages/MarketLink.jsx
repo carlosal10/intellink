@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaChartLine, FaHandshake, FaGlobeAfrica, FaLightbulb, FaCheckCircle } from "react-icons/fa";
 import { toast } from "react-toastify";
@@ -20,9 +20,28 @@ export default function MarketLink() {
     position: "",
     message: "",
   });
+  const [showForm, setShowForm] = useState(false);
+
+  const africaJapanRef = useRef(null);
+  const [animateTyping, setAnimateTyping] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
+  }, []);
+
+  // Scroll-triggered typing animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAnimateTyping(true);
+          setTimeout(() => setAnimateTyping(false), 10000); // Reset after 10s
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (africaJapanRef.current) observer.observe(africaJapanRef.current);
+    return () => observer.disconnect();
   }, []);
 
   const handleChange = (e) => {
@@ -53,6 +72,8 @@ export default function MarketLink() {
     }
   };
 
+  const africaJapan = t("marketLink.africaJapan");
+
   return (
     <div className="marketlink-page">
       {/* HERO */}
@@ -60,9 +81,7 @@ export default function MarketLink() {
         <div>
           <h1>{t("marketLink.hero.title")}</h1>
           <p>{t("marketLink.hero.desc")}</p>
-          <Link to="/contact" className="hero-cta">
-            {t("marketLink.hero.button")}
-          </Link>
+          <Link to="/contact" className="hero-cta">{t("marketLink.hero.button")}</Link>
         </div>
       </section>
 
@@ -105,9 +124,7 @@ export default function MarketLink() {
         <h2>{t("marketLink.why.title")}</h2>
         <ul>
           {(t("marketLink.why.points", { returnObjects: true }) || []).map((point, i) => (
-            <li key={i}>
-              <FaCheckCircle /> {point}
-            </li>
+            <li key={i}><FaCheckCircle /> {point}</li>
           ))}
         </ul>
       </section>
@@ -123,65 +140,76 @@ export default function MarketLink() {
       </section>
 
       {/* AFRICA → JAPAN */}
-      <section className="marketlink-africa-japan" data-aos="fade-up">
-        <h2>{t("marketLink.africaJapan.title")}</h2>
-        {t("marketLink.africaJapan.sections", { returnObjects: true })?.map((section, i) => (
-          <section key={i}>
-            <h4>{section.heading}</h4>
-            {section.text && <p>{section.text}</p>}
-            {section.list && (
-              <ul>
-                {section.list.map((item, j) => (
-                  <li key={j}>{item}</li>
-                ))}
-              </ul>
-            )}
-            {section.numbered && (
-              <ol>
-                {section.numbered.map((item, j) => (
-                  <li key={j}>{item}</li>
-                ))}
-              </ol>
-            )}
-          </section>
-        ))}
-        {t("marketLink.africaJapan.image") && (
-          <div className="africa-japan-image">
-            <img src={t("marketLink.africaJapan.image")} alt="Africa-Japan" />
-          </div>
-        )}
-      </section>
+      <section className="marketlink-africa-japan" ref={africaJapanRef} data-aos="fade-up">
+        <h2 className={animateTyping ? "typing-animation" : ""}>{africaJapan.title}</h2>
+        <p>{africaJapan.p1}</p>
+        <p>{africaJapan.p2}</p>
 
-      {/* JOIN OUR TEAM */}
-      <section className="marketlink-join" data-aos="fade-up">
-        <h2>{t("marketLink.join.title")}</h2>
-        <p>{t("marketLink.join.desc")}</p>
+        <div className="why-japan">
+          <h4>{africaJapan.whyJapan.title}</h4>
+          <div className="cards-grid">
+            {africaJapan.whyJapan.offers.map((offer, i) => (
+              <div className="why-card" key={`offer-${i}`}>
+                <FaLightbulb className="card-icon" />
+                <p>{offer}</p>
+              </div>
+            ))}
+            {africaJapan.whyJapan.challenges.map((challenge, i) => (
+              <div className="why-card challenge" key={`challenge-${i}`}>
+                <FaHandshake className="card-icon" />
+                <p>{challenge}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="services-list">
+          <h4>{africaJapan.services.title}</h4>
+          <ol>
+            {africaJapan.services.list.map((item, i) => (<li key={i}>{item}</li>))}
+          </ol>
+        </div>
+
+        <div className="beneficiaries">
+          <h4>Beneficiaries</h4>
+          <div className="tags scroll-horizontal">
+            {africaJapan.beneficiaries.items.map((item, i) => (<span key={i}>{item}</span>))}
+          </div>
+        </div>
+
+        <div className="africa-japan-cta">
+          <h4>{africaJapan.cta.title}</h4>
+          <p>{africaJapan.cta.text}</p>
+          <button className="ec-btn" onClick={() => setShowForm(!showForm)}>
+            {africaJapan.cta.button}
+          </button>
+        </div>
       </section>
 
       {/* APPLICATION FORM */}
-      <section className="marketlink-application" data-aos="fade-up">
-        <h2>Application Form</h2>
-        <form onSubmit={handleSubmit} className="application-form">
-          <div className="form-row">
-            <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="First Name" required />
-            <input type="text" name="middleName" value={formData.middleName} onChange={handleChange} placeholder="Middle Name" />
-            <input type="text" name="surname" value={formData.surname} onChange={handleChange} placeholder="Surname" required />
-          </div>
-          <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" required />
-          <input type="text" name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone" required />
-          <input type="text" name="position" value={formData.position} onChange={handleChange} placeholder="Position Applied For" required />
-          <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Your message..." rows="4"></textarea>
-          <button type="submit" className="submit-btn">Submit Application</button>
-        </form>
-      </section>
+      {showForm && (
+        <section className="marketlink-application" data-aos="fade-up">
+          <h2>Application Form</h2>
+          <form onSubmit={handleSubmit} className="application-form">
+            <div className="form-row">
+              <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="First Name" required />
+              <input type="text" name="middleName" value={formData.middleName} onChange={handleChange} placeholder="Middle Name" />
+              <input type="text" name="surname" value={formData.surname} onChange={handleChange} placeholder="Surname" required />
+            </div>
+            <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" required />
+            <input type="text" name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone" required />
+            <input type="text" name="position" value={formData.position} onChange={handleChange} placeholder="Position Applied For" required />
+            <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Your message..." rows="4"></textarea>
+            <button type="submit" className="submit-btn">Submit Application</button>
+          </form>
+        </section>
+      )}
 
       {/* FINAL CTA */}
       <section className="marketlink-finalcta" data-aos="fade-up">
         <h2>{t("marketLink.finalCTA.title")}</h2>
         <p>{t("marketLink.finalCTA.desc")}</p>
-        <Link to="/contact" className="final-cta-btn">
-          {t("marketLink.finalCTA.button")}
-        </Link>
+        <Link to="/contact" className="final-cta-btn">{t("marketLink.finalCTA.button")}</Link>
       </section>
     </div>
   );

@@ -128,16 +128,20 @@ p {
   margin-bottom: 1rem;
 }
 
-/* WHY */
+/* WHY section with dancing question mark */
 .marketlink-why {
+  position: relative;
   background: #0B2545;
   color: white;
   padding: 3rem 15%;
+  overflow: hidden;
 }
 
 .marketlink-why ul {
   list-style: none;
   padding: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .marketlink-why li {
@@ -151,6 +155,29 @@ p {
   margin-right: 0.5rem;
   color: #F1C40F;
 }
+
+/* Big dancing question mark */
+.marketlink-why::after {
+  content: "?";
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  font-size: 15rem;
+  font-weight: bold;
+  color: #F1C40F;
+  transform: translateY(-50%);
+  animation: dance 2s infinite ease-in-out;
+  pointer-events: none;
+}
+
+/* Dance animation */
+@keyframes dance {
+  0%, 100% { transform: translateY(-50%) rotate(0deg); }
+  25% { transform: translateY(-52%) rotate(-15deg); }
+  50% { transform: translateY(-48%) rotate(15deg); }
+  75% { transform: translateY(-50%) rotate(-10deg); }
+}
+
 
 /* IDEAL FOR */
 .marketlink-ideal {
@@ -173,53 +200,7 @@ p {
   border-radius: 20px;
 }
 
-.marketlink-africa-japan {
-  background: #fff;
-  padding: 4rem 2rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  max-width: 1200px;
-  margin: auto;
-}
 
-.marketlink-africa-japan h2,
-.marketlink-africa-japan h3,
-.marketlink-africa-japan h4 {
-  font-weight: 700;
-  color: #222;
-}
-
-.marketlink-africa-japan .mission {
-  font-style: italic;
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-.africa-japan-images {
-  display: flex;
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
-.africa-japan-images img {
-  width: 100%;
-  max-width: calc(33.33% - 1rem);
-  border-radius: 1rem;
-  object-fit: cover;
-  height: 220px;
-}
-
-.why-japan {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  margin: 2rem 0;
-}
-
-.why-japan ul {
-  list-style: disc;
-  padding-left: 1.5rem;
-}
 
 .services-list ol {
   padding-left: 1.5rem;
@@ -243,12 +224,188 @@ p {
   font-size: 0.9rem;
 }
 
+/* ---------------- AFRICA → JAPAN SECTION - ENHANCED ---------------- */
+.marketlink-africa-japan {
+  background: linear-gradient(135deg, #fdf6f0, #f0f4ff);
+  padding: 4rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.marketlink-africa-japan:hover {
+  transform: translateY(-5px);
+}
+
+/* Typing animation for h2 - repeating every 10s */
+.marketlink-africa-japan h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0B2545;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid #E63946; /* cursor */
+}
+
+
+
+.marketlink-africa-japan h4 {
+  color: #E63946;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.marketlink-africa-japan p {
+  color: #333;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* Section cards */
+.marketlink-africa-japan section {
+  padding: 1.5rem;
+  border-left: 5px solid #E63946;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.marketlink-africa-japan section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Lists inside the section */
+.marketlink-africa-japan ul,
+.marketlink-africa-japan ol {
+  margin-left: 1.5rem;
+  margin-top: 0.8rem;
+  color: #222;
+}
+
+.marketlink-africa-japan li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.marketlink-africa-japan li::before {
+  content: "•";
+  color: #E63946;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+/* Images inside the section */
+.africa-japan-image {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.africa-japan-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.africa-japan-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Beneficiaries cards - horizontal scrolling animation */
+.beneficiaries .tags {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  animation: scroll-left 40s linear infinite;
+  scroll-behavior: smooth;
+  
+}
+
+.beneficiaries .tags span {
+  flex: 0 0 auto;
+  background: #E63946;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.beneficiaries .tags span:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  animation-play-state: paused;
+}
+
+/* Scroll animation */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* CTA at the end */
 .africa-japan-cta {
   margin-top: 3rem;
-  padding: 1.5rem;
-  background: #f9fafc;
-  border-radius: 1rem;
+  text-align: center;
 }
+
+.africa-japan-cta .final-cta-btn {
+  background: #0B2545;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.africa-japan-cta .final-cta-btn:hover {
+  background: #081a32;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .marketlink-africa-japan {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .marketlink-africa-japan h2 {
+    font-size: 2rem;
+  }
+  .marketlink-africa-japan h4 {
+    font-size: 1.2rem;
+  }
+  .beneficiaries .tags {
+    animation: none; /* remove scrolling on small screens */
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+}
+
 
 
 .final-cta-btn {
@@ -259,6 +416,17 @@ p {
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s ease;
+}
+
+.marketlink-finalcta p {
+  margin-bottom: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+.marketlink-finalcta{
+  padding: 3rem 10%;
+  text-align: center;
+  background: #F5F5F5;
 }
 
 .final-cta-btn:hover {
@@ -365,3 +533,24 @@ button[type="submit"]:hover {
     flex-direction: column;
   }
 }
+
+/* Typing animation for Africa → Japan title */
+.typing-animation {
+  border-right: 3px solid #E63946;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: typing 3s steps(30) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+
+
