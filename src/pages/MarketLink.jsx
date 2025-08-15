@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   FaChartLine,
@@ -12,6 +12,9 @@ import useTranslate from "../hooks/useTranslate";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "react-toastify/dist/ReactToastify.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./MarketLink.css";
 
 export default function MarketLink() {
@@ -31,13 +34,11 @@ export default function MarketLink() {
     AOS.init({ duration: 1000 });
   }, []);
 
-  const handleChange = (e) => {
+  const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const res = await fetch(
         "https://intellink-8w9t.onrender.com/api/applications",
@@ -47,9 +48,7 @@ export default function MarketLink() {
           body: JSON.stringify(formData),
         }
       );
-
       if (!res.ok) throw new Error("Failed to submit application");
-
       toast.success("Application submitted successfully!");
       setFormData({
         firstName: "",
@@ -64,22 +63,6 @@ export default function MarketLink() {
       toast.error(error.message || "Something went wrong");
     }
   };
-
-  // Safe helper with warning
-const safeArray = (key) => {
-  const val = t(key, { returnObjects: true });
-  if (!Array.isArray(val)) {
-    if (process.env.NODE_ENV !== "production") {
-      console.warn(
-        `[MarketLink] Missing or invalid array for key: "${key}". Received:`,
-        val
-      );
-    }
-    return [];
-  }
-  return val;
-};
-
 
   return (
     <div className="marketlink-page">
@@ -99,7 +82,7 @@ const safeArray = (key) => {
         <p>{t("marketLink.intro.text")}</p>
       </section>
 
-      {/* WHAT IS */}
+      {/* ABOUT */}
       <section className="marketlink-about" data-aos="fade-up">
         <div className="about-text">
           <h2>{t("marketLink.about.title")}</h2>
@@ -107,7 +90,7 @@ const safeArray = (key) => {
         </div>
         <div className="about-image">
           <img
-            src="https://images.unsplash.com/photo-1556761175-4b46a572b786"
+            src={t("marketLink.about.image") || "https://images.unsplash.com/photo-1556761175-4b46a572b786"}
             alt={t("marketLink.about.imgAlt")}
           />
         </div>
@@ -117,7 +100,7 @@ const safeArray = (key) => {
       <section className="marketlink-services" data-aos="fade-up">
         <h2>{t("marketLink.services.title")}</h2>
         <div className="services-grid">
-          {safeArray("marketLink.services.items").map((item, i) => {
+          {(t("marketLink.services.items", { returnObjects: true }) || []).map((item, i) => {
             const icons = [FaChartLine, FaHandshake, FaGlobeAfrica, FaLightbulb];
             const Icon = icons[i % icons.length];
             return (
@@ -135,7 +118,7 @@ const safeArray = (key) => {
       <section className="marketlink-why" data-aos="fade-up">
         <h2>{t("marketLink.why.title")}</h2>
         <ul>
-          {safeArray("marketLink.why.points").map((point, i) => (
+          {(t("marketLink.why.points", { returnObjects: true }) || []).map((point, i) => (
             <li key={i}>
               <FaCheckCircle /> {point}
             </li>
@@ -147,83 +130,61 @@ const safeArray = (key) => {
       <section className="marketlink-ideal" data-aos="fade-up">
         <h2>{t("marketLink.ideal.title")}</h2>
         <div className="ideal-tags">
-          {safeArray("marketLink.ideal.items").map((tag, i) => (
+          {(t("marketLink.ideal.items", { returnObjects: true }) || []).map((tag, i) => (
             <span key={i}>{tag}</span>
           ))}
         </div>
       </section>
 
-      {/* AFRICA TO JAPAN */}
+      {/* AFRICA → JAPAN */}
       <section className="marketlink-africa-japan" data-aos="fade-up">
         <h2>{t("marketLink.africaJapan.title")}</h2>
-        <h3>{t("marketLink.africaJapan.subtitle")}</h3>
-        <p>{t("marketLink.africaJapan.intro")}</p>
-        <p className="mission">{t("marketLink.africaJapan.mission")}</p>
 
-        {/* Images */}
-        <div className="africa-japan-images">
-          {safeArray("marketLink.africaJapan.images").map((src, i) => (
-            <img key={i} src={src} alt={`africa-japan-${i}`} />
-          ))}
-        </div>
-
-        {/* Why Japan */}
-        <div className="why-japan">
-          <div className="offers">
-            <h4>{t("marketLink.africaJapan.whyJapan.title")}</h4>
-            <h5>Japan offers:</h5>
-            <ul>
-              {safeArray("marketLink.africaJapan.whyJapan.offers").map(
-                (item, i) => (
-                  <li key={i}>{item}</li>
-                )
-              )}
-            </ul>
-          </div>
-          <div className="challenges">
-            <h5>Yet many African enterprises face:</h5>
-            <ul>
-              {safeArray("marketLink.africaJapan.whyJapan.challenges").map(
-                (item, i) => (
-                  <li key={i}>{item}</li>
-                )
-              )}
-            </ul>
-          </div>
-        </div>
-
-        {/* Services */}
-        <div className="services-list">
-          <h4>{t("marketLink.africaJapan.services.title")}</h4>
-          <ol>
-            {safeArray("marketLink.africaJapan.services.list").map(
-              (service, i) => (
-                <li key={i}>
-                  <strong>{service[0]}</strong>
-                  <p>{service[1]}</p>
-                </li>
-              )
+        {(t("marketLink.africaJapan.sections", { returnObjects: true }) || []).map((section, i) => (
+          <section key={i} className="aj-section">
+            <h4>{section.heading}</h4>
+            {section.text && <p>{section.text}</p>}
+            {section.list && (
+              <ul>
+                {section.list.map((item, j) => (
+                  <li key={j}>{item}</li>
+                ))}
+              </ul>
             )}
-          </ol>
-        </div>
-
-        {/* Beneficiaries */}
-        <div className="beneficiaries">
-          <h4>{t("marketLink.africaJapan.beneficiaries.title")}</h4>
-          <div className="tags">
-            {safeArray("marketLink.africaJapan.beneficiaries.items").map(
-              (b, i) => (
-                <span key={i}>{b}</span>
-              )
+            {section.numbered && (
+              <ol>
+                {section.numbered.map((item, j) => (
+                  <li key={j}>{item}</li>
+                ))}
+              </ol>
             )}
-          </div>
-        </div>
+          </section>
+        ))}
 
-        {/* CTA */}
-        <div className="africa-japan-cta">
-          <h4>{t("marketLink.africaJapan.cta.title")}</h4>
-          <p>{t("marketLink.africaJapan.cta.text")}</p>
-        </div>
+        {/* IMAGE CAROUSEL */}
+        {(t("marketLink.africaJapan.images", { returnObjects: true }) || []).length > 0 && (
+          <Slider
+            dots={true}
+            infinite={true}
+            speed={500}
+            slidesToShow={1}
+            slidesToScroll={1}
+            adaptiveHeight={true}
+            className="aj-image-carousel"
+          >
+            {t("marketLink.africaJapan.images", { returnObjects: true }).map((img, i) => (
+              <div key={i}>
+                <img src={img} alt={`Africa→Japan ${i + 1}`} />
+              </div>
+            ))}
+          </Slider>
+        )}
+      </section>
+
+      {/* JOIN TEAM */}
+      <section className="marketlink-join" data-aos="fade-up">
+        <h2>{t("marketLink.join.title")}</h2>
+        <p>{t("marketLink.join.desc")}</p>
       </section>
 
       {/* APPLICATION FORM */}

@@ -204,7 +204,8 @@ services: {
     description: "We support businesses — especially in Africa — to source high-quality goods from Japan. Our services include supplier identification, verification, negotiation support, and coordination of logistics."
   }
 },
-marketLink: {
+
+marketLink : {
   hero: {
     title: "MarketLink",
     desc: "Start with certainty — connect to new markets with confidence and clarity.",
@@ -256,20 +257,21 @@ marketLink: {
   africaJapan: {
     header: "Africa to Japan",
     title: "Enabling African Innovators to Access the Japanese Market",
+    images: [
+      "https://images.unsplash.com/photo-1508615039623-a25605d2b022",
+      "https://images.unsplash.com/photo-1581091870621-1b23f9d55b14"
+    ],
     p1: "While Japan is renowned for its technology, precision, and consumer trust, it remains largely untapped by many African producers, entrepreneurs, manufacturers, and innovators. Despite having high-impact solutions and valuable products, African businesses often struggle to reach Japanese partners, investors, and buyers due to structural, informational, and cultural barriers.",
     p2: "At Intellink Nippon Consulting, we help African enterprises break through those barriers — with insight, access, and real partnership facilitation.",
-    why: {
+    whyJapan: {
       title: "Why Japan Matters for African Enterprises",
-      points: [
+      offers: [
         "A high-income consumer market with a strong appetite for innovation and uniqueness",
         "A long tradition of valuing quality, sustainability, and social impact",
         "Advanced technology and manufacturing ecosystems for collaboration",
         "Global networks for product acceleration — especially in green tech, health, food, and lifestyle sectors"
-      ]
-    },
-    challenges: {
-      title: "Yet, many African enterprises face:",
-      points: [
+      ],
+      challenges: [
         "Lack of visibility in Japan",
         "Difficulty navigating Japan’s complex business culture and buyer behavior",
         "Language barriers and compliance requirements",
@@ -285,17 +287,24 @@ marketLink: {
         ["Technology & Knowledge Exchange Facilitation", "Enable joint R&D, tech transfer, and innovation collaboration with Japanese counterparts."],
         ["Trade Events & Showcases in Japan", "Organize or participate in pop-ups, trade fairs, and exhibitions to introduce your offering to Japanese consumers."],
         ["Pitch & Investment Readiness Coaching", "Refine your pitch, improve investor materials, and align with Japanese business expectations."]
+      ],
+      list: [
+        "Market Access & Opportunity Scouting",
+        "Partner & Investor Matchmaking",
+        "Product Positioning & Compliance Support",
+        "Technology & Knowledge Exchange Facilitation",
+        "Trade Events & Showcases in Japan",
+        "Pitch & Investment Readiness Coaching"
       ]
     },
-    who: {
-      title: "Who Can Benefit?",
+    beneficiaries: {
       items: [
         "Agro-processors & food exporters",
         "Fashion & textile designers",
         "Beauty & wellness product manufacturers",
         "Renewable energy and cleantech innovators",
         "Creative entrepreneurs & artisan brands",
-        "EdTech, MedTech, and FinTech startups",
+        "EdTech, MedTech, FinTech startups",
         "Social enterprises with high-impact models"
       ]
     },
@@ -589,7 +598,7 @@ services: {
   }
 },
 
- marketLink: {
+marketLink: {
   hero: {
     title: "マーケットインテリンク",
     desc: "確信を持って始めよう — 自信と明確さをもって新しい市場へ。",
@@ -601,7 +610,8 @@ services: {
   about: {
     title: "マーケットインテリンクとは？",
     text: "国際企業が新たな地域を理解し、適応し、成長するための、特別に設計された市場調査と支援サービスです。現地の最新情報から適切なパートナー探しまで、市場参入をスムーズかつ戦略的に実現します。",
-    imgAlt: "市場調査"
+    imgAlt: "市場調査",
+    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786"
   },
   services: {
     title: "提供サービス",
@@ -610,6 +620,12 @@ services: {
       ["ビジネスマッチメイキング", "信頼できる現地パートナーやサプライヤーと接続。"],
       ["ローカルナビゲーション", "法務、文化、運営面でのガイド。"],
       ["戦略アドバイザリー", "成功のために設計されたカスタム市場参入プラン。"]
+    ],
+    list: [
+      "市場調査と分析",
+      "パートナー・サプライヤー接続",
+      "ローカル法務・運営サポート",
+      "戦略立案とアドバイザリー"
     ]
   },
   why: {
@@ -619,7 +635,19 @@ services: {
       "数多くの市場参入成功実績。",
       "複数地域にわたる信頼できるネットワーク。",
       "長期的成功のためのデータ主導型戦略。"
-    ]
+    ],
+    africaJapan: {
+      offers: [
+        "日本市場での高価値製品の発掘",
+        "戦略的パートナーとの接続",
+        "ブランド・製品ポジショニング支援"
+      ],
+      challenges: [
+        "日本での認知度不足",
+        "複雑なビジネス文化や購買行動の理解不足",
+        "言語・規制対応の課題"
+      ]
+    }
   },
   ideal: {
     title: "対象となるお客様",
@@ -638,7 +666,7 @@ services: {
           "革新性と独自性を求める高所得消費者市場",
           "品質、持続可能性、社会的インパクトを重視する長い伝統",
           "高度な技術・製造エコシステムとの協業機会",
-          "特にグリーンテック、健康、食品、ライフスタイル分野でのグローバルな製品加速ネットワーク"
+          "グリーンテック、健康、食品、ライフスタイル分野でのグローバル製品加速"
         ]
       },
       {
@@ -657,8 +685,8 @@ services: {
           "パートナー・投資家マッチメイキング — 志や価値観が一致する日本企業と接続",
           "製品ポジショニングと規制対応 — 日本市場に適したブランディングとパッケージング支援",
           "技術・知識交流促進 — 共同研究や技術移転の機会を創出",
-          "日本での展示・商談イベント — 販促のためのポップアップや展示会の企画",
-          "投資準備・ピッチコーチング — 日本の投資家向けプレゼン資料や戦略の最適化"
+          "展示・商談イベント — 販促のためのポップアップや展示会の企画",
+          "投資準備・ピッチコーチング — 日本の投資家向けプレゼン資料や戦略最適化"
         ]
       },
       {
@@ -670,11 +698,15 @@ services: {
           "再生可能エネルギー・クリーンテック開発者",
           "クリエイティブ企業・職人ブランド",
           "EdTech, MedTech, FinTech スタートアップ",
-          "高い社会的インパクトを持つソーシャルビジネス"
+          "社会的インパクトの高いソーシャルビジネス"
         ]
       }
     ],
-    image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022"
+    images: [
+      "https://images.unsplash.com/photo-1508615039623-a25605d2b022",
+      "https://images.unsplash.com/photo-1581091870621-1b23f9d55b14",
+      "https://images.unsplash.com/photo-1542223616-1b5dfc8634c2"
+    ]
   },
   join: {
     title: "チームに参加する",
@@ -684,8 +716,18 @@ services: {
     title: "仮説ではなく確信から始めよう",
     desc: "マーケットインテリンクと提携し、自信をもって新たな機会の扉を開きましょう。",
     button: "お問い合わせ"
+  },
+  beneficiaries: {
+    items: [
+      "輸出企業",
+      "スタートアップ",
+      "投資家",
+      "貿易機関",
+      "社会的インパクト企業"
+    ]
   }
 },
+
 
   expertConnect: {
       title: "エキスパートコネクト",
