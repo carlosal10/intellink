@@ -4,6 +4,7 @@
   width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
+  margin-top: auto;
 }
 
 /* Each section with a gradient overlay in the background */

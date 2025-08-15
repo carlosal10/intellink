@@ -1,6 +1,7 @@
 .expert-connect-section {
   font-family: 'Inter', sans-serif;
   color: #0b2545;
+  margin-top: auto;
 }
 
 /* Hero */
@@ -72,6 +73,13 @@
   color: #e63946;
   font-weight: bold;
 }
+.ec-icon p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+  line-height: 1.5;
+}
 
 /* Steps */
 .ec-steps {
@@ -93,6 +101,12 @@
   padding: 1.2rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ec-card p {
+  color: #333;
+  font: 1em sans-serif;
+  margin: 0.5rem 0;
+
 }
 .ec-card:hover {
   transform: translateY(-4px);
@@ -134,7 +148,11 @@
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
-
+p {
+  margin: 0.5rem 0;
+  color: #333;
+  font-size: 1rem;
+}
 /* Responsive */
 @media (max-width: 768px) {
   .ec-hero-content h1 {

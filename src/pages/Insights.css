@@ -2,6 +2,7 @@
   font-family: "Segoe UI", Roboto, sans-serif;
   color: #333;
   line-height: 1.6;
+  margin-top: auto; /* Adjusted for fixed navbar */
 }
 
 /* Hero Sections */
