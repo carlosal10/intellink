@@ -257,10 +257,7 @@ marketLink : {
   africaJapan: {
     header: "Africa to Japan",
     title: "Enabling African Innovators to Access the Japanese Market",
-    images: [
-      "https://images.unsplash.com/photo-1508615039623-a25605d2b022",
-      "https://images.unsplash.com/photo-1581091870621-1b23f9d55b14"
-    ],
+   
     p1: "While Japan is renowned for its technology, precision, and consumer trust, it remains largely untapped by many African producers, entrepreneurs, manufacturers, and innovators. Despite having high-impact solutions and valuable products, African businesses often struggle to reach Japanese partners, investors, and buyers due to structural, informational, and cultural barriers.",
     p2: "At Intellink Nippon Consulting, we help African enterprises break through those barriers — with insight, access, and real partnership facilitation.",
     whyJapan: {
@@ -702,11 +699,6 @@ marketLink: {
         ]
       }
     ],
-    images: [
-      "https://images.unsplash.com/photo-1508615039623-a25605d2b022",
-      "https://images.unsplash.com/photo-1581091870621-1b23f9d55b14",
-      "https://images.unsplash.com/photo-1542223616-1b5dfc8634c2"
-    ]
   },
   join: {
     title: "チームに参加する",
