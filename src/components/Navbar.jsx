@@ -27,31 +27,88 @@ export default function Navbar() {
 
   // Lock body scroll when menu is open
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
   }, [menuOpen]);
 
   return (
-    <nav className="navbar" ref={navRef}>
-      {/* Logo */}
-      <Link to="/" className="logo" onClick={closeMenu}>
-        <img
-          src="/images/android-chrome-512x512.png"
-          alt="Intellink Nippon Logo"
-          className="logo-img"
-        />
-      </Link>
+    <>
+      <nav className="navbar" ref={navRef}>
+        {/* Logo */}
+        <Link to="/" className="logo" onClick={closeMenu}>
+          <img
+            src="/images/android-chrome-512x512.png"
+            alt="Intellink Nippon Logo"
+            className="logo-img"
+          />
+        </Link>
 
-      {/* Hamburger for mobile */}
-      <div className="hamburger-wrapper">
-        <Hamburger toggled={menuOpen} toggle={setMenuOpen} size={24} color="#F1C40F" />
-      </div>
+        {/* Desktop Links */}
+        <div className="desktop-links">
+          <NavLink to="/" onClick={closeMenu}>
+            {language === 'en' ? 'Home' : 'ホーム'}
+          </NavLink>
+          <NavLink to="/about" onClick={closeMenu}>
+            {language === 'en' ? 'About' : '会社情報'}
+          </NavLink>
+          <NavLink to="/services" onClick={closeMenu}>
+            {language === 'en' ? 'Services' : 'サービス'}
+          </NavLink>
+          <NavLink to="/sectors" onClick={closeMenu}>
+            {language === 'en' ? 'Sectors' : 'セクター'}
+          </NavLink>
 
-      {/* Links */}
-      <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
+          {/* Dropdown */}
+          <div className="nav-dropdown">
+            <button className="nav-dropdown-toggle">
+              {language === 'en' ? 'Solutions' : 'もっと'}
+              <span className="dropdown-icon">▾</span>
+            </button>
+            <div className="dropdown-menu">
+              <NavLink to="/expertconnect" onClick={closeMenu}>
+                {language === 'en' ? 'Expert Connect' : 'エキスパートコネクト'}
+              </NavLink>
+              <NavLink to="/tradelink" onClick={closeMenu}>
+                {language === 'en' ? 'TradeLink' : 'トレードリンク'}
+              </NavLink>
+              <NavLink to="/marketlink" onClick={closeMenu}>
+                {language === 'en' ? 'MarketLink' : 'マーケットリンク'}
+              </NavLink>
+            </div>
+          </div>
+
+          <NavLink to="/insights" onClick={closeMenu}>
+            {language === 'en' ? 'Insights' : '知見'}
+          </NavLink>
+          <NavLink to="/contact" onClick={closeMenu}>
+            {language === 'en' ? 'Contact' : 'お問い合わせ'}
+          </NavLink>
+          <NavLink to="/recruitment" onClick={closeMenu}>
+            {language === 'en' ? 'Careers' : '採用情報'}
+          </NavLink>
+          <NavLink to="/blog" onClick={closeMenu}>
+            {language === 'en' ? 'Blog' : 'ブログ'}
+          </NavLink>
+
+          {/* Language Switch */}
+          <button
+            onClick={() => {
+              toggleLanguage();
+              closeMenu();
+            }}
+            className="lang-toggle"
+          >
+            {language === 'en' ? '日本語' : 'EN'}
+          </button>
+        </div>
+
+        {/* Hamburger (mobile only) */}
+        <div className="hamburger-wrapper">
+          <Hamburger toggled={menuOpen} toggle={setMenuOpen} size={24} color="#F1C40F" />
+        </div>
+      </nav>
+
+      {/* Sidebar Menu for mobile */}
+      <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
         <NavLink to="/" onClick={closeMenu}>
           {language === 'en' ? 'Home' : 'ホーム'}
         </NavLink>
@@ -65,22 +122,15 @@ export default function Navbar() {
           {language === 'en' ? 'Sectors' : 'セクター'}
         </NavLink>
 
-        {/* Solutions Dropdown */}
-        <div
-          className={`nav-dropdown ${mobileDropdownOpen ? 'mobile-open' : ''}`}
+        {/* Mobile dropdown */}
+        <button
+          className="mobile-dropdown-toggle"
+          onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
         >
-          <button
-            className="nav-dropdown-toggle"
-            onClick={() => {
-              if (window.innerWidth <= 900) {
-                setMobileDropdownOpen(!mobileDropdownOpen);
-              }
-            }}
-          >
-            {language === 'en' ? 'Solutions' : 'もっと'}
-            <span className="dropdown-icon">▾</span>
-          </button>
-          <div className="dropdown-menu">
+          {language === 'en' ? 'Solutions' : 'もっと'}
+        </button>
+        {mobileDropdownOpen && (
+          <div className="mobile-dropdown">
             <NavLink to="/expertconnect" onClick={closeMenu}>
               {language === 'en' ? 'Expert Connect' : 'エキスパートコネクト'}
             </NavLink>
@@ -91,7 +141,7 @@ export default function Navbar() {
               {language === 'en' ? 'MarketLink' : 'マーケットリンク'}
             </NavLink>
           </div>
-        </div>
+        )}
 
         <NavLink to="/insights" onClick={closeMenu}>
           {language === 'en' ? 'Insights' : '知見'}
@@ -105,18 +155,10 @@ export default function Navbar() {
         <NavLink to="/blog" onClick={closeMenu}>
           {language === 'en' ? 'Blog' : 'ブログ'}
         </NavLink>
-
-        {/* Language Switch */}
-        <button
-          onClick={() => {
-            toggleLanguage();
-            closeMenu();
-          }}
-          className="lang-toggle"
-        >
+        <button onClick={() => { toggleLanguage(); closeMenu(); }} className="lang-toggle">
           {language === 'en' ? '日本語' : 'EN'}
         </button>
       </div>
-    </nav>
+    </>
   );
 }
