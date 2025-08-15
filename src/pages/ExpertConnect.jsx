@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { FaGlobe, FaClipboardCheck, FaRocket } from "react-icons/fa";
 import useTranslate from "../hooks/useTranslate";
 import "./ExpertConnect.css";
@@ -11,9 +11,18 @@ const Section = ({ title, children }) => (
 );
 
 export default function ExpertConnect() {
-  // Pull translations for this page based on current language context
   const t = useTranslate("expertConnect") || {};
   const isLoading = !t?.title && !t?.tagline;
+
+  const [showForm, setShowForm] = useState(false);
+  const formRef = useRef(null);
+
+  const handleShowForm = () => {
+    setShowForm(true);
+    setTimeout(() => {
+      formRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
 
   return (
     <section className="expert-connect-section">
@@ -43,7 +52,7 @@ export default function ExpertConnect() {
 
       {/* Content */}
       <div className="ec-container">
-        <Section >
+        <Section>
           <p>{t?.intro || ""}</p>
         </Section>
 
@@ -104,8 +113,39 @@ export default function ExpertConnect() {
           <FaRocket className="ec-icon-large" />
           <h3>{t?.cta?.title}</h3>
           <p>{t?.cta?.text}</p>
-          <button className="ec-btn">{t?.cta?.button}</button>
+          <button className="ec-btn" onClick={handleShowForm}>
+            {t?.cta?.button}
+          </button>
         </div>
+
+        {/* Application Form */}
+        {showForm && (
+          <Section title="Expert Connect Application Form">
+            <div ref={formRef} className="ec-form">
+              <form>
+                <label>
+                  Full Name:
+                  <input type="text" name="name" required />
+                </label>
+                <label>
+                  Email Address:
+                  <input type="email" name="email" required />
+                </label>
+                <label>
+                  Area of Expertise:
+                  <input type="text" name="expertise" required />
+                </label>
+                <label>
+                  Why do you want to join?
+                  <textarea name="reason" required></textarea>
+                </label>
+                <button type="submit" className="ec-btn">
+                  Submit Application
+                </button>
+              </form>
+            </div>
+          </Section>
+        )}
       </div>
     </section>
   );

@@ -170,3 +170,58 @@ p {
     font-size: 1.4rem;
   }
 }
+/* ================================
+   Application Form
+================================ */
+.ec-form {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.ec-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ec-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.ec-form input,
+.ec-form textarea {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+.ec-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.ec-form button {
+  align-self: flex-start;
+}
+
+/* ================================
+   Responsive
+================================ */
+@media (min-width: 600px) {
+  .ec-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .ec-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
