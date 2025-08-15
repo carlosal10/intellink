@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import checkoutRoutes from './routes/checkout.js';
 import recruitmentRoutes from './routes/recruitment.js'; // Assuming you have a recruitment route
-
+import expertConnectRoutes from "./routes/expertConnect.js";
 dotenv.config();
 const app = express();
 
@@ -15,6 +15,7 @@ connectDB();
 
 app.use('/api/payment', checkoutRoutes);
 app.use('/api/recruitment', recruitmentRoutes);
+app.use('/api/expert-connect', expertConnectRoutes);
 
 
 const PORT = process.env.PORT || 5000;
