@@ -46,70 +46,7 @@ export default function AfricaToJapanRecruitment() {
   return (
     <div className="africa-japan-page">
 
-      {/* HERO */}
-      <section className="aj-hero">
-        <div className="aj-hero-overlay">
-          <h1><FaGlobe /> Africa to Japan</h1>
-          <p>Enabling African innovators to access the Japanese market.</p>
-        </div>
-      </section>
-
-      {/* OVERVIEW */}
-      <section className="aj-overview">
-        <p>
-          While Japan is renowned for its technology, precision, and consumer trust,
-          it remains largely untapped by many African producers, entrepreneurs, and innovators.
-          <strong> Intellink Nippon Consulting</strong> helps African enterprises break through
-          structural, informational, and cultural barriers—with insight, access, and partnership facilitation.
-        </p>
-      </section>
-
-      {/* WHY JAPAN */}
-      <section className="aj-why">
-        <h2>Why Japan Matters</h2>
-        <ul>
-          <li>High-income consumer market with a taste for innovation and uniqueness.</li>
-          <li>Strong tradition of valuing quality, sustainability, and social impact.</li>
-          <li>Advanced technology and manufacturing ecosystems.</li>
-          <li>Global networks in green tech, health, food, and lifestyle sectors.</li>
-        </ul>
-      </section>
-
-      {/* SERVICES */}
-      <section className="aj-services">
-        <h2>How We Help</h2>
-        <div className="aj-service-grid">
-          <div><FaChartLine /> Market Access & Opportunity Scouting</div>
-          <div><FaHandshake /> Partner & Investor Matchmaking</div>
-          <div><FaTags /> Product Positioning & Compliance</div>
-          <div><FaBriefcase /> Trade Events & Showcases</div>
-        </div>
-      </section>
-
-      {/* WHO CAN BENEFIT */}
-      <section className="aj-beneficiaries">
-        <h2>Who Can Benefit?</h2>
-        <p>
-          Agro-processors, fashion designers, cleantech innovators, artisan brands, tech startups,
-          and social enterprises ready to explore Japan’s potential.
-        </p>
-      </section>
-
-      {/* RECRUITMENT INTRO */}
-      <section className="aj-recruitment">
-        <h2>Join Our Team</h2>
-        <p>
-          We are building bridges between Japan and Africa. Whether you’re in international trade,
-          market research, supply chain, or sector-specific expertise, your skills can shape global business.
-        </p>
-        <h3>Current Openings</h3>
-        <ul>
-          <li>Market Research Associates (Tokyo / Remote)</li>
-          <li>B2B Matchmaking Consultants (Africa or Japan-based)</li>
-          <li>Interns / Fellows – International Trade & Investment</li>
-          <li>Sector Experts (Freelance / Retainer Basis)</li>
-        </ul>
-      </section>
+      
 
       {/* APPLICATION FORM */}
       <form onSubmit={handleSubmit} className="recruitment-form" encType="multipart/form-data">

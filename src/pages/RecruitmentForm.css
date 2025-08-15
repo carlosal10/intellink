@@ -77,67 +77,7 @@ input[type="checkbox"] {
 .submit-btn:hover {
   background-color: #06172d;
 }
-.africa-japan-page {
-  font-family: 'Segoe UI', sans-serif;
-  color: #333;
-  margin-top: 10%; /* Adjusted for fixed navbar */
-}
 
-.aj-hero {
-  background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') center/cover no-repeat;
-  height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.aj-hero-overlay {
-  background: rgba(0,0,0,0.5);
-  color: white;
-  padding: 2rem;
-  border-radius: 8px;
-  text-align: center;
-}
-.aj-hero-overlay h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: #f1c40f;
-}
-.aj-hero-overlay p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #fefefe;
-}
-
-.aj-overview, .aj-why, .aj-services, .aj-beneficiaries, .aj-recruitment {
-  padding: 2rem 10%;
-}
-
-.aj-why ul, .aj-recruitment ul {
-  list-style: none;
-  padding: 0;
-}
-
-.aj-why li::before {
-  content: "• ";
-  color: #E63946;
-  font-weight: bold;
-}
-
-.aj-service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
-
-.aj-service-grid div {
-  background: #f8f8f8;
-  padding: 1rem;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
 
 .recruitment-form {
   padding: 2rem 10%;
