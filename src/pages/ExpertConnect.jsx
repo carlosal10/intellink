@@ -10,8 +10,9 @@ const Section = ({ title, children }) => (
   </section>
 );
 
-export default function ExpertConnect({ lang = "en" }) {
-  const t = useTranslate(lang, "expertConnect") || {};
+export default function ExpertConnect() {
+  // Pull translations for this page based on current language context
+  const t = useTranslate("expertConnect") || {};
   const isLoading = !t?.title && !t?.tagline;
 
   return (
@@ -22,6 +23,7 @@ export default function ExpertConnect({ lang = "en" }) {
         </div>
       )}
 
+      {/* Hero */}
       <div
         className="ec-hero"
         style={{
@@ -39,6 +41,7 @@ export default function ExpertConnect({ lang = "en" }) {
         </div>
       </div>
 
+      {/* Content */}
       <div className="ec-container">
         <Section>
           <p>{t?.intro || ""}</p>
@@ -96,6 +99,7 @@ export default function ExpertConnect({ lang = "en" }) {
           <p>{t?.register?.howDescription}</p>
         </Section>
 
+        {/* CTA */}
         <div className="ec-cta">
           <FaRocket className="ec-icon-large" />
           <h3>{t?.cta?.title}</h3>
