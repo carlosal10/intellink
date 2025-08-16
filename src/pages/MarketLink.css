@@ -13,7 +13,9 @@
   justify-content: center;
   position: relative;
 }
-
+.marketlink-hero p{
+  color: #f0f4ff;
+}
 .hero-overlay {
   background: rgba(11, 37, 69, 0.7);
   padding: 2rem;
@@ -29,7 +31,7 @@ h1 {
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   margin-bottom: 2rem;
   color: #fefefe;
 }
@@ -135,6 +137,7 @@ p {
   color: white;
   padding: 3rem 15%;
   overflow: hidden;
+  border-radius: 50px;
 }
 
 .marketlink-why ul {
@@ -392,7 +395,7 @@ p {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   .marketlink-africa-japan h2 {
     font-size: 2rem;
   }
@@ -403,6 +406,9 @@ p {
     animation: none; /* remove scrolling on small screens */
     overflow-x: auto;
     justify-content: flex-start;
+  }
+  .marketlink-hero h1{
+    font-size: 2rems;
   }
 }
 
@@ -451,7 +457,7 @@ p {
   }
 
   .hero-overlay h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 /* APPLICATION FORM */

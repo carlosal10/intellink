@@ -1,91 +1,83 @@
-import './Insights.css';
-import useTranslate from '../hooks/useTranslate';
-import { useAuth } from '../context/AuthContext';
-import { redirectToCheckout } from '../api/checkout';
-import { useState } from 'react';
+import React from "react";
+import "./Insights.css";
+import useTranslate from "../hooks/useTranslate";
+
+// Reusable Section component
+const Section = ({ title, children }) => (
+  <section className="insights-section">
+    {title && <div className="section-title"><h2>{title}</h2></div>}
+    {children}
+  </section>
+);
+
+// Reusable Card Grid component
+const CardGrid = ({ items }) => (
+  <div className="articles-grid">
+    {items.map((item, idx) => (
+      <div key={idx} className="article-card">
+        <span className="article-title">{item.title}</span>
+        <p>{item.desc}</p>
+      </div>
+    ))}
+  </div>
+);
 
 export default function Insights() {
-  const t = useTranslate();
-  const { isLoggedIn, hasSubscription } = useAuth();
-  const [unlockedArticles, setUnlockedArticles] = useState([]);
+  const t = useTranslate("insights") || {};
 
-  const grantAccess = (index) => {
-    setUnlockedArticles((prev) => [...prev, index]);
-  };
+  // Pull content from translation object
+  const hero = t.hero || {};
+  const overview = t.overview || "";
+  const featuredInsights = t.featuredInsights || [];
+  const useCases = t.useCases || [];
+  const idealUsers = t.idealUsers || [];
+  const ctaSection = t.ctaSection || {};
 
   return (
     <div className="insights-container">
 
-      {/* Success Stories */}
+      {/* Hero */}
       <section
         className="insights-hero"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url("https://source.unsplash.com/1600x900/?success,business")`
-        }}
+        style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${hero.bgImage})` }}
       >
         <div className="insights-hero-content">
-          <h2>{t('insights.successTitle')}</h2>
-          <p>{t('insights.successText')}</p>
+          <h2>{hero.header}</h2>
+          <p>{hero.tagline}</p>
+          {hero.cta && <button className="cta-btn">{hero.cta}</button>}
         </div>
       </section>
 
-      {/* Client Feedback */}
-      <section
-        className="insights-hero"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url("https://source.unsplash.com/1600x900/?feedback,teamwork")`
-        }}
-      >
-        <div className="insights-hero-content">
-          <h2>{t('insights.feedbackTitle')}</h2>
-          <p>
-            {t('insights.feedbackText')}
-            <br />
-            <em className="feedback-client">{t('insights.feedbackClient')}</em>
-          </p>
-        </div>
-      </section>
+      {/* Overview */}
+      <Section title={t.overviewTitle || "Overview"}>
+        <p>{overview}</p>
+      </Section>
 
-      {/* Premium Articles */}
-      <section className="insights-articles">
-        <div className="articles-header">
-          <h2>{t('insights.articlesTitle')}</h2>
-        </div>
+      {/* Featured Insights */}
+      <Section title={t.featuredTitle || "Featured Insights"}>
+        <CardGrid items={featuredInsights} />
+      </Section>
 
-        <div className="articles-grid">
-          {t('insights.articles')?.map((article, index) => (
-            <div key={index} className="article-card">
-              <div className="article-info">
-                <span className="article-title">{article}</span>
-              </div>
+      {/* Use Cases */}
+      <Section title={t.useCasesTitle || "Use Cases"}>
+        <ul className="tl-list">
+          {useCases.map((item, idx) => <li key={idx}>{item}</li>)}
+        </ul>
+      </Section>
 
-              {unlockedArticles.includes(index) ? (
-                <a
-                  href={`/downloads/article-${index + 1}.pdf`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-btn"
-                >
-                  {t('insights.download')}
-                </a>
-              ) : (
-                <button
-                  className="secondary-btn"
-                  onClick={() => {
-                    if (isLoggedIn && hasSubscription) {
-                      grantAccess(index);
-                    } else {
-                      redirectToCheckout(index, 500); // $5
-                    }
-                  }}
-                >
-                  {t('insights.subscribeCTA')}
-                </button>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Ideal Users */}
+      <Section title={t.idealUsersTitle || "Ideal Users"}>
+        <ul className="tl-list">
+          {idealUsers.map((item, idx) => <li key={idx}>{item}</li>)}
+        </ul>
+      </Section>
+
+      {/* CTA Section */}
+      <Section title={ctaSection.title}>
+        <p>{ctaSection.text}</p>
+        {ctaSection.button && <button className="cta-btn">{ctaSection.button}</button>}
+      </Section>
+
     </div>
   );
 }

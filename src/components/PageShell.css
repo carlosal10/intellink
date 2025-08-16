@@ -1,0 +1,247 @@
+.pageshell {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  margin-top: 10%;
+}
+
+/* HERO */
+.pageshell-hero {
+  background: url("https://images.unsplash.com/photo-1521791136064-7986c2920216") center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-overlay {
+  background: rgba(11, 37, 69, 0.7);
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+}
+
+.pageshell-hero h1 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  color: #F1C40F;
+}
+
+.pageshell-hero p {
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+  color: #fefefe;
+}
+
+.hero-cta {
+  background: #E63946;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.hero-cta:hover {
+  background: #c12f3a;
+}
+
+/* INTRO */
+.pageshell-intro {
+  padding: 3rem 15%;
+  background: #F5F5F5;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.pageshell-intro p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #0B2545;
+}
+
+/* ABOUT */
+.pageshell-about {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem 10%;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
+}
+
+.pageshell-about h2 {
+  color: #0B2545;
+  margin-bottom: 1rem;
+}
+
+.pageshell-about p {
+  color: #000;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* SERVICES */
+.pageshell-services {
+  padding: 3rem 10%;
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #E63946;
+  margin-bottom: 1rem;
+}
+
+/* WHY */
+.pageshell-why {
+  position: relative;
+  background: #0B2545;
+  color: white;
+  padding: 3rem 15%;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+.pageshell-why ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pageshell-why li {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+/* IDEAL */
+.pageshell-ideal {
+  padding: 3rem 10%;
+  text-align: center;
+}
+
+.ideal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.ideal-tags span {
+  background: #E63946;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+/* AFRICA → JAPAN */
+.pageshell-africa-japan {
+  background: linear-gradient(135deg, #fdf6f0, #f0f4ff);
+  padding: 4rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  max-width: 1200px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.pageshell-africa-japan:hover {
+  transform: translateY(-5px);
+}
+
+.typing-animation {
+  border-right: 3px solid #E63946;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: typing 3s steps(30) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* FINAL CTA */
+.pageshell-finalcta {
+  padding: 3rem 10%;
+  text-align: center;
+  background: #F5F5F5;
+}
+
+.final-cta-btn {
+  background: #0B2545;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.final-cta-btn:hover {
+  background: #081a32;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .pageshell-about {
+    flex-direction: column;
+  }
+
+  .pageshell-africa-japan {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .pageshell-africa-japan h2 {
+    font-size: 2rem;
+  }
+}

@@ -5,105 +5,105 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./TradeLink.css";
 
-// Reusable Section wrapper
-const Section = ({ title, children, className = "" }) => (
-  <section className={`tl-section ${className}`}>
-    {title && <h2>{title}</h2>}
-    {children}
-  </section>
-);
-
-// Text + Image layout
-const TextImageBlock = ({ title, children, image, reverse }) => (
-  <div className={`tl-block ${reverse ? "reverse" : ""}`}>
-    <div className="tl-block__text">
-      {title && <h2>{title}</h2>}
-      {children}
-    </div>
-    <div className="tl-block__image">
-      <img src={image.src} alt={image.alt} />
-    </div>
-  </div>
-);
-
-export default function TradeLink() {
-  const t = useTranslate();
+export default function TradeLinkPage() {
+  const t = useTranslate("tradeLink") || {};
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
+  const TextImageBlock = ({ title, children, image, reverse }) => (
+    <div className={`page-block ${reverse ? "reverse" : ""}`} data-aos="fade-up">
+      <div className="block-text">
+        {title && <h3>{title}</h3>}
+        {children}
+      </div>
+      <div className="block-image">
+        <img src={image.src} alt={image.alt} />
+      </div>
+    </div>
+  );
+
   return (
-    <div className="trade-link">
-      {/* Hero */}
-      <section className="tl-hero" data-aos="fade-up">
-        <div className="tl-hero__content">
-          <h1>{t("tradeLink.hero.title")}</h1>
-          <p>{t("tradeLink.hero.desc")}</p>
-        </div>
-        <div className="tl-hero__image">
-          <img
-            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
-            alt={t("tradeLink.hero.imgAlt")}
-          />
+    <div className="page-shell">
+      {/* HERO */}
+      <section
+        className="page-hero"
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80')`,
+        }}
+      >
+        <div className="page-hero-overlay">
+          <h1>{t.hero?.title}</h1>
+          <p>{t.hero?.desc}</p>
         </div>
       </section>
 
-      {/* Intro */}
-      <Section title={t("tradeLink.intro.title")}>
-        <p>{t("tradeLink.intro.text")}</p>
-      </Section>
+      {/* INTRO */}
+      {t.intro && (
+        <section className="page-section">
+          <h3>{t.intro.title}</h3>
+          <p>{t.intro.text}</p>
+        </section>
+      )}
 
-      {/* What We Offer */}
-      <TextImageBlock
-        title={t("tradeLink.offer.title")}
-        image={{
-          src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
-          alt: t("tradeLink.offer.imgAlt"),
-        }}
-      >
-        <ul className="tl-list">
-          {t("tradeLink.offer.points").map((p, i) => (
-            <li key={i}>
-              <strong>{p[0]}:</strong> {p[1]}
-            </li>
-          ))}
-        </ul>
-      </TextImageBlock>
+      {/* WHAT WE OFFER */}
+      {t.offer && (
+  <TextImageBlock
+    title={t.offer.title}
+    image={{
+      src: t.offer.imgSrc || "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
+      alt: t.offer.imgAlt
+    }}
+  >
+    <ul>
+      {t.offer.points?.map((p, i) => (
+        <li key={i}>
+          <strong>{p.title}:</strong> {p.desc}
+        </li>
+      ))}
+    </ul>
+  </TextImageBlock>
+)}
 
-      {/* Why TradeLink */}
-      <TextImageBlock
-        title={t("tradeLink.why.title")}
-        reverse
-        image={{
-          src: "/images/photo-15.avif",
-          alt: t("tradeLink.why.imgAlt"),
-        }}
-      >
-        <ul className="tl-list">
-          {t("tradeLink.why.points").map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-      </TextImageBlock>
 
-      {/* Use Cases */}
-      <Section title={t("tradeLink.cases.title")}>
-        <ul className="tl-list">
-          {t("tradeLink.cases.items").map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-      </Section>
+      {/* WHY TRADELINK */}
+      {t.why && (
+        <TextImageBlock
+          title={t.why.title}
+          reverse
+          image={{ src: t.why.imgSrc || "/images/photo-15.avif", alt: t.why.imgAlt }}
+        >
+          <ul>
+            {t.why.points?.map((p, i) => (
+              <li key={i}>{p}</li>
+            ))}
+          </ul>
+        </TextImageBlock>
+      )}
+
+      {/* USE CASES */}
+      {t.cases && (
+        <section className="page-section">
+          <h3>{t.cases.title}</h3>
+          <ul>
+            {t.cases.items?.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* CTA */}
-      <section className="tl-cta" data-aos="fade-up">
-        <h2>{t("tradeLink.cta.title")}</h2>
-        <p>{t("tradeLink.cta.desc")}</p>
-        <Link to="/contact" className="cta-btn">
-          {t("tradeLink.cta.button")}
-        </Link>
-      </section>
+      {t.cta && (
+        <section className="page-cta" data-aos="fade-up">
+          <h3>{t.cta.title}</h3>
+          <p>{t.cta.desc}</p>
+          <Link to="/contact" className="cta-btn">
+            {t.cta.button}
+          </Link>
+        </section>
+      )}
     </div>
   );
 }

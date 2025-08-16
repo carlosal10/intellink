@@ -101,24 +101,44 @@ const translations = {
         submit: "Schedule a Consultation"
       }
     },
-    insights: {
-      successTitle: "Success Stories",
-      successText:
-        "We supported a Japanese agritech firm in establishing partnerships with local distributors in East Africa, resulting in a successful pilot launch and full-scale market entry within 9 months.",
-      feedbackTitle: "Featured Client Feedback",
-      feedbackText:
-        "“Intellink Nippon helped us understand complex regulatory landscapes in record time. Their precision and cross-cultural fluency gave us a confident edge.”",
-      feedbackClient: "— Japanese SME Executive, Manufacturing Sector",
-      articlesTitle: "Thought Leadership",
-      articles: [
-        "Why Japan-Africa Trade Needs More Than Capital: The Role of Cultural Brokers",
-        "Navigating Market Compliance Across Borders: A Practical Framework",
-        "From Opportunity to Action: Building Trust in Emerging Markets"
+   insights: {
+      hero: {
+        header: "Unlock Market Knowledge with Expert Insights",
+        tagline: "Practical intelligence to guide your business between Japan and Africa.",
+        cta: "Explore Reports",
+        bgImage: "https://source.unsplash.com/1600x900/?business,market"
+      },
+      overviewTitle: "Overview",
+      overview: "Our Insights & Reports section delivers actionable intelligence, market trends, and sector analyses to support your strategic decisions. Whether you are exploring new markets, launching products, or evaluating trade opportunities, our reports provide the clarity and context needed to make informed moves.",
+      featuredTitle: "Featured Insights",
+      featuredInsights: [
+        { title: "Market Entry Analyses", desc: "Feasibility studies and demand forecasts for African and Japanese markets." },
+        { title: "Consumer Behavior Studies", desc: "Surveys, focus groups, and product testing insights." },
+        { title: "Regulatory & Policy Briefs", desc: "Updates on compliance, tariffs, labeling, and non-tariff barriers." },
+        { title: "Sector Spotlights", desc: "In-depth reports on technology, energy, manufacturing, and agribusiness." },
+        { title: "Cross-Cultural Business Guides", desc: "Understanding corporate culture, communication, and relationship-building between Japan and Africa." }
       ],
-      download: "Download Article",
-      subscribeCTA: "Subscribe to Access",
-      subscribePrompt: "Please log in and subscribe to access this article."
+      useCasesTitle: "Use Cases",
+      useCases: [
+        "Japanese manufacturers planning entry into East African markets.",
+        "African exporters seeking access to Japan’s distribution networks.",
+        "Startups and SMEs evaluating demand and pricing strategies before launch.",
+        "Corporations needing up-to-date regulatory and compliance guidance."
+      ],
+      idealUsersTitle: "Ideal Users",
+      idealUsers: [
+        "Business executives and strategy teams",
+        "Market researchers and analysts",
+        "Trade and investment professionals",
+        "Entrepreneurs expanding internationally"
+      ],
+      ctaSection: {
+        title: "Stay Informed",
+        text: "Stay informed. Make data-driven decisions.",
+        button: "Access Reports →"
+      }
     },
+  
     // EN
 tradeLink: {
   hero: {
@@ -574,20 +594,41 @@ marketLink : {
       }
     },
     insights: {
-      successTitle: "成功事例",
-      successText: "私たちは日本のアグリテック企業が東アフリカで現地パートナーを確立し、9ヶ月以内にパイロットから本格的市場参入を成功させるのを支援しました。",
-      feedbackTitle: "クライアントの声",
-      feedbackText: "「Intellink Nipponは複雑な規制環境の理解を迅速に支援してくれました。正確さと文化的理解が当社に自信を与えてくれました。」",
-      feedbackClient: "— 日本の中小企業・製造業エグゼクティブ",
-      articlesTitle: "リーダーシップ記事",
-      articles: [
-        "日本・アフリカ貿易に資本以上のものが必要な理由：文化仲介者の役割",
-        "国境を超えたコンプライアンスの実践フレームワーク",
-        "チャンスを行動へ：新興市場で信頼を築く方法"
+      hero: {
+        header: "専門的な洞察で市場知識を解放する",
+        tagline: "日本とアフリカ間のビジネスを導く実践的なインテリジェンス。",
+        cta: "レポートを見る",
+        bgImage: "https://source.unsplash.com/1600x900/?business,market"
+      },
+      overviewTitle: "概要",
+      overview: "当社のインサイト＆レポートは、戦略的意思決定をサポートする市場動向やセクター分析などの実用的な情報を提供します。新市場の開拓、製品の立ち上げ、貿易機会の評価など、意思決定に必要な明確さとコンテキストを提供します。",
+      featuredTitle: "注目のインサイト",
+      featuredInsights: [
+        { title: "市場参入分析", desc: "アフリカおよび日本市場向けの実現可能性調査と需要予測。" },
+        { title: "消費者行動調査", desc: "アンケート、フォーカスグループ、製品テストの洞察。" },
+        { title: "規制・政策ブリーフ", desc: "コンプライアンス、関税、ラベル表示、非関税障壁の最新情報。" },
+        { title: "セクタースポットライト", desc: "技術、エネルギー、製造、農業ビジネスに関する詳細レポート。" },
+        { title: "異文化ビジネスガイド", desc: "日本とアフリカ間の企業文化、コミュニケーション、関係構築の理解。" }
       ],
-      download: "記事をダウンロード",
-      subscribeCTA: "購読してアクセス",
-      subscribePrompt: "記事にアクセスするには、ログインして購読してください。"
+      useCasesTitle: "活用事例",
+      useCases: [
+        "東アフリカ市場への参入を計画する日本企業。",
+        "日本の流通ネットワークへのアクセスを求めるアフリカの輸出業者。",
+        "立ち上げ前に需要と価格戦略を評価するスタートアップおよび中小企業。",
+        "最新の規制およびコンプライアンス情報が必要な企業。"
+      ],
+      idealUsersTitle: "理想的な利用者",
+      idealUsers: [
+        "企業経営者および戦略チーム",
+        "市場調査員およびアナリスト",
+        "貿易・投資専門家",
+        "国際展開を目指す起業家"
+      ],
+      ctaSection: {
+        title: "情報を入手する",
+        text: "情報を入手し、データに基づいた意思決定を行いましょう。",
+        button: "レポートにアクセス →"
+      }
     },
     // JP
 tradeLink: {

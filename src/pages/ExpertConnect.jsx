@@ -5,14 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import useTranslate from "../hooks/useTranslate";
 import "./ExpertConnect.css";
 
-const Section = ({ title, children }) => (
-  <section className="ec-section">
-    {title && <h3 className="ec-section-title">{title}</h3>}
-    {children}
-  </section>
-);
-
-export default function ExpertConnect() {
+export default function ExpertConnectPage() {
   const t = useTranslate("expertConnect") || {};
   const isLoading = !t?.title && !t?.tagline;
 
@@ -43,13 +36,12 @@ export default function ExpertConnect() {
 
       if (!res.ok) throw new Error("Failed to submit form");
 
-      toast.success("Your application has been submitted successfully, we're reviewing it.", {
-        position: "top-right",
-        autoClose: 3000,
-      });
-
+      toast.success(
+        "Your application has been submitted successfully, we're reviewing it.",
+        { position: "top-right", autoClose: 3000 }
+      );
       setFormData({ name: "", email: "", expertise: "", message: "" });
-      setTimeout(() => setShowForm(false), 500); // smooth close after toast
+      setTimeout(() => setShowForm(false), 500);
     } catch (err) {
       toast.error("Something went wrong. Please try again.", {
         position: "top-right",
@@ -59,105 +51,115 @@ export default function ExpertConnect() {
   };
 
   return (
-    <section className="expert-connect-section">
+    <div className="page-shell">
       {isLoading && (
-        <div className="ec-loading">
+        <div className="page-loading">
           <p>Loading content...</p>
         </div>
       )}
 
-      {/* Hero */}
-      <div
-        className="ec-hero"
+      {/* HERO */}
+      <section
+        className="page-hero"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1950&q=80')`,
         }}
       >
-        <div className="ec-hero-overlay">
-          <div className="ec-hero-content">
-            <h1>
-              <FaGlobe /> {t?.title || ""}
-            </h1>
-            <h2>{t?.tagline || ""}</h2>
-            <p>{t?.heroDescription || ""}</p>
-          </div>
+        <div className="page-hero-overlay">
+          <h1>
+            <FaGlobe /> {t?.title || ""}
+          </h1>
+          <h2>{t?.tagline || ""}</h2>
+          <p>{t?.heroDescription || ""}</p>
         </div>
-      </div>
+      </section>
 
-      {/* Content */}
-      <div className="ec-container">
-        <Section>
+      {/* CONTENT */}
+      <section className="page-content">
+        <div className="page-section">
           <p>{t?.intro || ""}</p>
-        </Section>
+        </div>
 
-        <Section title={t?.whatIs?.title}>
-          <p>{t?.whatIs?.description}</p>
-          <ul className="ec-list">
-            {t?.whatIs?.points?.map((point, idx) => (
-              <li key={idx}>{point}</li>
-            ))}
-          </ul>
-        </Section>
-
-        <Section title={t?.expect?.title}>
-          <div className="ec-grid">
-            {t?.expect?.points?.map((item, idx) => (
-              <div key={idx} className="ec-card">
-                <FaClipboardCheck className="ec-icon" />
-                <p>{item}</p>
-              </div>
-            ))}
+        {t?.whatIs && (
+          <div className="page-section">
+            <h3>{t.whatIs.title}</h3>
+            <p>{t.whatIs.description}</p>
+            <ul>
+              {t.whatIs.points?.map((p, i) => (
+                <li key={i}>{p}</li>
+              ))}
+            </ul>
           </div>
-        </Section>
+        )}
 
-        <Section title={t?.howItWorks?.title}>
-          <ol className="ec-steps">
-            {t?.howItWorks?.steps?.map((step, idx) => (
-              <li key={idx}>
-                <strong>{step.title}:</strong> {step.desc}
-              </li>
-            ))}
-          </ol>
-        </Section>
-
-        <Section title={t?.whyItMatters?.title}>
-          <div className="ec-grid">
-            {t?.whyItMatters?.points?.map((point, idx) => (
-              <div key={idx} className="ec-card">
-                <p>{point}</p>
-              </div>
-            ))}
+        {t?.expect && (
+          <div className="page-section grid-cards">
+            <h3>{t.expect.title}</h3>
+            <div className="grid">
+              {t.expect.points?.map((p, i) => (
+                <div className="card" key={i}>
+                  <FaClipboardCheck className="card-icon" />
+                  <p>{p}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </Section>
+        )}
 
-        <Section title={t?.register?.title}>
-          <p>{t?.register?.description}</p>
-          <h4>{t?.register?.whoTitle}</h4>
-          <ul className="ec-list">
-            {t?.register?.whoPoints?.map((point, idx) => (
-              <li key={idx}>{point}</li>
-            ))}
-          </ul>
-          <h4>{t?.register?.howTitle}</h4>
-          <p>{t?.register?.howDescription}</p>
-        </Section>
+        {t?.howItWorks && (
+          <div className="page-section">
+            <h3>{t.howItWorks.title}</h3>
+            <ol>
+              {t.howItWorks.steps?.map((step, i) => (
+                <li key={i}>
+                  <strong>{step.title}:</strong> {step.desc}
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+
+        {t?.whyItMatters && (
+          <div className="page-section grid-cards">
+            <h3>{t.whyItMatters.title}</h3>
+            <div className="grid">
+              {t.whyItMatters.points?.map((p, i) => (
+                <div className="card" key={i}>
+                  <p>{p}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {t?.register && (
+          <div className="page-section">
+            <h3>{t.register.title}</h3>
+            <p>{t.register.description}</p>
+            <h4>{t.register.whoTitle}</h4>
+            <ul>
+              {t.register.whoPoints?.map((p, i) => (
+                <li key={i}>{p}</li>
+              ))}
+            </ul>
+            <h4>{t.register.howTitle}</h4>
+            <p>{t.register.howDescription}</p>
+          </div>
+        )}
 
         {/* CTA */}
-        <div className="ec-cta">
-          <FaRocket className="ec-icon-large" />
+        <div className="page-cta">
+          <FaRocket className="cta-icon" />
           <h3>{t?.cta?.title}</h3>
           <p>{t?.cta?.text}</p>
-          <button
-            className="ec-btn"
-            onClick={() => setShowForm(!showForm)}
-          >
+          <button className="cta-btn" onClick={() => setShowForm(!showForm)}>
             {t?.cta?.button}
           </button>
         </div>
 
-        {/* Application Form - Animated */}
+        {/* FORM */}
         {showForm && (
-          <div className="ec-form-container slide-down">
+          <div className="page-form">
             <h3>Join Expert Connect</h3>
             <form onSubmit={handleSubmit}>
               <input
@@ -189,17 +191,16 @@ export default function ExpertConnect() {
                 placeholder="Tell us more..."
                 value={formData.message}
                 onChange={handleChange}
-              ></textarea>
-              <button type="submit" className="ec-btn-submit">
+              />
+              <button type="submit" className="form-btn">
                 Submit Application
               </button>
             </form>
           </div>
         )}
-      </div>
+      </section>
 
-      {/* Toast Notifications */}
       <ToastContainer />
-    </section>
+    </div>
   );
 }
