@@ -8,27 +8,45 @@ const translations = {
       contact: "Contact",
     },
     home: {
+       ctaExploreServices: "Explore Our Services",
+       ctaContactUs: "Get in Touch",
+       ctaAboutUs: "Learn More About Us",
       welcomeTitle: "Welcome to Intellink Nippon Consulting LLC",
+      welcomeIntro1:
+        "Your dedicated partner in connecting Japan with the world’s most promising emerging markets. Rooted in Tokyo and driven by global collaboration, we help businesses expand across borders with clarity, trust, and meaningful results.",
+      welcomeIntroSubtitle:
+        "Bridging Japan and Emerging Markets\n",
       welcomeIntro:
-        "Your dedicated partner in connecting Japan with the world’s most promising emerging markets. Rooted in Tokyo and inspired by global cooperation, we are here to help your business grow across borders with clarity, trust, and meaningful results.\n\n" +
-        "Bridging Japan and Emerging Markets\n" +
-        "Intellink Nippon Consulting was founded on a clear and urgent reality:\n" +
-        "Businesses and institutions in Japan and those in emerging markets, especially across Africa, are eager to engage with one another. Yet, despite the opportunities, significant barriers persist.\n" +
-        "Geographical distance, limited mutual understanding, and unfamiliarity with local conditions—paired with distinct cultural and business norms—make cross-border collaboration difficult and often risky.\n\n" +
-        "We exist to change that.\n" +
+        "Intellink Nippon Consulting was founded on a clear reality: businesses in Japan and emerging markets—particularly across Africa—are eager to engage, yet face significant barriers.\n" +
+        "Geographical distance, limited mutual understanding, and unfamiliarity with local conditions—combined with distinct cultural and business norms—make cross-border collaboration challenging.\n" +
+        "We exist to change that. Our mission is to eliminate friction in Africa–Japan business relations by providing critical linkages, local insights, and operational support needed to build trusted, sustainable partnerships.\n" +
         "We aim to eliminate the friction in Africa–Japan business relations by providing the critical linkages, local insight, and operational support needed to build trusted, sustainable partnerships.",
-      marketIntelligenceTitle: "Market Intelligence",
-      marketIntelligenceDesc:
-        "We deliver research, feasibility studies, and risk insights to support data-driven decisions in new markets.",
-      expertConnectTitle: "ExpertConnect™ Solutions",
-      expertConnectDesc:
-        "Access our expert-matching platform to connect with qualified professionals for your market expansion goals.",
-      tradeLinksTitle: "Trade Links",
-      tradeLinksDesc:
-        "We support procurement from Japan to Africa, offering supplier identification, negotiation, and logistics coordination.",
-      ctaExploreServices: "Explore Our Services",
-      ctaContactUs: "Get in Touch",
-      ctaAboutUs: "Learn More About Us",
+      
+
+      services: {
+      headerTitle: "Our Services",
+       headerDescription: "We provide solutions that bridge Japan and emerging markets — delivering insights, connections, and trade opportunities that enable sustainable business growth.",
+
+        marketIntelligence: {
+        title: "MarketIntelligence",
+        description: "We provide timely and accurate insights through research, feasibility studies, and regulatory analysis. Our reports help businesses make informed decisions and reduce risk when entering new markets."
+      },
+      marketLinks: {
+       title: "MarketLink™ — Market Insights & Entry",
+        description: "Unlock opportunities with actionable market research and local insights."
+      },
+    expertConnect: {
+    title: "ExpertConnect™ — Knowledge & Advisory",
+    description: "Access industry experts and tailored guidance to make informed decisions."
+   },
+     tradeLinks: {
+    title: "TradeLink™ — Trade & Procurement Facilitation",
+    description: "Streamline sourcing, trade, and logistics with verified partners."
+    },
+ 
+    
+},
+
     },
     about: {
       mission: "Mission",
@@ -55,53 +73,22 @@ const translations = {
         ["Partnership Beyond Projects", "We build lasting relationships that generate value beyond transactions."],
         ["Responsible Growth", "We promote sustainable business that benefits all stakeholders: clients, communities, and the environment."]
       ],
+      capabilities: {
+      title: "Our Capabilities",
+      paragraph1:
+        "At Intellink Nippon Consulting LLP, our strength lies in our people — professionals who blend cross-cultural insight, sector expertise, and trusted networks to help businesses and institutions succeed between Japan and Africa.",
+      paragraph2:
+        "We deliver agile, insight-driven, and relationship-centered solutions across market intelligence, strategic advisory, expert connections, and trade facilitation.",
+      paragraph3:
+        "With a multidisciplinary team and a deep understanding of both regions, we transform opportunities into actionable strategies — enabling our clients to expand with confidence, adapt to changing environments, and build long-term value across borders.",
+      tagline: "Insight-Driven | People-Powered | Globally Connected",
+    },
+  
       ourStory: "Our Story",
       ourStoryText:
         "Intellink Nippon Consulting LLC was established in Tokyo in 2025 with a clear goal: to close the gap between Japan’s innovative economy and the potential-rich markets of Africa and other emerging regions. Having witnessed the challenges that businesses face — from language and regulatory barriers to a lack of trusted partners — we created Intellink to be a reliable bridge. Today, we continue this mission by supporting companies on both sides to engage, grow, and thrive together.",
     },
-    services: {
-      marketIntelligence: {
-        title: "Market Intelligence",
-        desc: "We provide timely and accurate insights through research, feasibility studies, and regulatory analysis. Our reports help businesses make informed decisions and reduce risk when entering new markets.",
-        points: [
-          "Market Research & Insights",
-          "Feasibility Studies",
-          "Regulatory Affairs Support",
-          "Risk Analysis & Forecasting",
-          "Publishing (e.g. Kenya energy reports)"
-        ]
-      },
-      businessMatch: {
-        title: "Market Links (Business Matchmaking)",
-        desc: "We connect Japanese businesses with vetted African partners — and vice versa — ensuring each match supports long-term collaboration and business success.",
-        points: [
-          "B2B Matchmaking",
-          "Partner Verification",
-          "Government & Liaison Support",
-          "Cultural & Business Etiquette Training"
-        ]
-      },
-      expertConnect: {
-        title: "ExpertConnect™ Solutions",
-        desc: "Through our proprietary expert-matching platform, we connect organizations with specialized industry professionals, ensuring access to critical knowledge when and where it is needed.",
-        points: [
-          "Expert Database Access",
-          "Talent Matching for Japan–Africa Setup",
-          "Custom Sector Advisory",
-          "Knowledge Bank Access"
-        ]
-      },
-      tradeLink: {
-        title: "Trade Links",
-        desc: "We support businesses — especially in Africa — to source high-quality goods from Japan. Our services include supplier identification, verification, negotiation support, and coordination of logistics.",
-        points: [
-          "Japan Product Sourcing",
-          "Seller Identification & Verification",
-          "Procurement Negotiation",
-          "Logistics Coordination"
-        ]
-      }
-    },
+    
     contact: {
       title: "Contact Us",
       subtitle: "Let’s start a conversation. Reach out directly or leave us a message.",
@@ -207,13 +194,14 @@ services: {
 
 marketLink : {
   hero: {
-    title: "MarketLink",
-    desc: "Start with certainty — connect to new markets with confidence and clarity.",
-    button: "Get Started"
+    title: "MarketLink™ — Market Insights & Entry",
+    desc: "Helping businesses unlock opportunities with actionable insights and strategies.",
+    button: "Get Started",
   },
   intro: {
     text:
-      "Entering a new market is a bold move — but it shouldn’t be a blind one. MarketLink gives you the intelligence, insights, and trusted local connections you need to succeed from day one."
+      "Expanding into new markets requires more than ambition — it requires insight, strategy, and trusted local knowledge. MarketLink™ provides businesses with the intelligence and practical tools to confidently explore and establish themselves across Japan and Africa.Entering a new market is a bold move — but it shouldn’t be a blind one. MarketLink gives you the intelligence, insights, and trusted local connections you need to succeed from day one.\n" +
+      "Our approach combines local expertise with global insights to ensure your expansion is informed, practical, and actionable."
   },
   about: {
     title: "What is MarketLink?",
@@ -437,6 +425,75 @@ marketLink : {
         text: "Don’t let uncertainty slow you down. Access the expertise you need, when you need it.",
         button: "Join Expert Connect"
       }
+    },
+    careers: {
+      hero: {
+        header: "Join Our Team",
+        tagline: "Shape the future of Japan–Africa business collaboration with us.",
+        cta: "Apply Now"
+      },
+
+      overview: {
+        title: "Overview",
+        text: `At Intellink Nippon Consulting, we are passionate about connecting Japan and Africa through business, insights, and trade. We seek talented, driven individuals who thrive in a dynamic, cross-cultural environment. Whether your expertise lies in market research, advisory services, trade facilitation, or operations, you can play a pivotal role in driving impactful projects and fostering meaningful partnerships.`
+      },
+
+      whyWorkWithUs: {
+        title: "Why Work With Us",
+        points: [
+          "Impactful Work: Contribute to projects that connect businesses across continents.",
+          "Global Exposure: Collaborate with international clients, partners, and stakeholders.",
+          "Growth Opportunities: Develop your skills through mentorship, training, and challenging projects.",
+          "Inclusive Culture: Work in a supportive environment that values innovation, diversity, and teamwork."
+        ]
+      },
+
+      industries: {
+        title: "Industries We Serve",
+        points: [
+          "Market & Consumer Insights",
+          "Business Advisory & Knowledge Services",
+          "Trade & Procurement Facilitation",
+          "Regulatory & Compliance Consulting"
+        ]
+      },
+
+      capabilities: {
+        title: "Our Capabilities",
+        points: [
+          "Market research, feasibility studies, and data analysis",
+          "Expert advisory services and knowledge management",
+          "Trade sourcing, supplier/buyer matchmaking, and logistics support",
+          "Regulatory guidance, compliance, and local market advisory"
+        ]
+      },
+
+      positions: {
+        title: "Open Positions",
+        sampleRoles: [
+          "Market Research Analyst",
+          "Business Advisory Consultant",
+          "Trade & Logistics Coordinator",
+          "Regulatory Compliance Specialist",
+          "Administrative & Operations Support"
+        ],
+        note: "We encourage applications from professionals across disciplines who are motivated to make a difference in international business collaboration."
+      },
+
+      idealCandidates: {
+        title: "Ideal Candidates",
+        points: [
+          "Proactive, analytical, and solutions-oriented professionals",
+          "Comfortable working in a cross-cultural and fast-paced environment",
+          "Strong communicators with a collaborative mindset",
+          "Passionate about bridging markets, industries, and communities"
+        ]
+      },
+
+      ctaSection: {
+        text: "Ready to build your career with Intellink Nippon Consulting?",
+        button: "Apply Now →"
+      }
     }
 
 
@@ -487,6 +544,16 @@ marketLink : {
         ["プロジェクトを超えるパートナーシップ", "一過性ではなく、長期的な価値を生む関係を築きます。"],
         ["責任ある成長", "クライアント、地域社会、環境すべてに貢献するビジネスを推進します。"]
       ],
+      capabilities: {
+      title: "私たちの強み",
+      paragraph1:
+        "Intellink Nippon Consulting LLPの強みは人材にあります。クロスカルチャーの洞察、業界の専門知識、信頼できるネットワークを融合し、日本とアフリカのビジネスや機関の成功を支援します。",
+      paragraph2:
+        "私たちは、市場インテリジェンス、戦略アドバイザリー、エキスパート・コネクション、貿易促進の分野で、俊敏で洞察に基づき、人間関係を重視したソリューションを提供します。",
+      paragraph3:
+        "多分野にわたるチームと両地域に対する深い理解をもとに、私たちは機会を実行可能な戦略に変え、クライアントが自信を持って拡大し、変化に適応し、国境を越えて長期的な価値を築くことを可能にします。",
+      tagline: "洞察に基づく | 人材が原動力 | 世界とつながる",
+    },
       ourStory: "私たちの歩み",
       ourStoryText: "Intellink Nippon Consulting GKは2025年に東京で設立されました。日本の先進的な経済とアフリカをはじめとする有望な新興市場の間にあるギャップを埋めるために誕生しました。言語や制度面の障壁、信頼できるパートナーの不足といった課題を目の当たりにし、信頼の架け橋となることを使命に掲げています。現在も、両地域の企業が共に成長し続けられるよう支援を行っています。"
     },
@@ -598,7 +665,8 @@ services: {
 marketLink: {
   hero: {
     title: "マーケットインテリンク",
-    desc: "確信を持って始めよう — 自信と明確さをもって新しい市場へ。",
+    desc: "新しい市場への進出には、野心だけでなく、洞察力、戦略、そして信頼できる現地の知識が必要です。MarketLink™は、日本とアフリカ全域において、自信を持って市場を探索し、事業を確立するための情報と実践的なツールを企業に提供します。\n" + 
+    "私たちのアプローチは、地域の専門知識とグローバルな洞察を組み合わせ、進出が十分に情報に基づき、実践的で実行可能なものとなるようにします。",
     button: "今すぐ始める"
   },
   intro: {
@@ -793,7 +861,77 @@ marketLink: {
       }
     },
 
-  }
+  },
+  careers: {
+      hero: {
+        header: "私たちのチームに参加しませんか",
+        tagline: "日本とアフリカのビジネス協力の未来を共に形づくりましょう。",
+        cta: "今すぐ応募"
+      },
+
+      overview: {
+        title: "概要",
+        text: `Intellink Nippon Consultingでは、ビジネス、インサイト、貿易を通じて日本とアフリカをつなぐことに情熱を注いでいます。私たちは、ダイナミックで異文化が交差する環境で活躍できる、才能ある意欲的な人材を求めています。市場調査、アドバイザリーサービス、貿易促進、オペレーションなど、あなたの専門分野を活かして、影響力のあるプロジェクトを推進し、有意義なパートナーシップを築くことができます。`
+      },
+
+      whyWorkWithUs: {
+        title: "私たちと働く理由",
+        points: [
+          "影響力のある仕事：大陸を越えてビジネスをつなぐプロジェクトに貢献できます。",
+          "国際的な経験：海外のクライアント、パートナー、関係者と協働します。",
+          "成長の機会：メンターシップ、研修、挑戦的なプロジェクトを通じてスキルを磨けます。",
+          "包括的な文化：革新性、多様性、チームワークを重視する支援的な環境で働けます。"
+        ]
+      },
+
+      industries: {
+        title: "私たちがサービスを提供する業界",
+        points: [
+          "市場・消費者インサイト",
+          "ビジネスアドバイザリー & ナレッジサービス",
+          "貿易 & 調達支援",
+          "規制 & コンプライアンスコンサルティング"
+        ]
+      },
+
+      capabilities: {
+        title: "私たちの強み",
+        points: [
+          "市場調査、実現可能性調査、データ分析",
+          "専門的なアドバイザリーサービスと知識管理",
+          "調達支援、供給者/購入者マッチング、物流サポート",
+          "規制ガイダンス、コンプライアンス、現地市場アドバイザリー"
+        ]
+      },
+
+      positions: {
+        title: "募集職種",
+        sampleRoles: [
+          "市場調査アナリスト",
+          "ビジネスアドバイザリーコンサルタント",
+          "貿易 & 物流コーディネーター",
+          "規制コンプライアンススペシャリスト",
+          "管理・運営サポート"
+        ],
+        note: "国際ビジネス協力に貢献したいと考えるあらゆる分野の専門家からの応募を歓迎します。"
+      },
+
+      idealCandidates: {
+        title: "理想的な人材像",
+        points: [
+          "主体的で分析的、かつソリューション志向の専門家",
+          "異文化環境やスピード感のある環境に適応できる方",
+          "強いコミュニケーション能力と協調的なマインドセットを持つ方",
+          "市場・産業・地域をつなぐことに情熱を持つ方"
+        ]
+      },
+
+      ctaSection: {
+        text: "Intellink Nippon Consultingでキャリアを築く準備はできましたか？",
+        button: "今すぐ応募 →"
+      }
+    }
+  
 };
 
 export default translations;

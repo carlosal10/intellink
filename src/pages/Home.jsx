@@ -6,11 +6,46 @@ import 'aos/dist/aos.css';
 
 import './Home.css';
 
-
 export default function Home() {
   const t = useTranslate();
   const [activeSection, setActiveSection] = useState(null);
   const sectionRef = useRef(null);
+
+  // Unified services with images + CTA
+  const services = [
+    {
+      key: "marketIntelligence",
+      title: t('home.services.marketIntelligence.title'),
+      description: t('home.services.marketIntelligence.description'),
+      image: "/images/ist12.jpg",
+      link: "/marketintellink",
+      cta: "Learn More →",
+    },
+    {
+      key: "marketLinks",
+      title: t('home.services.marketLinks.title'),
+      description: t('home.services.marketLinks.description'),
+      image: "/images/i11.jpg",
+      link: "/marketlinks",
+      cta: "Learn More →",
+    },
+    {
+      key: "expertConnect",
+      title: t('home.services.expertConnect.title'),
+      description: t('home.services.expertConnect.description'),
+      image: "/images/i12.jpg",
+      link: "/expertconnect",
+      cta: "Learn More →",
+    },
+    {
+      key: "tradeLinks",
+      title: t('home.services.tradeLinks.title'),
+      description: t('home.services.tradeLinks.description'),
+      image: "/images/istockphoto-3.jpg",
+      link: "/tradelinks",
+      cta: "Learn More →",
+    },
+  ];
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -30,19 +65,21 @@ export default function Home() {
       <div className="hero-section" data-aos="fade-up">
         <div className="hero-text">
           <h1>{t('home.welcomeTitle')}</h1>
+          <p>{t('home.welcomeIntro1')}</p>
+          <h2>{t('home.welcomeIntroSubtitle')}</h2>
           <p>{t('home.welcomeIntro')}</p>
           <Link to="/services" className="btn-services">{t('home.ctaExploreServices')}</Link>
         </div>
         <div className="hero-image">
-          <img src="/images/ist612.jpg" alt="Business Meeting" />
+          <img src="/images/istockphoto-8.jpg" alt="Business Meeting" />
         </div>
       </div>
 
-      {/* Who We Are Section */}
+      {/* Who We Are */}
       <div className="services-section-who-we-are" data-aos="fade-up">
         <div className="modern-section who-we-are" data-aos="fade-right">
           <div className="image-wrapper">
-            <img src="/images/istockphoto-8.jpg" alt="Strategic Meeting" />
+            <img src="/images/ist612.jpg" alt="Strategic Meeting" />
           </div>
           <div className="text-box">
             <h2>{t('about.whoWeAre')}</h2>
@@ -52,28 +89,24 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Services Cards */}
-      <div className="services-section-service-box" data-aos="fade-up">
-        <div className="service-box">
-          <img src="/images/ist12.jpg" alt="Forecasting" />
-          <h3>{t('home.marketIntelligenceTitle')}</h3>
-          <p>{t('home.marketIntelligenceDesc')}</p>
-          <Link to="/marketintellink" className="btn secondary">Learn More</Link>
-        </div>
-        <div className="service-box">
-          <img src="/images/i12.jpg" alt="Expert Connect" />
-          <h3>{t('home.expertConnectTitle')}</h3>
-          <p>{t('home.expertConnectDesc')}</p>
-          <Link to="/expertconnect" className="btn secondary"> Discover Experts</Link>
-        </div>
-        <div className="service-box">
-          <img src="/images/istockphoto-3.jpg" alt="Trade Links" />
-          <h3>{t('home.tradeLinksTitle')}</h3>
-          <p>{t('home.tradeLinksDesc')}</p>
-          <Link to="/tradelinks" className="btn secondary">Explore Trade Links</Link>
-        </div>
-      </div>
+      {/* ✅ Unified Services Section */}
+      <section className="services-page">
+        <header className="services-header">
+          <h1 className="services-title">{t('services.headerTitle')}</h1>
+          <p className="services-subtext">{t('services.headerDescription')}</p>
+        </header>
 
+        <div className="services-grid">
+          {services.map((service) => (
+            <div className="service-card fade-in" key={service.key}>
+              <img src={service.image} alt={service.title} />
+              <h2 className="service-title">{service.title}</h2>
+              <p className="service-description">{service.description}</p>
+              <Link to={service.link} className="btn secondary">{service.cta}</Link>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Philosophy */}
       <div className="services-section-philosophy" data-aos="fade-up">

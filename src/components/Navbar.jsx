@@ -56,9 +56,9 @@ export default function Navbar() {
               <span className="dropdown-icon">▾</span>
             </button>
             <div className="dropdown-menu">
-              <NavLink to="/expertconnect" onClick={closeMenu}>{language === 'en' ? 'Expert Connect' : 'エキスパートコネクト'}</NavLink>
-              <NavLink to="/tradelink" onClick={closeMenu}>{language === 'en' ? 'TradeLink' : 'トレードリンク'}</NavLink>
-              <NavLink to="/marketlink" onClick={closeMenu}>{language === 'en' ? 'MarketLink' : 'マーケットリンク'}</NavLink>
+              <NavLink to="/expertconnect" onClick={closeMenu}>{language === 'en' ? 'ExpertConnect™' : 'エキスパートコネクト'}</NavLink>
+              <NavLink to="/tradelink" onClick={closeMenu}>{language === 'en' ? 'TradeLink™' : 'トレードリンク'}</NavLink>
+              <NavLink to="/marketlink" onClick={closeMenu}>{language === 'en' ? 'MarketLink™' : 'マーケットリンク'}</NavLink>
             </div>
           </div>
 
@@ -89,7 +89,7 @@ export default function Navbar() {
 
           {/* Mobile dropdown */}
           <button className="mobile-dropdown-toggle" onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}>
-            {language === 'en' ? 'Solutions' : 'もっと'}
+            {language === 'en' ? 'Services' : 'もっと'}
           </button>
           {mobileDropdownOpen && (
             <div className="mobile-dropdown">
@@ -99,9 +99,9 @@ export default function Navbar() {
             </div>
           )}
 
-          <NavLink to="/insights" onClick={closeMenu}>{language === 'en' ? 'Insights' : '知見'}</NavLink>
-          <NavLink to="/contact" onClick={closeMenu}>{language === 'en' ? 'Contact' : 'お問い合わせ'}</NavLink>
+          <NavLink to="/insights" onClick={closeMenu}>{language === 'en' ? 'Insights & Reports' : '知見'}</NavLink>
           <NavLink to="/recruitment" onClick={closeMenu}>{language === 'en' ? 'Careers' : '採用情報'}</NavLink>
+          <NavLink to="/contact" onClick={closeMenu}>{language === 'en' ? 'Contact' : 'お問い合わせ'}</NavLink>          
           <NavLink to="/blog" onClick={closeMenu}>{language === 'en' ? 'Blog' : 'ブログ'}</NavLink>
 
           <button onClick={() => { toggleLanguage(); closeMenu(); }} className="lang-toggle">

@@ -2,28 +2,92 @@
   padding: 40px 16px;
   background: #f5f5f5;
   font-family: 'Segoe UI', sans-serif;
-
+  margin-top: 10%;
 }
 
+/* === Careers Page === */
+.careers-page {
+  background: #fff;
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  margin-top: 10%;
+}
+
+.careers-page h1 {
+  color: #0B2545;
+  margin-bottom: 12px;
+  font-size: 2rem;
+}
+
+.careers-page h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0B2545;
+  margin-bottom: 12px;
+}
+
+.careers-page p {
+  margin-bottom: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.careers-page ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.careers-page ul li {
+  margin-bottom: 8px;
+}
+
+.careers-page .text-center {
+  text-align: center;
+}
+
+.careers-page .italic {
+  font-style: italic;
+  color: #444;
+}
+
+/* === Shared Button Styling === */
+.submit-btn {
+  background-color: #0B2545;
+  color: #fff;
+  padding: 14px 28px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #06172d;
+}
+
+/* === Application Form === */
 .recruitment-form {
   background: #fff;
   max-width: 900px;
   margin: 0 auto;
   padding: 32px;
   border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-.recruitment-form h1 {
+.recruitment-form h2 {
   color: #0B2545;
-  margin-bottom: 12px;
-  font-size: 2rem;
-}
-
-.recruitment-form p.intro {
-  margin-bottom: 32px;
-  font-size: 1rem;
-  color: #555;
+  margin-bottom: 16px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 fieldset {
@@ -64,51 +128,18 @@ input[type="checkbox"] {
   margin-right: 8px;
 }
 
-.submit-btn {
-  background-color: #0B2545;
-  color: #fff;
-  padding: 14px 28px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
+/* Responsive */
+@media (max-width: 600px) {
+  .careers-page, .recruitment-form {
+    padding: 20px;
+  }
 
-.submit-btn:hover {
-  background-color: #06172d;
-}
+  .careers-page h1 {
+    font-size: 1.5rem;
+  }
 
-
-.recruitment-form {
-  padding: 2rem 10%;
-  background: #F5F5F5;
-  margin-top: 2rem;
-  border-radius: 8px;
-}
-
-.recruitment-form fieldset {
-  border: none;
-  margin-bottom: 1.5rem;
-}
-
-.recruitment-form input, 
-.recruitment-form textarea {
-  width: 100%;
-  padding: 0.6rem;
-  margin: 0.4rem 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.submit-btn {
-  background: #0B2545;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.submit-btn:hover {
-  background: #081a32;
+  .careers-page h2,
+  .recruitment-form h2 {
+    font-size: 1.1rem;
+  }
 }

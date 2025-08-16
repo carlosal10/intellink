@@ -33,12 +33,23 @@ export default function About() {
       title: t('about.values'),
       valuesList: t('about.valuesList') // Array of [title, description]
     },
+  {
+     bg: 'istockphoto-4.avif',
+  title: t('about.capabilities.title'),
+  text: [
+    t('about.capabilities.paragraph1'),
+    t('about.capabilities.paragraph2'),
+    t('about.capabilities.paragraph3')
+  ],
+  tagline: t('about.capabilities.tagline'),
+},
     {
       bg: 'istockphoto-1369212121-640x640.avif',
       title: t('about.ourStory'),
       text: t('about.ourStoryText')
     }
   ];
+
 
   return (
     <section className="about-modern">
@@ -52,7 +63,7 @@ export default function About() {
             backgroundPosition: 'center'
           }}
         >
-          <div className="glass-overlay" data-aos="fade-up">
+          <div data-aos="fade-up">
             <div className="content-wrapper">
               <h2 className="about-title">{panel.title}</h2>
 
