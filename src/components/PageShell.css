@@ -1,6 +1,5 @@
 .pageshell {
   font-family: 'Segoe UI', sans-serif;
-  color: #333;
   margin-top: 10%;
 }
 
@@ -15,7 +14,7 @@
 }
 
 .hero-overlay {
-  background: rgba(11, 37, 69, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   padding: 2rem;
   text-align: center;
   color: white;

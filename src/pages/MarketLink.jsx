@@ -78,7 +78,7 @@ export default function MarketLink() {
     <div className="marketlink-page">
       {/* HERO */}
       <section className="marketlink-hero" data-aos="fade-up">
-        <div>
+        <div className="marketlink-overlay">
           <h1>{t("marketLink.hero.title")}</h1>
           <p>{t("marketLink.hero.desc")}</p>
           <Link to="/contact" className="hero-cta">{t("marketLink.hero.button")}</Link>

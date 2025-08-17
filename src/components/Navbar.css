@@ -202,6 +202,13 @@
   .desktop-links{ display:none; }
   .hamburger-wrapper{ display:block; z-index:10001; }
   .logo-img{ width: 150px; }
+  /* Show hamburger always (for testing) */
+.hamburger-wrapper {
+  display: flex !important; /* override default */
+  align-items: center;
+  z-index: 10001;
+}
+
 }
 
 /* Simple hamburger button style */

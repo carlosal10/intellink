@@ -16,12 +16,13 @@
 .marketlink-hero p{
   color: #f0f4ff;
 }
-.hero-overlay {
-  background: rgba(11, 37, 69, 0.7);
-  padding: 2rem;
+.marketlink-overlay {
+ background: rgba(0, 0, 0, 0.7);
   text-align: center;
   color: white;
   border-radius: 10px;
+  width: 100%;
+  height: 100%;
 }
 
 h1 {
