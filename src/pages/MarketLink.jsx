@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { FaChartLine, FaHandshake, FaGlobeAfrica, FaLightbulb, FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 import { toast } from "react-toastify";
 import useTranslate from "../hooks/useTranslate";
 import AOS from "aos";
@@ -23,25 +23,9 @@ export default function MarketLink() {
   const [showForm, setShowForm] = useState(false);
 
   const africaJapanRef = useRef(null);
-  const [animateTyping, setAnimateTyping] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
-  }, []);
-
-  // Scroll-triggered typing animation
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setAnimateTyping(true);
-          setTimeout(() => setAnimateTyping(false), 10000); // Reset after 10s
-        }
-      },
-      { threshold: 0.3 }
-    );
-    if (africaJapanRef.current) observer.observe(africaJapanRef.current);
-    return () => observer.disconnect();
   }, []);
 
   const handleChange = (e) => {
@@ -72,118 +56,87 @@ export default function MarketLink() {
     }
   };
 
-  const africaJapan = t("marketLink.africaJapan");
+  const hero = t("marketLink.hero", { returnObjects: true }) || {};
+  const intro = t("marketLink.intro", { returnObjects: true }) || {};
+  const offer = t("marketLink.offer", { returnObjects: true }) || {};
+  const casesData = t("marketLink.cases", { returnObjects: true }) || {};
+  const ideal = t("marketLink.ideal", { returnObjects: true }) || {};
+  const africaJapan = t("marketLink.africaJapan", { returnObjects: true }) || {};
+  const finalCTA = t("marketLink.finalCTA", { returnObjects: true }) || {};
 
   return (
     <div className="marketlink-page">
       {/* HERO */}
       <section className="marketlink-hero" data-aos="fade-up">
         <div className="marketlink-overlay">
-          <h1>{t("marketLink.hero.title")}</h1>
-          <p>{t("marketLink.hero.desc")}</p>
-          <Link to="/contact" className="hero-cta">{t("marketLink.hero.button")}</Link>
+          <h1>{hero?.title}</h1>
+          <p>{hero?.desc}</p>
+          <Link to="/contact" className="hero-cta">{hero?.button}</Link>
         </div>
       </section>
 
       {/* INTRO */}
       <section className="marketlink-intro" data-aos="fade-up">
-        <p>{t("marketLink.intro.text")}</p>
+        <p>{intro?.text}</p>
       </section>
 
-      {/* ABOUT */}
-      <section className="marketlink-about" data-aos="fade-up">
-        <div className="about-text">
-          <h2>{t("marketLink.about.title")}</h2>
-          <p>{t("marketLink.about.text")}</p>
-        </div>
-        <div className="about-image">
-          <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786" alt={t("marketLink.about.imgAlt")} />
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section className="marketlink-services" data-aos="fade-up">
-        <h2>{t("marketLink.services.title")}</h2>
-        <div className="services-grid">
-          {(t("marketLink.services.items", { returnObjects: true }) || []).map((item, i) => {
-            const icons = [FaChartLine, FaHandshake, FaGlobeAfrica, FaLightbulb];
-            const Icon = icons[i % icons.length];
-            return (
-              <div className="service-card" key={i}>
-                <Icon className="service-icon" />
-                <h3>{item[0]}</h3>
-                <p>{item[1]}</p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* WHY CHOOSE US */}
-      <section className="marketlink-why" data-aos="fade-up">
-        <h2>{t("marketLink.why.title")}</h2>
+      {/* OFFER / SOLUTIONS */}
+      <section className="marketlink-offer" data-aos="fade-up">
+        <h2>{offer?.title}</h2>
         <ul>
-          {(t("marketLink.why.points", { returnObjects: true }) || []).map((point, i) => (
+          {(offer?.points || []).map((point, i) => (
             <li key={i}><FaCheckCircle /> {point}</li>
           ))}
         </ul>
       </section>
 
-      {/* IDEAL FOR */}
-      <section className="marketlink-ideal" data-aos="fade-up">
-        <h2>{t("marketLink.ideal.title")}</h2>
-        <div className="ideal-tags">
-          {(t("marketLink.ideal.items", { returnObjects: true }) || []).map((tag, i) => (
-            <span key={i}>{tag}</span>
+      {/* CASES / USE CASES */}
+      <section className="marketlink-cases" data-aos="fade-up">
+        <h2>{casesData?.title}</h2>
+        <ul>
+          {(casesData?.items || []).map((item, i) => (
+            <li key={i}>{item}</li>
           ))}
-        </div>
+        </ul>
+      </section>
+
+      {/* IDEAL USERS */}
+      <section className="marketlink-ideal" data-aos="fade-up">
+        <h2>{ideal?.title}</h2>
+        <ul>
+          {(ideal?.items || []).map((item, i) => (<li key={i}>{item}</li>))}
+        </ul>
       </section>
 
       {/* AFRICA → JAPAN */}
       <section className="marketlink-africa-japan" ref={africaJapanRef} data-aos="fade-up">
-        <h2 className={animateTyping ? "typing-animation" : ""}>{africaJapan.title}</h2>
-        <p>{africaJapan.p1}</p>
-        <p>{africaJapan.p2}</p>
+        <h2>{africaJapan?.title}</h2>
 
-        <div className="why-japan">
-          <h4>{africaJapan.whyJapan.title}</h4>
-          <div className="cards-grid">
-            {africaJapan.whyJapan.offers.map((offer, i) => (
-              <div className="why-card" key={`offer-${i}`}>
-                <FaLightbulb className="card-icon" />
-                <p>{offer}</p>
-              </div>
-            ))}
-            {africaJapan.whyJapan.challenges.map((challenge, i) => (
-              <div className="why-card challenge" key={`challenge-${i}`}>
-                <FaHandshake className="card-icon" />
-                <p>{challenge}</p>
-              </div>
-            ))}
-          </div>
+        <div className="africa-section">
+          <h3>{africaJapan?.africa?.header}</h3>
+          <p>{africaJapan?.africa?.text}</p>
         </div>
 
-        <div className="services-list">
-          <h4>{africaJapan.services.title}</h4>
-          <ol>
-            {africaJapan.services.list.map((item, i) => (<li key={i}>{item}</li>))}
-          </ol>
+        <div className="japan-section">
+          <h3>{africaJapan?.japan?.header}</h3>
+          <p>{africaJapan?.japan?.text}</p>
         </div>
 
-        <div className="beneficiaries">
-          <h4>Beneficiaries</h4>
-          <div className="tags scroll-horizontal">
-            {africaJapan.beneficiaries.items.map((item, i) => (<span key={i}>{item}</span>))}
-          </div>
+        <div className="whynow-section">
+          <h3>{africaJapan?.whyNow?.header}</h3>
+          <p>{africaJapan?.whyNow?.text}</p>
         </div>
 
         <div className="africa-japan-cta">
-          <h4>{africaJapan.cta.title}</h4>
-          <p>{africaJapan.cta.text}</p>
-          <button className="ec-btn" onClick={() => setShowForm(!showForm)}>
-            {africaJapan.cta.button}
-          </button>
+          <p>{africaJapan?.cta?.title}</p>
+          <Link to="/contact" className="ec-btn">{africaJapan?.cta?.button}</Link>
         </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="marketlink-finalcta" data-aos="fade-up">
+        <h2>{finalCTA?.title}</h2>
+        <Link to="/contact" className="final-cta-btn">{finalCTA?.button}</Link>
       </section>
 
       {/* APPLICATION FORM */}
@@ -204,13 +157,6 @@ export default function MarketLink() {
           </form>
         </section>
       )}
-
-      {/* FINAL CTA */}
-      <section className="marketlink-finalcta" data-aos="fade-up">
-        <h2>{t("marketLink.finalCTA.title")}</h2>
-        <p>{t("marketLink.finalCTA.desc")}</p>
-        <Link to="/contact" className="final-cta-btn">{t("marketLink.finalCTA.button")}</Link>
-      </section>
     </div>
   );
 }

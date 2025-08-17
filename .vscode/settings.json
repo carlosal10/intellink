@@ -1,0 +1,8 @@
+{
+    "files.autoSave": "afterDelay",
+    "editor.wordWrap": "on",
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingComments": "always",
+    "javascript.suggest.completeFunctionCalls": true,
+    "terminal.integrated.suggest.enabled": true
+}
