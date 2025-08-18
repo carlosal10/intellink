@@ -10,7 +10,7 @@ const translations = {
     home: {
   capabilities: {
     title: "Our Capabilities",
-    description: "At Intellink Nippon Consulting LLP, our strength lies in our people — professionals who blend cross-cultural insight, sector expertise, and trusted networks to help businesses and institutions succeed between Japan and Africa.\nWe deliver agile, insight-driven, and relationship-centered solutions across market intelligence, strategic advisory, expert connections, and trade facilitation.\nWith a multidisciplinary team and a deep understanding of both regions, we transform opportunities into actionable strategies — enabling our clients to expand with confidence, adapt to changing environments, and build long-term value across borders.",
+    description: "At Intellink Nippon Consulting, our strength lies in our people — professionals who blend cross-cultural insight, sector expertise, and trusted networks to help businesses and institutions succeed between Japan and Africa.\nWe deliver agile, insight-driven, and relationship-centered solutions across market intelligence, strategic advisory, expert connections, and trade facilitation.\nWith a multidisciplinary team and a deep understanding of both regions, we transform opportunities into actionable strategies — enabling our clients to expand with confidence, adapt to changing environments, and build long-term value across borders.",
     "highlights": ["Insight-Driven", "People-Powered", "Globally Connected"]
   },
 
@@ -18,7 +18,7 @@ const translations = {
   ctaContactUs: "Get in Touch",
   ctaAboutUs: "Learn More About Us",
 
-  welcomeTitle: "Welcome to Intellink Nippon Consulting LLC",
+  welcomeTitle: "Welcome to Intellink Nippon Consulting",
   welcomeIntro1:
     "Your dedicated partner in connecting Japan with the world’s most promising emerging markets. Rooted in Tokyo and driven by global collaboration, we help businesses expand across borders with clarity, trust, and meaningful results.",
   welcomeIntroSubtitle: "Bridging Japan and Emerging Markets\n",
@@ -101,7 +101,7 @@ const translations = {
 },about: {
   mission: "Mission",
   missionText:
-    "Our mission is to make international business between Japan and emerging markets accessible, effective, and sustainable — by fostering trusted partnerships and delivering strategic solutions that support growth and shared value creation.",
+    "Our mission is to make business between Japan and emerging markets accessible, effective, and sustainable — by fostering trusted partnerships and delivering strategic solutions that support growth and shared value creation.",
 
   vision: "Our Vision",
   visionText:
@@ -109,7 +109,7 @@ const translations = {
 
   aboutUs: "About Us",
   aboutText:
-    "Intellink Nippon Consulting was founded in June 2025 in Shibuya, Tokyo, with a clear mission: to facilitate meaningful business collaboration between Japan and Africa. We recognized the untapped potential of African markets and the growing interest from Japanese companies to expand internationally. Our vision is to serve as a trusted partner, providing insights, advisory, and trade solutions that enable businesses to navigate cross-border opportunities with confidence.",
+    "Intellink Nippon Consulting was founded in in Tokyo, with a clear mission: to facilitate meaningful business collaboration between Japan and Africa. We recognized the untapped potential of African markets and the growing interest from Japanese companies to expand internationally. Our vision is to serve as a trusted partner, providing insights, advisory, and trade solutions that enable businesses to navigate cross-border opportunities with confidence.",
 
   whyChooseUs: {
     title: "Why Choose Us",
@@ -148,7 +148,7 @@ const translations = {
   capabilities: {
     title: "Our Capabilities",
     paragraph1:
-      "At Intellink Nippon Consulting LLP, our strength lies in our people — professionals who blend cross-cultural insight, sector expertise, and trusted networks to help businesses and institutions succeed between Japan and Africa.",
+      "At Intellink Nippon Consulting, our strength lies in our people — professionals who blend cross-cultural insight, sector expertise, and trusted networks to help businesses and institutions succeed between Japan and Africa.",
     paragraph2:
       "We deliver agile, insight-driven, and relationship-centered solutions across market intelligence, strategic advisory, expert connections, and trade facilitation.",
     paragraph3:
@@ -158,7 +158,7 @@ const translations = {
 
   ourStory: "Our Story",
   ourStoryText:
-    "We founded Intellink Nippon after recognizing a persistent gap: while Japanese institutions seek growth in emerging regions, they face cultural and informational barriers. Similarly, businesses in emerging markets often lack the networks or knowledge to engage with Japan’s advanced systems. With decades of combined experience in global consulting, policy advisory, and diaspora networks, our team set out to create a firm that doesn’t just advise — but connects, translates, and enables. At our core, we are connectors — we combine Japan’s strengths in quality and strategy with the energy and potential of emerging markets — helping our partners move forward with clarity and confidence."
+    "We founded Intellink Nippon after recognizing a persistent gap: while Japanese institutions seek growth in emerging regions, they face cultural and informational barriers. Similarly, businesses in emerging markets often lack the networks or knowledge to engage with Japan’s advanced systems. With decades of combined experience in global consulting, risk advisory, our team set out to create a firm that doesn’t just advise — but connects, translates, and enables. At our core, we are connectors — we combine Japan’s strengths in quality and strategy with the energy and potential of emerging markets — helping our partners move forward with clarity and confidence."
 },
 
     

@@ -67,9 +67,7 @@ export default function Navbar() {
             {language === "en" ? "About" : "会社情報"}
           </NavLink>
         
-          <NavLink to="/sectors" onClick={closeMenu}>
-            {language === "en" ? "Sectors" : "セクター"}
-          </NavLink>
+          
 
           {/* Dropdown */}
           <div className="nav-dropdown">
@@ -89,6 +87,9 @@ export default function Navbar() {
               </NavLink>
             </div>
           </div>
+          <NavLink to="/sectors" onClick={closeMenu}>
+            {language === "en" ? "Sectors" : "セクター"}
+          </NavLink>
 
           <NavLink to="/insights" onClick={closeMenu}>
             {language === "en" ? "Insights & Reports" : "知見"}

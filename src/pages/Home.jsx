@@ -66,6 +66,9 @@ export default function Home() {
           <div className="text-box hro-text">
             <h1>{t('home.welcomeTitle')}</h1>
             <p>{t('home.welcomeIntro1')}</p>
+         </div>
+        
+         <div>          
             <h2>{t('home.welcomeIntroSubtitle')}</h2>
             <p>{t('home.welcomeIntro')}</p>
             <Link onClick={scrollToServices} className="btn primary">
@@ -78,23 +81,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Who We Are Section */}
-      <div className="modern-section who-we-are" data-aos="fade-right">
-        <div className="who-image">
-          <img src="/images/ist612.jpg" alt="Strategic Meeting" />
-        </div>
-        <div className="text-box">
-           <h2>{t('about.whyChooseUs.title')}</h2>
-    <ul>
-      {t('about.whyChooseUs.points', { returnObjects: true }).map((point, index) => (
-        <li key={index}>{point}</li>
-      ))}
-    </ul>
-          <Link to="/about" className="btn secondary">
-            {t('home.ctaAboutUs')}
-          </Link>
-        </div>
-      </div>
+     
 
       {/* Services Section */}
       <section ref={servicesRef} className="services-section" data-aos="fade-up">
@@ -172,6 +159,24 @@ export default function Home() {
     ))}
   </div>
 </section>
+
+ {/* Who We Are Section */}
+      <div className="modern-section who-we-are" data-aos="fade-right">
+        <div className="who-image">
+          <img src="/images/ist612.jpg" alt="Strategic Meeting" />
+        </div>
+        <div className="text-box">
+           <h2>{t('about.whyChooseUs.title')}</h2>
+    <ul>
+      {t('about.whyChooseUs.points', { returnObjects: true }).map((point, index) => (
+        <li key={index}>{point}</li>
+      ))}
+    </ul>
+          <Link to="/about" className="btn secondary">
+            {t('home.ctaAboutUs')}
+          </Link>
+        </div>
+      </div>
 
       {/* Philosophy Section */}
       <div className="modern-section reverse philosophy" data-aos="fade-left">
