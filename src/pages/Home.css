@@ -347,9 +347,59 @@ body {
 ========================= */
 @media (max-width: 768px) {
   .hero-section {
-    grid-template-columns: 1fr;
     text-align: center;
   }
+  .hero-image img {
+  display: none;
+}
+.modern-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 12px;
+  background: var(--overlay-bg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+
+}
+.hr-overlay .hro-text p {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  color: #eef6ff;
+  width: 90%;
+}
+.hro-text {
+  max-width: 900px;  /* center nicely */
+  width: 100%;
+}
+.hro-text h1 {
+  font-size: 2.5rem;
+  color: #f1c40f;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.hr-overlay {
+  display: flex;           /* instead of grid */
+  flex-direction: column;  /* stack text vertically */
+  align-items: center;
+  justify-content: center;
+ 
+  width: 100%;
+  height: 100vh;           /* full viewport height */
+  background: rgba(0, 0, 0, 0.562);
+  color: white;
+  text-align: center;
+}
+
+
+.hr-overlay .hro-text h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
 
   .modern-section,
   .modern-section.reverse {
