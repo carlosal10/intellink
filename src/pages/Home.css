@@ -23,6 +23,8 @@ body {
 .home{
   margin-top: 10.5%;
   padding: 0;
+  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* =========================
@@ -392,7 +394,7 @@ body {
   flex-direction: column;  /* stack text vertically */
   align-items: center;
   justify-content: center;
-  width: 87%;
+  width: 88%;
   height: 100vh;           /* full viewport height */
   background: rgba(0, 0, 0, 0.562);
   color: white;
