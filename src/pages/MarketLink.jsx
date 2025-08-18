@@ -108,6 +108,18 @@ export default function MarketLink() {
         </ul>
       </section>
 
+    
+      
+        <section className="page-cta" data-aos="fade-up">
+          <h3> Get the Insights You Need to Expand</h3>
+          <p> From feasibility studies to consumer testing, MarketLink™ equips you with the intelligence to make confident, data-driven decisions before entering new markets.</p>
+          <button onConClick={() => setShowForm(!showForm)} className="cta-btn">
+            Discover Your Market Potential
+          </button>
+        </section>
+    
+    
+
       {/* APPLICATION FORM */}
       {showForm && (
         <section className="marketlink-application" data-aos="fade-up">

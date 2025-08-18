@@ -31,7 +31,7 @@ const translations = {
       "At Intellink Nippon Consulting, we help companies, governments, and innovators bridge opportunities between Japan and Africa. Our services are designed to simplify market entry, connect you with the right expertise, and make cross-border trade seamless.",
 
     marketLinks: {
-      title: "MarketLink™ — Market Insights & Entry",
+      title: "MarketLink™",
       description: "Helping businesses unlock opportunities with actionable insights and strategies.",
       points: [
         "Market feasibility studies & demand analysis",
@@ -44,7 +44,7 @@ const translations = {
     },
 
     expertConnect: {
-      title: "ExpertConnect™ — Knowledge & Advisory",
+      title: "ExpertConnect™",
       description: "Connecting you with the expertise you need to succeed.",
       points: [
         "Access to sector specialists and thought leaders",
@@ -56,7 +56,7 @@ const translations = {
     },
 
     tradeLinks: {
-      title: "TradeLink™ — Trade Facilitation & Operations",
+      title: "TradeLink™",
       description: "Making cross-border trade between Japan and Africa efficient and reliable.",
       points: [
         "Supplier & buyer identification",
@@ -182,7 +182,7 @@ const translations = {
         bgImage: "https://source.unsplash.com/1600x900/?business,market"
       },
       overviewTitle: "Overview",
-      overview: "Our Insights & Reports section delivers actionable intelligence, market trends, and sector analyses to support your strategic decisions. Whether you are exploring new markets, launching products, or evaluating trade opportunities, our reports provide the clarity and context needed to make informed moves.",
+      overview: "Our Market Insights & Reports delivers actionable intelligence, market trends, and sector analyses to support your strategic decisions. Whether you are exploring new markets, launching products, or evaluating trade opportunities, our reports provide the clarity and context needed to make informed moves.",
       featuredTitle: "Featured Insights",
       featuredInsights: [
         { title: "Market Entry Analyses", desc: "Feasibility studies and demand forecasts for African and Japanese markets." },
@@ -215,12 +215,11 @@ const translations = {
     // EN
 tradeLink: {
   hero: {
-    title: "TradeLink™ — Trade & Procurement Facilitation",
+    title: "TradeLink™",
     desc: "Streamlining connections between suppliers, buyers, and markets.",
     imgAlt: "Trade & Procurement Facilitation"
   },
   intro: {
-    title: "What is TradeLink™?",
     text: "Doing business across borders requires precision, trust, and efficiency. TradeLink™ simplifies procurement, logistics, and trade operations between Japan and Africa, ensuring your business moves forward without costly delays or missteps."
   },
   offer: {
@@ -254,7 +253,7 @@ tradeLink: {
   cta: {
     title: "Get Started Today",
     desc: "Connect with the right trade partners and streamline your operations.",
-    button: "Contact Us Today →"
+    button: "Connect With Local Partners Now →"
   }
 },
 services: {
@@ -282,9 +281,9 @@ services: {
 
 marketLink: {
   hero: {
-    title: "MarketLink™ — Market Insights & Entry",
+    title: "MarketLink™",
     desc: "Helping businesses unlock opportunities with actionable insights and strategies.",
-    button: "Contact Us"
+    button: "Find Out Where Your Business Can Grow"
   },
   intro: {
     text: "Expanding into new markets requires more than ambition — it requires insight, strategy, and trusted local knowledge. MarketLink™ provides businesses with the intelligence and practical tools to confidently explore and establish themselves across Japan and Africa. Our approach combines local expertise with global insights to ensure your expansion is informed, practical, and actionable."
@@ -343,7 +342,7 @@ marketLink: {
 
 
   expertConnect: {
-  title: "ExpertConnect™ — Knowledge & Advisory",
+  title: "ExpertConnect™",
   tagline: "Connecting you with the expertise you need to succeed.",
   heroDescription:
     "ExpertConnect™ bridges the gap between your business challenges and industry expertise. We connect you with sector specialists, provide tailored advisory services, and unlock insights from our knowledge bank to support strategic decision-making.",
@@ -355,15 +354,14 @@ marketLink: {
       "Sector Experts Matching",
       "Knowledge Bank Access",
       "Tailored Advisory Services",
-      "Workshops & Training",
-      "Problem-Solving Consultations"
+      "Workshops & Training"
     ]
   },
   expect: {
     title: "Use Cases",
     points: [
       "A Japanese agritech startup plans to expand into East Africa but lacks local market knowledge. Through ExpertConnect™, they are connected with agricultural experts, regulatory advisors, and distribution consultants. This guidance allows them to develop a market-ready strategy, identify key partners, and navigate compliance efficiently.",
-      "A tech startup from Nairobi is preparing to pitch investors in Tokyo. Through ExpertConnect™, they are matched with a Japanese financial expert who advises on investment structuring and a cultural coach who prepares them for Japanese investor expectations. The result: a successful funding round."
+      "A tech startup from Nairobi is preparing to pitch to investors in Tokyo. Through ExpertConnect™, they are matched with a Japanese financial expert who advises on investment structuring and a cultural coach who prepares them for Japanese investor expectations. The result: a successful funding round."
     ]
   },
   howItWorks: {
@@ -379,7 +377,7 @@ marketLink: {
     title: "Tap into expertise that drives results",
     description:
       "Get access to the guidance and support that accelerates your business decisions.",
-    ctaButton: "Get Connected →"
+    ctaButton: "Request an Expert →"
   }
 },
     careers: {

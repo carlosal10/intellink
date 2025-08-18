@@ -67,7 +67,7 @@ export default function ExpertConnectPage() {
       >
         <div className="page-hero-overlay">
           <h1>
-            <FaGlobe /> {t?.title || ""}
+             {t?.title || ""}
           </h1>
           <h2>{t?.tagline || ""}</h2>
           <p>{t?.heroDescription || ""}</p>
@@ -160,7 +160,7 @@ export default function ExpertConnectPage() {
         {/* FORM */}
         {showForm && (
           <div className="page-form">
-            <h3>Join Expert Connect</h3>
+            <h3>ExpertConnect Application Form</h3>
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
