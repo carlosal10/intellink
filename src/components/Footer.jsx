@@ -9,7 +9,6 @@ export default function Footer() {
     { to: '/', label: { en: 'Home', jp: 'ホーム' } },
     { to: '/about', label: { en: 'About', jp: '会社情報' } },
     { to: '/sectors', label: { en: 'Sectors', jp: 'セクター' } },
-    
     { to: '/insights', label: { en: 'Insights & Reports', jp: '知見' } },
     { to: '/recruitment', label: { en: 'Careers', jp: '採用情報' } },
     { to: '/contact', label: { en: 'Contact', jp: 'お問い合わせ' } },
@@ -27,46 +26,42 @@ export default function Footer() {
   return (
     <footer className="footer">
       {/* Row 1: Nav Links */}
-      <div className="footer-nav-row">
+      <div className="footer-row footer-nav-row">
         {navLinks.map(link => (
           <div key={link.to} className="footer-nav-group">
-            <NavLink to={link.to}>{language === 'en' ? link.label.en : link.label.jp}</NavLink>
-            {link.dropdown && (
-              <div className="footer-dropdown">
-                {link.dropdown.map(sublink => (
-                  <NavLink key={sublink.to} to={sublink.to}>
-                    {language === 'en' ? sublink.label.en : sublink.label.jp}
-                  </NavLink>
-                ))}
-              </div>
-            )}
+            <NavLink to={link.to}>
+              {language === 'en' ? link.label.en : link.label.jp}
+            </NavLink>
           </div>
         ))}
       </div>
 
-      {/* Row 2: Social Icons + Language + Copyright + Logo */}
-      <div className="footer-bottom-row">
-        <div className="social-icons">
-          {socialLinks.map(link => (
-            <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
-              <i className={link.icon}></i>
-            </a>
-          ))}
-        </div>
+      {/* Row 2: Social Icons */}
+      <div className="footer-row social-icons">
+        {socialLinks.map(link => (
+          <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
+            <i className={link.icon}></i>
+          </a>
+        ))}
+      </div>
 
+      {/* Row 3: Copyright */}
+      <div className="footer-row copyright">
+        © {new Date().getFullYear()} Intellink Nippon Consulting LLC
+      </div>
+
+      {/* Row 4: Logo */}
+      <div className="footer-row footer-logo-wrapper">
+        <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+          <img src="/images/android-chrome-512x512.png" alt="Intellink Nippon Logo" className="footer-logo" />
+        </Link>
+      </div>
+
+      {/* Row 5: Language Toggle */}
+      <div className="footer-row">
         <button onClick={toggleLanguage} className="footer-lang">
           {language === 'en' ? '日本語' : 'EN'}
         </button>
-
-        <p className="copyright">
-          © {new Date().getFullYear()} Intellink Nippon Consulting LLC
-        </p>
-
-        <div className="footer-logo-wrapper">
-          <Link to="/" onClick={() => window.scrollTo(0, 0)}>
-            <img src="/images/android-chrome-512x512.png" alt="Intellink Nippon Logo" className="footer-logo" />
-          </Link>
-        </div>
       </div>
     </footer>
   );

@@ -98,54 +98,69 @@ const translations = {
       cta: "Contact Us Today →"
     }
   }
-},
-    about: {
-      mission: "Mission",
-      missionText:
-        "Our mission is to make international business between Japan and emerging markets accessible, effective, and sustainable — by fostering trusted partnerships and delivering strategic solutions that support growth and shared value creation.",
-      vision: "Vision",
-      visionText:
-        "To be the foremost facilitator of impactful cross-border business between Japan and frontier markets, helping solve global challenges through collaboration, knowledge exchange, and responsible enterprise.",
-      aboutUs: "About Us",
-      aboutText:
-        "Intellink Nippon Consulting LLC is a Japan-based consulting firm focused on empowering businesses to successfully explore and engage with emerging market opportunities — especially in Africa. We simplify complex market landscapes, connect you with verified local partners, and support sustainable expansion with expertise and integrity.",
-      whyChooseUs: {
-  title: "Why Choose Us",
-  points: [
-    "Insight-Driven: Data, research, and analysis guide every decision.",
-    "Expert-Led: Specialized knowledge across sectors and regions.",
-    "Connection-Focused: Bridging businesses, regulators, and partners.",
-    "Responsible Growth: Ethical, sustainable, and mutually beneficial practices."
-  ]
+},about: {
+  mission: "Mission",
+  missionText:
+    "Our mission is to make international business between Japan and emerging markets accessible, effective, and sustainable — by fostering trusted partnerships and delivering strategic solutions that support growth and shared value creation.",
+
+  vision: "Our Vision",
+  visionText:
+    "To become the premier consulting partner for Japan–Africa business collaboration, driving sustainable growth, innovation, and long-term partnerships.",
+
+  aboutUs: "About Us",
+  aboutText:
+    "Intellink Nippon Consulting was founded in June 2025 in Shibuya, Tokyo, with a clear mission: to facilitate meaningful business collaboration between Japan and Africa. We recognized the untapped potential of African markets and the growing interest from Japanese companies to expand internationally. Our vision is to serve as a trusted partner, providing insights, advisory, and trade solutions that enable businesses to navigate cross-border opportunities with confidence.",
+
+  whyChooseUs: {
+    title: "Why Choose Us",
+    points: [
+      "Insight-Driven: Data, research, and analysis guide every decision.",
+      "Expert-Led: Specialized knowledge across sectors and regions.",
+      "Connection-Focused: Bridging businesses, regulators, and partners.",
+      "Responsible Growth: Ethical, sustainable, and mutually beneficial practices."
+    ]
+  },
+
+  whatWeDo: "What We Do",
+  whatWeDoText:
+    "We provide advisory and facilitation services that support market entry, trade, investment, and business development between Japan and emerging economies. Our services are designed to simplify complex business environments, reduce risk, and help organizations capture new opportunities.",
+
+  philosophy: "Our Philosophy",
+  philosophyText:
+    "We believe that business thrives on understanding, trust, and shared purpose. At Intellink, we approach every engagement with empathy, professionalism, and a long-term mindset. Our work is grounded in listening first, acting with integrity, and delivering value that endures.",
+
+  values: "Our Core Values",
+  valuesList: [
+    [
+      "Kaizen Mindset",
+      "We embrace continuous learning and improvement for ourselves and our clients."
+    ],
+    [
+      "Partnership Beyond Projects",
+      "We build lasting relationships that generate value beyond transactions."
+    ],
+    [
+      "Responsible Growth",
+      "We promote sustainable business that benefits all stakeholders: clients, communities, and the environment."
+    ]
+  ],
+
+  capabilities: {
+    title: "Our Capabilities",
+    paragraph1:
+      "At Intellink Nippon Consulting LLP, our strength lies in our people — professionals who blend cross-cultural insight, sector expertise, and trusted networks to help businesses and institutions succeed between Japan and Africa.",
+    paragraph2:
+      "We deliver agile, insight-driven, and relationship-centered solutions across market intelligence, strategic advisory, expert connections, and trade facilitation.",
+    paragraph3:
+      "With a multidisciplinary team and a deep understanding of both regions, we transform opportunities into actionable strategies — enabling our clients to expand with confidence, adapt to changing environments, and build long-term value across borders.",
+    tagline: "Insight-Driven | People-Powered | Globally Connected",
+  },
+
+  ourStory: "Our Story",
+  ourStoryText:
+    "We founded Intellink Nippon after recognizing a persistent gap: while Japanese institutions seek growth in emerging regions, they face cultural and informational barriers. Similarly, businesses in emerging markets often lack the networks or knowledge to engage with Japan’s advanced systems. With decades of combined experience in global consulting, policy advisory, and diaspora networks, our team set out to create a firm that doesn’t just advise — but connects, translates, and enables. At our core, we are connectors — we combine Japan’s strengths in quality and strategy with the energy and potential of emerging markets — helping our partners move forward with clarity and confidence."
 },
 
-      whatWeDo: "What We Do",
-      whatWeDoText:
-        "We provide advisory and facilitation services that support market entry, trade, investment, and business development between Japan and emerging economies. Our services are designed to simplify complex business environments, reduce risk, and help organizations capture new opportunities.",
-      philosophy: "Our Philosophy",
-      philosophyText:
-        "We believe that business thrives on understanding, trust, and shared purpose. At Intellink, we approach every engagement with empathy, professionalism, and a long-term mindset. Our work is grounded in listening first, acting with integrity, and delivering value that endures.",
-      values: "Our Core Values",
-      valuesList: [
-        ["Kaizen Mindset", "We embrace continuous learning and improvement for ourselves and our clients."],
-        ["Partnership Beyond Projects", "We build lasting relationships that generate value beyond transactions."],
-        ["Responsible Growth", "We promote sustainable business that benefits all stakeholders: clients, communities, and the environment."]
-      ],
-      capabilities: {
-      title: "Our Capabilities",
-      paragraph1:
-        "At Intellink Nippon Consulting LLP, our strength lies in our people — professionals who blend cross-cultural insight, sector expertise, and trusted networks to help businesses and institutions succeed between Japan and Africa.",
-      paragraph2:
-        "We deliver agile, insight-driven, and relationship-centered solutions across market intelligence, strategic advisory, expert connections, and trade facilitation.",
-      paragraph3:
-        "With a multidisciplinary team and a deep understanding of both regions, we transform opportunities into actionable strategies — enabling our clients to expand with confidence, adapt to changing environments, and build long-term value across borders.",
-      tagline: "Insight-Driven | People-Powered | Globally Connected",
-    },
-  
-      ourStory: "Our Story",
-      ourStoryText:
-        "Intellink Nippon Consulting LLC was established in Tokyo in 2025 with a clear goal: to close the gap between Japan’s innovative economy and the potential-rich markets of Africa and other emerging regions. Having witnessed the challenges that businesses face — from language and regulatory barriers to a lack of trusted partners — we created Intellink to be a reliable bridge. Today, we continue this mission by supporting companies on both sides to engage, grow, and thrive together.",
-    },
     
     contact: {
       title: "Contact Us",
@@ -546,41 +561,68 @@ marketLink: {
 },
 
     about: {
-      mission: "ミッション",
-      missionText: "日本と新興市場間の国際ビジネスを、信頼できるパートナーシップと戦略的ソリューションを通じて、アクセス可能で効果的かつ持続可能なものにすること。",
-      vision: "ビジョン",
-      visionText: "国境を越えたビジネスを推進する主要なファシリテーターとして、協力、知識交換、責任ある企業活動を通じて、世界的課題の解決に貢献する。",
-      aboutUs: "会社概要",
-      aboutText: "Intellink Nippon Consulting GKは、日本を拠点に、アフリカを中心とする新興市場へのビジネス展開を支援するコンサルティング会社です。複雑な市場をシンプルにし、信頼できる現地パートナーとつなぎ、専門性と誠実さをもって持続可能な成長を後押しします。",
-      whoWeAre: "私たちについて",
-      whoWeAreText: "私たちは国際コンサルティング、貿易支援、異文化コミュニケーションに深い知見を持つ専門家チームです。日本、アフリカをはじめとする多様な地域に根差し、地域に適した高いインパクトを生み出す支援を提供しています。",
-      whatWeDo: "提供するサービス",
-      whatWeDoText: "日本と新興国間の市場参入、貿易、投資、事業開発を支援するアドバイザリーおよびファシリテーションサービスを提供しています。市場環境の複雑さを軽減し、リスクを抑え、新たなビジネス機会の獲得を可能にします。",
-      philosophy: "私たちの理念",
-      philosophyText: "ビジネスは理解、信頼、そして共通の目的の上に成り立ちます。私たちは共感と誠実さ、長期的な視点を大切にし、まず耳を傾け、価値ある支援を持続的に提供することを心がけています。",
-      values: "価値観",
-      valuesList: [
-        ["カイゼンマインドセット", "継続的な学びと改善を自らとクライアントのために追求します。"],
-        ["プロジェクトを超えるパートナーシップ", "一過性ではなく、長期的な価値を生む関係を築きます。"],
-        ["責任ある成長", "クライアント、地域社会、環境すべてに貢献するビジネスを推進します。"]
-      ],
-      capabilities: {
-      title: "私たちの強み",
-      paragraph1:
-        "Intellink Nippon Consulting LLPの強みは人材にあります。クロスカルチャーの洞察、業界の専門知識、信頼できるネットワークを融合し、日本とアフリカのビジネスや機関の成功を支援します。",
-      paragraph2:
-        "私たちは、市場インテリジェンス、戦略アドバイザリー、エキスパート・コネクション、貿易促進の分野で、俊敏で洞察に基づき、人間関係を重視したソリューションを提供します。",
-      paragraph3:
-        "多分野にわたるチームと両地域に対する深い理解をもとに、私たちは機会を実行可能な戦略に変え、クライアントが自信を持って拡大し、変化に適応し、国境を越えて長期的な価値を築くことを可能にします。",
-      tagline: "洞察に基づく | 人材が原動力 | 世界とつながる",
-    },
-      ourStory: "私たちの歩み",
-      ourStoryText: "Intellink Nippon Consulting GKは2025年に東京で設立されました。日本の先進的な経済とアフリカをはじめとする有望な新興市場の間にあるギャップを埋めるために誕生しました。言語や制度面の障壁、信頼できるパートナーの不足といった課題を目の当たりにし、信頼の架け橋となることを使命に掲げています。現在も、両地域の企業が共に成長し続けられるよう支援を行っています。"
-    },
-    services: {
-      // Same structure as EN
-      // ...already provided and mirrored above
-    },
+  mission: "使命",
+  missionText:
+    "私たちの使命は、日本と新興市場との国際ビジネスを、信頼できるパートナーシップを育み、成長と価値の創造を支える戦略的ソリューションを提供することで、アクセスしやすく、効果的かつ持続可能なものにすることです。",
+
+  vision: "私たちのビジョン",
+  visionText:
+    "日本とアフリカのビジネス協力における最優秀なコンサルティングパートナーとなり、持続的な成長、イノベーション、長期的なパートナーシップを推進します。",
+
+  aboutUs: "私たちについて",
+  aboutText:
+    "インテリンク・ニッポン・コンサルティングは、2025年6月に東京・渋谷で設立されました。私たちの明確な使命は、日本とアフリカ間の有意義なビジネス協力を促進することです。アフリカ市場の未開拓の可能性と、日本企業の国際展開への関心の高まりを認識し、私たちは信頼できるパートナーとして、洞察、アドバイザリー、貿易ソリューションを提供し、企業が国境を越えた機会を自信を持って活用できるよう支援します。",
+
+  whyChooseUs: {
+    title: "私たちが選ばれる理由",
+    points: [
+      "洞察重視：データ、調査、分析に基づいた意思決定。",
+      "専門知識：各分野・地域における高度な知識。",
+      "つながり重視：企業、規制当局、パートナーをつなぐ架け橋。",
+      "責任ある成長：倫理的で持続可能、かつ相互に利益をもたらす実践。"
+    ]
+  },
+
+  whatWeDo: "私たちの取り組み",
+  whatWeDoText:
+    "私たちは、日本と新興経済圏との間で、市場参入、貿易、投資、事業開発を支援するアドバイザリーおよびファシリテーションサービスを提供しています。複雑なビジネス環境をシンプルにし、リスクを軽減し、組織が新しい機会をつかむことを可能にします。",
+
+  philosophy: "私たちの理念",
+  philosophyText:
+    "ビジネスは理解、信頼、そして共通の目的によって成長すると信じています。私たちは、共感、専門性、長期的な視点を持ってあらゆる取り組みに臨みます。まず傾聴し、誠実に行動し、持続的な価値を提供することを大切にしています。",
+
+  values: "私たちの価値観",
+  valuesList: [
+    [
+      "改善（カイゼン）の精神",
+      "私たち自身とクライアントのために、継続的な学びと改善を大切にします。"
+    ],
+    [
+      "プロジェクトを超えたパートナーシップ",
+      "取引を超えて、長期的に価値を生み出す関係を築きます。"
+    ],
+    [
+      "責任ある成長",
+      "クライアント、地域社会、そして環境に利益をもたらす持続可能なビジネスを推進します。"
+    ]
+  ],
+
+  capabilities: {
+    title: "私たちの強み",
+    paragraph1:
+      "インテリンク・ニッポン・コンサルティング合同会社の強みは、クロスカルチュラルな洞察、業界専門知識、そして信頼できるネットワークを活かし、日本とアフリカ間のビジネスや機関の成功を支援するプロフェッショナルにあります。",
+    paragraph2:
+      "市場調査、戦略的アドバイザリー、専門家ネットワーク、貿易促進など、機動的で洞察重視、そして人と人とのつながりを大切にしたソリューションを提供します。",
+    paragraph3:
+      "多分野のチームと両地域に対する深い理解をもって、機会を実行可能な戦略へと変換し、クライアントが自信を持って拡大し、環境変化に適応し、国境を越えて長期的な価値を築けるように支援します。",
+    tagline: "洞察重視 | 人を中心に | グローバルにつながる"
+  },
+
+  ourStory: "私たちの歩み",
+  ourStoryText:
+    "インテリンク・ニッポンは、次のような課題を認識したことから設立されました。日本の機関は新興地域での成長を求めている一方で、文化的・情報的な障壁に直面しています。同様に、新興市場の企業は、日本の高度な仕組みに関与するためのネットワークや知識を欠いています。私たちのチームは、国際コンサルティング、政策アドバイザリー、そしてディアスポラネットワークにおける数十年の経験を活かし、「助言するだけでなく、つなぎ、翻訳し、実現する」会社を設立しました。私たちの本質は「つなぐこと」です。日本の品質と戦略の強みを、新興市場のエネルギーと可能性と組み合わせ、パートナーが明確さと自信を持って前進できるよう支援します。"
+},
+
     contact: {
       title: "お問い合わせ",
       subtitle: "お気軽にご連絡ください。下記のフォームよりメッセージをお送りいただけます。",

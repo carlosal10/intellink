@@ -80,7 +80,7 @@ export default function Home() {
 
       {/* Who We Are Section */}
       <div className="modern-section who-we-are" data-aos="fade-right">
-        <div className="hero-image">
+        <div className="who-image">
           <img src="/images/ist612.jpg" alt="Strategic Meeting" />
         </div>
         <div className="text-box">
@@ -108,13 +108,7 @@ export default function Home() {
               <img src={service.image} alt={service.title} />
               <h2>{service.title}</h2>
               <p>{service.description}</p>
-              {service.points && (
-                <ul className="services-list">
-                  {service.points.map((point, index) => (
-                    <li key={index}>{point}</li>
-                  ))}
-                </ul>
-              )}
+             
               <Link to={service.link} className="btn secondary">
                 {service.cta}
               </Link>
@@ -181,7 +175,7 @@ export default function Home() {
 
       {/* Philosophy Section */}
       <div className="modern-section reverse philosophy" data-aos="fade-left">
-        <div className="hero-image">
+        <div className="phy-image">
           <img src="/images/1p.jpg" alt="Team Discussion" />
         </div>
         <div className="text-box">
@@ -220,28 +214,6 @@ export default function Home() {
       </ul>
       <Link to="/about" className="btn-link">
         {t("home.blog.whyAfricaJapan.cta")}
-      </Link>
-    </div>
-
-    {/* Careers Snapshot */}
-    <div className="blog-card" style={{ marginBottom: "2rem" }}>
-      <h3>{t("home.blog.careers.title")}</h3>
-      <ul>
-        {t("home.blog.careers.points", { returnObjects: true }).map((point, idx) => (
-          <li key={idx}>{point}</li>
-        ))}
-      </ul>
-      <Link to="/careers" className="btn-link">
-        {t("home.blog.careers.cta")}
-      </Link>
-    </div>
-
-    {/* CTA Section / Contact */}
-    <div className="blog-card contact-cta" style={{ textAlign: "center", marginTop: "3rem" }}>
-      <h3>{t("home.blog.contactCta.title")}</h3>
-      <p>{t("home.blog.contactCta.subtitle")}</p>
-      <Link to="/contact" className="btn primary">
-        {t("home.blog.contactCta.cta")}
       </Link>
     </div>
 

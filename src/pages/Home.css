@@ -21,7 +21,7 @@ body {
   
 }
 .home{
-  margin-top: 9rem;
+  margin-top: 10.5%;
 }
 
 /* =========================
@@ -67,6 +67,17 @@ body {
 }
 
 .hero-image img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  height: 90vh;
+}
+.phy-image img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.who-image img {
   width: 100%;
   border-radius: 12px;
   object-fit: cover;

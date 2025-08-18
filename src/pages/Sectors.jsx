@@ -1,6 +1,7 @@
 import './Sectors.css';
 import useTranslate from '../hooks/useTranslate';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';   // ✅ Import Link
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -66,16 +67,24 @@ export default function Sectors() {
 
   return (
     <section className="sectors-page">
+      {/* Hero */}
       <div className="sectors-hero">
-        <h1 data-aos="fade-up">Industries We Serve</h1>
+        <h1 data-aos="fade-up">{t("sectorsPage.heroTitle") || "Industries We Serve"}</h1>
         <p data-aos="fade-up" data-aos-delay="100">
-          We work across sectors where Japan–Africa collaboration creates social, economic, and technological impact.
+          {t("sectorsPage.heroSubtitle") ||
+            "We work across sectors where Japan–Africa collaboration creates social, economic, and technological impact."}
         </p>
       </div>
 
+      {/* Industries */}
       <div className="industries-section">
         {industries.map((sector, idx) => (
-          <div className="industry-box" key={idx} data-aos="fade-up" data-aos-delay={100 * idx}>
+          <div
+            className="industry-box"
+            key={idx}
+            data-aos="fade-up"
+            data-aos-delay={100 * idx}
+          >
             <img src={sector.image} alt={sector.title} className="sector-image" />
             <div className="sector-content">
               <h3>{sector.title}</h3>
@@ -85,8 +94,9 @@ export default function Sectors() {
         ))}
       </div>
 
+      {/* Clients */}
       <div className="clients-section">
-        <h2 data-aos="fade-up">Our Clients Include</h2>
+        <h2 data-aos="fade-up">{t("sectorsPage.clientsTitle") || "Our Clients Include"}</h2>
         <ul className="client-list">
           {clients.map((client, idx) => (
             <li key={idx} data-aos="fade-up" data-aos-delay={100 * idx}>
@@ -94,6 +104,44 @@ export default function Sectors() {
             </li>
           ))}
         </ul>
+      </div>
+
+      {/* Why Africa, Why Japan, Why Now */}
+      <div className="why-section">
+        <h2 data-aos="fade-up">Why Africa, Why Japan, Why Now</h2>
+        
+        <div className="why-block" data-aos="fade-up" data-aos-delay="100">
+          <h3>Africa: The 21st Century’s Great Frontier</h3>
+          <p>
+            Africa is rapidly emerging as a global growth engine. With a young, dynamic population,
+            expanding urban infrastructure, and soaring demand for technology, clean energy, and advanced
+            manufacturing, the continent presents opportunities for businesses ready to engage strategically.
+          </p>
+        </div>
+
+        <div className="why-block" data-aos="fade-up" data-aos-delay="200">
+          <h3>Japan: Innovation Meets Opportunity</h3>
+          <p>
+            Japan’s expertise in technology, quality management, and strategic planning is a powerful asset
+            for businesses looking to expand into emerging markets. Japanese institutions bring precision,
+            reliability, and innovation—qualities that complement the dynamism of African markets.
+          </p>
+        </div>
+
+        <div className="why-block" data-aos="fade-up" data-aos-delay="300">
+          <h3>Why Now</h3>
+          <p>
+            The convergence of Africa’s growth and Japan’s global ambitions creates a timely moment for partnership.
+            Companies that act today can establish early market presence, build trusted networks, and shape long-term
+            business relationships while aligning with sustainable growth practices.
+          </p>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="cta-section" data-aos="zoom-in">
+        <h2>Seize the opportunity at the intersection of Japan and Africa.</h2>
+        <Link to="/contact" className="cta-button">Get Started →</Link>
       </div>
     </section>
   );

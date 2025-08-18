@@ -31,6 +31,17 @@
   padding-left: 1.2rem;
 }
 
+.hero-cta {
+  background: #E63946;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+
 .block-image {
   flex: 1 1 400px;
 }

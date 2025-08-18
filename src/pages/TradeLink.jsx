@@ -36,6 +36,7 @@ export default function TradeLinkPage() {
         <div className="page-hero-overlay">
           <h1>{t.hero?.title}</h1>
           <p>{t.hero?.desc}</p>
+          <Link to="/contact" className="hero-cta">Contact Us Today →</Link>
         </div>
       </section>
 

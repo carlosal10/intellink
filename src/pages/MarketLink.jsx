@@ -108,37 +108,6 @@ export default function MarketLink() {
         </ul>
       </section>
 
-      {/* AFRICA → JAPAN */}
-      <section className="marketlink-africa-japan" ref={africaJapanRef} data-aos="fade-up">
-        <h2>{africaJapan?.title}</h2>
-
-        <div className="africa-section">
-          <h3>{africaJapan?.africa?.header}</h3>
-          <p>{africaJapan?.africa?.text}</p>
-        </div>
-
-        <div className="japan-section">
-          <h3>{africaJapan?.japan?.header}</h3>
-          <p>{africaJapan?.japan?.text}</p>
-        </div>
-
-        <div className="whynow-section">
-          <h3>{africaJapan?.whyNow?.header}</h3>
-          <p>{africaJapan?.whyNow?.text}</p>
-        </div>
-
-        <div className="africa-japan-cta">
-          <p>{africaJapan?.cta?.title}</p>
-          <Link to="/contact" className="ec-btn">{africaJapan?.cta?.button}</Link>
-        </div>
-      </section>
-
-      {/* FINAL CTA */}
-      <section className="marketlink-finalcta" data-aos="fade-up">
-        <h2>{finalCTA?.title}</h2>
-        <Link to="/contact" className="final-cta-btn">{finalCTA?.button}</Link>
-      </section>
-
       {/* APPLICATION FORM */}
       {showForm && (
         <section className="marketlink-application" data-aos="fade-up">

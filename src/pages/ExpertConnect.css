@@ -2,7 +2,7 @@
 .page-shell {
   font-family: 'Segoe UI', sans-serif;
   color: #333;
-  margin-top: 10%;
+  margin-top: 12.5%;
 }
 
 /* HERO */
@@ -193,5 +193,8 @@
   }
   .grid-cards .grid {
     grid-template-columns: 1fr;
+  }
+  .page-shell{
+    margin-top: 12.5%;
   }
 }
