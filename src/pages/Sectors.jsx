@@ -107,7 +107,17 @@ export default function Sectors() {
       </div>
 
       {/* Why Africa, Why Japan, Why Now */}
-      <div className="why-section">
+      <div className="why-section"
+      style={{
+          backgroundImage: "url('/images/whyafrikawhyjapan.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          
+        }}
+      >
+             
+
         <h2 data-aos="fade-up">Why Africa, Why Japan, Why Now</h2>
         
         <div className="why-block" data-aos="fade-up" data-aos-delay="100">
@@ -136,13 +146,15 @@ export default function Sectors() {
             business relationships while aligning with sustainable growth practices.
           </p>
         </div>
-      </div>
+      
+      
 
       {/* CTA Section */}
       <div className="cta-section" data-aos="zoom-in">
         <h2>Seize the opportunity at the intersection of Japan and Africa.</h2>
         <Link to="/contact" className="cta-button">Get Started →</Link>
       </div>
+    </div>
     </section>
   );
 }
