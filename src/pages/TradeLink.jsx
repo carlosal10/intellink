@@ -30,13 +30,13 @@ export default function TradeLinkPage() {
       <section
         className="page-hero"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80')`,
+          backgroundImage: `url('/images/TradeLink1.jpg')`,
         }}
       >
         <div className="page-hero-overlay">
           <h1>{t.hero?.title}</h1>
           <p>{t.hero?.desc}</p>
-          <Link to="/contact" className="hero-cta"> Connect With the Right Market Players →</Link>
+          <Link to="/contact" className="hero-cta"> Connect With the Right Market  →</Link>
         </div>
       </section>
 

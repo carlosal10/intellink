@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
 import { toast } from "react-toastify";
@@ -21,8 +21,6 @@ export default function MarketLink() {
     message: "",
   });
   const [showForm, setShowForm] = useState(false);
-
-  const africaJapanRef = useRef(null);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -61,13 +59,13 @@ export default function MarketLink() {
   const offer = t("marketLink.offer", { returnObjects: true }) || {};
   const casesData = t("marketLink.cases", { returnObjects: true }) || {};
   const ideal = t("marketLink.ideal", { returnObjects: true }) || {};
-  const africaJapan = t("marketLink.africaJapan", { returnObjects: true }) || {};
-  const finalCTA = t("marketLink.finalCTA", { returnObjects: true }) || {};
 
   return (
     <div className="marketlink-page">
       {/* HERO */}
-      <section className="marketlink-hero" data-aos="fade-up">
+      <section className="marketlink-hero" data-aos="fade-up" style={{
+          backgroundImage: `url('/images/MarketLink1.jpg')`,
+        }}>
         <div className="marketlink-overlay">
           <h1>{hero?.title}</h1>
           <p>{hero?.desc}</p>
@@ -81,7 +79,11 @@ export default function MarketLink() {
       </section>
 
       {/* OFFER / SOLUTIONS */}
-      <section className="marketlink-offer" data-aos="fade-up">
+      <section className="marketlink-offer" data-aos="fade-up" style={{
+          backgroundImage: `url('/images/MarketLink.jpg')`,
+          backgroundRepeat:'no-repeat',
+          backgroundSize: 'cover'
+        }}>
         <h2>{offer?.title}</h2>
         <ul>
           {(offer?.points || []).map((point, i) => (
@@ -100,13 +102,18 @@ export default function MarketLink() {
         </ul>
       </section>
 
-      {/* IDEAL USERS */}
-      <section className="marketlink-ideal" data-aos="fade-up">
-        <h2>{ideal?.title}</h2>
-        <ul>
-          {(ideal?.items || []).map((item, i) => (<li key={i}>{item}</li>))}
-        </ul>
-      </section>
+     {/* IDEAL USERS */}
+<section className="marketlink-ideal" data-aos="fade-up">
+  <h2>{ideal?.title}</h2>
+  <div className="ideal-grid">
+    {(ideal?.items || []).map((item, i) => (
+      <div key={i} className="ideal-card" data-aos="zoom-in">
+        <h3>{item}</h3>
+      </div>
+    ))}
+  </div>
+</section>
+
 
     
       

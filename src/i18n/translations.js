@@ -179,7 +179,7 @@ const translations = {
         header: "Unlock Market Knowledge with Expert Insights",
         tagline: "Practical intelligence to guide your business between Japan and Africa.",
         cta: "Explore Reports",
-        bgImage: "https://source.unsplash.com/1600x900/?business,market"
+        bgImage: "/images/InsightsandReports.jpg"
       },
       overviewTitle: "Overview",
       overview: "Our Market Insights & Reports delivers actionable intelligence, market trends, and sector analyses to support your strategic decisions. Whether you are exploring new markets, launching products, or evaluating trade opportunities, our reports provide the clarity and context needed to make informed moves.",

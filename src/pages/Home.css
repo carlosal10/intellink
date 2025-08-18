@@ -20,6 +20,37 @@ body {
   overflow-x: hidden;
   
 }
+.bridge{
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  gap: 24px;
+}
+.bridge .bridge-overlay{
+   background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+}
+.bridge-overlay p{
+  color: #eef6ff;
+  font-size: 1.23rem;
+}
+.bridge-overlay h2{
+  color: #F1C40F;
+  font-size: 4rem;
+}
 .home{
   margin-top: 10.5%;
   padding: 0;
@@ -33,40 +64,35 @@ body {
 
 
 .hro-text h1 {
-  font-size: 3.5rem;
-  color: #f1c40f;
+   font-size: 5rem;
   margin-bottom: 1rem;
-  font-weight: 700;
+  color: #F1C40F;
 }
-.hr-overlay{ background: rgba(0, 0, 0, 0.562);
-    display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 2rem;
-  padding: 4rem 2rem;
-  backdrop-filter: blur(12px);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  margin: 2rem auto;
-  padding: 2rem;
-  text-align: center;
+.hr-overlay{ 
+  background: rgba(0, 0, 0, 0.7);
+  text-align: start;
   color: white;
   border-radius: 10px;
   width: 100%;
-  height: 50%;}
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ }
 
 .hr-overlay .hro-text h2 {
   font-size: 2rem;
   color: var(--accent);
   margin-bottom: 1rem;
   font-weight: 600;
+  
 }
 
 .hr-overlay .hro-text p {
-  font-size: 1.2rem;
-  line-height: 1.75;
-  margin-bottom: 1.5rem;
-  color: #eef6ff;
+    font-size: 1.7rem;
+  margin-bottom: 2rem;
+  color: #fefefe;
+
 }
 
 .hero-image img {
@@ -90,16 +116,16 @@ body {
    Modern Section (Reusable)
 ========================= */
 .modern-section {
+    height: 70vh;
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
-  margin: 4rem auto;
-  width: 90%;
-  border-radius: 12px;
-  background: var(--overlay-bg);
-  box-shadow: var(--shadow-soft);
-  overflow: hidden;
+  justify-content: center;
   position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  gap: 24px;
 }
 
 .modern-section.reverse {

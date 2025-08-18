@@ -16,12 +16,12 @@ export default function Sectors() {
     {
       title: "Agriculture & Agri-tech",
       description: "Boosting productivity, market access, and sustainability across borders.",
-      image: "/images/istockphoto-6.jpg"
+      image: "/images/Agritech.jpg"
     },
     {
       title: "Renewable Energy & Infrastructure",
       description: "Supporting energy and infrastructure firms with partnerships and regulation.",
-      image: "/images/istockphoto-5.jpg"
+      image: "/images/RenewableEnergy.jpg"
     },
     {
       title: "Healthcare & Pharmaceuticals",
@@ -31,17 +31,17 @@ export default function Sectors() {
     {
       title: "Manufacturing & Industrial Goods",
       description: "Linking Japanese industrial suppliers with high-growth markets.",
-      image: "/images/industrial.jpg"
+      image: "/images/Manufacturing .jpg"
     },
     {
       title: "ICT & Innovation",
       description: "Enabling digital transformation and scalable tech partnerships.",
-      image: "/images/ict.jpg"
+      image: "/images/ICT&Innovation.jpg"
     },
     {
       title: "Consumer Goods & Retail",
       description: "Guiding brands with market entry, branding, and distribution.",
-      image: "/images/retail.jpg"
+      image: "/images/ConsumerGoods.jpg"
     },
     {
       title: "Education & Skills Training",

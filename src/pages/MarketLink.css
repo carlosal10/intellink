@@ -7,12 +7,13 @@
 
 /* ---------------- HERO ---------------- */
 .marketlink-hero {
-  background: url("https://images.unsplash.com/photo-1521791136064-7986c2920216") center/cover no-repeat;
   height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .marketlink-overlay {
   background: rgba(0, 0, 0, 0.7);
@@ -73,6 +74,17 @@
   padding: 3rem 10%;
   text-align: center;
   margin-bottom: 3rem;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
 }
 
 .marketlink-offer h2 {
@@ -117,29 +129,45 @@
 .marketlink-cases li {
   margin-bottom: 1rem;
   line-height: 1.6;
+  font-size: 1.25rem;
 }
 
-/* ---------------- IDEAL USERS ---------------- */
 .marketlink-ideal {
-  padding: 3rem 10%;
+  padding: 4rem 2rem;
+  background: #f9fafb;
   text-align: center;
-  margin-bottom: 3rem;
 }
 
-.ideal-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 1rem;
+.marketlink-ideal h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
-.ideal-tags span {
-  background: #E63946;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+.ideal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
+
+.ideal-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ideal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.ideal-card h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+}
+
 
 /* ---------------- AFRICA → JAPAN ---------------- */
 .marketlink-africa-japan {
