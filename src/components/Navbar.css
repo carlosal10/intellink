@@ -32,7 +32,7 @@
   text-decoration: none;
   flex-shrink: 0;
 }
-.logo-img{ width: 165px; height: auto; }
+.logo-img{ width: 175px; height: auto; }
 
 /* Desktop links */
 .desktop-links{
@@ -96,6 +96,7 @@
   opacity: 0; visibility: hidden; transform: translateY(-10px);
   transition: opacity .2s ease, transform .2s ease, visibility .2s;
   overflow: hidden;
+  z-index: 10001;
 }
 .nav-dropdown:hover .dropdown-menu{ opacity:1; visibility:visible; transform: translateY(0); }
 .dropdown-menu a{
