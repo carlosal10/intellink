@@ -10,7 +10,7 @@
 }
 
 .navbar{
-  position: fixed;
+  position: absolute;
   top: 0; left: 0; right: 0;
   z-index: 10001;
   display: flex;
@@ -32,7 +32,7 @@
   text-decoration: none;
   flex-shrink: 0;
 }
-.logo-img{ width: 175px; height: auto; }
+.logo-img{ width: 250px; height: auto; }
 
 /* Desktop links */
 .desktop-links{

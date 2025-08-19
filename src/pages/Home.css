@@ -382,7 +382,7 @@ body {
   .hero-image img {
   display: none;
 }
-.modern-section {
+.bridge {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -411,26 +411,23 @@ body {
   width: 100%;
 }
 .hro-text h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #f1c40f;
   margin-bottom: 1rem;
   font-weight: 700;
 }
-.hr-overlay {
-  display: flex;           /* instead of grid */
-  flex-direction: column;  /* stack text vertically */
-  align-items: center;
-  justify-content: center;
-  width: 88%;
-  height: 100vh;           /* full viewport height */
-  background: rgba(0, 0, 0, 0.562);
-  color: white;
-  text-align: center;
+
+.bridge-overlay p{
+  color: #eef6ff;
+  font-size: 1.23rem;
+}
+.bridge-overlay h2{
+  color: #F1C40F;
+  font-size: 2.5rem;
 }
 
-
 .hr-overlay .hro-text h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--accent);
   margin-bottom: 1rem;
   font-weight: 600;

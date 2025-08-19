@@ -27,7 +27,7 @@ export default function Home() {
       points: t('home.services.marketLinks.points'),
       link: '/marketlink',
       cta: t('home.services.marketLinks.cta'),
-      image: '/images/io.jpg'
+      image: '/images/MarketLink.jpg'
     },
     {
       key: 'expertConnect',
@@ -36,7 +36,7 @@ export default function Home() {
       points: t('home.services.expertConnect.points'),
       link: '/expertconnect',
       cta: t('home.services.expertConnect.cta'),
-      image: '/images/i12.jpg'
+      image: '/images/ExpertConnect.jpg'
     },
     {
       key: 'tradeLinks',
