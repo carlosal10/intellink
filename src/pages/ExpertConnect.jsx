@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { FaGlobe, FaClipboardCheck, FaRocket } from "react-icons/fa";
+import { FaClipboardCheck, FaRocket } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useTranslate from "../hooks/useTranslate";
 import "./ExpertConnect.css";
+import { Link } from "react-router-dom";
 
 export default function ExpertConnectPage() {
   const t = useTranslate("expertConnect") || {};
@@ -49,6 +50,7 @@ export default function ExpertConnectPage() {
       });
     }
   };
+  
 
   return (
     <div className="page-shell">
@@ -71,6 +73,7 @@ export default function ExpertConnectPage() {
           </h1>
           <h2>{t?.tagline || ""}</h2>
           <p>{t?.heroDescription || ""}</p>
+           <Link to="/contact" className="hero-cta"> Request an Expert →</Link>
         </div>
       </section>
 
@@ -151,9 +154,9 @@ export default function ExpertConnectPage() {
         <div className="page-cta">
           <FaRocket className="cta-icon" />
           <h3>{t?.cta?.title}</h3>
-          <p>{t?.cta?.text}</p>
+          <p>Ready to explore new markets with confidence</p>
           <button className="cta-btn" onClick={() => setShowForm(!showForm)}>
-            {t?.cta?.button}
+            Request an Expert
           </button>
         </div>
 

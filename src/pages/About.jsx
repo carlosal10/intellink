@@ -46,7 +46,10 @@ export default function About() {
     {
       bg: 'istockphoto-1369212121-640x640.avif',
       title: t('about.ourStory'),
-      text: t('about.ourStoryText')
+      text:[ t('about.ourStoryText.paragraph1'),
+             t('about.ourStoryText.paragraph2'),
+             t('about.ourStoryText.paragraph3'),
+      ]
     }
   ];
 

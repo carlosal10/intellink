@@ -68,22 +68,24 @@ export default function Home() {
             <Link onClick={scrollToServices} className="btn primary">
               {t('home.ctaExploreServices')}
             </Link>
-            
-            <div className='hr-overlay'>
+            </div>
+        </div>
+      <section className='robo'>
+        <div className='hr-overlay'>
                   <div className="text-box hro-text">
                   <h1>{t('home.welcomeTitle')}</h1>
-                   <p>{t('home.welcomeIntro1')}</p>
+                   <p>{t('home.welcomeIntro1.paragraph1')}</p>
+                    <p>{t('home.welcomeIntro1.paragraph2')}</p>
+                    <p>{t('home.welcomeIntro1.paragraph3')}</p>
+                    <p>{t('home.welcomeIntro1.paragraph4')}</p>
         
                    </div>
                    <div className='hero-image'>
                    <img src='/images/istockphoto-8.jpg'></img>
                    </div>
                  </div>
-
-              </div>
         
-        </div>
-      
+      </section>
 
      
 

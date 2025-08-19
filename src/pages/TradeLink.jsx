@@ -52,7 +52,7 @@ export default function TradeLinkPage() {
   <TextImageBlock
     title={t.offer.title}
     image={{
-      src: t.offer.imgSrc || "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
+      src: t.offer.imgSrc || "/images/istockphoto-4.avif",
       alt: t.offer.imgAlt
     }}
   >
@@ -72,13 +72,15 @@ export default function TradeLinkPage() {
         <TextImageBlock
           title={t.why.title}
           reverse
-          image={{ src: t.why.imgSrc || "/images/photo-15.avif", alt: t.why.imgAlt }}
+          image={{ src: t.why.imgSrc || "/images/io.jpg", alt: t.why.imgAlt }}
         >
+        <div className="why-tradelink">
           <ul>
             {t.why.points?.map((p, i) => (
               <li key={i}>{p}</li>
             ))}
           </ul>
+          </div>
         </TextImageBlock>
       )}
 

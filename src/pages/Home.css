@@ -20,6 +20,16 @@ body {
   overflow-x: hidden;
   
 }
+.robo{
+   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  gap: 24px;
+}
 .bridge{
   height: 100vh;
   display: flex;
@@ -67,7 +77,7 @@ body {
 .hro-text h1 {
    font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #F1C40F;
+  color: #06172d;
 }
 .hr-overlay{ 
   
@@ -90,7 +100,7 @@ body {
 .hr-overlay .hro-text p {
     font-size: 1.2rem;
   margin-bottom: 2rem;
-  color: #fefefe;
+  color: #555;
 
 }
 
