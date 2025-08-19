@@ -38,23 +38,22 @@ export default function Footer() {
 
       {/* Row 2: Social Icons */}
       <div className="footer-row social-icons">
+         <div className="footer-row footer-logo-wrapper">
+        <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+          <img src="/images/android-chrome-512x512.png" alt="Intellink Nippon Logo" className="footer-logo" />
+        </Link>
+      </div>
         {socialLinks.map(link => (
           <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
             <i className={link.icon}></i>
           </a>
         ))}
+        
       </div>
 
       {/* Row 3: Copyright */}
       <div className="footer-row copyright">
         © {new Date().getFullYear()} Intellink Nippon Consulting LLC
-      </div>
-
-      {/* Row 4: Logo */}
-      <div className="footer-row footer-logo-wrapper">
-        <Link to="/" onClick={() => window.scrollTo(0, 0)}>
-          <img src="/images/android-chrome-512x512.png" alt="Intellink Nippon Logo" className="footer-logo" />
-        </Link>
       </div>
 
       {/* Row 5: Language Toggle */}
