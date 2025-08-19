@@ -18,11 +18,11 @@ const translations = {
   ctaContactUs: "Get in Touch",
   ctaAboutUs: "Learn More About Us",
 
-  welcomeTitle: "Welcome to Intellink Nippon Consulting",
-  welcomeIntro1:
-    "Your dedicated partner in connecting Japan with the world’s most promising emerging markets. Rooted in Tokyo and driven by global collaboration, we help businesses expand across borders with clarity, trust, and meaningful results.",
-  welcomeIntroSubtitle: "Bridging Japan and Emerging Markets\n",
+  welcomeIntroSubtitle: "Welcome to Intellink Nippon Consulting",
   welcomeIntro:
+    "Your dedicated partner in connecting Japan with the world’s most promising emerging markets. Rooted in Tokyo and driven by global collaboration, we help businesses expand across borders with clarity, trust, and meaningful results.",
+  welcomeTitle: "Connecting Japan and Emerging Markets\n",
+  welcomeIntro1:
     "Intellink Nippon Consulting was founded on a clear reality: businesses in Japan and emerging markets—particularly across Africa—are eager to engage, yet face significant barriers.\nGeographical distance, limited mutual understanding, and unfamiliarity with local conditions—combined with distinct cultural and business norms—make cross-border collaboration challenging.\nWe exist to change that. Our mission is to eliminate friction in Africa–Japan business relations by providing critical linkages, local insights, and operational support needed to build trusted, sustainable partnerships.\nWe aim to eliminate the friction in Africa–Japan business relations by providing the critical linkages, local insight, and operational support needed to build trusted, sustainable partnerships.",
 
   services: {

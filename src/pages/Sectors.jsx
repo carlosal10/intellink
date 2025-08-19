@@ -110,7 +110,7 @@ export default function Sectors() {
       <div className="why-section"
       style={{
           backgroundImage: "url('/images/whyafrikawhyjapan.jpg')",
-          backgroundSize: 'cover',
+          backgroundSize: '',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           

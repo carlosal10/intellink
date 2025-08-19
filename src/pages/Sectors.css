@@ -148,12 +148,158 @@
   font-weight: 600;
 }
 
-/* Responsive layout for why-blocks */
-@media (min-width: 768px) {
+/* ================================
+   📱 Mobile Styling (max-width: 768px)
+   ================================ */
+@media (max-width: 768px) {
+
+  /* General Page Padding */
+  .sectors-page {
+    padding: 16px;
+    background: #f8f8f8;
+  }
+
+  /* Hero */
+  .sectors-hero {
+    text-align: center;
+    padding: 40px 16px 20px;
+  }
+
+  .sectors-hero h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .sectors-hero p {
+    font-size: 1rem;
+    margin-top: 12px;
+    color: #e0e0e0;
+  }
+
+  /* Industries Section */
+  .industries-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .industry-box {
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f8f8f8;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .industry-box img.sector-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .sector-content {
+    padding: 14px;
+    text-align: center;
+  }
+
+  .sector-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+
+  .sector-content p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  /* Clients Section */
+  .clients-section {
+    margin-top: 40px;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .clients-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+
+  .client-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .client-list li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: #f1f5f9;
+    font-size: 0.95rem;
+    color: #333;
+  }
+
+  /* Why Section */
+  .why-section {
+    margin-top: 50px;
+    padding: 30px 16px;
+    color: #fff;
+    text-align: center;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.55); /* fallback overlay for readability */
+  }
+
+  .why-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+
   .why-block {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+  }
+
+  .why-block h3 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    color: #ffd700;
+  }
+
+  .why-block p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* CTA */
+  .cta-section {
+    margin-top: 40px;
+    padding: 24px 16px;
+    background: #0B2545;
+    color: #fff;
+    text-align: center;
+    border-radius: 12px;
+  }
+
+  .cta-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 14px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1rem;
+    background: #ff6b35;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .cta-button:hover {
+    background: #e65a2d;
   }
 }
+
 
 /* ============================
    CTA Section

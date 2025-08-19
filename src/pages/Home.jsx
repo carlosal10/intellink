@@ -52,8 +52,8 @@ export default function Home() {
   return (
     <section className="home">
       {/* Hero Section */}
-      <div className="modern-section hero-section"
-            style={{
+      
+        <div className='bridge'  style={{
               backgroundImage: "url('/images/Nippon.jpg')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
@@ -61,30 +61,26 @@ export default function Home() {
                  }}
                   data-aos="fade-up"
                       >
-                  <div className='hr-overlay'>
-                  <div className="text-box hro-text">
-                  <h1>{t('home.welcomeTitle')}</h1>
-                   <p>{t('home.welcomeIntro1')}</p>
-        
-                   </div>
-                 </div>
-
-              
-             </div >
-        <div className='bridge' style={{
-          backgroundImage: "url('/images/3p.jpg')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-        data-aos="fade-up">  
-        <div className='bridge-overlay'>       
+                  
+           <div className='bridge-overlay'>       
             <h2>{t('home.welcomeIntroSubtitle')}</h2>
             <p>{t('home.welcomeIntro')}</p>
             <Link onClick={scrollToServices} className="btn primary">
               {t('home.ctaExploreServices')}
             </Link>
-            </div>
+            
+            <div className='hr-overlay'>
+                  <div className="text-box hro-text">
+                  <h1>{t('home.welcomeTitle')}</h1>
+                   <p>{t('home.welcomeIntro1')}</p>
+        
+                   </div>
+                   <div className='hero-image'>
+                   <img src='/images/istockphoto-8.jpg'></img>
+                   </div>
+                 </div>
+
+              </div>
         
         </div>
       
