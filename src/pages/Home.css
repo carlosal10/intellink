@@ -413,19 +413,14 @@ body {
   font-size: 1rem;
   line-height: 1.75;
   margin-bottom: 1.5rem;
-  color: #eef6ff;
+  color: #555;
   width: 100%;
 }
 .hro-text {
   max-width: 900px;  /* center nicely */
   width: 100%;
 }
-.hro-text h1 {
-  font-size: 2rem;
-  color: #f1c40f;
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
+
 
 .bridge-overlay p{
   color: #eef6ff;
