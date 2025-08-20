@@ -3,6 +3,8 @@
   font-family: 'Segoe UI', sans-serif;
   color: #333;
   margin-top: 12.5%; /* Adjusted for fixed navbar */
+  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* ---------------- HERO ---------------- */

@@ -55,9 +55,9 @@ body {
 }
 .bridge-overlay p{
   color: #eef6ff;
-  font-size: 1.23rem;
+  font-size: 1.7rem;
 }
-.bridge-overlay h2{
+.bridge-overlay h1{
   color: #F1C40F;
   font-size: 4rem;
 }
@@ -426,7 +426,7 @@ body {
   color: #eef6ff;
   font-size: 1.23rem;
 }
-.bridge-overlay h2{
+.bridge-overlay h1{
   color: #F1C40F;
   font-size: 2.5rem;
 }
