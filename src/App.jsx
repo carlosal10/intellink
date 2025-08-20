@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HelmetProvider } from "react-helmet-async";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -16,6 +17,7 @@ import { AuthProvider } from './context/AuthContext';
 function App() {
   return (
     <AuthProvider>
+       <HelmetProvider>
       <Router>
         <div className="app">
           <Navbar />
@@ -42,6 +44,7 @@ function App() {
           <Footer />
         </div>
       </Router>
+      </HelmetProvider>
     </AuthProvider>
   );
 }
