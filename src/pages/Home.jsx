@@ -115,16 +115,16 @@ export default function Home() {
     </Helmet>
 
       {/* Hero Section */}
-      <section
-        className="bridge"
-        style={{
-          backgroundImage: "url('/images/Nippon.jpg')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-        data-aos="fade-up"
-      >
+      {/* Hero Section */}
+      <section className="bridge" data-aos="fade-up">
+        <video
+          className="bridge-video"
+          src="/images/Nippon.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
         <div className="bridge-overlay">
           <h1>{t('home.welcomeIntroSubtitle')}</h1>
           <p>{t('home.welcomeIntro')}</p>
@@ -133,6 +133,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
 
       {/* Intro Section */}
       <section className="robo">

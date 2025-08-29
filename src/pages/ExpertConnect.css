@@ -45,26 +45,6 @@
   padding: 3rem 10%;
 }
 
-.page-section {
-  margin-bottom: 3rem;
-  font-size: 1.4rem;
-}
-.page-content .page-section p {
-  color: #000000;
-  font-size: 1.25rem;
-}
-
-.page-section h3 {
-  color: #0B2545;
-  margin-bottom: 1rem;
-}
-
-.page-section p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
 .page-section ul,
 .page-section ol {
   margin-left: 1.5rem;
@@ -121,6 +101,19 @@
   margin-top: 1rem;
   transition: all 0.3s ease;
 }
+.expert-offer {
+  position: relative;
+  min-height: 400px; /* ensures visibility */
+  color: #fff; /* contrast */
+}
+
+.expert-offer-overlay {
+  background: rgba(0, 0, 0, 0.6); /* dim overlay */
+  padding: 60px 20px;
+  height: 100%;
+  width: 100%;
+}
+
 
 .cta-btn:hover {
   background: #081a32;

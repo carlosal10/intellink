@@ -78,11 +78,11 @@ export default function ExpertConnectPage() {
       </section>
 
       {/* CONTENT */}
-      <section className="page-content">
-        <div className="page-section">
+        <section className="page-section">
           <p>{t?.intro || ""}</p>
-        </div>
+        </section>
 
+        <section>
         {t?.whatIs && (
           <div className="page-section">
             <h3>{t.whatIs.title}</h3>
@@ -94,7 +94,9 @@ export default function ExpertConnectPage() {
             </ul>
           </div>
         )}
+        </section>
 
+        <section>
         {t?.expect && (
           <div className="page-section grid-cards">
             <h3>{t.expect.title}</h3>
@@ -108,7 +110,8 @@ export default function ExpertConnectPage() {
             </div>
           </div>
         )}
-
+        </section>
+        <section>
         {t?.howItWorks && (
           <div className="page-section">
             <h3>{t.howItWorks.title}</h3>
@@ -121,8 +124,10 @@ export default function ExpertConnectPage() {
             </ol>
           </div>
         )}
-
-        {t?.whyItMatters && (
+          </section>
+          
+          <section>
+          {t?.whyItMatters && (
           <div className="page-section grid-cards">
             <h3>{t.whyItMatters.title}</h3>
             <div className="grid">
@@ -134,11 +139,12 @@ export default function ExpertConnectPage() {
             </div>
           </div>
         )}
-
-        {t?.register && (
-          <div className="page-section">
-            <h3>{t.register.title}</h3>
-            <p>{t.register.description}</p>
+        </section>
+        <section>
+          {t?.register && (
+            <div className="page-section">
+              <h3>{t.register.title}</h3>
+              <p>{t.register.description}</p>
             <h4>{t.register.whoTitle}</h4>
             <ul>
               {t.register.whoPoints?.map((p, i) => (
@@ -149,6 +155,7 @@ export default function ExpertConnectPage() {
             <p>{t.register.howDescription}</p>
           </div>
         )}
+        
 
         {/* CTA */}
         <div className="page-cta">
