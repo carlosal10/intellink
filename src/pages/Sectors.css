@@ -1,339 +1,152 @@
-.sectors-page {
-  padding: 80px 24px;
-  background: #ffffff;
-  font-family: 'Segoe UI', sans-serif;
-  color: #333;
-  margin-top: 12.5%; /* Adjusted for fixed navbar */
+:root{
+  --sec-primary:#0B2545;
+  --sec-accent:#E63946;
+  --sec-gold:#F1C40F;
+  --sec-ink:#162235;
+  --sec-text:#2a3445;
+  --sec-muted:#5a6a80;
+  --sec-bg:#f6f8fb;
+
+  --shadow-soft:0 10px 24px rgba(0,0,0,.08);
+  --shadow-card:0 14px 34px rgba(11,37,69,.14);
 }
 
-.sectors-hero {
-  text-align: center;
-  margin-bottom: 60px;
+.sectors-page{
+  font-family:"Segoe UI",sans-serif;
+  color:var(--sec-text);
+  background:var(--sec-bg);
+  margin-top:10%; /* fixed navbar offset */
+  overflow-x:hidden;
 }
 
-.sectors-hero h1 {
-  font-size: 3rem;
-  color: #0B2545;
-  margin-bottom: 16px;
+/* Hero */
+.sectors-hero{
+  position:relative;
+  min-height:52vh;
+  
+  display:flex;align-items:flex-end;justify-content:center;
+}
+.sectors-hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(11,37,69,.15) 0%, rgba(11,37,69,.65) 55%, rgba(11,37,69,.95) 100%);
+}
+.sectors-hero-inner{
+  position:relative;z-index:1;color:#F1C40F;text-align:center;
+  padding:3.5rem 1rem 4.5rem;max-width:980px;
+}
+.sectors-hero-inner h1{
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  margin:0 0 .5rem;font-weight:800;color:#F1C40F;
+}
+.sectors-hero-inner p{
+  margin:0 auto;max-width:800px;opacity:.95;line-height:1.7;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: #d7e7fb;
 }
 
-.sectors-hero p {
-  font-size: 1.2rem;
-  color: #555;
-  max-width: 760px;
-  margin: 0 auto;
+/* Industries */
+.industries-section{padding:56px 0}
+.industries-grid{
+  max-width:1150px;margin:0 auto;padding:0 1rem;
+  display:grid;gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+.industry-card{
+  background:#fff;border-radius:16px;overflow:hidden;
+  border:1px solid #eef1f5;box-shadow:var(--shadow-soft);
+  transition:.25s ease;display:flex;flex-direction:column;
+}
+.industry-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-card)}
+.industry-media img{width:100%;height:190px;object-fit:cover;display:block}
+.industry-body{padding:16px 16px 18px}
+.industry-body h3{margin:2px 0 6px;color:var(--sec-primary);font-size:1.15rem}
+.industry-body p{margin:0;color:var(--sec-muted);line-height:1.6}
+
+/* Clients */
+.clients-section{
+  padding:18px 0 56px;text-align:center;
+}
+.clients-section h2{
+  color:var(--sec-primary);margin-bottom:12px;
+}
+.client-list{
+  list-style:none;margin:0 auto;max-width:900px;padding:0 1rem;
+  display:grid;gap:10px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+.client-list li{
+  background:#fff;border:1px solid #eef1f5;border-radius:999px;
+  padding:10px 14px;color:#21314a;box-shadow:0 4px 12px rgba(0,0,0,.04);
 }
 
-.industries-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
-  margin-top: 40px;
-  margin-bottom: 80px;
+/* WHY — Africa / Japan / Now */
+.why-wrapper{
+  position:relative;overflow:hidden;margin:10px auto 64px;
+  border-radius:20px;max-width:1200px;
+  background-position:center;background-size:cover;background-repeat:no-repeat;
 }
-
-.industry-box {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
+.why-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg, rgba(11,37,69,.88) 0%, rgba(11,37,69,.78) 35%, rgba(11,37,69,.65) 100%);
+  backdrop-filter: blur(2px);
 }
-
-.industry-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+.why-inner{
+  position:relative;z-index:1;color:#fff;padding:56px 20px 64px;
 }
-
-.sector-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+.why-title{
+  text-align:center;font-size: clamp(1.8rem, 4.2vw, 2.4rem);
+  font-weight:800;margin:0 0 22px;color:#F1C40F;
 }
-
-.industry-box:hover .sector-image {
-  transform: scale(1.03);
-}
-
-.sector-content {
-  padding: 20px;
-}
-
-.sector-content h3 {
-  font-size: 1.3rem;
-  color: #0B2545;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.sector-content p {
-  font-size: 1rem;
-  color: #444;
-  margin: 0;
-}
-
-.clients-section {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.clients-section h2 {
-  font-size: 2rem;
-  color: #0B2545;
-  margin-bottom: 24px;
-}
-
-.client-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.client-list li {
-  font-size: 1.1rem;
-  margin-bottom: 12px;
-  color: #333;
-  position: relative;
-  padding-left: 20px;
-}
-
-.client-list li::before {
-  content: '●';
-  color: #F1C40F;
+.bridge-video {
   position: absolute;
-  left: 0;
   top: 0;
-  font-size: 1.2rem;
-  line-height: 1;
-}
-/* ============================
-   Why Africa, Why Japan, Why Now
-=============================== */
-.why-section {
-  max-width: 1100px;
-  margin: 60px auto;
-  padding: 40px 20px;
-  background: #fafafa;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
-.why-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: #222;
+/* Why grid cards */
+.why-grid{
+  display:grid;gap:18px;max-width:1100px;margin:0 auto 24px;
+  grid-template-columns:repeat(3,1fr);
 }
-
-.why-block {
-  margin-bottom: 30px;
+@media (max-width: 960px){
+  .why-grid{grid-template-columns:1fr}
 }
-
-.why-block h3 {
-  font-size: 1.4rem;
-  color: #003366; /* deep professional blue */
-  margin-bottom: 10px;
-  font-weight: 600;
+.why-card{
+  background:linear-gradient(180deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,.06) 100%);
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:16px;padding:18px 16px 20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.18);
+  backdrop-filter: blur(6px);
+  transition:transform .25s ease, box-shadow .25s ease;
 }
+.why-card:hover{transform:translateY(-4px)}
+.why-card h3{margin:4px 0 8px;font-size:1.15rem;color:#fff}
+.why-card p{margin:0;color:#e6edf7;line-height:1.7}
 
-.why-block p {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color:#000;
-  font-weight: 600;
+/* Icon badges */
+.why-icon{
+  width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  margin-bottom:10px;font-size:1.1rem;color:#10243a;font-weight:700;
+  background:#fff;box-shadow:0 8px 20px rgba(255,255,255,.18);
 }
+.badge-africa{background:linear-gradient(135deg,#fff,#e0f4ff)}
+.badge-japan{background:linear-gradient(135deg,#fff,#ffe6ea)}
+.badge-now{background:linear-gradient(135deg,#fff,#fff6db)}
 
-/* ================================
-   📱 Mobile Styling (max-width: 768px)
-   ================================ */
-@media (max-width: 768px) {
-
-  /* General Page Padding */
-  .sectors-page {
-    padding: 16px;
-    background: #f8f8f8;
-  }
-
-  /* Hero */
-  .sectors-hero {
-    text-align: center;
-    padding: 40px 16px 20px;
-  }
-
-  .sectors-hero h1 {
-    font-size: 1.8rem;
-    line-height: 1.3;
-  }
-
-  .sectors-hero p {
-    font-size: 1rem;
-    margin-top: 12px;
-    color: #e0e0e0;
-  }
-
-  /* Industries Section */
-  .industries-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .industry-box {
-    display: flex;
-    flex-direction: column;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #f8f8f8;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  }
-
-  .industry-box img.sector-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-
-  .sector-content {
-    padding: 14px;
-    text-align: center;
-  }
-
-  .sector-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 6px;
-  }
-
-  .sector-content p {
-    font-size: 0.95rem;
-    color: #555;
-  }
-
-  /* Clients Section */
-  .clients-section {
-    margin-top: 40px;
-    padding: 0 10px;
-    text-align: center;
-  }
-
-  .clients-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 16px;
-  }
-
-  .client-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .client-list li {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    background: #f1f5f9;
-    font-size: 0.95rem;
-    color: #333;
-  }
-
-  /* Why Section */
-  .why-section {
-    margin-top: 50px;
-    padding: 30px 16px;
-    color: #fff;
-    text-align: center;
-    border-radius: 12px;
-    background: rgba(0,0,0,0.55); /* fallback overlay for readability */
-  }
-
-  .why-section h2 {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-  }
-
-  .why-block {
-    margin-bottom: 20px;
-  }
-
-  .why-block h3 {
-    font-size: 1.2rem;
-    margin-bottom: 6px;
-    color: #ffd700;
-  }
-
-  .why-block p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  /* CTA */
-  .cta-section {
-    margin-top: 40px;
-    padding: 24px 16px;
-    background: #0B2545;
-    color: #fff;
-    text-align: center;
-    border-radius: 12px;
-  }
-
-  .cta-section h2 {
-    font-size: 1.3rem;
-    margin-bottom: 14px;
-  }
-
-  .cta-button {
-    display: inline-block;
-    padding: 12px 20px;
-    font-size: 1rem;
-    background: #ff6b35;
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 0.3s;
-  }
-
-  .cta-button:hover {
-    background: #e65a2d;
-  }
+/* CTA inside why */
+.cta-section{
+  text-align:center;margin-top:16px;
 }
-
-
-/* ============================
-   CTA Section
-=============================== */
-.cta-section {
-  text-align: center;
-  margin: 80px auto;
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #003366, #0055a5);
-  border-radius: 20px;
-  color: #fff;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+.cta-section h3{
+  margin:0 0 12px;color:#fff;font-weight:700;
 }
-
-.cta-section h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 25px;
+.cta-button{
+  display:inline-block;background:linear-gradient(135deg,var(--sec-accent),#c9303e);
+  color:#fff;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700;
+  box-shadow:0 10px 24px rgba(0,0,0,.2);transition:transform .2s ease, filter .2s ease;
 }
-
-.cta-button {
-  display: inline-block;
-  padding: 12px 28px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #003366;
-  background: #fff;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  background: #f1f1f1;
-  transform: translateY(-2px);
-}
-
+.cta-button:hover{transform:translateY(-2px);filter:brightness(1.05)}
