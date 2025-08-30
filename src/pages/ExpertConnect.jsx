@@ -276,7 +276,7 @@ export default function ExpertConnectPage() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Jane Doe"
+                  placeholder="Haruto Akira"
                   required
                 />
               </div>
@@ -288,7 +288,7 @@ export default function ExpertConnectPage() {
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="jane@company.com"
+                  placeholder="Haruto@company.com"
                   required
                 />
               </div>
