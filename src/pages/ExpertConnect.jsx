@@ -1,6 +1,14 @@
+// src/pages/ExpertConnectPage.jsx
 import React, { useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaClipboardCheck, FaRocket, FaCheckCircle, FaArrowRight, FaUpload, FaTrash } from "react-icons/fa";
+import {
+  FaClipboardCheck,
+  FaRocket,
+  FaCheckCircle,
+  FaArrowRight,
+  FaUpload,
+  FaTrash,
+} from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useTranslate from "../hooks/useTranslate";
@@ -16,6 +24,7 @@ export default function ExpertConnectPage() {
   const [errors, setErrors] = useState({});
 
   const [form, setForm] = useState({
+    // Section 1: Personal Information
     firstName: "",
     middleName: "",
     lastName: "",
@@ -24,32 +33,48 @@ export default function ExpertConnectPage() {
     nationality: "",
     country: "",
     city: "",
+
+    // Section 2: Contact Information
     email: "",
     phone: "",
     linkedin: "",
     preferredContact: "Email",
+
+    // Section 3: Professional Background
     jobTitle: "",
     employer: "",
     yearsExperience: "",
     yearsSpecialization: "",
     availability: [],
+
+    // Section 4: Areas of Expertise
     industrySectors: [],
     functionalExpertise: [],
     regionExpertise: [],
     keySkills: [],
+
+    // Section 5: Qualifications & Credentials
     highestAcademicQualification: "",
     certifications: [],
     languages: [],
+
+    // Section 6: Experience Portfolio
     projects: [{ title: "", role: "", description: "" }],
     publications: [],
     references: [],
+
+    // Section 7: Engagement Preferences
     workArrangement: "Remote",
     expectedRate: "",
     willingToTravel: "No",
     travelRegions: "",
     noticePeriod: "Immediate",
+
+    // Section 8: Supporting Documents
     resume: null,
     portfolioFiles: [],
+
+    // Section 9: Consent & Declaration
     consentShareProfile: false,
     declarationAccurate: false,
   });
@@ -57,6 +82,7 @@ export default function ExpertConnectPage() {
   const resumeInputRef = useRef(null);
   const portfolioInputRef = useRef(null);
 
+  // Options
   const AVAILABILITY = ["Full-time", "Part-time", "Short-term contract", "Advisory", "On-demand"];
   const SECTORS = ["Finance", "Healthcare", "Energy", "Technology", "Agriculture", "Education", "Consulting", "Trade", "Manufacturing", "Public Sector"];
   const FUNCTIONS = ["Strategy", "Market Research", "Project Management", "Operations", "Finance", "Legal", "HR", "IT", "Engineering", "Supply Chain", "Marketing", "ESG"];
@@ -79,6 +105,7 @@ export default function ExpertConnectPage() {
     { key: "review", title: "Review", desc: "Final check" },
   ], []);
 
+  // Helpers
   function updateField(name, value) {
     setForm((prev) => ({ ...prev, [name]: value }));
     setErrors((e) => ({ ...e, [name]: undefined }));
@@ -94,6 +121,7 @@ export default function ExpertConnectPage() {
   function validateCurrentStep() {
     const e = {};
     const s = steps[step]?.key;
+
     if (s === "personal") {
       if (!form.firstName) e.firstName = "Required";
       if (!form.lastName) e.lastName = "Required";
@@ -129,6 +157,7 @@ export default function ExpertConnectPage() {
       if (!form.consentShareProfile) e.consentShareProfile = "Required";
       if (!form.declarationAccurate) e.declarationAccurate = "Required";
     }
+
     setErrors(e);
     return Object.keys(e).length === 0;
   }
@@ -138,42 +167,92 @@ export default function ExpertConnectPage() {
 
   async function handleSubmit(e) {
     e?.preventDefault?.();
-    let ok = true;
+
+    // full pass validation
     for (let i = 0; i < steps.length; i++) {
       setStep(i);
-      if (!validateCurrentStep()) { ok = false; break; }
+      const sKey = steps[i].key;
+      const prevStep = step;
+      // temporarily set step to run validation for that section UI
+      const valid = (() => {
+        const cur = step;
+        // run validation scoped to step i
+        const eBag = {};
+        switch (sKey) {
+          case "personal":
+          case "contact":
+          case "professional":
+          case "expertise":
+          case "qualifications":
+          case "documents":
+          case "consent":
+            // mimic validateCurrentStep for this step
+            setStep(i);
+            const ok = validateCurrentStep();
+            setStep(cur);
+            return ok;
+          default:
+            return true;
+        }
+      })();
+      if (!valid) {
+        setStep(i);
+        return;
+      }
+      setStep(prevStep);
     }
-    if (!ok) return;
 
     setSubmitting(true);
     try {
       const endpoint = "https://intellink-8w9t.onrender.com/api/expert-connect";
+
+      // Auto FormData if files exist; else JSON
       if (form.resume || (form.portfolioFiles && form.portfolioFiles.length)) {
         const fd = new FormData();
-        const payload = { ...form }; delete payload.resume; delete payload.portfolioFiles;
+        const payload = { ...form };
+        delete payload.resume;
+        delete payload.portfolioFiles;
         fd.append("data", new Blob([JSON.stringify(payload)], { type: "application/json" }));
         if (form.resume) fd.append("resume", form.resume);
-        (form.portfolioFiles || []).forEach((f, i) => fd.append(`portfolio_${i+1}`, f));
+        (form.portfolioFiles || []).forEach((f, i) => fd.append(`portfolio_${i + 1}`, f));
+
         const res = await fetch(endpoint, { method: "POST", body: fd });
         if (!res.ok) throw new Error("Failed to submit form");
       } else {
-        const res = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(form) });
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        });
         if (!res.ok) throw new Error("Failed to submit form");
       }
-      toast.success("Application submitted. We'll review and respond.", { position: "top-right", autoClose: 3000 });
-      setTimeout(() => { setStep(0); updateField("resume", null); updateField("portfolioFiles", []); }, 400);
+
+      toast.success("Application submitted successfully, we're reviewing it.", {
+        position: "top-right",
+        autoClose: 3000,
+      });
       setShowForm(false);
+      setStep(0);
     } catch (err) {
-      toast.error("Something went wrong. Please try again.", { position: "top-right", autoClose: 3000 });
-    } finally { setSubmitting(false); }
+      toast.error("Something went wrong. Please try again.", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+    } finally {
+      setSubmitting(false);
+    }
   }
 
+  // Small UI helpers
   const Progress = () => {
     const pct = ((step + 1) / steps.length) * 100;
     return (
       <div className="ec-progress">
         <div className="ec-progress-bar" style={{ width: `${pct}%` }} />
-        <div className="ec-progress-meta"><span>Step {step + 1} / {steps.length}</span><span>{steps[step]?.title}</span></div>
+        <div className="ec-progress-meta">
+          <span>Step {step + 1} / {steps.length}</span>
+          <span>{steps[step]?.title}</span>
+        </div>
       </div>
     );
   };
@@ -182,18 +261,27 @@ export default function ExpertConnectPage() {
 
   function ChipInput({ label, name, values, placeholder, onChange }) {
     const [draft, setDraft] = useState("");
-    function add(val) { const v = (val ?? draft).trim(); if (!v) return; onChange([...(values||[]), v]); setDraft(""); }
+    function add(val) {
+      const v = (val ?? draft).trim(); if (!v) return;
+      onChange([...(values || []), v]); setDraft("");
+    }
     function remove(idx) { onChange(values.filter((_, i) => i !== idx)); }
     return (
       <div className="ec-field">
         <label>{label}</label>
         <div className="ec-chipbox" onClick={() => document.getElementById(name)?.focus?.()}>
-          {(values||[]).map((v, i) => (
+          {(values || []).map((v, i) => (
             <span className="ec-chip" key={`${name}-${i}`}>{v}
               <button type="button" aria-label="Remove" onClick={() => remove(i)}>×</button>
             </span>
           ))}
-          <input id={name} value={draft} onChange={(e) => setDraft(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter" || e.key === ",") { e.preventDefault(); add(); } }} placeholder={placeholder} />
+          <input
+            id={name}
+            value={draft}
+            onChange={(e) => setDraft(e.target.value)}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === ",") { e.preventDefault(); add(); } }}
+            placeholder={placeholder}
+          />
         </div>
       </div>
     );
@@ -205,7 +293,12 @@ export default function ExpertConnectPage() {
         <label>{label}</label>
         <div className="ec-tags">
           {options.map((opt) => (
-            <button key={`${name}-${opt}`} type="button" className={`ec-tag ${values.includes(opt) ? "active" : ""}`} onClick={() => onToggle(name, opt)}>
+            <button
+              key={`${name}-${opt}`}
+              type="button"
+              className={`ec-tag ${values.includes(opt) ? "active" : ""}`}
+              onClick={() => onToggle(name, opt)}
+            >
               {opt}
             </button>
           ))}
@@ -216,9 +309,14 @@ export default function ExpertConnectPage() {
   }
 
   function RepeaterProjects() {
-    function update(idx, key, value) { const clone = [...form.projects]; clone[idx] = { ...clone[idx], [key]: value }; updateField("projects", clone); }
+    function update(idx, key, value) {
+      const clone = [...form.projects]; clone[idx] = { ...clone[idx], [key]: value }; updateField("projects", clone);
+    }
     function add() { updateField("projects", [...form.projects, { title: "", role: "", description: "" }]); }
-    function remove(idx) { const clone = form.projects.filter((_, i) => i !== idx); updateField("projects", clone.length ? clone : [{ title: "", role: "", description: "" }]); }
+    function remove(idx) {
+      const clone = form.projects.filter((_, i) => i !== idx);
+      updateField("projects", clone.length ? clone : [{ title: "", role: "", description: "" }]);
+    }
     return (
       <div className="ec-repeater">
         {form.projects.map((p, i) => (
@@ -235,7 +333,9 @@ export default function ExpertConnectPage() {
               </div>
             </div>
             <div className="ec-row-actions">
-              <button type="button" className="btn btn-ghost" onClick={() => remove(i)}><FaTrash /> Remove</button>
+              <button type="button" className="btn btn-ghost" onClick={() => remove(i)}>
+                <FaTrash /> Remove
+              </button>
             </div>
           </div>
         ))}
@@ -244,186 +344,283 @@ export default function ExpertConnectPage() {
     );
   }
 
-  function StepPersonal() { return (
-    <div className="ec-grid-3">
-      <div className="ec-field"><label>First Name</label>
-        <input value={form.firstName} onChange={(e) => updateField("firstName", e.target.value)} />
-        <Error msg={errors.firstName} />
-      </div>
-      <div className="ec-field"><label>Middle Name</label>
-        <input value={form.middleName} onChange={(e) => updateField("middleName", e.target.value)} />
-      </div>
-      <div className="ec-field"><label>Last Name</label>
-        <input value={form.lastName} onChange={(e) => updateField("lastName", e.target.value)} />
-        <Error msg={errors.lastName} />
-      </div>
-      <div className="ec-field"><label>Date of Birth</label>
-        <input type="date" value={form.dateOfBirth} onChange={(e) => updateField("dateOfBirth", e.target.value)} />
-        <Error msg={errors.dateOfBirth} />
-      </div>
-      <div className="ec-field"><label>Gender</label>
-        <select value={form.gender} onChange={(e) => updateField("gender", e.target.value)}>
-          <option value="">Select</option>
-          {GENDERS.map((g) => <option key={g} value={g}>{g}</option>)}
-        </select>
-        <Error msg={errors.gender} />
-      </div>
-      <div className="ec-field"><label>Nationality</label>
-        <input value={form.nationality} onChange={(e) => updateField("nationality", e.target.value)} />
-        <Error msg={errors.nationality} />
-      </div>
-      <div className="ec-field"><label>Country of Residence</label>
-        <input value={form.country} onChange={(e) => updateField("country", e.target.value)} />
-        <Error msg={errors.country} />
-      </div>
-      <div className="ec-field"><label>City/Region</label>
-        <input value={form.city} onChange={(e) => updateField("city", e.target.value)} />
-        <Error msg={errors.city} />
-      </div>
-    </div>
-  ); }
-
-  function StepContact() { return (
-    <div className="ec-grid-2">
-      <div className="ec-field"><label>Email Address</label>
-        <input type="email" value={form.email} onChange={(e) => updateField("email", e.target.value)} />
-        <Error msg={errors.email} />
-      </div>
-      <div className="ec-field"><label>Phone/WhatsApp Number</label>
-        <input value={form.phone} onChange={(e) => updateField("phone", e.target.value)} />
-        <Error msg={errors.phone} />
-      </div>
-      <div className="ec-field"><label>LinkedIn / Portfolio</label>
-        <input value={form.linkedin} onChange={(e) => updateField("linkedin", e.target.value)} placeholder="https://..." />
-      </div>
-      <div className="ec-field"><label>Preferred Method of Contact</label>
-        <select value={form.preferredContact} onChange={(e) => updateField("preferredContact", e.target.value)}>
-          {CONTACT_METHODS.map((m) => <option key={m} value={m}>{m}</option>)}
-        </select>
-      </div>
-    </div>
-  ); }
-
-  function StepProfessional() { return (
-    <div className="ec-grid-3">
-      <div className="ec-field"><label>Current Job Title / Designation</label>
-        <input value={form.jobTitle} onChange={(e) => updateField("jobTitle", e.target.value)} />
-        <Error msg={errors.jobTitle} />
-      </div>
-      <div className="ec-field"><label>Current Employer / Organization</label>
-        <input value={form.employer} onChange={(e) => updateField("employer", e.target.value)} placeholder="Optional if freelance" />
-      </div>
-      <div className="ec-field"><label>Years of Professional Experience</label>
-        <input type="number" min="0" value={form.yearsExperience} onChange={(e) => updateField("yearsExperience", e.target.value)} />
-        <Error msg={errors.yearsExperience} />
-      </div>
-      <div className="ec-field"><label>Total Years of Expertise in Specialization</label>
-        <input type="number" min="0" value={form.yearsSpecialization} onChange={(e) => updateField("yearsSpecialization", e.target.value)} />
-        <Error msg={errors.yearsSpecialization} />
-      </div>
-      <TagSelect label="Availability" name="availability" options={AVAILABILITY} values={form.availability} onToggle={toggleFromArray} />
-    </div>
-  ); }
-
-  function StepExpertise() { return (
-    <>
-      <TagSelect label="Industry Sector" name="industrySectors" options={SECTORS} values={form.industrySectors} onToggle={toggleFromArray} error={errors.industrySectors} />
-      <TagSelect label="Functional Expertise" name="functionalExpertise" options={FUNCTIONS} values={form.functionalExpertise} onToggle={toggleFromArray} error={errors.functionalExpertise} />
-      <TagSelect label="Region of Expertise" name="regionExpertise" options={REGIONS} values={form.regionExpertise} onToggle={toggleFromArray} error={errors.regionExpertise} />
-      <ChipInput label="Key Skills" name="keySkills" values={form.keySkills} placeholder="Type a skill and press Enter" onChange={(vals) => updateField("keySkills", vals)} />
-    </>
-  ); }
-
-  function StepQualifications() { return (
-    <div className="ec-grid-2">
-      <div className="ec-field"><label>Highest Academic Qualification</label>
-        <input value={form.highestAcademicQualification} onChange={(e) => updateField("highestAcademicQualification", e.target.value)} />
-        <Error msg={errors.highestAcademicQualification} />
-      </div>
-      <ChipInput label="Professional Certifications (CFA, PMP, etc.)" name="certifications" values={form.certifications} placeholder="Type and press Enter" onChange={(vals) => updateField("certifications", vals)} />
-      <ChipInput label="Languages Spoken (with proficiency)" name="languages" values={form.languages} placeholder="e.g., English — Fluent" onChange={(vals) => updateField("languages", vals)} />
-    </div>
-  ); }
-
-  function StepPortfolio() { return (
-    <>
-      <RepeaterProjects />
-      <ChipInput label="Publications / Research / Thought Leadership" name="publications" values={form.publications} placeholder="Title or link — press Enter" onChange={(vals) => updateField("publications", vals)} />
-      <ChipInput label="References (optional)" name="references" values={form.references} placeholder="Name — Contact" onChange={(vals) => updateField("references", vals)} />
-    </>
-  ); }
-
-  function StepEngagement() { return (
-    <div className="ec-grid-3">
-      <div className="ec-field"><label>Preferred Work Arrangement</label>
-        <select value={form.workArrangement} onChange={(e) => updateField("workArrangement", e.target.value)}>
-          {WORK_ARRANGEMENTS.map((w) => <option key={w} value={w}>{w}</option>)}
-        </select>
-      </div>
-      <div className="ec-field"><label>Expected Daily/Hourly Rate (optional / negotiable)</label>
-        <input value={form.expectedRate} onChange={(e) => updateField("expectedRate", e.target.value)} placeholder="$ / day or $ / hr" />
-      </div>
-      <div className="ec-field"><label>Willingness to Travel</label>
-        <select value={form.willingToTravel} onChange={(e) => updateField("willingToTravel", e.target.value)}>
-          <option>No</option><option>Yes</option>
-        </select>
-        <Hint>Specify regions if yes.</Hint>
-      </div>
-      {form.willingToTravel === "Yes" && (
-        <div className="ec-field"><label>Travel Regions</label>
-          <input value={form.travelRegions} onChange={(e) => updateField("travelRegions", e.target.value)} placeholder="e.g., East Africa, Japan" />
+  // Step renderers
+  function StepPersonal() {
+    return (
+      <div className="ec-grid-3">
+        <div className="ec-field"><label>First Name</label>
+          <input value={form.firstName} onChange={(e) => updateField("firstName", e.target.value)} />
+          <Error msg={errors.firstName} />
         </div>
-      )}
-      <div className="ec-field"><label>Availability Notice Period</label>
-        <select value={form.noticePeriod} onChange={(e) => updateField("noticePeriod", e.target.value)}>
-          {NOTICE.map((n) => <option key={n} value={n}>{n}</option>)}
-        </select>
+        <div className="ec-field"><label>Middle Name</label>
+          <input value={form.middleName} onChange={(e) => updateField("middleName", e.target.value)} />
+        </div>
+        <div className="ec-field"><label>Last Name</label>
+          <input value={form.lastName} onChange={(e) => updateField("lastName", e.target.value)} />
+          <Error msg={errors.lastName} />
+        </div>
+        <div className="ec-field"><label>Date of Birth</label>
+          <input type="date" value={form.dateOfBirth} onChange={(e) => updateField("dateOfBirth", e.target.value)} />
+          <Error msg={errors.dateOfBirth} />
+        </div>
+        <div className="ec-field"><label>Gender</label>
+          <select value={form.gender} onChange={(e) => updateField("gender", e.target.value)}>
+            <option value="">Select</option>
+            {GENDERS.map((g) => <option key={g} value={g}>{g}</option>)}
+          </select>
+          <Error msg={errors.gender} />
+        </div>
+        <div className="ec-field"><label>Nationality</label>
+          <input value={form.nationality} onChange={(e) => updateField("nationality", e.target.value)} />
+          <Error msg={errors.nationality} />
+        </div>
+        <div className="ec-field"><label>Country of Residence</label>
+          <input value={form.country} onChange={(e) => updateField("country", e.target.value)} />
+          <Error msg={errors.country} />
+        </div>
+        <div className="ec-field"><label>City/Region</label>
+          <input value={form.city} onChange={(e) => updateField("city", e.target.value)} />
+          <Error msg={errors.city} />
+        </div>
       </div>
-    </div>
-  ); }
+    );
+  }
 
-  function StepDocuments() { return (
-    <div className="ec-grid-2">
-      <div className="ec-field">
-        <label>Upload Resume/CV <span className="req">*</span></label>
-        <div className="ec-uploader" onClick={() => resumeInputRef.current?.click?.()}>
-          <FaUpload />
-          <div>
-            <strong>{form.resume ? form.resume.name : "Choose file or drop here"}</strong>
-            <p className="ec-hint">PDF / DOCX preferred</p>
+  function StepContact() {
+    return (
+      <div className="ec-grid-2">
+        <div className="ec-field"><label>Email Address</label>
+          <input type="email" value={form.email} onChange={(e) => updateField("email", e.target.value)} />
+          <Error msg={errors.email} />
+        </div>
+        <div className="ec-field"><label>Phone/WhatsApp Number</label>
+          <input value={form.phone} onChange={(e) => updateField("phone", e.target.value)} />
+          <Error msg={errors.phone} />
+        </div>
+        <div className="ec-field"><label>LinkedIn / Portfolio</label>
+          <input value={form.linkedin} onChange={(e) => updateField("linkedin", e.target.value)} placeholder="https://..." />
+        </div>
+        <div className="ec-field"><label>Preferred Method of Contact</label>
+          <select value={form.preferredContact} onChange={(e) => updateField("preferredContact", e.target.value)}>
+            {CONTACT_METHODS.map((m) => <option key={m} value={m}>{m}</option>)}
+          </select>
+        </div>
+      </div>
+    );
+  }
+
+  function StepProfessional() {
+    return (
+      <div className="ec-grid-3">
+        <div className="ec-field"><label>Current Job Title / Designation</label>
+          <input value={form.jobTitle} onChange={(e) => updateField("jobTitle", e.target.value)} />
+          <Error msg={errors.jobTitle} />
+        </div>
+        <div className="ec-field"><label>Current Employer / Organization</label>
+          <input value={form.employer} onChange={(e) => updateField("employer", e.target.value)} placeholder="Optional if freelance" />
+        </div>
+        <div className="ec-field"><label>Years of Professional Experience</label>
+          <input type="number" min="0" value={form.yearsExperience} onChange={(e) => updateField("yearsExperience", e.target.value)} />
+          <Error msg={errors.yearsExperience} />
+        </div>
+        <div className="ec-field"><label>Total Years of Expertise in Specialization</label>
+          <input type="number" min="0" value={form.yearsSpecialization} onChange={(e) => updateField("yearsSpecialization", e.target.value)} />
+          <Error msg={errors.yearsSpecialization} />
+        </div>
+        <TagSelect
+          label="Availability"
+          name="availability"
+          options={AVAILABILITY}
+          values={form.availability}
+          onToggle={toggleFromArray}
+        />
+      </div>
+    );
+  }
+
+  function StepExpertise() {
+    return (
+      <>
+        <TagSelect
+          label="Industry Sector"
+          name="industrySectors"
+          options={SECTORS}
+          values={form.industrySectors}
+          onToggle={toggleFromArray}
+          error={errors.industrySectors}
+        />
+        <TagSelect
+          label="Functional Expertise"
+          name="functionalExpertise"
+          options={FUNCTIONS}
+          values={form.functionalExpertise}
+          onToggle={toggleFromArray}
+          error={errors.functionalExpertise}
+        />
+        <TagSelect
+          label="Region of Expertise"
+          name="regionExpertise"
+          options={REGIONS}
+          values={form.regionExpertise}
+          onToggle={toggleFromArray}
+          error={errors.regionExpertise}
+        />
+        <ChipInput
+          label="Key Skills"
+          name="keySkills"
+          values={form.keySkills}
+          placeholder="Type a skill and press Enter"
+          onChange={(vals) => updateField("keySkills", vals)}
+        />
+      </>
+    );
+  }
+
+  function StepQualifications() {
+    return (
+      <div className="ec-grid-2">
+        <div className="ec-field"><label>Highest Academic Qualification</label>
+          <input value={form.highestAcademicQualification} onChange={(e) => updateField("highestAcademicQualification", e.target.value)} />
+          <Error msg={errors.highestAcademicQualification} />
+        </div>
+        <ChipInput
+          label="Professional Certifications (CFA, PMP, etc.)"
+          name="certifications"
+          values={form.certifications}
+          placeholder="Type and press Enter"
+          onChange={(vals) => updateField("certifications", vals)}
+        />
+        <ChipInput
+          label="Languages Spoken (with proficiency)"
+          name="languages"
+          values={form.languages}
+          placeholder="e.g., English — Fluent"
+          onChange={(vals) => updateField("languages", vals)}
+        />
+      </div>
+    );
+  }
+
+  function StepPortfolio() {
+    return (
+      <>
+        <RepeaterProjects />
+        <ChipInput
+          label="Publications / Research / Thought Leadership"
+          name="publications"
+          values={form.publications}
+          placeholder="Title or link — press Enter"
+          onChange={(vals) => updateField("publications", vals)}
+        />
+        <ChipInput
+          label="References (optional)"
+          name="references"
+          values={form.references}
+          placeholder="Name — Contact"
+          onChange={(vals) => updateField("references", vals)}
+        />
+      </>
+    );
+  }
+
+  function StepEngagement() {
+    return (
+      <div className="ec-grid-3">
+        <div className="ec-field"><label>Preferred Work Arrangement</label>
+          <select value={form.workArrangement} onChange={(e) => updateField("workArrangement", e.target.value)}>
+            {WORK_ARRANGEMENTS.map((w) => <option key={w} value={w}>{w}</option>)}
+          </select>
+        </div>
+        <div className="ec-field"><label>Expected Daily/Hourly Rate (optional / negotiable)</label>
+          <input value={form.expectedRate} onChange={(e) => updateField("expectedRate", e.target.value)} placeholder="$ / day or $ / hr" />
+        </div>
+        <div className="ec-field"><label>Willingness to Travel</label>
+          <select value={form.willingToTravel} onChange={(e) => updateField("willingToTravel", e.target.value)}>
+            <option>No</option><option>Yes</option>
+          </select>
+          <Hint>Specify regions if yes.</Hint>
+        </div>
+        {form.willingToTravel === "Yes" && (
+          <div className="ec-field"><label>Travel Regions</label>
+            <input value={form.travelRegions} onChange={(e) => updateField("travelRegions", e.target.value)} placeholder="e.g., East Africa, Japan" />
           </div>
-          <input type="file" accept=".pdf,.doc,.docx,.rtf" ref={resumeInputRef} style={{ display: "none" }} onChange={(e) => updateField("resume", e.target.files?.[0] || null)} />
-        </div>
-        <Error msg={errors.resume} />
-      </div>
-      <div className="ec-field">
-        <label>Upload Portfolio / Case Studies (optional)</label>
-        <div className="ec-uploader" onClick={() => portfolioInputRef.current?.click?.()}>
-          <FaUpload />
-          <div>
-            <strong>{form.portfolioFiles?.length ? `${form.portfolioFiles.length} file(s) selected` : "Choose files or drop here"}</strong>
-            <p className="ec-hint">PDF / PPT / Images</p>
-          </div>
-          <input type="file" multiple accept=".pdf,.ppt,.pptx,.png,.jpg,.jpeg,.webp" ref={portfolioInputRef} style={{ display: "none" }} onChange={(e) => updateField("portfolioFiles", Array.from(e.target.files || []))} />
+        )}
+        <div className="ec-field"><label>Availability Notice Period</label>
+          <select value={form.noticePeriod} onChange={(e) => updateField("noticePeriod", e.target.value)}>
+            {NOTICE.map((n) => <option key={n} value={n}>{n}</option>)}
+          </select>
         </div>
       </div>
-    </div>
-  ); }
+    );
+  }
 
-  function StepConsent() { return (
-    <div className="ec-stack">
-      <label className="ec-check">
-        <input type="checkbox" checked={form.consentShareProfile} onChange={(e) => updateField("consentShareProfile", e.target.checked)} />
-        <span>I consent for Intellink Nippon Consulting LLC to share my profile with potential clients.</span>
-      </label>
-      <Error msg={errors.consentShareProfile} />
-      <label className="ec-check">
-        <input type="checkbox" checked={form.declarationAccurate} onChange={(e) => updateField("declarationAccurate", e.target.checked)} />
-        <span>I declare that the information provided is accurate.</span>
-      </label>
-      <Error msg={errors.declarationAccurate} />
-    </div>
-  ); }
+  function StepDocuments() {
+    return (
+      <div className="ec-grid-2">
+        <div className="ec-field">
+          <label>Upload Resume/CV <span className="req">*</span></label>
+          <div className="ec-uploader" onClick={() => resumeInputRef.current?.click?.()}>
+            <FaUpload />
+            <div>
+              <strong>{form.resume ? form.resume.name : "Choose file or drop here"}</strong>
+              <p className="ec-hint">PDF / DOCX preferred</p>
+            </div>
+            <input
+              type="file"
+              accept=".pdf,.doc,.docx,.rtf"
+              ref={resumeInputRef}
+              style={{ display: "none" }}
+              onChange={(e) => updateField("resume", e.target.files?.[0] || null)}
+            />
+          </div>
+          <Error msg={errors.resume} />
+        </div>
+        <div className="ec-field">
+          <label>Upload Portfolio / Case Studies (optional)</label>
+          <div className="ec-uploader" onClick={() => portfolioInputRef.current?.click?.()}>
+            <FaUpload />
+            <div>
+              <strong>{form.portfolioFiles?.length ? `${form.portfolioFiles.length} file(s) selected` : "Choose files or drop here"}</strong>
+              <p className="ec-hint">PDF / PPT / Images</p>
+            </div>
+            <input
+              type="file"
+              multiple
+              accept=".pdf,.ppt,.pptx,.png,.jpg,.jpeg,.webp"
+              ref={portfolioInputRef}
+              style={{ display: "none" }}
+              onChange={(e) => updateField("portfolioFiles", Array.from(e.target.files || []))}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  function StepConsent() {
+    return (
+      <div className="ec-stack">
+        <label className="ec-check">
+          <input
+            type="checkbox"
+            checked={form.consentShareProfile}
+            onChange={(e) => updateField("consentShareProfile", e.target.checked)}
+          />
+          <span>I consent for Intellink Nippon Consulting LLC to share my profile with potential clients.</span>
+        </label>
+        <Error msg={errors.consentShareProfile} />
+        <label className="ec-check">
+          <input
+            type="checkbox"
+            checked={form.declarationAccurate}
+            onChange={(e) => updateField("declarationAccurate", e.target.checked)}
+          />
+          <span>I declare that the information provided is accurate.</span>
+        </label>
+        <Error msg={errors.declarationAccurate} />
+      </div>
+    );
+  }
 
   function StepReview() {
     const fullName = [form.firstName, form.middleName, form.lastName].filter(Boolean).join(" ");
@@ -472,22 +669,34 @@ export default function ExpertConnectPage() {
   return (
     <div className="ec-shell">
       {isLoading && (
-        <div className="ec-loading"><div className="spinner" /><p>Loading content...</p></div>
+        <div className="ec-loading">
+          <div className="spinner" />
+          <p>Loading content...</p>
+        </div>
       )}
 
       {/* HERO */}
-      <section className="ec-hero" style={{
-        backgroundImage:
-          "url('/images/expert-hero.jpg'), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1950&q=80')",
-      }}>
+      <section
+        className="ec-hero"
+        style={{
+          backgroundImage:
+            "url('/images/expert-hero.jpg'), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1950&q=80')",
+        }}
+      >
         <div className="ec-hero-overlay">
           <div className="ec-hero-chip">ExpertConnect™</div>
-          <h1 className="ec-hero-title">{t?.title || "Expert Connect"}</h1>
-          <p className="ec-hero-sub">{t?.tagline || "Vetted expertise. On demand."}</p>
-          <p className="ec-hero-desc">{t?.heroDescription || "Tap into a global bench of specialists across Africa, Japan, and beyond."}</p>
+          <h1 className="ec-hero-title">{t?.title || "ExpertConnect™"}</h1>
+          <p className="ec-hero-sub">{t?.tagline || "Connecting you with the expertise you need to succeed."}</p>
+          {t?.heroDescription && <p className="ec-hero-desc">{t.heroDescription}</p>}
           <div className="ec-hero-cta">
             <Link to="/contact" className="btn btn-outline">{t?.cta?.alt || "Contact Us"}</Link>
-            <button type="button" className="btn btn-primary" onClick={() => { setShowForm(true); setTimeout(() => document.getElementById('application')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 10); }}>
+            <button
+              className="btn btn-primary"
+              onClick={() => {
+                setShowForm(true);
+                setTimeout(() => document.getElementById("application")?.scrollIntoView({ behavior: "smooth", block: "start" }), 10);
+              }}
+            >
               Apply as Expert <FaArrowRight />
             </button>
           </div>
@@ -495,13 +704,50 @@ export default function ExpertConnectPage() {
         <div className="ec-hero-fade" />
       </section>
 
-      {/* WHAT TO EXPECT */}
+      {/* INTRO */}
+      {t?.intro && (
+        <section className="ec-section ec-intro">
+          <div className="ec-container">
+            <div className="ec-intro-card glass">
+              <h3 className="ec-h3">About ExpertConnect™</h3>
+              <p>{t.intro}</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SOLUTIONS OFFERED */}
+      {t?.whatIs && (
+        <section className="ec-section">
+          <div className="ec-container ec-split">
+            <div className="ec-split-media">
+              <img
+                src="/images/ExpertConnect.jpg"
+                alt="Solutions Offered"
+                onError={(e) => (e.currentTarget.src = "/images/placeholder.jpg")}
+                loading="lazy"
+              />
+            </div>
+            <div className="ec-split-content">
+              <h3 className="ec-h3">{t.whatIs.title}</h3>
+              <ul className="ec-list">
+                {(t.whatIs.points || []).map((p, i) => (
+                  <li key={`whatIs-${i}`}>
+                    <FaCheckCircle /> {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* USE CASES */}
       {t?.expect && (
         <section className="ec-section ec-section-alt">
           <div className="ec-container">
             <div className="ec-section-head">
               <h3 className="ec-h3">{t.expect.title}</h3>
-              <p className="ec-sub">{t?.expect?.subtitle || "A curated experience from brief to engagement."}</p>
             </div>
             <div className="ec-grid">
               {(t.expect.points || []).map((p, i) => (
@@ -510,6 +756,55 @@ export default function ExpertConnectPage() {
                   <p>{p}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* IDEAL USERS */}
+      {t?.howItWorks && (
+        <section className="ec-section">
+          <div className="ec-container">
+            <div className="ec-section-head">
+              <h3 className="ec-h3">{t.howItWorks.title}</h3>
+            </div>
+            <div className="ec-grid ec-grid-3">
+              {(t.howItWorks.points || []).map((p, i) => (
+                <div className="ec-card ec-card-soft" key={`how-${i}`}>
+                  <p>{p}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* REGISTER CTA BLOCK */}
+      {t?.register && (
+        <section className="ec-section">
+          <div className="ec-container ec-split reverse">
+            <div className="ec-split-media">
+              <img
+                src="/images/istockphoto-4.avif"
+                alt="Tap into expertise"
+                onError={(e) => (e.currentTarget.src = "/images/placeholder.jpg")}
+                loading="lazy"
+              />
+            </div>
+            <div className="ec-split-content">
+              <h3 className="ec-h3">{t.register.title}</h3>
+              {t.register.description && <p className="ec-lead">{t.register.description}</p>}
+              <div className="ec-hero-cta">
+                <button
+                  className="btn btn-primary"
+                  onClick={() => {
+                    setShowForm(true);
+                    setTimeout(() => document.getElementById("application")?.scrollIntoView({ behavior: "smooth", block: "start" }), 10);
+                  }}
+                >
+                  {t.register.ctaButton || "Request an Expert →"}
+                </button>
+              </div>
             </div>
           </div>
         </section>
@@ -528,6 +823,7 @@ export default function ExpertConnectPage() {
 
             <form className="ec-form" onSubmit={handleSubmit} onKeyDown={(e) => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) handleSubmit(e); }}>
               {renderStep()}
+
               <div className="ec-wizard-nav">
                 <button type="button" className="btn btn-outline" onClick={back} disabled={step === 0}>Back</button>
                 {step < steps.length - 1 ? (
@@ -548,7 +844,13 @@ export default function ExpertConnectPage() {
         <div className="ec-cta-inner">
           <div className="ec-cta-left"><FaRocket /><div><h3>{t?.cta?.title || "Ready to move faster?"}</h3><p>{t?.cta?.subtitle || "Join as an expert or request one."}</p></div></div>
           <div className="ec-cta-right">
-            <button type="button" className="btn btn-primary" onClick={() => { setShowForm(true); setTimeout(() => document.getElementById('application')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 10); }}>
+            <button
+              className="btn btn-primary"
+              onClick={() => {
+                setShowForm(true);
+                setTimeout(() => document.getElementById("application")?.scrollIntoView({ behavior: "smooth", block: "start" }), 10);
+              }}
+            >
               Apply as Expert
             </button>
             <Link to="/contact" className="btn btn-outline">Talk to Us</Link>
