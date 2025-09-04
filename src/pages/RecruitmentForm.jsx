@@ -217,13 +217,13 @@ export default function AfricaToJapanRecruitment() {
           <fieldset className="aj-fieldset">
             <legend>Personal Information</legend>
             <div className="aj-form-grid">
-              <input name="fullName" placeholder="Full Name" required onChange={handleChange} />
-              <input type="date" name="dob" required onChange={handleChange} />
-              <input name="nationality" placeholder="Nationality" required onChange={handleChange} />
-              <input type="email" name="email" placeholder="Email Address" required onChange={handleChange} />
-              <input name="phone" placeholder="Phone Number" required onChange={handleChange} />
-              <input name="location" placeholder="Location (City, Country)" required onChange={handleChange} />
-              <input name="linkedin" placeholder="LinkedIn / Website / Portfolio" onChange={handleChange} />
+              <input type="text" name="fullName" placeholder="Full Name" autoComplete="name" required onChange={handleChange} />
+              <input type="date" name="dob" placeholder="Date of Birth" required onChange={handleChange} />
+              <input type="text" name="nationality" placeholder="Nationality" autoComplete="country-name" required onChange={handleChange} />
+              <input type="email" name="email" placeholder="Email Address" autoComplete="email" required onChange={handleChange} />
+              <input type="tel" name="phone" placeholder="Phone Number" autoComplete="tel" required onChange={handleChange} />
+              <input type="text" name="location" placeholder="Location (City, Country)" autoComplete="address-level2" required onChange={handleChange} />
+              <input type="url" name="linkedin" placeholder="LinkedIn / Website / Portfolio" onChange={handleChange} />
             </div>
           </fieldset>
 
