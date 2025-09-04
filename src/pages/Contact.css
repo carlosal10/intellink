@@ -1,12 +1,11 @@
 .contact {
   padding: 60px 20px;
   background-color: #F5F5F5; /* Soft Grey */
-  margin-top: 10%;
 }
 
 .contact-container {
-  max-width: 800px;
-  margin: auto;
+  max-width: 95vw;
+  margin: 0 auto;
   text-align: center;
 }
 

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import useTranslate from "../hooks/useTranslate";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "./TradeLink.css";
+import { FaCheckCircle } from "react-icons/fa";
+import "./MarketLink.css";
 
 export default function TradeLinkPage() {
   const t = useTranslate("tradeLink") || {};
@@ -12,84 +13,74 @@ export default function TradeLinkPage() {
     AOS.init({ duration: 1000 });
   }, []);
 
-  const TextImageBlock = ({ title, children, image, reverse }) => (
-    <div className={`page-block ${reverse ? "reverse" : ""}`} data-aos="fade-up">
-      <div className="block-text">
-        {title && <h3>{title}</h3>}
-        {children}
-      </div>
-      <div className="block-image">
-        <img src={image.src} alt={image.alt} />
-      </div>
-    </div>
-  );
-
   return (
-    <div className="page-shell">
+    <div className="marketlink-page">
       {/* HERO */}
       <section
-        className="page-hero"
-        style={{
-          backgroundImage: `url('/images/TradeLink1.jpg')`,
-        }}
+        className="marketlink-hero"
+        data-aos="fade-up"
+        style={{ backgroundImage: `url('/images/TradeLink1.jpg')` }}
       >
-        <div className="page-hero-overlay">
+        <div className="marketlink-overlay">
           <h1>{t.hero?.title}</h1>
           <p>{t.hero?.desc}</p>
-          <Link to="/contact" className="hero-cta"> Connect With the Right Market  →</Link>
+          <Link to="/contact" className="hero-cta">
+            {t.hero?.button || "Connect With the Right Market"}
+          </Link>
         </div>
       </section>
 
       {/* INTRO */}
       {t.intro && (
-        <section className="page-section">
+        <section className="marketlink-intro" data-aos="fade-up">
           <p>{t.intro.text}</p>
         </section>
       )}
 
-      {/* WHAT WE OFFER */}
+      {/* OFFER / SOLUTIONS */}
       {t.offer && (
-  <TextImageBlock
-    title={t.offer.title}
-    image={{
-      src: t.offer.imgSrc || "/images/istockphoto-4.avif",
-      alt: t.offer.imgAlt
-    }}
-  >
-    <ul>
-      {t.offer.points?.map((p, i) => (
-        <li key={i}>
-          <strong>{p.title}:</strong> {p.desc}
-        </li>
-      ))}
-    </ul>
-  </TextImageBlock>
-)}
-
-
-      {/* WHY TRADELINK */}
-      {t.why && (
-        <TextImageBlock
-          title={t.why.title}
-          reverse
-          image={{ src: t.why.imgSrc || "/images/io.jpg", alt: t.why.imgAlt }}
+        <section
+          className="marketlink-offer"
+          data-aos="fade-up"
+          style={{
+            backgroundImage: `url('${t.offer.imgSrc || "/images/MarketLink.jpg"}')`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
         >
-        <div className="why-tradelink">
+          <h2>{t.offer.title}</h2>
           <ul>
-            {t.why.points?.map((p, i) => (
-              <li key={i}>{p}</li>
+            {(t.offer.points || []).map((p, i) => (
+              <li key={i}>
+                <FaCheckCircle /> {p?.title ? (
+                  <><strong>{p.title}:</strong> {p.desc}</>
+                ) : (
+                  <>{p}</>
+                )}
+              </li>
             ))}
           </ul>
-          </div>
-        </TextImageBlock>
+        </section>
+      )}
+
+      {/* WHY / REASONS */}
+      {t.why && (
+        <section className="marketlink-cases" data-aos="fade-up">
+          <h2>{t.why.title}</h2>
+          <ul>
+            {(t.why.points || []).map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        </section>
       )}
 
       {/* USE CASES */}
       {t.cases && (
-        <section className="page-section">
-          <h3>{t.cases.title}</h3>
+        <section className="marketlink-cases" data-aos="fade-up">
+          <h2>{t.cases.title}</h2>
           <ul>
-            {t.cases.items?.map((item, i) => (
+            {(t.cases.items || []).map((item, i) => (
               <li key={i}>{item}</li>
             ))}
           </ul>
@@ -109,3 +100,4 @@ export default function TradeLinkPage() {
     </div>
   );
 }
+

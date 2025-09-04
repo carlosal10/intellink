@@ -13,6 +13,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useTranslate from "../hooks/useTranslate";
 import "./ExpertConnect.css";
+import "./MarketLink.css";
 
 export default function ExpertConnectPage() {
   const t = useTranslate("expertConnect") || {};
@@ -177,7 +178,6 @@ export default function ExpertConnectPage() {
       const valid = (() => {
         const cur = step;
         // run validation scoped to step i
-        const eBag = {};
         switch (sKey) {
           case "personal":
           case "contact":
@@ -667,7 +667,7 @@ export default function ExpertConnectPage() {
   }
 
   return (
-    <div className="ec-shell">
+    <div className="marketlink-page">
       {isLoading && (
         <div className="ec-loading">
           <div className="spinner" />

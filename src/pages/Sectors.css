@@ -15,7 +15,6 @@
   font-family:"Segoe UI",sans-serif;
   color:var(--sec-text);
   background:var(--sec-bg);
-  margin-top:10%; /* fixed navbar offset */
   overflow-x:hidden;
 }
 
@@ -32,14 +31,14 @@
 }
 .sectors-hero-inner{
   position:relative;z-index:1;color:#F1C40F;text-align:center;
-  padding:3.5rem 1rem 4.5rem;max-width:980px;
+  padding:3.5rem 2.5% 4.5rem;max-width:95vw;
 }
 .sectors-hero-inner h1{
   font-size: clamp(2rem, 4.2vw, 3rem);
   margin:0 0 .5rem;font-weight:800;color:#F1C40F;
 }
 .sectors-hero-inner p{
-  margin:0 auto;max-width:800px;opacity:.95;line-height:1.7;
+  margin:0 auto;max-width:95vw;opacity:.95;line-height:1.7;
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   color: #d7e7fb;
 }
@@ -47,7 +46,7 @@
 /* Industries */
 .industries-section{padding:56px 0}
 .industries-grid{
-  max-width:1150px;margin:0 auto;padding:0 1rem;
+  max-width:95vw;margin:0 auto;padding:0 2.5%;
   display:grid;gap:18px;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 }
@@ -70,7 +69,7 @@
   color:var(--sec-primary);margin-bottom:12px;
 }
 .client-list{
-  list-style:none;margin:0 auto;max-width:900px;padding:0 1rem;
+  list-style:none;margin:0 auto;max-width:95vw;padding:0 2.5%;
   display:grid;gap:10px;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 }
@@ -82,7 +81,7 @@
 /* WHY — Africa / Japan / Now */
 .why-wrapper{
   position:relative;overflow:hidden;margin:10px auto 64px;
-  border-radius:20px;max-width:1200px;
+  border-radius:20px;max-width:95vw;
   background-position:center;background-size:cover;background-repeat:no-repeat;
 }
 
@@ -105,7 +104,7 @@
 
 /* Why grid cards */
 .why-grid{
-  display:grid;gap:18px;max-width:1100px;margin:0 auto 24px;
+  display:grid;gap:18px;max-width:95vw;margin:0 auto 24px;
   grid-template-columns:repeat(3,1fr);
 }
 @media (max-width: 960px){
