@@ -11,82 +11,59 @@ export default function About() {
     AOS.init({ duration: 800, once: true });
   }, []);
 
-  const panels = [
+  const sections = [
     {
-      bg: 'ist612copy.jpg',
-      title: t('about.aboutUs'),
-      text: t('about.aboutText')
+      tag: 'OUR STORY',
+      heading: t('about.ourStory') || 'Our Story',
+      paragraphs: [
+        t('about.ourStoryText.paragraph1'),
+        t('about.ourStoryText.paragraph2'),
+        t('about.ourStoryText.paragraph3')
+      ].filter(Boolean),
+      image: '/images/istockphoto-1369212121-640x640.avif',
+      badge: 'BRIDGING AFRICA AND JAPAN'
     },
     {
-      bg: 'istockphoto-16.jpg',
-      title: t('about.mission'),
-      text: t('about.missionText'),
-      highlight: true
+      tag: 'OUR MISSION',
+      heading: t('about.mission') || 'Our Mission',
+      paragraphs: [t('about.missionText')].filter(Boolean),
+      image: '/images/istockphoto-16.jpg',
+      badge: 'IMPACT THROUGH EXPERTISE'
     },
     {
-      bg: 'istockphoto-4.avif',
-      title: t('about.vision'),
-      text: t('about.visionText')
-    },
-    {
-      bg: 'corporateculture.jpg',
-      title: t('about.values'),
-      valuesList: t('about.valuesList') // Array of [title, description]
-    },
-  {
-     bg: 'istockphoto-4.avif',
-  title: t('about.capabilities.title'),
-  text: [
-    t('about.capabilities.paragraph1'),
-    t('about.capabilities.paragraph2'),
-    t('about.capabilities.paragraph3')
-  ],
-  tagline: t('about.capabilities.tagline'),
-},
-    {
-      bg: 'istockphoto-1369212121-640x640.avif',
-      title: t('about.ourStory'),
-      text:[ t('about.ourStoryText.paragraph1'),
-             t('about.ourStoryText.paragraph2'),
-             t('about.ourStoryText.paragraph3'),
-      ]
+      tag: 'OUR VISION',
+      heading: t('about.vision') || 'Our Vision',
+      paragraphs: [t('about.visionText')].filter(Boolean),
+      image: '/images/corporateculture.jpg',
+      badge: 'TRUSTED, LONG-TERM PARTNERSHIPS'
     }
   ];
 
-
   return (
-    <section className="about-modern">
-      {panels.map((panel, index) => (
-        <div
-          key={index}
-          className="about-modern-section"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url(/images/${panel.bg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        >
-          <div data-aos="fade-up">
-            <div className="content-wrapper">
-              <h2 className="about-title">{panel.title}</h2>
+    <main className="about2">
+      {sections.map((s, i) => (
+        <section key={i} className="about2-section" data-aos="fade-up">
+          <div className="about2-inner">
+            {/* Left: Text Block */}
+            <div className="about2-text">
+              <span className="about2-tag">{s.tag}</span>
+              <h2 className="about2-heading">{s.heading}</h2>
+              <div className="about2-body">
+                {s.paragraphs.map((p, idx) => (
+                  <p key={idx}>{p}</p>
+                ))}
+              </div>
+            </div>
 
-              {panel.valuesList ? (
-                <ul className="values-list">
-                  {panel.valuesList.map(([valueTitle, valueDesc], idx) => (
-                    <li key={idx} className="value-item">
-                      <strong>{valueTitle}</strong> — {valueDesc}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className={`about-text ${panel.highlight ? 'highlight' : ''}`}>
-                  {panel.text}
-                </p>
-              )}
+            {/* Right: Image Block */}
+            <div className="about2-media">
+              <img src={s.image} alt={s.heading} loading="lazy" />
+              <div className="about2-badge">{s.badge}</div>
             </div>
           </div>
-        </div>
+        </section>
       ))}
-    </section>
+    </main>
   );
 }
+
