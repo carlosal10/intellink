@@ -274,7 +274,8 @@ export default function ExpertConnectPage() {
         const payload = { ...form };
         delete payload.resume;
         delete payload.portfolioFiles;
-        fd.append("data", new Blob([JSON.stringify(payload)], { type: "application/json" }));
+        // Append JSON as a plain string so multer treats it as a field
+        fd.append("data", JSON.stringify(payload));
         if (form.resume) fd.append("resume", form.resume);
         (form.portfolioFiles || []).forEach((f, i) => fd.append(`portfolio_${i + 1}`, f));
 
