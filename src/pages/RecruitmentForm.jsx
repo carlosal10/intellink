@@ -140,19 +140,6 @@ export default function AfricaToJapanRecruitment() {
         </div>
       </section>
 
-      {/* ===== CARDS: Capabilities ===== */}
-      <section className="aj-section">
-        <div className="aj-container">
-          <h2 className="aj-h2">{t("careers.capabilities.title") || "Capabilities"}</h2>
-          <div className="aj-grid">
-            {(t("careers.capabilities.points") || []).map((p, i) => (
-              <div className="aj-card" key={`cap-${i}`}>
-                <p className="aj-body">{p}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ===== WIDE IMAGE (Image #3) ===== */}
       <section className="aj-banner">

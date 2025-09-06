@@ -1,5 +1,5 @@
 // src/pages/ExpertConnectPage.jsx
-import React, { useMemo, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FaClipboardCheck,
@@ -19,9 +19,121 @@ export default function ExpertConnectPage() {
   const t = useTranslate("expertConnect") || {};
   const isLoading = !t?.title && !t?.tagline;
 
+  // Default English content as fallback when translations are missing
+  const defaults = {
+    title: "ExpertConnect",
+    tagline: "Connecting Your Business with the Right Expertise, On Demand",
+    heroDescription:
+      "Access industry specialists in Japan and Africa for one-off projects, short-term assignments, or ongoing consultation. ExpertConnect ensures you find credible experts with the right local knowledge and global perspectives to achieve your business goals.",
+    cta: { alt: "Find an Expert Today" },
+    intro:
+      "We understand the importance of finding the right expertise at the right time. ExpertConnect bridges businesses with seasoned professionals who possess the sector-specific skills, experience, and insights needed for strategic growth. Whether you are tackling complex projects, entering new markets, or seeking operational guidance, ExpertConnect provides fast, reliable access to the experts you need.",
+    services: {
+      title: "Services",
+      description:
+        "We understand the importance of finding the right expertise at the right time. ExpertConnect bridges businesses with seasoned professionals who possess the sector-specific skills, experience, and insights needed for strategic growth. Whether you are tackling complex projects, entering new markets, or seeking operational guidance, ExpertConnect provides fast, reliable access to the experts you need.",
+      items: [
+        {
+          title: "On-Demand Expert Engagement",
+          body:
+            "Need advice or specialized skills quickly? ExpertConnect connects you with consultants ready to engage immediately, whether for a one-off project, short-term assignment, or ongoing support. We ensure you get the right expertise when and where you need it, saving time and reducing project risk.",
+          cta: "Connect with an Expert for Your Project.",
+        },
+        {
+          title: "Industry & Sector Specialization",
+          body:
+            "We match businesses with experts who have deep sector knowledge, spanning finance, energy, technology, manufacturing, trade, and more. By leveraging our extensive database, we ensure your team gains actionable insights from professionals who understand both local and global market dynamics.",
+          cta: "Discover Industry Specialists Today.",
+        },
+        {
+          title: "Strategic Advisory & Market Insights",
+          body:
+            "ExpertConnect goes beyond simple consultation. Our experts provide strategic guidance, market intelligence, and regulatory insights to help businesses make informed decisions. Whether it’s navigating cross-border trade, understanding consumer trends, or structuring complex projects, we connect you with advisors who deliver results.",
+          cta: "Get Strategic Insights from Experienced Experts.",
+        },
+      ],
+    },
+    useCases: {
+      title: "ExpertConnect Use Cases",
+      items: [
+        {
+          title: "Japanese Tech Firm Expanding to Africa",
+          points: [
+            "A Japanese renewable energy company wanted to enter East Africa but lacked knowledge of local regulations, consumer behavior, and distribution channels.",
+            "ExpertConnect matched them with an energy sector consultant based in Nairobi, who provided market intelligence reports, government engagement strategies, and local partner introductions.",
+          ],
+          result:
+            "The company launched successfully with reduced risk and faster market entry.",
+        },
+        {
+          title: "African Agribusiness Scaling to Japan",
+          points: [
+            "An agribusiness cooperative in Ghana producing organic cocoa wants to enter the Japanese premium food market. They lack knowledge of Japanese import regulations, consumer preferences, and retail distribution channels.",
+            "Through ExpertConnect, they are matched with a Japanese food industry consultant specializing in imports and retail placement.",
+            "The expert helps them navigate compliance requirements, advises on branding and packaging for Japanese consumers, and introduces them to potential distribution partners.",
+          ],
+          result:
+            "The cooperative secures shelf space in Tokyo specialty stores and establishes a sustainable export pipeline.",
+        },
+        {
+          title: "Policy Advisory for Trade & Investment",
+          points: [
+            "A regional African government agency sought to design policies that attract Japanese investors into manufacturing and technology.",
+            "ExpertConnect connected them with a former Japanese trade policy advisor, who helped draft investment-friendly policies, share case studies, and prepare the agency team for high-level dialogues.",
+          ],
+          result:
+            "The region launched a competitive policy framework, boosting investor confidence and generating new joint ventures.",
+        },
+      ],
+    },
+    whyWorks: {
+      title: "Why ExpertConnect Works",
+      points: [
+        "Access expertise quickly and efficiently",
+        "Reduce operational and market risks",
+        "Make informed, strategic decisions",
+      ],
+      cta:
+        "Reach out today to find the experts who can drive your business forward.",
+    },
+    forExperts: {
+      title: "For Experts: Share Your Knowledge, Expand Your Impact",
+      description:
+        "ExpertConnect is not just for businesses—it’s a platform for professionals seeking consulting opportunities across Japan and Africa. We connect experts with companies that need their sector-specific knowledge, skills, and strategic insight, enabling mutually beneficial collaborations.",
+      whyJoin: {
+        title: "Why Join ExpertConnect?",
+        points: [
+          "Access Diverse Opportunities: Work on one-off projects, short-term assignments, or ongoing engagements across multiple industries.",
+          "Flexible Work Arrangements: Choose assignments that fit your schedule, expertise, and career goals.",
+          "Expand Your Influence: Apply your skills to real-world business challenges, from market entry strategies to operational optimization.",
+          "Connect Across Borders: Engage with businesses in Japan and Africa, gaining global exposure while leveraging local insights.",
+        ],
+      },
+      gettingStarted: {
+        title: "Getting Started is Easy",
+        steps: [
+          "Register Your Profile: Share your experience, skills, and areas of expertise.",
+          "Match with Projects: We connect you with companies seeking your knowledge.",
+          "Collaborate & Deliver: Engage on projects that align with your interests and availability.",
+        ],
+      },
+      cta: "Join Our Expert Network Today",
+    },
+    contactBox: {
+      title: "Contact",
+      lines: [
+        "+81-80-5643-1501",
+        "www.intellink-nippon.co.jp",
+        "g-owuor@intellink-nippon.co.jp",
+        "5th Floor, FPG Links Jinnan,",
+        "1-11-4 Jinnan, Shibuya-ku, Tokyo",
+      ],
+    },
+  };
+
   const [submitting, setSubmitting] = useState(false);
   const [showForm, setShowForm] = useState(false);
-  const [step, setStep] = useState(0);
+  // no step state in single-page form
   const [errors, setErrors] = useState({});
 
   const [form, setForm] = useState({
@@ -93,18 +205,14 @@ export default function ExpertConnectPage() {
   const WORK_ARRANGEMENTS = ["On-site", "Remote", "Hybrid"];
   const NOTICE = ["Immediate", "2 weeks", "1 month", "2 months"];
 
-  const steps = useMemo(() => [
-    { key: "personal", title: "Personal", desc: "Who you are" },
-    { key: "contact", title: "Contact", desc: "How to reach you" },
-    { key: "professional", title: "Background", desc: "Experience summary" },
-    { key: "expertise", title: "Expertise", desc: "Sectors & skills" },
-    { key: "qualifications", title: "Qualifications", desc: "Degrees & credentials" },
-    { key: "portfolio", title: "Portfolio", desc: "Projects & publications" },
-    { key: "engagement", title: "Engagement", desc: "Work preferences" },
-    { key: "documents", title: "Documents", desc: "Resume & portfolio" },
-    { key: "consent", title: "Consent", desc: "Permissions & declaration" },
-    { key: "review", title: "Review", desc: "Final check" },
-  ], []);
+  // Aliases to render content (use translations if available, else English defaults)
+  const SVC = t.services || defaults.services;
+  const UCC = t.useCases || defaults.useCases;
+  const WHY = t.whyWorks || defaults.whyWorks;
+  const FX = t.forExperts || defaults.forExperts;
+  const CB = t.contactBox || defaults.contactBox;
+
+  // No steps in single-page form
 
   // Helpers
   function updateField(name, value) {
@@ -119,88 +227,42 @@ export default function ExpertConnectPage() {
     });
   }
 
-  function validateCurrentStep() {
-    const e = {};
-    const s = steps[step]?.key;
-
-    if (s === "personal") {
-      if (!form.firstName) e.firstName = "Required";
-      if (!form.lastName) e.lastName = "Required";
-      if (!form.dateOfBirth) e.dateOfBirth = "Required";
-      if (!form.gender) e.gender = "Required";
-      if (!form.nationality) e.nationality = "Required";
-      if (!form.country) e.country = "Required";
-      if (!form.city) e.city = "Required";
-    }
-    if (s === "contact") {
-      if (!form.email) e.email = "Required";
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = "Enter a valid email";
-      if (!form.phone) e.phone = "Required";
-    }
-    if (s === "professional") {
-      if (!form.jobTitle) e.jobTitle = "Required";
-      if (!form.yearsExperience) e.yearsExperience = "Required";
-      if (form.yearsExperience && Number(form.yearsExperience) < 0) e.yearsExperience = "Invalid";
-      if (!form.yearsSpecialization) e.yearsSpecialization = "Required";
-    }
-    if (s === "expertise") {
-      if (!form.industrySectors.length) e.industrySectors = "Select at least one";
-      if (!form.functionalExpertise.length) e.functionalExpertise = "Select at least one";
-      if (!form.regionExpertise.length) e.regionExpertise = "Select at least one";
-    }
-    if (s === "qualifications") {
-      if (!form.highestAcademicQualification) e.highestAcademicQualification = "Required";
-    }
-    if (s === "documents") {
-      if (!form.resume) e.resume = "Resume/CV is required";
-    }
-    if (s === "consent") {
-      if (!form.consentShareProfile) e.consentShareProfile = "Required";
-      if (!form.declarationAccurate) e.declarationAccurate = "Required";
-    }
-
-    setErrors(e);
-    return Object.keys(e).length === 0;
-  }
-
-  function next() { if (!validateCurrentStep()) return; setStep((i) => Math.min(i + 1, steps.length - 1)); }
-  function back() { setStep((i) => Math.max(i - 1, 0)); }
+  // No step-wise validation
 
   async function handleSubmit(e) {
     e?.preventDefault?.();
-
-    // full pass validation
-    for (let i = 0; i < steps.length; i++) {
-      setStep(i);
-      const sKey = steps[i].key;
-      const prevStep = step;
-      // temporarily set step to run validation for that section UI
-      const valid = (() => {
-        const cur = step;
-        // run validation scoped to step i
-        switch (sKey) {
-          case "personal":
-          case "contact":
-          case "professional":
-          case "expertise":
-          case "qualifications":
-          case "documents":
-          case "consent":
-            // mimic validateCurrentStep for this step
-            setStep(i);
-            const ok = validateCurrentStep();
-            setStep(cur);
-            return ok;
-          default:
-            return true;
-        }
-      })();
-      if (!valid) {
-        setStep(i);
-        return;
-      }
-      setStep(prevStep);
-    }
+    // Single-pass validation
+    const eAll = {};
+    // Personal
+    if (!form.firstName) eAll.firstName = "Required";
+    if (!form.lastName) eAll.lastName = "Required";
+    if (!form.dateOfBirth) eAll.dateOfBirth = "Required";
+    if (!form.gender) eAll.gender = "Required";
+    if (!form.nationality) eAll.nationality = "Required";
+    if (!form.country) eAll.country = "Required";
+    if (!form.city) eAll.city = "Required";
+    // Contact
+    if (!form.email) eAll.email = "Required";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) eAll.email = "Enter a valid email";
+    if (!form.phone) eAll.phone = "Required";
+    // Professional
+    if (!form.jobTitle) eAll.jobTitle = "Required";
+    if (!form.yearsExperience) eAll.yearsExperience = "Required";
+    if (form.yearsExperience && Number(form.yearsExperience) < 0) eAll.yearsExperience = "Invalid";
+    if (!form.yearsSpecialization) eAll.yearsSpecialization = "Required";
+    // Expertise
+    if (!form.industrySectors.length) eAll.industrySectors = "Select at least one";
+    if (!form.functionalExpertise.length) eAll.functionalExpertise = "Select at least one";
+    if (!form.regionExpertise.length) eAll.regionExpertise = "Select at least one";
+    // Qualifications
+    if (!form.highestAcademicQualification) eAll.highestAcademicQualification = "Required";
+    // Documents
+    if (!form.resume) eAll.resume = "Resume/CV is required";
+    // Consent
+    if (!form.consentShareProfile) eAll.consentShareProfile = "Required";
+    if (!form.declarationAccurate) eAll.declarationAccurate = "Required";
+    setErrors(eAll);
+    if (Object.keys(eAll).length) return;
 
     setSubmitting(true);
     try {
@@ -232,7 +294,6 @@ export default function ExpertConnectPage() {
         autoClose: 3000,
       });
       setShowForm(false);
-      setStep(0);
     } catch (err) {
       toast.error("Something went wrong. Please try again.", {
         position: "top-right",
@@ -244,18 +305,7 @@ export default function ExpertConnectPage() {
   }
 
   // Small UI helpers
-  const Progress = () => {
-    const pct = ((step + 1) / steps.length) * 100;
-    return (
-      <div className="ec-progress">
-        <div className="ec-progress-bar" style={{ width: `${pct}%` }} />
-        <div className="ec-progress-meta">
-          <span>Step {step + 1} / {steps.length}</span>
-          <span>{steps[step]?.title}</span>
-        </div>
-      </div>
-    );
-  };
+  // Progress removed (single-page form)
   const Error = ({ msg }) => (msg ? <p className="ec-error">{msg}</p> : null);
   const Hint = ({ children }) => <p className="ec-hint">{children}</p>;
 
@@ -347,7 +397,7 @@ export default function ExpertConnectPage() {
   // Step renderers
   function StepPersonal() {
     return (
-      <div className="ec-grid-3">
+      <div className="ec-grid-4">
         <div className="ec-field"><label>First Name</label>
           <input value={form.firstName} onChange={(e) => updateField("firstName", e.target.value)} />
           <Error msg={errors.firstName} />
@@ -388,7 +438,7 @@ export default function ExpertConnectPage() {
 
   function StepContact() {
     return (
-      <div className="ec-grid-2">
+      <div className="ec-grid-4">
         <div className="ec-field"><label>Email Address</label>
           <input type="email" value={form.email} onChange={(e) => updateField("email", e.target.value)} />
           <Error msg={errors.email} />
@@ -411,7 +461,7 @@ export default function ExpertConnectPage() {
 
   function StepProfessional() {
     return (
-      <div className="ec-grid-3">
+      <div className="ec-grid-4">
         <div className="ec-field"><label>Current Job Title / Designation</label>
           <input value={form.jobTitle} onChange={(e) => updateField("jobTitle", e.target.value)} />
           <Error msg={errors.jobTitle} />
@@ -478,7 +528,7 @@ export default function ExpertConnectPage() {
 
   function StepQualifications() {
     return (
-      <div className="ec-grid-2">
+      <div className="ec-grid-4">
         <div className="ec-field"><label>Highest Academic Qualification</label>
           <input value={form.highestAcademicQualification} onChange={(e) => updateField("highestAcademicQualification", e.target.value)} />
           <Error msg={errors.highestAcademicQualification} />
@@ -525,7 +575,7 @@ export default function ExpertConnectPage() {
 
   function StepEngagement() {
     return (
-      <div className="ec-grid-3">
+      <div className="ec-grid-4">
         <div className="ec-field"><label>Preferred Work Arrangement</label>
           <select value={form.workArrangement} onChange={(e) => updateField("workArrangement", e.target.value)}>
             {WORK_ARRANGEMENTS.map((w) => <option key={w} value={w}>{w}</option>)}
@@ -622,49 +672,9 @@ export default function ExpertConnectPage() {
     );
   }
 
-  function StepReview() {
-    const fullName = [form.firstName, form.middleName, form.lastName].filter(Boolean).join(" ");
-    return (
-      <div className="ec-review">
-        <div className="ec-review-card">
-          <h4>Applicant</h4>
-          <p><strong>{fullName || "—"}</strong></p>
-          <p>{form.email || "—"} · {form.phone || "—"}</p>
-          <p>{[form.country, form.city].filter(Boolean).join(", ") || "—"}</p>
-          <p>{form.jobTitle || "—"}{form.employer ? ` @ ${form.employer}` : ""}</p>
-        </div>
-        <div className="ec-review-card">
-          <h4>Expertise</h4>
-          <p><strong>Sectors:</strong> {form.industrySectors.join(", ") || "—"}</p>
-          <p><strong>Functions:</strong> {form.functionalExpertise.join(", ") || "—"}</p>
-          <p><strong>Regions:</strong> {form.regionExpertise.join(", ") || "—"}</p>
-          <p><strong>Skills:</strong> {form.keySkills.join(", ") || "—"}</p>
-        </div>
-        <div className="ec-review-card">
-          <h4>Engagement</h4>
-          <p>{form.workArrangement} · Notice: {form.noticePeriod}</p>
-          <p>Rate: {form.expectedRate || "Negotiable"}</p>
-          <p>Travel: {form.willingToTravel}{form.travelRegions ? ` — ${form.travelRegions}` : ""}</p>
-        </div>
-      </div>
-    );
-  }
+  
 
-  function renderStep() {
-    switch (steps[step]?.key) {
-      case "personal": return <StepPersonal />;
-      case "contact": return <StepContact />;
-      case "professional": return <StepProfessional />;
-      case "expertise": return <StepExpertise />;
-      case "qualifications": return <StepQualifications />;
-      case "portfolio": return <StepPortfolio />;
-      case "engagement": return <StepEngagement />;
-      case "documents": return <StepDocuments />;
-      case "consent": return <StepConsent />;
-      case "review": return <StepReview />;
-      default: return null;
-    }
-  }
+  // renderStep removed (single-page form)
 
   return (
     <div className="marketlink-page">
@@ -689,7 +699,7 @@ export default function ExpertConnectPage() {
           <p className="ec-hero-sub">{t?.tagline || "Connecting you with the expertise you need to succeed."}</p>
           {t?.heroDescription && <p className="ec-hero-desc">{t.heroDescription}</p>}
           <div className="ec-hero-cta">
-            <Link to="/contact" className="btn btn-outline">{t?.cta?.alt || "Contact Us"}</Link>
+            <Link to="/contact" className="btn btn-outline">{t?.cta?.alt || "Find an Expert Today"}</Link>
             <button
               className="btn btn-primary"
               onClick={() => {
@@ -717,7 +727,7 @@ export default function ExpertConnectPage() {
       )}
 
       {/* SOLUTIONS OFFERED */}
-      {t?.whatIs && (
+      {false && (
         <section className="ec-section">
           <div className="ec-container ec-split">
             <div className="ec-split-media">
@@ -743,7 +753,7 @@ export default function ExpertConnectPage() {
       )}
 
       {/* USE CASES */}
-      {t?.expect && (
+      {false && (
         <section className="ec-section ec-section-alt">
           <div className="ec-container">
             <div className="ec-section-head">
@@ -774,6 +784,132 @@ export default function ExpertConnectPage() {
                   <p>{p}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SERVICES (new) */}
+      {(SVC) && (
+        <section className="ec-section">
+          <div className="ec-container">
+            <div className="ec-section-head">
+              <h3 className="ec-h3">{SVC.title || "Services"}</h3>
+              {SVC.description && <p className="ec-lead">{SVC.description}</p>}
+            </div>
+            <div className="ec-grid">
+              {(SVC.items || []).map((s, i) => (
+                <div className="ec-card" key={`svc-${i}`}>
+                  <h4 className="ec-h4">{s.title}</h4>
+                  <p>{s.body}</p>
+                  {s.cta && (
+                    <div className="ec-card-actions">
+                      <Link to="/contact" className="btn btn-soft">{s.cta}</Link>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* USE CASES (new) */}
+      {(UCC) && (
+        <section className="ec-section ec-section-alt">
+          <div className="ec-container">
+            <div className="ec-section-head">
+              <h3 className="ec-h3">{UCC.title || "ExpertConnect Use Cases"}</h3>
+            </div>
+            <div className="ec-grid">
+              {(UCC.items || []).map((c, i) => (
+                <div className="ec-card" key={`case-${i}`}>
+                  <div className="ec-card-icon"><FaClipboardCheck /></div>
+                  <h4 className="ec-h4">{c.title}</h4>
+                  {(c.points || []).map((p, j) => (
+                    <p key={`cp-${i}-${j}`}>{p}</p>
+                  ))}
+                  {c.result && <p><strong>Result:</strong> {c.result}</p>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* WHY IT WORKS (new) */}
+      {(WHY) && (
+        <section className="ec-section">
+          <div className="ec-container">
+            <div className="ec-section-head">
+              <h3 className="ec-h3">{WHY.title}</h3>
+            </div>
+            <ul className="ec-list">
+              {(WHY.points || []).map((p, i) => (
+                <li key={`why-${i}`}>
+                  <FaCheckCircle /> {p}
+                </li>
+              ))}
+            </ul>
+            {WHY.cta && (
+              <div className="ec-hero-cta" style={{marginTop: 16}}>
+                <Link to="/contact" className="btn btn-primary">{WHY.cta}</Link>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* FOR EXPERTS (new) */}
+      {(FX) && (
+        <section className="ec-section ec-section-alt">
+          <div className="ec-container">
+            <div className="ec-section-head">
+              <h3 className="ec-h3">{FX.title}</h3>
+              {FX.description && <p className="ec-lead">{FX.description}</p>}
+            </div>
+            {FX.whyJoin && (
+              <div className="ec-split">
+                <div className="ec-split-content">
+                  <h4 className="ec-h4">{FX.whyJoin.title}</h4>
+                  <ul className="ec-list">
+                    {(FX.whyJoin.points || []).map((p, i) => (
+                      <li key={`wj-${i}`}><FaCheckCircle /> {p}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="ec-split-content">
+                  <h4 className="ec-h4">{FX.gettingStarted?.title || "Getting Started is Easy"}</h4>
+                  <ol className="ec-list numbered">
+                    {(FX.gettingStarted?.steps || []).map((s, i) => (
+                      <li key={`gs-${i}`}>{s}</li>
+                    ))}
+                  </ol>
+                  {FX.cta && (
+                    <button
+                      className="btn btn-primary"
+                      onClick={() => {
+                        setShowForm(true);
+                        setTimeout(() => document.getElementById("application")?.scrollIntoView({ behavior: "smooth", block: "start" }), 10);
+                      }}
+                    >
+                      {FX.cta}
+                    </button>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* CONTACT BOX (new) */}
+      {(CB) && (
+        <section className="ec-section">
+          <div className="ec-container">
+            <div className="ec-card ec-card-soft">
+              <h4 className="ec-h4">{CB.title || "Contact Details"}</h4>
+              {(CB.lines || []).map((l, i) => (<p key={`cb-${i}`}>{l}</p>))}
             </div>
           </div>
         </section>
@@ -815,24 +951,51 @@ export default function ExpertConnectPage() {
         <section id="application" className="ec-section">
           <div className="ec-container">
             <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:12,marginBottom:6}}>
-              <h3 className="ec-h3" style={{margin:0}}>ExpertConnect Application</h3>
+              <h3 className="ec-h3" style={{margin:0}}>Register As an Expert</h3>
               <button type="button" className="btn btn-ghost" onClick={() => setShowForm(false)}>Hide form</button>
             </div>
 
-            <Progress />
-
             <form className="ec-form" onSubmit={handleSubmit} onKeyDown={(e) => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) handleSubmit(e); }}>
-              {renderStep()}
-
-              <div className="ec-wizard-nav">
-                <button type="button" className="btn btn-outline" onClick={back} disabled={step === 0}>Back</button>
-                {step < steps.length - 1 ? (
-                  <button type="button" className="btn btn-primary" onClick={next}>Next</button>
-                ) : (
-                  <button type="submit" className="btn btn-primary" disabled={submitting}>
-                    {submitting ? "Submitting..." : "Submit Application"}
-                  </button>
-                )}
+              <div className="ec-card ec-card-soft">
+                <h4 className="ec-h4" style={{marginTop:0}}>Personal Information</h4>
+                {StepPersonal()}
+              </div>
+              <div className="ec-card ec-card-soft">
+                <h4 className="ec-h4" style={{marginTop:0}}>Contact Information</h4>
+                {StepContact()}
+              </div>
+              <div className="ec-card ec-card-soft">
+                <h4 className="ec-h4" style={{marginTop:0}}>Professional Background</h4>
+                {StepProfessional()}
+              </div>
+              <div className="ec-card ec-card-soft">
+                <h4 className="ec-h4" style={{marginTop:0}}>Areas of Expertise</h4>
+                {StepExpertise()}
+              </div>
+              <div className="ec-card ec-card-soft">
+                <h4 className="ec-h4" style={{marginTop:0}}>Qualifications & Credentials</h4>
+                {StepQualifications()}
+              </div>
+              <div className="ec-card ec-card-soft">
+                <h4 className="ec-h4" style={{marginTop:0}}>Experience Portfolio</h4>
+                {StepPortfolio()}
+              </div>
+              <div className="ec-card ec-card-soft">
+                <h4 className="ec-h4" style={{marginTop:0}}>Engagement Preferences</h4>
+                {StepEngagement()}
+              </div>
+              <div className="ec-card ec-card-soft">
+                <h4 className="ec-h4" style={{marginTop:0}}>Supporting Documents</h4>
+                {StepDocuments()}
+              </div>
+              <div className="ec-card ec-card-soft">
+                <h4 className="ec-h4" style={{marginTop:0}}>Consent & Declaration</h4>
+                {StepConsent()}
+              </div>
+              <div className="ec-wizard-nav" style={{justifyContent:'flex-end'}}>
+                <button type="submit" className="btn btn-primary" disabled={submitting}>
+                  {submitting ? "Submitting..." : "Submit Application"}
+                </button>
               </div>
             </form>
           </div>
@@ -862,3 +1025,6 @@ export default function ExpertConnectPage() {
     </div>
   );
 }
+
+
+
