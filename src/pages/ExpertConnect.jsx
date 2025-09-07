@@ -210,7 +210,6 @@ export default function ExpertConnectPage() {
   const UCC = t.useCases || defaults.useCases;
   const WHY = t.whyWorks || defaults.whyWorks;
   const FX = t.forExperts || defaults.forExperts;
-  const CB = t.contactBox || defaults.contactBox;
 
   // No steps in single-page form
 
@@ -904,17 +903,7 @@ export default function ExpertConnectPage() {
         </section>
       )}
 
-      {/* CONTACT BOX (new) */}
-      {(CB) && (
-        <section className="ec-section">
-          <div className="ec-container">
-            <div className="ec-card ec-card-soft">
-              <h4 className="ec-h4">{CB.title || "Contact Details"}</h4>
-              {(CB.lines || []).map((l, i) => (<p key={`cb-${i}`}>{l}</p>))}
-            </div>
-          </div>
-        </section>
-      )}
+      
 
       {/* REGISTER CTA BLOCK */}
       {t?.register && (

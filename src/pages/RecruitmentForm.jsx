@@ -6,14 +6,52 @@ import "./RecruitmentForm.css";
 export default function AfricaToJapanRecruitment() {
   const t = useTranslate();
 
+  const [formType, setFormType] = useState('full'); // 'full' or 'intern'
   const [form, setForm] = useState({
+    // Shared/Contact
     fullName: "",
-    dob: "",
-    nationality: "",
     email: "",
     phone: "",
     location: "",
+    // Personal
+    dob: "",
+    gender: "",
+    // Education & Qualifications
+    educationLevel: "",
+    educationOther: "",
+    fieldOfStudy: "",
+    certifications: "",
+    // Work Experience
+    currentEmployer: "",
+    jobTitle: "",
+    experienceYears: "",
+    keySkills: "",
+    projectExperience: "",
+    // Languages & Technical
+    languages: "",
+    softwareSkills: "",
+    // Job Preferences
+    position: "",
+    workType: "",
+    startDate: "",
+    motivation: "",
+    // References
+    refName: "",
+    refRelation: "",
+    refContact: "",
+    // Links
     linkedin: "",
+    // Internship/Graduate subset
+    ig_level: "",
+    ig_fieldOfStudy: "",
+    ig_graduationDate: "",
+    ig_keySkills: "",
+    ig_languages: "",
+    ig_software: "",
+    ig_prefWorkType: "",
+    ig_startDate: "",
+    ig_motivation: "",
+    // Confirmations
     declaration: false,
     consent: false,
   });
@@ -35,7 +73,10 @@ export default function AfricaToJapanRecruitment() {
     e.preventDefault();
     try {
       const formData = new FormData();
-      Object.entries(form).forEach(([key, val]) => formData.append(key, val));
+      formData.append('formType', formType);
+      Object.entries(form).forEach(([key, val]) => {
+        if (val !== undefined && val !== null) formData.append(key, val);
+      });
       if (files.cv) formData.append("cv", files.cv);
       if (files.coverLetter) formData.append("coverLetter", files.coverLetter);
 
@@ -45,7 +86,10 @@ export default function AfricaToJapanRecruitment() {
       });
 
       const data = await res.json();
-      alert(data.message);
+      const confirmMsg = formType === 'full'
+        ? "Thank you for applying to Intellink Nippon Consulting. We will review your submission and contact you if your profile matches an available opportunity."
+        : "Thank you for applying! We will review your submission and contact you regarding suitable internship or junior opportunities.";
+      alert(data.message || confirmMsg);
     } catch (err) {
       console.error(err);
       alert("Error submitting application. Please try again.");
@@ -73,10 +117,10 @@ export default function AfricaToJapanRecruitment() {
               "We place exceptional talent on high-value projects across Africa and Japan."}
           </p>
           <div className="aj-cta-row">
-            <button onClick={() => setShowForm(true)} className="aj-btn aj-btn-primary">
+            <button onClick={() => { setFormType('full'); setShowForm(true); }} className="aj-btn aj-btn-primary">
               {t("careers.ctaSection.button") || "Apply Now"}
             </button>
-            <a href="#overview" className="aj-btn aj-btn-ghost">Learn more</a>
+            <button onClick={() => { setFormType('intern'); setShowForm(true); }} className="aj-btn aj-btn-ghost">Apply for Internship / Graduate</button>
           </div>
         </div>
       </header>
@@ -198,21 +242,171 @@ export default function AfricaToJapanRecruitment() {
           aria-labelledby="appFormTitle"
         >
           <h2 id="appFormTitle" className="aj-form-title">
-            <FaUserAlt /> Application Form
+            <FaUserAlt /> {formType === 'full' ? 'Join Our Team – Application Form' : 'Internship / Graduate Program Positions'}
           </h2>
+          {formType === 'full' ? (
+            <p className="aj-lead">We are excited that you are interested in joining Intellink Nippon Consulting. Please complete the form below to apply for a position. All information will be treated confidentially.</p>
+          ) : (
+            <p className="aj-lead">Interested in joining our team? Complete this short form to apply for internship or graduate programs opportunities.</p>
+          )}
 
-          <fieldset className="aj-fieldset">
-            <legend>Personal Information</legend>
-            <div className="aj-form-grid">
-              <input type="text" name="fullName" placeholder="Full Name" autoComplete="name" required onChange={handleChange} />
-              <input type="date" name="dob" placeholder="Date of Birth" required onChange={handleChange} />
-              <input type="text" name="nationality" placeholder="Nationality" autoComplete="country-name" required onChange={handleChange} />
-              <input type="email" name="email" placeholder="Email Address" autoComplete="email" required onChange={handleChange} />
-              <input type="tel" name="phone" placeholder="Phone Number" autoComplete="tel" required onChange={handleChange} />
-              <input type="text" name="location" placeholder="Location (City, Country)" autoComplete="address-level2" required onChange={handleChange} />
-              <input type="url" name="linkedin" placeholder="LinkedIn / Website / Portfolio" onChange={handleChange} />
-            </div>
-          </fieldset>
+          {formType === 'full' ? (
+            <>
+              <fieldset className="aj-fieldset">
+                <legend>Section 1: Personal Information</legend>
+                <div className="aj-form-grid">
+                  <input type="text" name="fullName" placeholder="Full Name" autoComplete="name" required onChange={handleChange} />
+                  <input type="date" name="dob" placeholder="Date of Birth (Optional)" onChange={handleChange} />
+                  <div>
+                    <label className="aj-body" style={{display:'block', marginBottom:6}}>Gender (Optional)</label>
+                    <select name="gender" onChange={handleChange}>
+                      <option value="">Select Gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Prefer not to say">Prefer not to say</option>
+                    </select>
+                  </div>
+                  <input type="email" name="email" placeholder="Email Address" autoComplete="email" required onChange={handleChange} />
+                  <input type="tel" name="phone" placeholder="Phone Number" autoComplete="tel" required onChange={handleChange} />
+                  <input type="text" name="location" placeholder="Current Location (City, Country)" autoComplete="address-level2" required onChange={handleChange} />
+                  <input type="url" name="linkedin" placeholder="LinkedIn / Website / Portfolio (Optional)" onChange={handleChange} />
+                </div>
+              </fieldset>
+
+              <fieldset className="aj-fieldset">
+                <legend>Section 2: Education & Qualifications</legend>
+                <div className="aj-form-grid">
+                  <div>
+                    <label className="aj-body" style={{display:'block', marginBottom:6}}>Highest Level of Education</label>
+                    <select name="educationLevel" required onChange={handleChange}>
+                      <option value="">Select Level</option>
+                      <option>High School</option>
+                      <option>Bachelor’s Degree</option>
+                      <option>Master’s Degree</option>
+                      <option>Doctorate</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  {form.educationLevel === 'Other' && (
+                    <input type="text" name="educationOther" placeholder="Please specify (Other)" onChange={handleChange} />
+                  )}
+                  <input type="text" name="fieldOfStudy" placeholder="Field of Study / Major" required onChange={handleChange} />
+                  <textarea name="certifications" rows={3} placeholder="Relevant Certifications (Optional)" onChange={handleChange} />
+                </div>
+              </fieldset>
+
+              <fieldset className="aj-fieldset">
+                <legend>Section 3: Work Experience</legend>
+                <div className="aj-form-grid">
+                  <input type="text" name="currentEmployer" placeholder="Current / Most Recent Employer" required onChange={handleChange} />
+                  <input type="text" name="jobTitle" placeholder="Job Title" required onChange={handleChange} />
+                  <div>
+                    <label className="aj-body" style={{display:'block', marginBottom:6}}>Years of Experience</label>
+                    <select name="experienceYears" required onChange={handleChange}>
+                      <option value="">Select</option>
+                      <option>0–2 years</option>
+                      <option>3–5 years</option>
+                      <option>6–10 years</option>
+                      <option>10+ years</option>
+                    </select>
+                  </div>
+                  <textarea name="keySkills" rows={4} placeholder="Key Skills & Expertise" required onChange={handleChange} />
+                  <textarea name="projectExperience" rows={4} placeholder="Relevant Project or Work Experience (Optional)" onChange={handleChange} />
+                </div>
+              </fieldset>
+
+              <fieldset className="aj-fieldset">
+                <legend>Section 4: Language & Technical Skills</legend>
+                <div className="aj-form-grid">
+                  <textarea name="languages" rows={3} placeholder="Languages Spoken / Proficiency" required onChange={handleChange} />
+                  <textarea name="softwareSkills" rows={3} placeholder="Technical / Software Skills (Optional)" onChange={handleChange} />
+                </div>
+              </fieldset>
+
+              <fieldset className="aj-fieldset">
+                <legend>Section 5: Job Preferences</legend>
+                <div className="aj-form-grid">
+                  <input type="text" name="position" placeholder="Position Applied For" required onChange={handleChange} />
+                  <div>
+                    <label className="aj-body" style={{display:'block', marginBottom:6}}>Preferred Work Type</label>
+                    <select name="workType" required onChange={handleChange}>
+                      <option value="">Select</option>
+                      <option>Full-time</option>
+                      <option>Part-time</option>
+                      <option>Internship / Graduate Program</option>
+                    </select>
+                  </div>
+                  <input type="date" name="startDate" placeholder="Available Start Date" required onChange={handleChange} />
+                  <textarea name="motivation" rows={4} placeholder="Motivation / Cover Letter – Briefly explain why you want to join Intellink Nippon Consulting and what you can contribute." required onChange={handleChange} />
+                </div>
+              </fieldset>
+
+              <fieldset className="aj-fieldset">
+                <legend>Section 6: References (Optional)</legend>
+                <div className="aj-form-grid">
+                  <input type="text" name="refName" placeholder="Reference Name" onChange={handleChange} />
+                  <input type="text" name="refRelation" placeholder="Relationship / Position" onChange={handleChange} />
+                  <input type="text" name="refContact" placeholder="Contact Information (Email / Phone)" onChange={handleChange} />
+                </div>
+              </fieldset>
+            </>
+          ) : (
+            <>
+              <fieldset className="aj-fieldset">
+                <legend>Section 1: Personal Information</legend>
+                <div className="aj-form-grid">
+                  <input type="text" name="fullName" placeholder="Full Name" autoComplete="name" required onChange={handleChange} />
+                  <input type="email" name="email" placeholder="Email Address" autoComplete="email" required onChange={handleChange} />
+                  <input type="tel" name="phone" placeholder="Phone Number" autoComplete="tel" required onChange={handleChange} />
+                  <input type="text" name="location" placeholder="Current Location (City, Country)" autoComplete="address-level2" required onChange={handleChange} />
+                </div>
+              </fieldset>
+
+              <fieldset className="aj-fieldset">
+                <legend>Section 2: Education</legend>
+                <div className="aj-form-grid">
+                  <div>
+                    <label className="aj-body" style={{display:'block', marginBottom:6}}>Current Level / Program of Study</label>
+                    <select name="ig_level" required onChange={handleChange}>
+                      <option value="">Select Level</option>
+                      <option>High School</option>
+                      <option>Undergraduate Student</option>
+                      <option>Graduate Student</option>
+                      <option>Recent Graduate (within 1 year)</option>
+                    </select>
+                  </div>
+                  <input type="text" name="ig_fieldOfStudy" placeholder="Field of Study / Major" required onChange={handleChange} />
+                  <input type="date" name="ig_graduationDate" placeholder="Expected Graduation Date (Optional)" onChange={handleChange} />
+                </div>
+              </fieldset>
+
+              <fieldset className="aj-fieldset">
+                <legend>Section 3: Skills & Interests</legend>
+                <div className="aj-form-grid">
+                  <textarea name="ig_keySkills" rows={3} placeholder="Key Skills or Areas of Interest" required onChange={handleChange} />
+                  <input type="text" name="ig_languages" placeholder="Languages Spoken (Optional)" onChange={handleChange} />
+                  <input type="text" name="ig_software" placeholder="Software / Technical Skills (Optional)" onChange={handleChange} />
+                </div>
+              </fieldset>
+
+              <fieldset className="aj-fieldset">
+                <legend>Section 4: Availability & Motivation</legend>
+                <div className="aj-form-grid">
+                  <div>
+                    <label className="aj-body" style={{display:'block', marginBottom:6}}>Preferred Work Type</label>
+                    <select name="ig_prefWorkType" required onChange={handleChange}>
+                      <option value="">Select</option>
+                      <option>Internship (Short-term, 1–3 months)</option>
+                      <option>Part-time / Flexible</option>
+                      <option>Full-time (for recent graduates)</option>
+                    </select>
+                  </div>
+                  <input type="date" name="ig_startDate" placeholder="Available Start Date" required onChange={handleChange} />
+                  <textarea name="ig_motivation" rows={4} placeholder="Brief Motivation / Cover Note – Tell us why you want to join Intellink Nippon Consulting and what you hope to learn or contribute." required onChange={handleChange} />
+                </div>
+              </fieldset>
+            </>
+          )}
 
           <fieldset className="aj-fieldset">
             <legend><FaPaperclip /> Supporting Documents</legend>

@@ -118,10 +118,10 @@ export default function MarketLink() {
     
       
         <section className="page-cta" data-aos="fade-up">
-          <h3> Get the Insights You Need to Expand</h3>
-          <p> From feasibility studies to consumer testing, MarketLink™ equips you with the intelligence to make confident, data-driven decisions before entering new markets.</p>
+          <h3>Contact MarketIntel™ to Make Informed Business Decisions</h3>
+          <p>MarketIntel™ provides data-driven insights for market entry, growth, and investment across Japan and Africa.</p>
           <button onClick={() => setShowForm(!showForm)} className="cta-btn">
-            Discover Your Market Potential
+            Get Market Insights Today
           </button>
         </section>
     
