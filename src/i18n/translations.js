@@ -224,45 +224,80 @@ const translations = {
     // EN
 tradeLink: {
   hero: {
-    title: "TradeLink™",
-    desc: "Streamlining connections between suppliers, buyers, and markets.",
+    title: "TradeLink™ Services",
+    tagline: "Connecting Your Business Across Borders with Confidence",
+    desc:
+      "Do business in Japan and Africa with precision, trust, and efficiency. TradeLink™ helps you find the right partners, access new markets, and execute projects smoothly—so you can focus on growth while we handle the connections and on-the-ground support.",
+    button: "Connect with a Partner",
     imgAlt: "Trade & Procurement Facilitation"
   },
   intro: {
-    text: "Doing business across borders requires precision, trust, and efficiency. TradeLink™ simplifies procurement, logistics, and trade operations between Japan and Africa, ensuring your business moves forward without costly delays or missteps."
+    text:
+      "Cross-Border Business Made Simple. Doing business across borders requires precision, trust, and efficiency. At Intellink Nippon Consulting, we help businesses achieve all three by connecting them with the right partners in Japan and Africa. TradeLink™ addresses the common challenges companies face when entering new markets or sourcing partners, including finding reliable contacts, navigating local regulations, and securing on-the-ground support."
   },
   offer: {
-    title: "Solutions Offered",
+    title: "Services",
     imgAlt: "TradeLink Services",
+    imgSrc: "/images/TradeLink2.jpg",
     points: [
-      { title: "Supplier & Buyer Identification", desc: "Quickly discover and connect with reliable trade partners." },
-      { title: "Procurement Facilitation", desc: "Arrange required materials or services efficiently." },
-      { title: "Logistics Support & Supply Chain Optimization", desc: "Streamline shipping, customs, and delivery processes." },
-      { title: "Trade Fairs, Exhibitions & Conferences", desc: "Support participation at global trade events and showcases." }
-    ]
-  },
-  why: {
-    title: "Why TradeLink™?",
-    imgAlt: "TradeLink Advantages",
-    points: [
-      "Fast and secure transactions — minimize delays and risks",
-      "Local knowledge — navigate regulations, culture, and norms",
-      "Trusted network — work only with vetted partners",
-      "Market growth — expand strategically",
-      "End-to-end support — from sourcing to delivery"
+      {
+        title: "Sourcing & Supply Support",
+        body:
+          "Finding the right suppliers or service providers in a foreign market can be time-consuming and risky. TradeLink™ supports businesses in identifying credible partners who meet quality, reliability, and compliance standards. Whether you are looking to source raw materials, finished products, or specialized services, we guide you through the process, ensuring your supply chain is robust and aligned with your business goals. By leveraging our local knowledge and network, we help reduce risks, eliminate delays, and ensure smooth transactions across borders.",
+        cta: "Find the right suppliers or service providers"
+      },
+      {
+        title: "Market Access & Sales Channels",
+        body:
+          "Entering a new market requires more than just a product—it requires the right connections, visibility, and strategy. TradeLink™ assists businesses in accessing new markets through trusted distributors, agents, and local business partners. We also facilitate participation in trade fairs, exhibitions, and conferences, helping companies showcase their products, generate leads, and build relationships. Our expertise ensures that your market entry is strategic, efficient, and targeted, minimizing the common frustration of trying to navigate unfamiliar market landscapes alone.",
+        cta: "Open doors to new markets and channels"
+      },
+      {
+        title: "Events, Seminars & Training",
+        body:
+          "Organizing business events in a foreign country can be a logistical and cultural challenge. TradeLink™ helps companies plan and execute seminars, workshops, and training programs with precision and confidence. We provide on-the-ground coordination, connecting businesses to trusted vendors, venues, speakers, and service providers. For companies struggling to find reliable local support, TradeLink™ ensures that events run smoothly, meet objectives, and reflect professional standards—turning challenges into opportunities for networking, knowledge sharing, and brand building.",
+        cta: "Organize impactful events and training"
+      }
     ]
   },
   cases: {
-    title: "Use Cases",
+    title: "TradeLink™ Use Cases",
     items: [
-      "A Japanese manufacturing firm sourcing raw materials from African markets. TradeLink™ identifies verified suppliers, checks compliance, and coordinates shipping, reducing lead times and customs delays.",
-      "An African agribusiness exporting processed foods to Japan. TradeLink™ identifies Japanese buyers, arranges procurement agreements, and manages customs and logistics, enabling smooth market entry and exhibition at Tokyo food expos."
+      {
+        title: "Sourcing & Supply Support: Jet Fuel Manufacturer",
+        body:
+          "A jet fuel manufacturer based in Africa wanted to source feedstock—used cooking oil—from Japan to produce sustainable aviation fuel. The company faced challenges identifying reliable offtakers and suppliers, navigating Japanese regulations, and ensuring timely logistics for cross-border shipments. Through TradeLink™, Intellink Nippon Consulting connected the manufacturer with verified offtakers and collection partners in Japan, coordinated compliance checks, and facilitated agreements that aligned with both parties’ operational and quality standards.",
+        result:
+          "The manufacturer established a reliable feedstock supply chain, reduced sourcing risks, and scaled sustainable jet fuel production efficiently."
+      },
+      {
+        title: "Market Access & Sales Channels: Cocoa Exporter",
+        body:
+          "A Ugandan coffee exporter aimed to enter the Japanese premium food market but struggled to identify credible distributors and gain exposure to potential buyers. TradeLink™ supported the exporter in accessing Japanese trade fairs and exhibitions, introduced them to qualified distributors and retail partners, and advised on marketing strategies tailored for Japanese consumers.",
+        result:
+          "The exporter launched in Tokyo and Osaka, secured long-term distribution agreements, and expanded their international footprint."
+      },
+      {
+        title: "Events, Seminars & Training: Investment Promotion Seminar",
+        body:
+          "A regional African business association sought to organize a seminar in Tokyo to promote investment opportunities. They faced difficulties finding reliable venues, vendors, and on-the-ground support. Through TradeLink™, Intellink Nippon Consulting handled end-to-end planning and coordination, including venue selection, vendor management, speaker liaison, and event logistics.",
+        result:
+          "The seminar attracted key Japanese investors and partners, increased regional visibility, and generated actionable investment opportunities."
+      }
+    ]
+  },
+  why: {
+    title: "Why TradeLink™ Works",
+    points: [
+      "TradeLink™ bridges the gap between strategic intent and practical execution. By combining local knowledge, credible partnerships, and hands-on support, we help businesses succeed in cross-border trade, reduce risk, and maximize efficiency."
     ]
   },
   cta: {
-    title: "Get Started Today",
-    desc: "Connect with the right trade partners and streamline your operations.",
-    button: "Connect With Local Partners Now →"
+    title: "Ready to Connect?",
+    desc:
+      "Reach out today to discover how TradeLink™ can support your business growth across Japan and Africa.",
+    contactInfo: "+81-80-5643-1501 · www.intellink-nippon.co.jp · g-owuor@intellink-nippon.co.jp",
+    button: "Connect with a Partner"
   }
 },
 services: {
