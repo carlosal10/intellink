@@ -1,69 +1,289 @@
-import { useEffect } from 'react';
-import useTranslate from '../hooks/useTranslate';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import './About.css';
+import React, { useEffect } from "react";
+import useTranslate from "../hooks/useTranslate";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "./About.css";
 
 export default function About() {
   const t = useTranslate();
 
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    AOS.init({ duration: 800, once: true, offset: 80, easing: "ease-out" });
   }, []);
 
-  const sections = [
-    {
-      tag: 'OUR STORY',
-      heading: t('about.ourStory') || 'Our Story',
-      paragraphs: [
-        t('about.ourStoryText.paragraph1'),
-        t('about.ourStoryText.paragraph2'),
-        t('about.ourStoryText.paragraph3')
-      ].filter(Boolean),
-      image: '/images/istockphoto-1369212121-640x640.avif',
-      badge: 'BRIDGING AFRICA AND JAPAN'
-    },
-    {
-      tag: 'OUR MISSION',
-      heading: t('about.mission') || 'Our Mission',
-      paragraphs: [t('about.missionText')].filter(Boolean),
-      image: '/images/istockphoto-16.jpg',
-      badge: 'IMPACT THROUGH EXPERTISE'
-    },
-    {
-      tag: 'OUR VISION',
-      heading: t('about.vision') || 'Our Vision',
-      paragraphs: [t('about.visionText')].filter(Boolean),
-      image: '/images/corporateculture.jpg',
-      badge: 'TRUSTED, LONG-TERM PARTNERSHIPS'
-    }
-  ];
+  const whyPoints = (t("about.whyChooseUs.points") || []).map((p) => {
+    if (typeof p !== "string") return { title: "", desc: "" };
+    const [title, ...rest] = p.split(":");
+    return { title: (title || "").trim(), desc: rest.join(":").trim() };
+  });
 
   return (
     <main className="about2">
-      {sections.map((s, i) => (
-        <section key={i} className="about2-section" data-aos="fade-up">
-          <div className="about2-inner">
-            {/* Left: Text Block */}
-            <div className="about2-text">
-              <span className="about2-tag">{s.tag}</span>
-              <h2 className="about2-heading">{s.heading}</h2>
-              <div className="about2-body">
-                {s.paragraphs.map((p, idx) => (
-                  <p key={idx}>{p}</p>
-                ))}
-              </div>
-            </div>
+      {/* HERO / ABOUT US */}
+      <section
+        className="about-hero"
+        style={{
+          backgroundImage:
+            "linear-gradient(180deg, rgba(11,37,69,.55), rgba(0,0,0,.65)), url('/images/1p.jpg')",
+        }}
+        data-aos="fade-up"
+      >
+        <div className="about-hero-inner">
+          <span className="about-chip">Intellink Nippon Consulting</span>
+          <h1 className="about-hero-title">{t("about.aboutUs") || "About Us"}</h1>
+          <p className="about-hero-sub">{t("about.aboutText")}</p>
 
-            {/* Right: Image Block */}
-            <div className="about2-media">
-              <img src={s.image} alt={s.heading} loading="lazy" />
-              <div className="about2-badge">{s.badge}</div>
+          {/* proof stats row */}
+          <div className="about-proof">
+            <div>
+              <strong>12+</strong>
+              <span>Markets</span>
+            </div>
+            <div>
+              <strong>8+</strong>
+              <span>Sectors</span>
+            </div>
+            <div>
+              <strong>50+</strong>
+              <span>Partners</span>
+            </div>
+          </div>
+
+          <div className="about-hero-cta">
+            <a href="/contact" className="abtn abtn-primary">
+              Work with Us
+            </a>
+            <a href="/services" className="abtn abtn-outline">
+              Explore Services
+            </a>
+          </div>
+        </div>
+        {/* Decorative map accent */}
+        <img
+          className="about-hero-accent"
+          src="/images/isto40.avif"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        />
+      </section>
+
+      {/* WHAT WE DO */}
+      <section className="about2-section" data-aos="fade-up">
+        <div className="about2-inner">
+          <div className="about2-text">
+            <span className="about2-tag">WHAT WE DO</span>
+            <h2 className="about2-heading">{t("about.whatWeDo") || "What We Do"}</h2>
+            <div className="about2-body">
+              <p>{t("about.whatWeDoText")}</p>
+            </div>
+            <div className="about-cards">
+              {[
+                {
+                  title: t("services.marketIntelligence.title") || "Market Intelligence",
+                  desc: t("services.marketIntelligence.description") || "Decision-grade research and insight.",
+                },
+                {
+                  title: "Strategic Advisory",
+                  desc: "Entry strategies, growth playbooks, and decision support.",
+                },
+                {
+                  title: t("services.expertConnect.title") || "Expert Connections",
+                  desc: t("services.expertConnect.description") || "On-demand sector specialists and regulators.",
+                },
+                {
+                  title: "Trade Facilitation",
+                  desc: "Partners, logistics, and compliance for cross-border trade.",
+                },
+              ].map((c, i) => (
+                <article className="about-card" key={i}>
+                  <h4>{c.title}</h4>
+                  <p>{c.desc}</p>
+                  <a href="/services" className="abtn abtn-link">
+                    Explore Services →
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* Image #1 */}
+          <div className="about2-media" data-aos="zoom-in">
+            <img
+              src="/images/istockphoto-16.jpg"
+              alt="Japan–Africa collaboration in action"
+              loading="lazy"
+            />
+            <span className="about2-badge">Cross-Border Focus</span>
+          </div>
+        </div>
+      </section>
+
+      {/* VISION */}
+      <section className="about2-section" data-aos="fade-up">
+        <div className="about2-inner">
+          <div className="about-single">
+            <span className="about2-tag">OUR VISION</span>
+            <h2 className="about2-heading">{t("about.vision") || "Our Vision"}</h2>
+            <div className="about-divider" />
+            <p className="about-quote">{t("about.visionText")}</p>
+          </div>
+
+          {/* Image #2 */}
+          <div className="about2-media" data-aos="zoom-in">
+            <img src="/images/istockphoto-16.jpg" alt="Our team at work" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      {/* MISSION */}
+      <section className="about2-section" data-aos="fade-up">
+        <div className="about2-inner">
+          <div className="about-single">
+            <span className="about2-tag">OUR MISSION</span>
+            <h2 className="about2-heading">{t("about.mission") || "Mission"}</h2>
+            <p className="about-body-lg">{t("about.missionText")}</p>
+            <ul className="about-bullets">
+              {(whyPoints.slice(0, 3) || []).map((p, idx) => (
+                <li key={`pill-${idx}`}>{p.title || p.desc}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Image #3 */}
+          <div className="about2-media" data-aos="zoom-in">
+            <img
+              src="/images/istockphoto-14.jpg"
+              alt="Bridging markets across borders"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      {whyPoints.length > 0 && (
+        <section className="about2-section" data-aos="fade-up">
+          <div className="about2-inner">
+            <div className="about2-text">
+              <span className="about2-tag">WHY CHOOSE US</span>
+              <h2 className="about2-heading">
+                {t("about.whyChooseUs.title") || "Why Choose Us"}
+              </h2>
+            </div>
+            <div className="about-cards">
+              {whyPoints.map((p, i) => (
+                <article className="about-card about-card-soft" key={`why-${i}`}>
+                  <h4>{p.title}</h4>
+                  <p>{p.desc}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
-      ))}
+      )}
+
+      {/* CAPABILITIES */}
+      {t("about.capabilities.title") && (
+        <section className="about2-section" data-aos="fade-up">
+          <div className="about2-inner">
+            <div className="about2-text">
+              <span className="about2-tag">CAPABILITIES</span>
+              <h2 className="about2-heading">{t("about.capabilities.title")}</h2>
+              <div className="about2-body">
+                {[t("about.capabilities.paragraph1"), t("about.capabilities.paragraph2"), t("about.capabilities.paragraph3")]
+                  .filter(Boolean)
+                  .map((p, idx) => (
+                    <p key={idx}>{p}</p>
+                  ))}
+                {t("about.capabilities.tagline") && (
+                  <p>
+                    <strong>{t("about.capabilities.tagline")}</strong>
+                  </p>
+                )}
+              </div>
+            </div>
+            <div className="about2-media" data-aos="zoom-in">
+              <img src="/images/istockphoto-8.jpg" alt="Our capabilities" loading="lazy" />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* PHILOSOPHY */}
+      {(t("about.philosophy") || t("about.philosophyText")) && (
+        <section className="about2-section" data-aos="fade-up">
+          <div className="about2-inner">
+            <div className="about-single">
+              <span className="about2-tag">OUR PHILOSOPHY</span>
+              <h2 className="about2-heading">{t("about.philosophy") || "Our Philosophy"}</h2>
+              <blockquote className="about-pull">{t("about.philosophyText")}</blockquote>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* VALUES */}
+      {(t("about.values") || t("about.valuesList")) && (
+        <section className="about2-section" data-aos="fade-up">
+          <div className="about2-inner">
+            <div className="about2-text">
+              <span className="about2-tag">VALUES</span>
+              <h2 className="about2-heading">{t("about.values") || "Our Core Values"}</h2>
+              <div className="about2-values">
+                {(t("about.valuesList") || []).map((pair, idx) => (
+                  <div className="about2-value" key={idx}>
+                    <h4>{Array.isArray(pair) ? pair[0] : ""}</h4>
+                    <p>{Array.isArray(pair) ? pair[1] : pair}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* OUR STORY */}
+      <section className="about2-section" data-aos="fade-up">
+        <div className="about2-inner">
+          <div className="about2-text">
+            <span className="about2-tag">OUR STORY</span>
+            <h2 className="about2-heading">{t("about.ourStory") || "Our Story"}</h2>
+          </div>
+          <div className="about-timeline">
+            {[
+              { label: "Founding", text: t("about.ourStoryText.paragraph1") },
+              { label: "Bridge", text: t("about.ourStoryText.paragraph2") },
+              { label: "Today", text: t("about.ourStoryText.paragraph3") },
+            ]
+              .filter((s) => s.text)
+              .map((node, i) => (
+                <div className="timeline-item" key={i}>
+                  <div className="timeline-dot" />
+                  <div className="timeline-content">
+                    <h4>{node.label}</h4>
+                    <p>{node.text}</p>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* END CTA */}
+      <section className="about2-section" data-aos="fade-up">
+        <div className="about2-inner about-cta-end">
+          <h3>Let’s build across borders</h3>
+          <div className="about-cta-actions">
+            <a href="/services" className="abtn abtn-outline">
+              Explore Services
+            </a>
+            <a href="/contact" className="abtn abtn-primary">
+              Talk to Us
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
-
