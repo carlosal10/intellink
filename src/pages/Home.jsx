@@ -135,21 +135,20 @@ export default function Home() {
       </section>
 
 
-      {/* Intro Section */}
       <section className="robo">
-        <div className="hr-overlay">
-          <div className="text-box hro-text">
-            <h2>{t('home.welcomeTitle')}</h2>
-            <p>{t('home.welcomeIntro1.paragraph1')}</p>
-            <p>{t('home.welcomeIntro1.paragraph2')}</p>
-            <p>{t('home.welcomeIntro1.paragraph3')}</p>
-            <p>{t('home.welcomeIntro1.paragraph4')}</p>
-          </div>
-          <div className="hero-image">
-            <img src="/images/istockphoto-8.jpg" alt="Welcome to Japan and Africa collaboration" />
-          </div>
-        </div>
-      </section>
+  <div className="hr-overlay">
+    <div className="hero-image">
+      <img src="/images/istockphoto-8.jpg" alt="Welcome to Japan and Africa collaboration" />
+    </div>
+    <div className="text-box hro-text">
+      <h2>{t('home.welcomeTitle')}</h2>
+      <p>{t('home.welcomeIntro1.paragraph1')}</p>
+      <p>{t('home.welcomeIntro1.paragraph2')}</p>
+      <p>{t('home.welcomeIntro1.paragraph3')}</p>
+      <p>{t('home.welcomeIntro1.paragraph4')}</p>
+    </div>
+  </div>
+</section>
 
       {/* Services Section */}
       <section ref={servicesRef} className="services-section" data-aos="fade-up">
