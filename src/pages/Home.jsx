@@ -138,7 +138,7 @@ export default function Home() {
       <section className="robo">
   <div className="hr-overlay">
     <div className="hero-image">
-      <img src="/images/istockphoto-8.jpg" alt="Welcome to Japan and Africa collaboration" />
+      <img src="/images/istockphoto-8.webp" alt="Welcome to Japan and Africa collaboration" />
     </div>
     <div className="text-box hro-text">
       <h2>{t('home.welcomeTitle')}</h2>
@@ -152,10 +152,10 @@ export default function Home() {
 
       {/* Services Section */}
       <section ref={servicesRef} className="services-section" data-aos="fade-up">
-        <header className="services-header">
-          <h2 className="services-title">{t('home.services.headerTitle')}</h2>
-          <p className="services-subtext">{t('home.services.headerDescription')}</p>
-        </header>
+        <div className="services-header">
+          <h2>{t('home.services.headerTitle')}</h2>
+          <p>{t('home.services.headerDescription')}</p>
+        </div>
         <div className="services-grid">
           {services.map((service) => (
             <article className="service-card" key={service.key} data-aos="fade-up">
@@ -173,8 +173,8 @@ export default function Home() {
       {/* Capabilities Section */}
       <section ref={capabilitiesRef} className="capabilities-section" data-aos="fade-up">
         <header className="capabilities-header" style={{ textAlign: 'center', marginBottom: '2rem', padding: '0 10%' }}>
-          <h2>{t('home.capabilities.title') || 'Our Capabilities'}</h2>
-          <p style={{ lineHeight: '1.8' }}>{t('home.capabilities.description')}</p>
+          <h2 style={{ fontSize: '4.5rem', fontFamily: '"Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif', fontWeight: 100 }}>{t('home.capabilities.title') || 'Our Capabilities'}</h2>
+          <p style={{ lineHeight: '1.8', fontWeight: 100, fontFamily: '"Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif', fontSize: '1.75rem', color: '#000' }}>{t('home.capabilities.description')}</p>
         </header>
 
         <div
@@ -207,10 +207,8 @@ export default function Home() {
       </section>
 
       {/* Who We Are Section */}
-      <section className="modern-section who-we-are" data-aos="fade-right">
-        <div className="who-image">
-          <img src="/images/ist612.jpg" alt="Strategic meeting team" loading="lazy" />
-        </div>
+      <section className="who-we-are" data-aos="fade-right">
+        
         <div className="text-box">
           <h2>{t('about.whyChooseUs.title')}</h2>
           <ul>
@@ -221,7 +219,11 @@ export default function Home() {
           <Link to="/about" className="btn secondary">
             {t('home.ctaAboutUs')}
           </Link>
-        </div>
+          </div>
+          <div className="who-image">
+          <img src="/images/ist612.jpg" alt="Strategic meeting team" loading="lazy" />
+          </div>
+        
       </section>
 
       {/* Philosophy Section */}
@@ -229,7 +231,7 @@ export default function Home() {
         <div className="phy-image">
           <img src="/images/1p.jpg" alt="Team discussing strategy" loading="lazy" />
         </div>
-        <div className="text-box">
+        <div className="phy-box">
           <h2>{t('about.philosophy')}</h2>
           <p>{t('about.philosophyText')}</p>
           <Link to="/contact" className="btn primary">
