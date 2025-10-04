@@ -29,25 +29,9 @@ export default function About() {
         data-aos="fade-up"
       >
         <div className="about-hero-inner">
-          <span className="about-chip">Intellink Nippon Consulting</span>
           <h1 className="about-hero-title">{t("about.aboutUs") || "About Us"}</h1>
           <p className="about-hero-sub">{t("about.aboutText")}</p>
 
-          {/* proof stats row */}
-          <div className="about-proof">
-            <div>
-              <strong>12+</strong>
-              <span>Markets</span>
-            </div>
-            <div>
-              <strong>8+</strong>
-              <span>Sectors</span>
-            </div>
-            <div>
-              <strong>50+</strong>
-              <span>Partners</span>
-            </div>
-          </div>
 
           <div className="about-hero-cta">
             <a href="/contact" className="abtn abtn-primary">
@@ -72,7 +56,6 @@ export default function About() {
       <section className="about2-section" data-aos="fade-up">
         <div className="about2-inner">
           <div className="about2-text">
-            <span className="about2-tag">WHAT WE DO</span>
             <h2 className="about2-heading">{t("about.whatWeDo") || "What We Do"}</h2>
             <div className="about2-body">
               <p>{t("about.whatWeDoText")}</p>
@@ -110,7 +93,7 @@ export default function About() {
           {/* Image #1 */}
           <div className="about2-media" data-aos="zoom-in">
             <img
-              src="/images/istockphoto-16.jpg"
+              src="/images/whatwedo.jpg"
               alt="Japan–Africa collaboration in action"
               loading="lazy"
             />
@@ -123,7 +106,6 @@ export default function About() {
       <section className="about2-section" data-aos="fade-up">
         <div className="about2-inner">
           <div className="about-single">
-            <span className="about2-tag">OUR VISION</span>
             <h2 className="about2-heading">{t("about.vision") || "Our Vision"}</h2>
             <div className="about-divider" />
             <p className="about-quote">{t("about.visionText")}</p>
@@ -139,8 +121,7 @@ export default function About() {
       {/* MISSION */}
       <section className="about2-section" data-aos="fade-up">
         <div className="about2-inner">
-          <div className="about-single">
-            <span className="about2-tag">OUR MISSION</span>
+          <div className="about-single">      
             <h2 className="about2-heading">{t("about.mission") || "Mission"}</h2>
             <p className="about-body-lg">{t("about.missionText")}</p>
             <ul className="about-bullets">
@@ -153,7 +134,7 @@ export default function About() {
           {/* Image #3 */}
           <div className="about2-media" data-aos="zoom-in">
             <img
-              src="/images/istockphoto-14.jpg"
+              src="/images/mission.jpg"
               alt="Bridging markets across borders"
               loading="lazy"
             />
@@ -165,8 +146,7 @@ export default function About() {
       {whyPoints.length > 0 && (
         <section className="about2-section" data-aos="fade-up">
           <div className="about2-inner">
-            <div className="about2-text">
-              <span className="about2-tag">WHY CHOOSE US</span>
+            <div className="about2-text">              
               <h2 className="about2-heading">
                 {t("about.whyChooseUs.title") || "Why Choose Us"}
               </h2>
@@ -180,6 +160,22 @@ export default function About() {
               ))}
             </div>
           </div>
+          
+          {/* proof stats row */}
+          <div className="about-proof">
+            <div>
+              <strong>12+</strong>
+              <span>Markets</span>
+            </div>
+            <div>
+              <strong>8+</strong>
+              <span>Sectors</span>
+            </div>
+            <div>
+              <strong>50+</strong>
+              <span>Partners</span>
+            </div>
+          </div>
         </section>
       )}
 
@@ -188,7 +184,6 @@ export default function About() {
         <section className="about2-section" data-aos="fade-up">
           <div className="about2-inner">
             <div className="about2-text">
-              <span className="about2-tag">CAPABILITIES</span>
               <h2 className="about2-heading">{t("about.capabilities.title")}</h2>
               <div className="about2-body">
                 {[t("about.capabilities.paragraph1"), t("about.capabilities.paragraph2"), t("about.capabilities.paragraph3")]
@@ -204,7 +199,7 @@ export default function About() {
               </div>
             </div>
             <div className="about2-media" data-aos="zoom-in">
-              <img src="/images/istockphoto-8.jpg" alt="Our capabilities" loading="lazy" />
+              <img src="/images/capabilities.jpg" alt="Our capabilities" loading="lazy" />
             </div>
           </div>
         </section>
@@ -214,8 +209,7 @@ export default function About() {
       {(t("about.philosophy") || t("about.philosophyText")) && (
         <section className="about2-section" data-aos="fade-up">
           <div className="about2-inner">
-            <div className="about-single">
-              <span className="about2-tag">OUR PHILOSOPHY</span>
+            <div className="about-single">        
               <h2 className="about2-heading">{t("about.philosophy") || "Our Philosophy"}</h2>
               <blockquote className="about-pull">{t("about.philosophyText")}</blockquote>
             </div>
@@ -228,7 +222,6 @@ export default function About() {
         <section className="about2-section" data-aos="fade-up">
           <div className="about2-inner">
             <div className="about2-text">
-              <span className="about2-tag">VALUES</span>
               <h2 className="about2-heading">{t("about.values") || "Our Core Values"}</h2>
               <div className="about2-values">
                 {(t("about.valuesList") || []).map((pair, idx) => (
@@ -244,24 +237,21 @@ export default function About() {
       )}
 
       {/* OUR STORY */}
-      <section className="about2-section" data-aos="fade-up">
+      <section className="about02-section" data-aos="fade-up">
         <div className="about2-inner">
-          <div className="about2-text">
-            <span className="about2-tag">OUR STORY</span>
+          <div className="about02-text">
             <h2 className="about2-heading">{t("about.ourStory") || "Our Story"}</h2>
           </div>
           <div className="about-timeline">
             {[
-              { label: "Founding", text: t("about.ourStoryText.paragraph1") },
-              { label: "Bridge", text: t("about.ourStoryText.paragraph2") },
-              { label: "Today", text: t("about.ourStoryText.paragraph3") },
+              {  text: t("about.ourStoryText.paragraph1") },
+              { text: t("about.ourStoryText.paragraph2") },
+              { text: t("about.ourStoryText.paragraph3") },
             ]
               .filter((s) => s.text)
               .map((node, i) => (
                 <div className="timeline-item" key={i}>
-                  <div className="timeline-dot" />
-                  <div className="timeline-content">
-                    <h4>{node.label}</h4>
+                  <div className="timeline-content">                    
                     <p>{node.text}</p>
                   </div>
                 </div>
