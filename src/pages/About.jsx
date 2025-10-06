@@ -43,13 +43,7 @@ export default function About() {
           </div>
         </div>
         {/* Decorative map accent */}
-        <img
-          className="about-hero-accent"
-          src="/images/isto40.avif"
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-        />
+       
       </section>
 
       {/* WHAT WE DO */}
@@ -92,11 +86,7 @@ export default function About() {
 
           {/* Image #1 */}
           <div className="about2-media" data-aos="zoom-in">
-            <img
-              src="/images/whatwedo.jpg"
-              alt="Japan–Africa collaboration in action"
-              loading="lazy"
-            />
+            
             <span className="about2-badge">Cross-Border Focus</span>
           </div>
         </div>
@@ -110,12 +100,9 @@ export default function About() {
             <div className="about-divider" />
             <p className="about-quote">{t("about.visionText")}</p>
           </div>
+</div>
 
-          {/* Image #2 */}
-          <div className="about2-media" data-aos="zoom-in">
-            <img src="/images/istockphoto-16.jpg" alt="Our team at work" loading="lazy" />
-          </div>
-        </div>
+          
       </section>
 
       {/* MISSION */}
@@ -131,79 +118,14 @@ export default function About() {
             </ul>
           </div>
 
-          {/* Image #3 */}
-          <div className="about2-media" data-aos="zoom-in">
-            <img
-              src="/images/mission.jpg"
-              alt="Bridging markets across borders"
-              loading="lazy"
-            />
-          </div>
+          
+          
         </div>
       </section>
 
-      {/* WHY CHOOSE US */}
-      {whyPoints.length > 0 && (
-        <section className="about2-section" data-aos="fade-up">
-          <div className="about2-inner">
-            <div className="about2-text">              
-              <h2 className="about2-heading">
-                {t("about.whyChooseUs.title") || "Why Choose Us"}
-              </h2>
-            </div>
-            <div className="about-cards">
-              {whyPoints.map((p, i) => (
-                <article className="about-card about-card-soft" key={`why-${i}`}>
-                  <h4>{p.title}</h4>
-                  <p>{p.desc}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-          
-          {/* proof stats row */}
-          <div className="about-proof">
-            <div>
-              <strong>12+</strong>
-              <span>Markets</span>
-            </div>
-            <div>
-              <strong>8+</strong>
-              <span>Sectors</span>
-            </div>
-            <div>
-              <strong>50+</strong>
-              <span>Partners</span>
-            </div>
-          </div>
-        </section>
-      )}
+     
 
-      {/* CAPABILITIES */}
-      {t("about.capabilities.title") && (
-        <section className="about2-section" data-aos="fade-up">
-          <div className="about2-inner">
-            <div className="about2-text">
-              <h2 className="about2-heading">{t("about.capabilities.title")}</h2>
-              <div className="about2-body">
-                {[t("about.capabilities.paragraph1"), t("about.capabilities.paragraph2"), t("about.capabilities.paragraph3")]
-                  .filter(Boolean)
-                  .map((p, idx) => (
-                    <p key={idx}>{p}</p>
-                  ))}
-                {t("about.capabilities.tagline") && (
-                  <p>
-                    <strong>{t("about.capabilities.tagline")}</strong>
-                  </p>
-                )}
-              </div>
-            </div>
-            <div className="about2-media" data-aos="zoom-in">
-              <img src="/images/capabilities.jpg" alt="Our capabilities" loading="lazy" />
-            </div>
-          </div>
-        </section>
-      )}
+     
 
       {/* PHILOSOPHY */}
       {(t("about.philosophy") || t("about.philosophyText")) && (

@@ -228,9 +228,7 @@ export default function Home() {
 
       {/* Philosophy Section */}
       <section className="modern-section reverse philosophy" data-aos="fade-left">
-        <div className="phy-image">
-          <img src="/images/1p.jpg" alt="Team discussing strategy" loading="lazy" />
-        </div>
+        
         <div className="phy-box">
           <h2>{t('about.philosophy')}</h2>
           <p>{t('about.philosophyText')}</p>

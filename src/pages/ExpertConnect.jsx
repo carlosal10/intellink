@@ -688,13 +688,19 @@ export default function ExpertConnectPage() {
       {/* HERO */}
       <section
         className="ec-hero"
-        style={{
-          backgroundImage:
-            "url('/images/expert-hero.jpg'), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1950&q=80')",
-        }}
+        style={{ display: isLoading ? "none" : "block" }}
       >
+        <video className="ec-hero-video"
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
+        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          src="/images/expert-hero1.mp4" type="video/mp4" 
+        />
+        
         <div className="ec-hero-overlay">
-          <div className="ec-hero-chip">ExpertConnect™</div>
+         
           <h1 className="ec-hero-title">{t?.title || "ExpertConnect™"}</h1>
           <p className="ec-hero-sub">{t?.tagline || "Connecting you with the expertise you need to succeed."}</p>
           {t?.heroDescription && <p className="ec-hero-desc">{t.heroDescription}</p>}
@@ -712,6 +718,9 @@ export default function ExpertConnectPage() {
           </div>
         </div>
         <div className="ec-hero-fade" />
+        
+          
+        
       </section>
 
       {/* INTRO */}

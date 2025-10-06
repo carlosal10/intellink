@@ -32,12 +32,24 @@
 
 /* Hero */
 .ec-hero{
-  position:relative;min-height:68vh;display:flex;align-items:flex-end;
-  background-size:cover;background-position:center;
+  
+  min-height:68vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-size:cover;
+  background-position:center;
+}
+@media (max-width: 768px) {
+  .ec-hero{min-height:50vh}
 }
 .ec-hero-overlay{
-  position:relative;z-index:2;margin:0 auto;max-width:95vw;
-  width:100%;padding:4rem 2.5% 6rem;
+  position:relative;
+  z-index:2;
+
+  max-width:95vw;
+  width:100%;
+ 
   color:#fff;
 }
 .ec-hero-fade{
@@ -45,24 +57,56 @@
   background:linear-gradient(180deg, rgba(11,37,69,0.15) 0%, rgba(11,37,69,0.75) 45%, rgba(0, 0, 0, 0.75) 100%);
   z-index:1;
 }
-.ec-hero-chip{
-  display:inline-block;background:rgba(241,196,15,0.15);
-  color:#fff;border:1px solid rgba(241,196,15,0.35);
-  padding:6px 12px;border-radius:999px;margin-bottom:14px;
-  font-weight:600;backdrop-filter: blur(6px);
-}
+
 .ec-hero-title{
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  font-weight:800;line-height:1.1;margin:0 0 10px;
+  font-size: clamp(7rem, 5vw, 3.25rem);
+  font-weight:100;
+  line-height:1.1;
+  
   color: #F1C40F;
+  text-align: center;
+  font-family: nunito, "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  text-shadow:0 4px 12px rgba(0,0,0,.12);
+
 }
+@media (max-width: 600px){
+  .ec-hero-title{ font-size:clamp(4.5rem,8vw,3.2rem); margin:6px 0 6px; }
+  .ec-hero-sub{ font-size:clamp(2.5rem,5vw,1.5rem); margin:4px 0 4px; }
+  .ec-hero-desc{ font-size:clamp(2.5rem,4vw,1.5rem); margin:4px 0 4px; }
+}
+
+.ec-hero-video{
+position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
 .ec-hero-sub{
-  font-size: clamp(1.1rem, 2.8vw, 1.35rem);
-  opacity:.95;margin:0 0 12px;
+  font-size: clamp(2.5rem, 2.8vw, 1.35rem);
+  opacity:.95;
   color:#d7e7fb;
+  line-height:1.6;
+  font-weight: 200;
+  font-family: nunito, "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
+
 }
 .ec-hero-desc{
-  max-width: 800px;color:#e7edf6;opacity:.9;margin-bottom:22px;
+  
+  color:#e7edf6;
+  opacity:.9;
+  margin-bottom:22px;
+  line-height:1.7;
+  font-size: clamp(2.5rem, 2.4vw, 1.1rem);
+  font-weight: 200; 
+  font-family: nunito, "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 .ec-hero-cta{display:flex;gap:12px;flex-wrap:wrap}
 
@@ -130,8 +174,15 @@
 }
 .ec-card:hover{transform:translateY(-3px)}
 .ec-card-icon{
-  width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,#fef3f4,#ffe3e6);color:var(--ec-secondary);margin-bottom:10px;
+  width:42px;
+  height:42px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#fef3f4,#ffe3e6);
+  color:var(--ec-secondary);
+  margin-bottom:10px;
 }
 .ec-card-soft{
   background:linear-gradient(180deg,#ffffff 0%, #fbfcff 100%);
