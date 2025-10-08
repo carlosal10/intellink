@@ -65,6 +65,9 @@ export default function MarketLink() {
       {/* HERO */}
       <section className="marketlink-hero" data-aos="fade-up" style={{
           backgroundImage: `url('/images/MarketLink1.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
         }}>
         <div className="marketlink-overlay">
           <h1>{hero?.title}</h1>
@@ -85,16 +88,16 @@ export default function MarketLink() {
           backgroundSize: 'cover'
         }}>
         <h2>{offer?.title}</h2>
-        <ul>
+        <ul style={{ listStyle: "none", padding: 0, marginTop: "1rem", }}>
           {(offer?.points || []).map((point, i) => (
-            <li key={i}><FaCheckCircle /> {point}</li>
+            <li style={{fontSize: "clamp(1rem, 2vw, 1.5rem)", color: "#fff" }} key={i}><FaCheckCircle /> {point}</li>
           ))}
         </ul>
       </section>
 
       {/* CASES / USE CASES */}
       <section className="marketlink-cases" data-aos="fade-up">
-        <h2>{casesData?.title}</h2>
+        <h2 style={{ fontSize: "clamp(1.5rem, 2.5vw, 3.5rem)", color: "#F11" }}>{casesData?.title}</h2>
         <ul>
           {(casesData?.items || []).map((item, i) => (
             <li key={i}>{item}</li>
@@ -104,11 +107,11 @@ export default function MarketLink() {
 
      {/* IDEAL USERS */}
 <section className="marketlink-ideal" data-aos="fade-up">
-  <h2>{ideal?.title}</h2>
+  <h2 style={{ fontSize: "clamp(1.5rem, 2.5vw, 3.5rem)", color: "#F11" }}>{ideal?.title}</h2>
   <div className="ideal-grid">
     {(ideal?.items || []).map((item, i) => (
       <div key={i} className="ideal-card" data-aos="zoom-in">
-        <h3>{item}</h3>
+        <h3 style={{ fontSize: "clamp(1.5rem, 2.5vw, 1.5rem)", color: "#243149" }}>{item}</h3>
       </div>
     ))}
   </div>
@@ -118,7 +121,7 @@ export default function MarketLink() {
     
       
         <section className="page-cta" data-aos="fade-up">
-          <h3>Contact MarketIntel™ to Make Informed Business Decisions</h3>
+          <h3 style={{ fontSize: "clamp(1.5rem, 2.5vw, 3.5rem)", color: "#f11" }}>Contact Us to Make Informed Business Decisions</h3>
           <p>MarketIntel™ provides data-driven insights for market entry, growth, and investment across Japan and Africa.</p>
           <button onClick={() => setShowForm(!showForm)} className="cta-btn">
             Get Market Insights Today

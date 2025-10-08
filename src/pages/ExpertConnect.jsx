@@ -319,7 +319,7 @@ export default function ExpertConnectPage() {
     return (
       <div className="ec-field">
         <label>{label}</label>
-        <div className="ec-chipbox" onClick={() => document.getElementById(name)?.focus?.()}>
+        <div style={{ fontSize: "clamp(1rem, 2.3vw, 1.5rem)", color: "#243149" }} className="ec-chipbox" onClick={() => document.getElementById(name)?.focus?.()}>
           {(values || []).map((v, i) => (
             <span className="ec-chip" key={`${name}-${i}`}>{v}
               <button type="button" aria-label="Remove" onClick={() => remove(i)}>×</button>
@@ -529,11 +529,11 @@ export default function ExpertConnectPage() {
   function StepQualifications() {
     return (
       <div className="ec-grid-4">
-        <div className="ec-field"><label>Highest Academic Qualification</label>
+        <div style={{ fontSize: "clamp(1rem, 2.3vw, 1.5rem)", color: "#243149" }} className="ec-field"><label>Highest Academic Qualification</label>
           <input value={form.highestAcademicQualification} onChange={(e) => updateField("highestAcademicQualification", e.target.value)} />
           <Error msg={errors.highestAcademicQualification} />
         </div>
-        <ChipInput
+        <ChipInput 
           label="Professional Certifications (CFA, PMP, etc.)"
           name="certifications"
           values={form.certifications}
@@ -555,14 +555,15 @@ export default function ExpertConnectPage() {
     return (
       <>
         <RepeaterProjects />
-        <ChipInput
+        <ChipInput style={{ marginTop: "1.5rem", fontSize: "clamp(1rem, 2.3vw, 1.5rem)", color: "#243149" }}
           label="Publications / Research / Thought Leadership"
           name="publications"
           values={form.publications}
           placeholder="Title or link — press Enter"
           onChange={(vals) => updateField("publications", vals)}
         />
-        <ChipInput
+        <ChipInput 
+          style={{ marginTop: "1.5rem", fontSize: "clamp(1rem, 2.3vw, 1.5rem)", color: "#243149" }} 
           label="References (optional)"
           name="references"
           values={form.references}
@@ -612,7 +613,7 @@ export default function ExpertConnectPage() {
           <div className="ec-uploader" onClick={() => resumeInputRef.current?.click?.()}>
             <FaUpload />
             <div>
-              <strong>{form.resume ? form.resume.name : "Choose file or drop here"}</strong>
+              <strong style={{ fontSize: "clamp(1rem, 2.3vw, 1.5rem)", color: "#243149" }}>{form.resume ? form.resume.name : "Choose file or drop here"}</strong>
               <p className="ec-hint">PDF / DOCX preferred</p>
             </div>
             <input
@@ -630,7 +631,7 @@ export default function ExpertConnectPage() {
           <div className="ec-uploader" onClick={() => portfolioInputRef.current?.click?.()}>
             <FaUpload />
             <div>
-              <strong>{form.portfolioFiles?.length ? `${form.portfolioFiles.length} file(s) selected` : "Choose files or drop here"}</strong>
+              <strong style={{ fontSize: "clamp(1rem, 2.3vw, 1.5rem)", color: "#243149" }}>{form.portfolioFiles?.length ? `${form.portfolioFiles.length} file(s) selected` : "Choose files or drop here"}</strong>
               <p className="ec-hint">PDF / PPT / Images</p>
             </div>
             <input
@@ -656,7 +657,7 @@ export default function ExpertConnectPage() {
             checked={form.consentShareProfile}
             onChange={(e) => updateField("consentShareProfile", e.target.checked)}
           />
-          <span>I consent for Intellink Nippon Consulting LLC to share my profile with potential clients.</span>
+          <span style={{ fontSize: "clamp(1rem, 2.3vw, 1.5rem)", color: "#243149" }}>I consent for Intellink Nippon Consulting LLC to share my profile with potential clients.</span>
         </label>
         <Error msg={errors.consentShareProfile} />
         <label className="ec-check">
@@ -665,7 +666,7 @@ export default function ExpertConnectPage() {
             checked={form.declarationAccurate}
             onChange={(e) => updateField("declarationAccurate", e.target.checked)}
           />
-          <span>I declare that the information provided is accurate.</span>
+          <span style={{ fontSize: "clamp(1rem, 2.3vw, 1.5rem)", color: "#243149" }}  >I declare that the information provided is accurate.</span>
         </label>
         <Error msg={errors.declarationAccurate} />
       </div>
@@ -677,7 +678,7 @@ export default function ExpertConnectPage() {
   // renderStep removed (single-page form)
 
   return (
-    <div className="marketlink-page">
+    <div className="marketlink-page expertconnect-page">
       {isLoading && (
         <div className="ec-loading">
           <div className="spinner" />
@@ -785,12 +786,14 @@ export default function ExpertConnectPage() {
         <section className="ec-section">
           <div className="ec-container">
             <div className="ec-section-head">
-              <h3 className="ec-h3">{t.howItWorks.title}</h3>
+              <h3 className="ec-h3" style={{ color: "var(--brand-gold)" }}>{t.howItWorks.title}</h3>
             </div>
             <div className="ec-grid ec-grid-3">
               {(t.howItWorks.points || []).map((p, i) => (
-                <div className="ec-card ec-card-soft" key={`how-${i}`}>
-                  <p>{p}</p>
+                <div className="ec-card ec-card-soft" key={`how-${i}`} style={{ borderTop: "4px solid var(--brand-gold)", 
+                  color: "#000"
+                }}>
+                  <p style={{ color: "#000" }}>{p}</p>
                 </div>
               ))}
             </div>
@@ -803,13 +806,13 @@ export default function ExpertConnectPage() {
         <section className="ec-section">
           <div className="ec-container">
             <div className="ec-section-head">
-              <h3 className="ec-h3">{SVC.title || "Services"}</h3>
-              {SVC.description && <p className="ec-lead">{SVC.description}</p>}
+              <h3 style={{ fontSize: "clamp(2rem, 6vw, 3.5rem)", color: "#E63946" }} className="ec-h3">{SVC.title || "Services"}</h3>
+              {SVC.description && <p style={{ fontSize: "clamp(1rem, 2.3vw, 1.5rem)", color: "#000" }} className="ec-lead">{SVC.description}</p>}
             </div>
             <div className="ec-grid">
               {(SVC.items || []).map((s, i) => (
                 <div className="ec-card" key={`svc-${i}`}>
-                  <h4 className="ec-h4">{s.title}</h4>
+                  <h4 style={{ fontSize: "clamp(1.5rem, 4vw, 2rem)", color: "#E63946" }} className="ec-h4">{s.title}</h4>
                   <p>{s.body}</p>
                   {s.cta && (
                     <div className="ec-card-actions">
@@ -828,13 +831,13 @@ export default function ExpertConnectPage() {
         <section className="ec-section ec-section-alt">
           <div className="ec-container">
             <div className="ec-section-head">
-              <h3 className="ec-h3">{UCC.title || "ExpertConnect Use Cases"}</h3>
+              <h3 style={{ fontSize: "clamp(2rem, 6vw, 3.5rem)", color: "#000" }} className="ec-h3">{UCC.title || "Use Cases"}</h3>
             </div>
             <div className="ec-grid">
               {(UCC.items || []).map((c, i) => (
                 <div className="ec-card" key={`case-${i}`}>
-                  <div className="ec-card-icon"><FaClipboardCheck /></div>
-                  <h4 className="ec-h4">{c.title}</h4>
+                  <div className="ec-card-icon"></div>
+                  <h4 style={{ fontSize: "clamp(1.5rem, 4vw, 2rem)", color: "#000" }} className="ec-h4">{c.title}</h4>
                   {(c.points || []).map((p, j) => (
                     <p key={`cp-${i}-${j}`}>{p}</p>
                   ))}
@@ -851,11 +854,11 @@ export default function ExpertConnectPage() {
         <section className="ec-section">
           <div className="ec-container">
             <div className="ec-section-head">
-              <h3 className="ec-h3">{WHY.title}</h3>
+              <h3 style={{ fontSize: "clamp(2rem, 6vw, 3.5rem)" }} className="ec-h3">{WHY.title}</h3>
             </div>
             <ul className="ec-list">
               {(WHY.points || []).map((p, i) => (
-                <li key={`why-${i}`}>
+                <li style={{fontSize: "clamp(1rem, 2.3vw, 1.5rem)"}} key={`why-${i}`}>
                   <FaCheckCircle /> {p}
                 </li>
               ))}
@@ -874,8 +877,8 @@ export default function ExpertConnectPage() {
         <section className="ec-section ec-section-alt">
           <div className="ec-container">
             <div className="ec-section-head">
-              <h3 className="ec-h3">{FX.title}</h3>
-              {FX.description && <p className="ec-lead">{FX.description}</p>}
+              <h3 style={{ fontSize: "clamp(2rem, 6vw, 3.5rem)" }} className="ec-h3">{FX.title}</h3>
+              {FX.description && <p style={{ fontSize: "clamp(1rem, 2.3vw, 1.5rem)", }} className="ec-lead">{FX.description}</p>}
             </div>
             {FX.whyJoin && (
               <div className="ec-split">
@@ -883,7 +886,7 @@ export default function ExpertConnectPage() {
                   <h4 className="ec-h4">{FX.whyJoin.title}</h4>
                   <ul className="ec-list">
                     {(FX.whyJoin.points || []).map((p, i) => (
-                      <li key={`wj-${i}`}><FaCheckCircle /> {p}</li>
+                      <li style={{fontSize: "clamp(1rem, 2.3vw, 1.5rem)", }} key={`wj-${i}`}><FaCheckCircle /> {p}</li>
                     ))}
                   </ul>
                 </div>
@@ -891,7 +894,7 @@ export default function ExpertConnectPage() {
                   <h4 className="ec-h4">{FX.gettingStarted?.title || "Getting Started is Easy"}</h4>
                   <ol className="ec-list numbered">
                     {(FX.gettingStarted?.steps || []).map((s, i) => (
-                      <li key={`gs-${i}`}>{s}</li>
+                      <li style={{fontSize: "clamp(1rem, 2.3vw, 1.5rem)"}} key={`gs-${i}`}>{s}</li>
                     ))}
                   </ol>
                   {FX.cta && (
@@ -927,8 +930,8 @@ export default function ExpertConnectPage() {
               />
             </div>
             <div className="ec-split-content">
-              <h3 className="ec-h3">{t.register.title}</h3>
-              {t.register.description && <p className="ec-lead">{t.register.description}</p>}
+              <h3 style={{ fontSize: "clamp(2rem, 6vw, 3.5rem)", color: "#000" }} className="ec-h3">{t.register.title}</h3>
+              {t.register.description && <p style={{ fontSize: "clamp(1rem, 2.3vw, 1.5rem)", color: "#000" }} className="ec-lead">{t.register.description}</p>}
               <div className="ec-hero-cta">
                 <button
                   className="btn btn-primary"
@@ -1004,7 +1007,7 @@ export default function ExpertConnectPage() {
       {/* CTA BAR (sticky) */}
       <section className="ec-cta">
         <div className="ec-cta-inner">
-          <div className="ec-cta-left"><FaRocket /><div><h3>{t?.cta?.title || "Ready to move faster?"}</h3><p>{t?.cta?.subtitle || "Join as an expert or request one."}</p></div></div>
+          <div className="ec-cta-left"><FaRocket /><div><h3 style={{ fontSize: "clamp(2rem, 6vw, 3.5rem)", color: "#F63946" }}>{t?.cta?.title || "Ready to move faster?"}</h3><p style={{ fontSize: "clamp(1rem, 2.3vw, 1.5rem)", color: "#000" }}>{t?.cta?.subtitle || "Join as an expert or request one."}</p></div></div>
           <div className="ec-cta-right">
             <button
               className="btn btn-primary"

@@ -1,5 +1,5 @@
 .pageshell {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: nunito, "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 /* HERO */
@@ -21,7 +21,8 @@
 }
 
 .pageshell-hero h1 {
-  font-size: 5rem;
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 100;
   margin-bottom: 1rem;
   color: #F1C40F;
 }

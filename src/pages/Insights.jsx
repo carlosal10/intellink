@@ -106,7 +106,7 @@ export default function Insights() {
         style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url(${hero.bgImage})` }}
       >
         <div className="insights-hero-content">
-          {hero.chip && <div className="hero-chip">{hero.chip}</div>}
+          
           <h2>{hero.header}</h2>
           <p>{hero.tagline}</p>
           {hero.subheadline && <p className="hero-sub">{hero.subheadline}</p>}
@@ -224,8 +224,8 @@ export default function Insights() {
             {productsExplainer.map((p, i) => (
               <div className="product-card" key={i}>
                 <h3 className="product-title">{p.title}</h3>
-                <ul className="product-bullets">
-                  {(p.bullets || []).map((b, j) => (<li key={j}>{b}</li>))}
+                <ul style={{ listStyle: "none", padding: 0, }} className="product-bullets">
+                  {(p.bullets || []).map((b, j) => (<li style={{ fontSize: "clamp(1rem, 2vw, 1.5rem)", color: "#000" }} key={j}>{b}</li>))}
                 </ul>
                 {p.cta && <button className="cta-btn product-cta">{p.cta}</button>}
               </div>

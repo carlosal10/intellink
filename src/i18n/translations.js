@@ -367,7 +367,7 @@ tradeLink: {
     title: "Ready to Connect?",
     desc:
       "Reach out today to discover how TradeLink™ can support your business growth across Japan and Africa.",
-    contactInfo: "+81-80-5643-1501 · www.intellink-nippon.co.jp · g-owuor@intellink-nippon.co.jp",
+    contactInfo: "www.intellink-nippon.co.jp · info@intellink-nippon.co.jp",
     button: "Connect with a Partner"
   }
 },
@@ -412,7 +412,7 @@ marketLink: {
     ]
   },
   cases: {
-    title: "Success in Action: MarketIntel™ Use Cases",
+    title: "Use Cases",
     items: [
       "Japanese SME Entering African Consumer Market — A Japanese cosmetics company lacked insights into Kenyan consumer preferences and distribution channels. MarketIntel™ ran consumer surveys, retail audits, and competitor analysis, delivering data-driven recommendations for positioning and pricing. Result: Successful launch with high initial acceptance and distribution agreements with key retailers.",
       "African Agribusiness Feasibility Study for Japan — A Ghanaian cocoa cooperative was uncertain about market size, compliance, and logistics. MarketIntel™ delivered a detailed feasibility study including market sizing, cost analysis, and regulatory guidance. Result: Clear visibility on opportunities and risks, enabling a strategic and cost-effective entry plan.",

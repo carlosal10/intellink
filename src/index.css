@@ -3,7 +3,7 @@ html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-family: nunito, "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background-color: #F5F5F5;
   color: #333333;
 }
@@ -77,3 +77,369 @@ html, body, #root {
   background-color: #0B2545;
   color: #ffffff;
 }
+
+/* --------------------------------------------------
+   Global Typography & Section Alternation
+   - Applies the ExpertConnect typography across pages
+   - Alternates section backgrounds harmonically across sections
+--------------------------------------------------- */
+
+:root{
+  --brand-navy: #0B2545;
+  --brand-red: maroon;          /* Red / Maroon */
+  --brand-gold: #F1C40F;         /* Yellow */
+  --brand-maroon: #8B1E2D;       /* Optional deeper accent */
+  --bg-white: #ffffff;
+  --bg-red-soft: #FFE8EC;        /* soft red tint */
+  --bg-gold-soft: #FFF6CC;       /* soft yellow tint */
+}
+
+/* Page wrappers */
+.marketlink-page,
+.ec-shell,
+.about2,
+.services-page,
+.sectors-page,
+.pageshell,
+.home,
+.aj-shell,
+.contact,
+.insights-section,
+.insights-hero,
+.insights-container {
+  font-family: nunito, "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(1rem, 2.3vw, 2rem);
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+/* Titles: lighter weight, 5rem size */
+.marketlink-page h1, .marketlink-page h2, .marketlink-page h3, .marketlink-page h4,
+.ec-shell h1, .ec-shell h2, .ec-shell h3, .ec-shell h4,
+.about2 h1, .about2 h2, .about2 h3, .about2 h4,
+.services-page h1, .services-page h2, .services-page h3, .services-page h4,
+.sectors-page h1, .sectors-page h2, .sectors-page h3, .sectors-page h4,
+.pageshell h1, .pageshell h2, .pageshell h3, .pageshell h4,
+.home h1, .home h2, .home h3, .home h4,
+.aj-shell h1, .aj-shell h2, .aj-shell h3, .aj-shell h4,
+.contact h1, .contact h2, .contact h3, .contact h4,
+.insights-section h1, .insights-section h2, .insights-section h3, .insights-section h4,
+.insights-hero h1, .insights-hero h2 {
+  font-weight: 100;
+  color: var(--brand-gold);
+}
+
+/* Common hero titles across pages set to 5rem */
+.ec-hero-title,
+.marketlink-hero h1,
+.about-hero-title,
+.services-title,
+.sectors-hero-inner h1,
+.pageshell-hero h1,
+.aj-title,
+.section-title h2 {
+  font-weight: 100 !important;
+  font-size: clamp(2rem, 6vw, 5rem) !important;
+}
+
+/* Body-weight reinforcement (anchors, labels, lists) */
+.marketlink-page p, .marketlink-page li, .marketlink-page a:not(.btn), .marketlink-page label,
+.ec-shell p, .ec-shell li, .ec-shell a:not(.btn), .ec-shell label,
+.about2 p, .about2 li, .about2 a:not(.btn), .about2 label,
+.services-page p, .services-page li, .services-page a:not(.btn), .services-page label,
+.sectors-page p, .sectors-page li, .sectors-page a:not(.btn), .sectors-page label,
+.pageshell p, .pageshell li, .pageshell a:not(.btn), .pageshell label,
+.home p, .home li, .home a:not(.btn), .home label,
+.aj-shell p, .aj-shell li, .aj-shell a:not(.btn), .aj-shell label,
+.contact p, .contact li, .contact a:not(.btn), .contact label,
+.insights-section p, .insights-section li, .insights-section a:not(.btn), .insights-section label {
+  font-weight: 200;
+}
+
+/* Alternating backgrounds (4-step, vibrant) */
+.marketlink-page > section:nth-of-type(4n+1),
+.ec-shell > section:nth-of-type(4n+1),
+.services-page > section:nth-of-type(4n+1),
+.pageshell > section:nth-of-type(4n+1),
+.home > section:nth-of-type(4n+1),
+.aj-shell > section:nth-of-type(4n+1) { background: var(--bg-white); }
+
+.marketlink-page > section:nth-of-type(4n+2),
+.ec-shell > section:nth-of-type(4n+2),
+.services-page > section:nth-of-type(4n+2),
+.pageshell > section:nth-of-type(4n+2),
+.home > section:nth-of-type(4n+2),
+.aj-shell > section:nth-of-type(4n+2) { background: var(--bg-gold-soft); }
+
+.marketlink-page > section:nth-of-type(4n+3),
+.ec-shell > section:nth-of-type(4n+3),
+.services-page > section:nth-of-type(4n+3),
+.pageshell > section:nth-of-type(4n+3),
+.home > section:nth-of-type(4n+3),
+.aj-shell > section:nth-of-type(4n+3) { background: var(--brand-red); color: #ffffff; }
+
+.marketlink-page > section:nth-of-type(4n+4),
+.ec-shell > section:nth-of-type(4n+4),
+.services-page > section:nth-of-type(4n+4),
+.pageshell > section:nth-of-type(4n+4),
+.home > section:nth-of-type(4n+4),
+.aj-shell > section:nth-of-type(4n+4) { background: var(--bg-red-soft); }
+
+/* Alternation for wrappers that use non-section children */
+.about2 > *:not(style):nth-child(4n+1),
+.sectors-page > *:not(style):nth-child(4n+1) { background: var(--bg-white); }
+.about2 > *:not(style):nth-child(4n+2),
+.sectors-page > *:not(style):nth-child(4n+2) { background: var(--bg-gold-soft); }
+.about2 > *:not(style):nth-child(4n+3),
+.sectors-page > *:not(style):nth-child(4n+3) { background: var(--brand-red); color: #fff; }
+.about2 > *:not(style):nth-child(4n+4),
+.sectors-page > *:not(style):nth-child(4n+4) { background: var(--bg-red-soft); }
+
+/* Insights sections (no top-level wrapper) */
+.insights-section:nth-of-type(4n+1) { background: var(--bg-white); }
+.insights-section:nth-of-type(4n+2) { background: var(--bg-gold-soft); }
+.insights-section:nth-of-type(4n+3) { background: var(--brand-red); color: #fff; }
+.insights-section:nth-of-type(4n+4) { background: var(--bg-red-soft); }
+
+/* Contrast & heading color adjustments per background tint */
+/* Gold-soft sections: prefer red headings, darker body text, vivid links */
+.marketlink-page > section:nth-of-type(4n+2) h1,
+.marketlink-page > section:nth-of-type(4n+2) h2,
+.marketlink-page > section:nth-of-type(4n+2) h3,
+.marketlink-page > section:nth-of-type(4n+2) h4,
+.ec-shell > section:nth-of-type(4n+2) h1,
+.ec-shell > section:nth-of-type(4n+2) h2,
+.ec-shell > section:nth-of-type(4n+2) h3,
+.ec-shell > section:nth-of-type(4n+2) h4,
+.services-page > section:nth-of-type(4n+2) h1,
+.services-page > section:nth-of-type(4n+2) h2,
+.services-page > section:nth-of-type(4n+2) h3,
+.services-page > section:nth-of-type(4n+2) h4,
+.pageshell > section:nth-of-type(4n+2) h1,
+.pageshell > section:nth-of-type(4n+2) h2,
+.pageshell > section:nth-of-type(4n+2) h3,
+.pageshell > section:nth-of-type(4n+2) h4,
+.home > section:nth-of-type(4n+2) h1,
+.home > section:nth-of-type(4n+2) h2,
+.home > section:nth-of-type(4n+2) h3,
+.home > section:nth-of-type(4n+2) h4,
+.aj-shell > section:nth-of-type(4n+2) h1,
+.aj-shell > section:nth-of-type(4n+2) h2,
+.aj-shell > section:nth-of-type(4n+2) h3,
+.aj-shell > section:nth-of-type(4n+2) h4,
+.insights-section:nth-of-type(4n+2) h1,
+.insights-section:nth-of-type(4n+2) h2,
+.insights-section:nth-of-type(4n+2) h3,
+.insights-section:nth-of-type(4n+2) h4,
+.about2 > *:not(style):nth-child(4n+2) h1,
+.about2 > *:not(style):nth-child(4n+2) h2,
+.about2 > *:not(style):nth-child(4n+2) h3,
+.about2 > *:not(style):nth-child(4n+2) h4,
+.sectors-page > *:not(style):nth-child(4n+2) h1,
+.sectors-page > *:not(style):nth-child(4n+2) h2,
+.sectors-page > *:not(style):nth-child(4n+2) h3,
+.sectors-page > *:not(style):nth-child(4n+2) h4 { color: var(--brand-red); }
+
+.marketlink-page > section:nth-of-type(4n+2) p,
+.marketlink-page > section:nth-of-type(4n+2) li,
+.ec-shell > section:nth-of-type(4n+2) p,
+.ec-shell > section:nth-of-type(4n+2) li,
+.services-page > section:nth-of-type(4n+2) p,
+.services-page > section:nth-of-type(4n+2) li,
+.pageshell > section:nth-of-type(4n+2) p,
+.pageshell > section:nth-of-type(4n+2) li,
+.home > section:nth-of-type(4n+2) p,
+.home > section:nth-of-type(4n+2) li,
+.aj-shell > section:nth-of-type(4n+2) p,
+.aj-shell > section:nth-of-type(4n+2) li,
+.insights-section:nth-of-type(4n+2) p,
+.insights-section:nth-of-type(4n+2) li,
+.about2 > *:not(style):nth-child(4n+2) p,
+.about2 > *:not(style):nth-child(4n+2) li,
+.sectors-page > *:not(style):nth-child(4n+2) p,
+.sectors-page > *:not(style):nth-child(4n+2) li { color: #21314a; }
+
+.marketlink-page > section:nth-of-type(4n+2) a,
+.ec-shell > section:nth-of-type(4n+2) a,
+.services-page > section:nth-of-type(4n+2) a,
+.pageshell > section:nth-of-type(4n+2) a,
+.home > section:nth-of-type(4n+2) a,
+.aj-shell > section:nth-of-type(4n+2) a,
+.insights-section:nth-of-type(4n+2) a,
+.about2 > *:not(style):nth-child(4n+2) a,
+.sectors-page > *:not(style):nth-child(4n+2) a { color: var(--brand-red); }
+
+/* Solid red sections: prefer gold headings, white body, white links */
+.marketlink-page > section:nth-of-type(4n+3) h1,
+.marketlink-page > section:nth-of-type(4n+3) h2,
+.marketlink-page > section:nth-of-type(4n+3) h3,
+.marketlink-page > section:nth-of-type(4n+3) h4,
+.ec-shell > section:nth-of-type(4n+3) h1,
+.ec-shell > section:nth-of-type(4n+3) h2,
+.ec-shell > section:nth-of-type(4n+3) h3,
+.ec-shell > section:nth-of-type(4n+3) h4,
+.services-page > section:nth-of-type(4n+3) h1,
+.services-page > section:nth-of-type(4n+3) h2,
+.services-page > section:nth-of-type(4n+3) h3,
+.services-page > section:nth-of-type(4n+3) h4,
+.pageshell > section:nth-of-type(4n+3) h1,
+.pageshell > section:nth-of-type(4n+3) h2,
+.pageshell > section:nth-of-type(4n+3) h3,
+.pageshell > section:nth-of-type(4n+3) h4,
+.home > section:nth-of-type(4n+3) h1,
+.home > section:nth-of-type(4n+3) h2,
+.home > section:nth-of-type(4n+3) h3,
+.home > section:nth-of-type(4n+3) h4,
+.aj-shell > section:nth-of-type(4n+3) h1,
+.aj-shell > section:nth-of-type(4n+3) h2,
+.aj-shell > section:nth-of-type(4n+3) h3,
+.aj-shell > section:nth-of-type(4n+3) h4,
+.insights-section:nth-of-type(4n+3) h1,
+.insights-section:nth-of-type(4n+3) h2,
+.insights-section:nth-of-type(4n+3) h3,
+.insights-section:nth-of-type(4n+3) h4,
+.about2 > *:not(style):nth-child(4n+3) h1,
+.about2 > *:not(style):nth-child(4n+3) h2,
+.about2 > *:not(style):nth-child(4n+3) h3,
+.about2 > *:not(style):nth-child(4n+3) h4,
+.sectors-page > *:not(style):nth-child(4n+3) h1,
+.sectors-page > *:not(style):nth-child(4n+3) h2,
+.sectors-page > *:not(style):nth-child(4n+3) h3,
+.sectors-page > *:not(style):nth-child(4n+3) h4 { color: var(--brand-gold); }
+
+.marketlink-page > section:nth-of-type(4n+3) p,
+.marketlink-page > section:nth-of-type(4n+3) li,
+.ec-shell > section:nth-of-type(4n+3) p,
+.ec-shell > section:nth-of-type(4n+3) li,
+.services-page > section:nth-of-type(4n+3) p,
+.services-page > section:nth-of-type(4n+3) li,
+.pageshell > section:nth-of-type(4n+3) p,
+.pageshell > section:nth-of-type(4n+3) li,
+.home > section:nth-of-type(4n+3) p,
+.home > section:nth-of-type(4n+3) li,
+.aj-shell > section:nth-of-type(4n+3) p,
+.aj-shell > section:nth-of-type(4n+3) li,
+.insights-section:nth-of-type(4n+3) p,
+.insights-section:nth-of-type(4n+3) li,
+.about2 > *:not(style):nth-child(4n+3) p,
+.about2 > *:not(style):nth-child(4n+3) li,
+.sectors-page > *:not(style):nth-child(4n+3) p,
+.sectors-page > *:not(style):nth-child(4n+3) li { color: #ffffff; }
+
+.marketlink-page > section:nth-of-type(4n+3) a,
+.ec-shell > section:nth-of-type(4n+3) a,
+.services-page > section:nth-of-type(4n+3) a,
+.pageshell > section:nth-of-type(4n+3) a,
+.home > section:nth-of-type(4n+3) a,
+.aj-shell > section:nth-of-type(4n+3) a,
+.insights-section:nth-of-type(4n+3) a,
+.about2 > *:not(style):nth-child(4n+3) a,
+.sectors-page > *:not(style):nth-child(4n+3) a { color: #ffffff; }
+
+/* Soft red sections (4n+4): gold headings, darker body, navy links */
+.marketlink-page > section:nth-of-type(4n+4) h1,
+.marketlink-page > section:nth-of-type(4n+4) h2,
+.marketlink-page > section:nth-of-type(4n+4) h3,
+.marketlink-page > section:nth-of-type(4n+4) h4,
+.ec-shell > section:nth-of-type(4n+4) h1,
+.ec-shell > section:nth-of-type(4n+4) h2,
+.ec-shell > section:nth-of-type(4n+4) h3,
+.ec-shell > section:nth-of-type(4n+4) h4,
+.services-page > section:nth-of-type(4n+4) h1,
+.services-page > section:nth-of-type(4n+4) h2,
+.services-page > section:nth-of-type(4n+4) h3,
+.services-page > section:nth-of-type(4n+4) h4,
+.pageshell > section:nth-of-type(4n+4) h1,
+.pageshell > section:nth-of-type(4n+4) h2,
+.pageshell > section:nth-of-type(4n+4) h3,
+.pageshell > section:nth-of-type(4n+4) h4,
+.home > section:nth-of-type(4n+4) h1,
+.home > section:nth-of-type(4n+4) h2,
+.home > section:nth-of-type(4n+4) h3,
+.home > section:nth-of-type(4n+4) h4,
+.aj-shell > section:nth-of-type(4n+4) h1,
+.aj-shell > section:nth-of-type(4n+4) h2,
+.aj-shell > section:nth-of-type(4n+4) h3,
+.aj-shell > section:nth-of-type(4n+4) h4,
+.insights-section:nth-of-type(4n+4) h1,
+.insights-section:nth-of-type(4n+4) h2,
+.insights-section:nth-of-type(4n+4) h3,
+.insights-section:nth-of-type(4n+4) h4,
+.about2 > *:not(style):nth-child(4n+4) h1,
+.about2 > *:not(style):nth-child(4n+4) h2,
+.about2 > *:not(style):nth-child(4n+4) h3,
+.about2 > *:not(style):nth-child(4n+4) h4,
+.sectors-page > *:not(style):nth-child(4n+4) h1,
+.sectors-page > *:not(style):nth-child(4n+4) h2,
+.sectors-page > *:not(style):nth-child(4n+4) h3,
+.sectors-page > *:not(style):nth-child(4n+4) h4 { color: var(--brand-gold); }
+
+.marketlink-page > section:nth-of-type(4n+4) p,
+.marketlink-page > section:nth-of-type(4n+4) li,
+.ec-shell > section:nth-of-type(4n+4) p,
+.ec-shell > section:nth-of-type(4n+4) li,
+.services-page > section:nth-of-type(4n+4) p,
+.services-page > section:nth-of-type(4n+4) li,
+.pageshell > section:nth-of-type(4n+4) p,
+.pageshell > section:nth-of-type(4n+4) li,
+.home > section:nth-of-type(4n+4) p,
+.home > section:nth-of-type(4n+4) li,
+.aj-shell > section:nth-of-type(4n+4) p,
+.aj-shell > section:nth-of-type(4n+4) li,
+.insights-section:nth-of-type(4n+4) p,
+.insights-section:nth-of-type(4n+4) li,
+.about2 > *:not(style):nth-child(4n+4) p,
+.about2 > *:not(style):nth-child(4n+4) li,
+.sectors-page > *:not(style):nth-child(4n+4) p,
+.sectors-page > *:not(style):nth-child(4n+4) li { color: #21314a; }
+
+.marketlink-page > section:nth-of-type(4n+4) a,
+.ec-shell > section:nth-of-type(4n+4) a,
+.services-page > section:nth-of-type(4n+4) a,
+.pageshell > section:nth-of-type(4n+4) a,
+.home > section:nth-of-type(4n+4) a,
+.aj-shell > section:nth-of-type(4n+4) a,
+.insights-section:nth-of-type(4n+4) a,
+.about2 > *:not(style):nth-child(4n+4) a,
+.sectors-page > *:not(style):nth-child(4n+4) a { color: var(--brand-navy); }
+
+/* Button sizing globally reduced */
+.btn, .abtn, .aj-btn, .hero-cta, .cta-btn, .cta-button, .submit-btn, .svc-link, .ec-card .btn-card {
+  font-size: clamp(0.9rem, 1.4vw, 1.15rem) !important;
+}
+
+/* Consistent hero subtitle sizing (max 3rem) */
+.ec-hero-sub, .ec-hero-desc,
+.marketlink-hero p,
+.pageshell-hero p,
+.services-subtext,
+.about-hero-sub,
+.sectors-hero-inner p,
+.aj-sub,
+.insights-hero p {
+  font-size: clamp(1rem, 3vw, 2rem) !important;
+  font-weight: 200;
+}
+
+/* Ensure hero backgrounds do not repeat */
+.ec-hero, .marketlink-hero, .services-hero-bg, .pageshell-hero, .about-hero {
+  background-repeat: no-repeat !important;
+}
+
+/* Responsive scaling nudges */
+@media (max-width: 1200px){
+  .marketlink-page, .ec-shell, .about2, .services-page, .sectors-page, .pageshell, .home, .aj-shell, .contact, .insights-section, .insights-hero, .insights-container {
+    font-size: clamp(1rem, 2vw, 1.8rem);
+  }
+}
+@media (max-width: 900px){
+  .marketlink-page, .ec-shell, .about2, .services-page, .sectors-page, .pageshell, .home, .aj-shell, .contact, .insights-section, .insights-hero, .insights-container {
+    font-size: clamp(0.95rem, 2.2vw, 1.4rem);
+  }
+}
+@media (max-width: 600px){
+  .marketlink-page, .ec-shell, .about2, .services-page, .sectors-page, .pageshell, .home, .aj-shell, .contact, .insights-section, .insights-hero, .insights-container {
+    font-size: 1.05rem;
+  }
+}
+

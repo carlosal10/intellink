@@ -99,13 +99,19 @@ export default function AfricaToJapanRecruitment() {
   return (
     <div className="aj-shell">
       {/* ===== HERO (Image #1) ===== */}
-      <header
-        className="aj-hero"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1920&auto=format&fit=crop')",
-        }}
-      >
+      <section className="aj-hero">
+        <video
+          src="images/careers.mp4"
+          alt="Business meeting"
+          loading="lazy"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="aj-hero-media"
+        />
+
+        
         <div className="aj-hero-overlay" />
         <div className="aj-hero-inner">
           <span className="aj-chip">Africa ⇄ Japan</span>
@@ -123,7 +129,7 @@ export default function AfricaToJapanRecruitment() {
             <button onClick={() => { setFormType('intern'); setShowForm(true); }} className="aj-btn aj-btn-ghost">Apply for Internship / Graduate</button>
           </div>
         </div>
-      </header>
+      </section>
 
       {/* ===== OVERVIEW (Card) ===== */}
       <section id="overview" className="aj-section">
@@ -139,10 +145,14 @@ export default function AfricaToJapanRecruitment() {
       <section className="aj-section">
         <div className="aj-container aj-split">
           <div className="aj-split-media">
-            <img
-              src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1400&auto=format&fit=crop"
+            <video
+              src="images/careers0.mp4"
               alt="Advisory collaboration"
               loading="lazy"
+              autoPlay
+              muted
+              loop
+              playsInline
             />
           </div>
           <div className="aj-split-content">
@@ -187,10 +197,15 @@ export default function AfricaToJapanRecruitment() {
 
       {/* ===== WIDE IMAGE (Image #3) ===== */}
       <section className="aj-banner">
-        <img
-          src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2000&auto=format&fit=crop"
+        <video
+          src="images/careers1.mp4"
           alt="Strategy workshop"
           loading="lazy"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="aj-banner-media"
         />
         <div className="aj-banner-overlay">
           <p className="aj-banner-text">Where ambition meets execution.</p>

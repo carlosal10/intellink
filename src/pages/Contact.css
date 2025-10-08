@@ -1,6 +1,6 @@
 .contact {
   padding: 60px 20px;
-  background-color: #F5F5F5; /* Soft Grey */
+  background: transparent; /* Inherit alternating backgrounds */
 }
 
 .contact-container {
@@ -10,16 +10,17 @@
 }
 
 .contact h2 {
-  font-size: 1.8rem;
+  font-size: clamp(2rem, 6vw, 5rem);
   color: #0B2545; /* Navy Blue */
   margin-bottom: 12px;
-  font-weight: 700;
+  font-weight: 100;
 }
 
 .subtext {
   color: #555;
   font-size: 1rem;
   margin-bottom: 32px;
+  font-weight: 200;
 }
 
 .contact-form {

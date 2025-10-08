@@ -25,6 +25,9 @@ export default function About() {
         style={{
           backgroundImage:
             "linear-gradient(180deg, rgba(11,37,69,.55), rgba(0,0,0,.65)), url('/images/1p.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
         data-aos="fade-up"
       >

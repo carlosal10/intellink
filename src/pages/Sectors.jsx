@@ -144,6 +144,8 @@ export default function Sectors() {
         className="why-wrapper"
         style={{
           backgroundImage: "url('/images/whyafrikawhyjapan.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         <div className="why-overlay" />

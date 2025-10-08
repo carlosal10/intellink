@@ -16,7 +16,7 @@
 .services-page{
   background: var(--svc-bg);
   color: var(--svc-text);
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-family: nunito, "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   overflow-x: hidden;
 }
 
@@ -67,8 +67,8 @@
 
 .services-title{
   margin: 10px 0 8px;
-  font-size: clamp(3rem, 4.8vw, 5rem);
-  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 100;
   color: #F1C40F;
   letter-spacing: -0.02em;
 }
