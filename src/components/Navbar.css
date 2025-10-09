@@ -10,7 +10,7 @@
 }
 
 .navbar{
-  position: absolute;
+  position: sticky;
   top: 0; left: 0; right: 0;
   z-index: 10001;
   display: flex;
@@ -20,9 +20,6 @@
   backdrop-filter: blur(8px);
   padding: 0.6rem 1.2rem;
   box-shadow: 0 2px 6px rgba(0,0,0,.15);
-  height: 20%;
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 /* Logo */
@@ -41,7 +38,6 @@
   margin-right: 50px;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 4.2%;
 }
 .desktop-links a,
 .desktop-links button.nav-linklike{

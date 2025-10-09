@@ -12,10 +12,9 @@
 }
 
 .sectors-page{
-  font-family:"Segoe UI",sans-serif;
+  font-family: nunito, "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color:var(--sec-text);
   background:var(--sec-bg);
-  margin-top:10%; /* fixed navbar offset */
   overflow-x:hidden;
 }
 
@@ -32,14 +31,14 @@
 }
 .sectors-hero-inner{
   position:relative;z-index:1;color:#F1C40F;text-align:center;
-  padding:3.5rem 1rem 4.5rem;max-width:980px;
+  padding:3.5rem 2.5% 4.5rem;max-width:95vw;
 }
 .sectors-hero-inner h1{
-  font-size: clamp(2rem, 4.2vw, 3rem);
-  margin:0 0 .5rem;font-weight:800;color:#F1C40F;
+  font-size: clamp(2rem, 6vw, 5rem);
+  margin:0 0 .5rem;font-weight:100;color:#F1C40F;
 }
 .sectors-hero-inner p{
-  margin:0 auto;max-width:800px;opacity:.95;line-height:1.7;
+  margin:0 auto;max-width:95vw;opacity:.95;line-height:1.7;
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   color: #d7e7fb;
 }
@@ -47,7 +46,7 @@
 /* Industries */
 .industries-section{padding:56px 0}
 .industries-grid{
-  max-width:1150px;margin:0 auto;padding:0 1rem;
+  max-width:95vw;margin:0 auto;padding:0 2.5%;
   display:grid;gap:18px;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 }
@@ -70,19 +69,24 @@
   color:var(--sec-primary);margin-bottom:12px;
 }
 .client-list{
-  list-style:none;margin:0 auto;max-width:900px;padding:0 1rem;
+  list-style:none;margin:0 auto;max-width:95vw;padding:0 2.5%;
   display:grid;gap:10px;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 }
 .client-list li{
-  background:#fff;border:1px solid #eef1f5;border-radius:999px;
-  padding:10px 14px;color:#21314a;box-shadow:0 4px 12px rgba(0,0,0,.04);
+
+  border:1px solid #eef1f5;
+  border-radius:999px;
+  padding:10px 14px;
+  color:#000000;
+  box-shadow:0 4px 12px rgba(0,0,0,.04);
+  font-size: 1.4rem;
 }
 
 /* WHY — Africa / Japan / Now */
 .why-wrapper{
   position:relative;overflow:hidden;margin:10px auto 64px;
-  border-radius:20px;max-width:1200px;
+  border-radius:20px;max-width:95vw;
   background-position:center;background-size:cover;background-repeat:no-repeat;
 }
 
@@ -105,14 +109,14 @@
 
 /* Why grid cards */
 .why-grid{
-  display:grid;gap:18px;max-width:1100px;margin:0 auto 24px;
+  display:grid;gap:18px;max-width:95vw;margin:0 auto 24px;
   grid-template-columns:repeat(3,1fr);
 }
 @media (max-width: 960px){
   .why-grid{grid-template-columns:1fr}
 }
 .why-card{
-  background:linear-gradient(180deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,.06) 100%);
+  background:linear-gradient(180deg, rgba(14, 13, 13, 0.404) 0%, rgba(0, 0, 0, 0.493) 100%);
   border:1px solid rgba(255,255,255,.22);
   border-radius:16px;padding:18px 16px 20px;
   box-shadow:0 10px 30px rgba(0,0,0,.18);
@@ -129,7 +133,7 @@
   margin-bottom:10px;font-size:1.1rem;color:#10243a;font-weight:700;
   background:#fff;box-shadow:0 8px 20px rgba(255,255,255,.18);
 }
-.badge-africa{background:linear-gradient(135deg,#fff,#e0f4ff)}
+.badge-africa{background:linear-gradient(135deg,#f0f4ff,#e0f4ff)}
 .badge-japan{background:linear-gradient(135deg,#fff,#ffe6ea)}
 .badge-now{background:linear-gradient(135deg,#fff,#fff6db)}
 

@@ -35,6 +35,18 @@ const translations = {
     headerDescription:
       "At Intellink Nippon Consulting, we help companies, governments, and innovators bridge opportunities between Japan and Africa. Our services are designed to simplify market entry, connect you with the right expertise, and make cross-border trade seamless.",
 
+       expertConnect: {
+      title: "ExpertConnect™",
+      description: "Connecting you with the expertise you need to succeed.",
+      points: [
+        "Access to sector specialists and thought leaders",
+        "Knowledge bank with curated insights & reports",
+        "Tailored business advisory sessions",
+        "Strategic workshops & cultural orientation"
+      ],
+      cta: "Get Connected →"
+    },
+
     marketLinks: {
       title: "MarketLink™",
       description: "Helping businesses unlock opportunities with actionable insights and strategies.",
@@ -48,17 +60,7 @@ const translations = {
       cta: "Learn More →"
     },
 
-    expertConnect: {
-      title: "ExpertConnect™",
-      description: "Connecting you with the expertise you need to succeed.",
-      points: [
-        "Access to sector specialists and thought leaders",
-        "Knowledge bank with curated insights & reports",
-        "Tailored business advisory sessions",
-        "Strategic workshops & cultural orientation"
-      ],
-      cta: "Get Connected →"
-    },
+   
 
     tradeLinks: {
       title: "TradeLink™",
@@ -114,7 +116,7 @@ const translations = {
 
   aboutUs: "About Us",
   aboutText:
-    "Intellink Nippon Consulting was founded in in Tokyo, with a clear mission: to facilitate meaningful business collaboration between Japan and Africa. We recognized the untapped potential of African markets and the growing interest from Japanese companies to expand internationally. Our vision is to serve as a trusted partner, providing insights, advisory, and trade solutions that enable businesses to navigate cross-border opportunities with confidence.",
+    "Intellink Nippon Consulting was founded in Tokyo, with a clear mission: to facilitate meaningful business collaboration between Japan and Africa. We recognized the untapped potential of African markets and the growing interest from Japanese companies to expand internationally. Our vision is to serve as a trusted partner, providing insights, advisory, and trade solutions that enable businesses to navigate cross-border opportunities with confidence.",
 
   whyChooseUs: {
     title: "Why Choose Us",
@@ -183,86 +185,191 @@ const translations = {
         submit: "Schedule a Consultation"
       }
     },
-   insights: {
+    insights: {
       hero: {
-        header: "Unlock Market Knowledge with Expert Insights",
-        tagline: "Practical intelligence to guide your business between Japan and Africa.",
-        cta: "Explore Reports",
+        header: "Insights & Reports",
+        tagline: "Actionable Intelligence for Cross-Border Business",
+        subheadline: "Access in-depth market reports, sectoral insights, and trend analysis to make informed decisions in Japan–Africa business.",
+        body: "Subscribe to receive timely intelligence or purchase individual reports tailored to your strategic needs.",
+        chip: "Premium Intelligence",
+        cta: "Explore Reports & Subscribe",
         bgImage: "/images/InsightsandReports.jpg"
       },
-      overviewTitle: "Overview",
-      overview: "Our Market Insights & Reports delivers actionable intelligence, market trends, and sector analyses to support your strategic decisions. Whether you are exploring new markets, launching products, or evaluating trade opportunities, our reports provide the clarity and context needed to make informed moves.",
-      featuredTitle: "Featured Insights",
+      overviewTitle: "About Insights & Reports",
+      overview: "Insights & Reports is Intellink Nippon Consulting’s premium market intelligence service, providing businesses with reliable, data-driven insights. Whether entering new markets, evaluating investment opportunities, or monitoring sector trends, our publications give you the knowledge you need to act with confidence. By combining cross-border expertise, local market understanding, and global analysis, we deliver reports that help businesses stay ahead of the competition.",
+      featuredTitle: "Our Products",
       featuredInsights: [
-        { title: "Market Entry Analyses", desc: "Feasibility studies and demand forecasts for African and Japanese markets." },
-        { title: "Consumer Behavior Studies", desc: "Surveys, focus groups, and product testing insights." },
-        { title: "Regulatory & Policy Briefs", desc: "Updates on compliance, tariffs, labeling, and non-tariff barriers." },
-        { title: "Sector Spotlights", desc: "In-depth reports on technology, energy, manufacturing, and agribusiness." },
-        { title: "Cross-Cultural Business Guides", desc: "Understanding corporate culture, communication, and relationship-building between Japan and Africa." }
+        { title: "Market Reports", desc: "Identify opportunities · Understand demand · Benchmark competitors. Purchase Options: Individual reports or annual subscriptions." },
+        { title: "Sectoral Insights", desc: "Trends & forecasts · Policy updates · Ops opportunities & risks. Delivery: Monthly or quarterly." },
+        { title: "Custom Research & Advisory", desc: "Feasibility studies · Entry strategies · Custom surveys. Delivery: On-demand, project-based, or subscription-based." }
       ],
-      useCasesTitle: "Use Cases",
+      productsExplainer: [
+        { title: "Market Reports", bullets: ["Identify opportunities","Understand demand","Benchmark competitors"], cta: "Browse Reports" },
+        { title: "Sectoral Insights", bullets: ["Trends & forecasts","Policy updates","Ops opportunities & risks"], cta: "View Insights" },
+        { title: "Custom Research & Advisory", bullets: ["Feasibility studies","Entry strategies","Custom surveys"], cta: "Request Custom" }
+      ],
+      useCasesTitle: "Subscription & Access",
       useCases: [
-        "Japanese manufacturers planning entry into East African markets.",
-        "African exporters seeking access to Japan’s distribution networks.",
-        "Startups and SMEs evaluating demand and pricing strategies before launch.",
-        "Corporations needing up-to-date regulatory and compliance guidance."
+        "Individual Report Purchase: Access single reports as needed",
+        "Monthly Subscription: Receive sectoral and market updates automatically every month",
+        "Annual Subscription: Full access to all reports, insights, and publications throughout the year"
       ],
-      idealUsersTitle: "Ideal Users",
+      idealUsersTitle: "Benefits",
       idealUsers: [
-        "Business executives and strategy teams",
-        "Market researchers and analysts",
-        "Trade and investment professionals",
-        "Entrepreneurs expanding internationally"
+        "Timely intelligence delivered directly to your inbox",
+        "Downloadable PDF or interactive reports",
+        "Stay ahead with insights on Japan–Africa trade, investment, and consumer trends"
+      ],
+      sampleReports: {
+        title: "Sample Reports",
+        items: [
+          "Japanese Renewable Energy Market in Africa – 2025 Outlook: Covers opportunities, regulatory landscape, and potential partners",
+          "Consumer Electronics Trends in West Africa: Insights on demand patterns, distribution channels, and competitor analysis",
+          "African Agricultural Exports to Japan: Market Entry Guide: Step-by-step analysis of requirements, pricing, and logistics"
+        ],
+        cta: "View All Reports"
+      },
+      forBusiness: {
+        title: "For Businesses: Make Intelligent Decisions",
+        items: [
+          "Understand Market Trends: Gain insights into consumer behavior, sector growth, and competitive landscapes",
+          "Plan Strategically: Use data-driven intelligence for market entry, product launches, and investment decisions",
+          "Stay Ahead of Regulatory Changes: Monitor policy updates and compliance requirements in key markets",
+          "Reduce Risk: Make decisions based on verified, credible data instead of assumptions"
+        ],
+        cta: "Subscribe Now to Access Reports & Insights"
+      },
+      forAnalysts: {
+        title: "For Analysts & Contributors: Share Your Expertise",
+        items: [
+          "Publish Research: Share sectoral insights, market analysis, or specialized reports",
+          "Reach Businesses Across Borders: Help Japanese and African companies make informed decisions",
+          "Collaborate on Custom Reports: Work with our research team on on-demand or subscription-based publications",
+          "Gain Recognition: Build visibility as a thought leader in your field"
+        ],
+        cta: "Join Our Analyst Network & Contribute Insights"
+      },
+      whyInsights: {
+        title: "Why Use Our Insights & Reports",
+        items: [
+          "Credible & Verified Data: Research conducted by experienced analysts with local market knowledge",
+          "Cross-Border Expertise: Focused on Japan–Africa business opportunities and challenges",
+          "Actionable Insights: Reports designed to inform decision-making and strategy, not just present data"
+        ],
+        cta: "Subscribe Today and Access the Intelligence You Need"
+      },
+      filters: {
+        sectors: ["Technology","Energy","Manufacturing","Agriculture","Finance","Consumer"],
+        geographies: ["Japan","East Africa","West Africa","Southern Africa","Pan-Africa"],
+        format: ["PDF","Interactive"],
+        year: ["2025","2024","2023"]
+      },
+      catalog: [
+        { slug: "renewable-energy-africa-2025", title: "Japanese Renewable Energy Market in Africa – 2025 Outlook", abstract: "Opportunities, regulatory landscape, and partner ecosystem across key African markets.", sector: "Energy", geography: "Pan-Africa", format: "PDF", year: 2025, length: "48 pages", lastUpdated: "Mar 2025", paid: true, editorsPick: true, reads: 1280, image: "/images/RenewableEnergy.jpg" },
+        { slug: "consumer-electronics-west-africa", title: "Consumer Electronics Trends in West Africa", abstract: "Demand patterns, distribution channels, and competitor positioning in Nigeria and Ghana.", sector: "Consumer", geography: "West Africa", format: "PDF", year: 2024, length: "32 pages", lastUpdated: "Nov 2024", paid: false, editorsPick: false, reads: 980, image: "/images/consumerelec.avif" },
+        { slug: "agri-exports-to-japan-guide", title: "African Agricultural Exports to Japan: Market Entry Guide", abstract: "Requirements, pricing corridors, and logistics for cocoa, coffee, and horticulture.", sector: "Agriculture", geography: "Japan", format: "Interactive", year: 2024, length: "Interactive", lastUpdated: "Oct 2024", paid: true, editorsPick: false, reads: 640, image: "/images/Agritech.jpg" },
+        { slug: "fintech-east-africa-landscape", title: "Fintech Landscape in East Africa – 2025", abstract: "Mobile money, regulatory shifts, and partnership routes for Japanese entrants.", sector: "Finance", geography: "East Africa", format: "PDF", year: 2025, length: "40 pages", lastUpdated: "Feb 2025", paid: true, editorsPick: true, reads: 1510, image: "/images/ict.jpg" }
+      ],
+      subscribe: {
+        plans: [
+          { name: "Individual", price: "—", note: "Pay per report" },
+          { name: "Monthly", price: "KES —", note: "Sectoral + market updates" },
+          { name: "Annual", price: "KES —", note: "All reports + archives" }
+        ]
+      },
+      subscribePlans: [
+        { key: "individual", title: "Individual Purchase", icon: "file", blurb: "Buy single reports as needed.", cta: "Buy a Report", badge: "" },
+        { key: "monthly", title: "Monthly", icon: "sync", blurb: "Sectoral + market updates every month.", cta: "Subscribe Monthly", badge: "Recommended" },
+        { key: "annual", title: "Annual", icon: "globe", blurb: "Full access to all reports + archives.", cta: "Subscribe Annual", badge: "Best Value" }
+      ],
+      benefitsRow: [
+        "⏰ Timely delivery",
+        "📥 Downloadable PDFs",
+        "📊 Stay ahead on trends"
       ],
       ctaSection: {
-        title: "Stay Informed",
-        text: "Stay informed. Make data-driven decisions.",
-        button: "Access Reports →"
+        title: "Subscribe Now",
+        text: "Get actionable intelligence: monthly updates, annual full access, or purchase individual reports.",
+        button: "Explore Reports & Subscribe"
       }
     },
   
     // EN
 tradeLink: {
   hero: {
-    title: "TradeLink™",
-    desc: "Streamlining connections between suppliers, buyers, and markets.",
+    title: "TradeLink™ Services",
+    tagline: "Connecting Your Business Across Borders with Confidence",
+    desc:
+      "Do business in Japan and Africa with precision, trust, and efficiency. TradeLink™ helps you find the right partners, access new markets, and execute projects smoothly—so you can focus on growth while we handle the connections and on-the-ground support.",
+    button: "Connect with a Partner",
     imgAlt: "Trade & Procurement Facilitation"
   },
   intro: {
-    text: "Doing business across borders requires precision, trust, and efficiency. TradeLink™ simplifies procurement, logistics, and trade operations between Japan and Africa, ensuring your business moves forward without costly delays or missteps."
+    text:
+      "Doing business across borders requires precision, trust, and efficiency. At Intellink Nippon Consulting, we help businesses achieve all three by connecting them with the right partners in Japan and Africa. TradeLink™ addresses the common challenges companies face when entering new markets or sourcing partners, including finding reliable contacts, navigating local regulations, and securing on-the-ground support."
   },
   offer: {
-    title: "Solutions Offered",
+    title: "Services",
     imgAlt: "TradeLink Services",
+    imgSrc: "/images/TradeLink2.jpg",
     points: [
-      { title: "Supplier & Buyer Identification", desc: "Quickly discover and connect with reliable trade partners." },
-      { title: "Procurement Facilitation", desc: "Arrange required materials or services efficiently." },
-      { title: "Logistics Support & Supply Chain Optimization", desc: "Streamline shipping, customs, and delivery processes." },
-      { title: "Trade Fairs, Exhibitions & Conferences", desc: "Support participation at global trade events and showcases." }
-    ]
-  },
-  why: {
-    title: "Why TradeLink™?",
-    imgAlt: "TradeLink Advantages",
-    points: [
-      "Fast and secure transactions — minimize delays and risks",
-      "Local knowledge — navigate regulations, culture, and norms",
-      "Trusted network — work only with vetted partners",
-      "Market growth — expand strategically",
-      "End-to-end support — from sourcing to delivery"
+      {
+        title: "Sourcing & Supply Support",
+        body:
+          "Finding the right suppliers or service providers in a foreign market can be time-consuming and risky. TradeLink™ supports businesses in identifying credible partners who meet quality, reliability, and compliance standards. Whether you are looking to source raw materials, finished products, or specialized services, we guide you through the process, ensuring your supply chain is robust and aligned with your business goals. By leveraging our local knowledge and network, we help reduce risks, eliminate delays, and ensure smooth transactions across borders.",
+        cta: "Find the right suppliers or service providers"
+      },
+      {
+        title: "Market Access & Sales Channels",
+        body:
+          "Entering a new market requires more than just a product—it requires the right connections, visibility, and strategy. TradeLink™ assists businesses in accessing new markets through trusted distributors, agents, and local business partners. We also facilitate participation in trade fairs, exhibitions, and conferences, helping companies showcase their products, generate leads, and build relationships. Our expertise ensures that your market entry is strategic, efficient, and targeted, minimizing the common frustration of trying to navigate unfamiliar market landscapes alone.",
+        cta: "Open doors to new markets and channels"
+      },
+      {
+        title: "Events, Seminars & Training",
+        body:
+          "Organizing business events in a foreign country can be a logistical and cultural challenge. TradeLink™ helps companies plan and execute seminars, workshops, and training programs with precision and confidence. We provide on-the-ground coordination, connecting businesses to trusted vendors, venues, speakers, and service providers. For companies struggling to find reliable local support, TradeLink™ ensures that events run smoothly, meet objectives, and reflect professional standards—turning challenges into opportunities for networking, knowledge sharing, and brand building.",
+        cta: "Organize impactful events and training"
+      }
     ]
   },
   cases: {
-    title: "Use Cases",
+    title: "TradeLink™ Use Cases",
     items: [
-      "A Japanese manufacturing firm sourcing raw materials from African markets. TradeLink™ identifies verified suppliers, checks compliance, and coordinates shipping, reducing lead times and customs delays.",
-      "An African agribusiness exporting processed foods to Japan. TradeLink™ identifies Japanese buyers, arranges procurement agreements, and manages customs and logistics, enabling smooth market entry and exhibition at Tokyo food expos."
+      {
+        title: "Sourcing & Supply Support: Jet Fuel Manufacturer",
+        body:
+          "A jet fuel manufacturer based in Africa wanted to source feedstock—used cooking oil—from Japan to produce sustainable aviation fuel. The company faced challenges identifying reliable offtakers and suppliers, navigating Japanese regulations, and ensuring timely logistics for cross-border shipments. Through TradeLink™, Intellink Nippon Consulting connected the manufacturer with verified offtakers and collection partners in Japan, coordinated compliance checks, and facilitated agreements that aligned with both parties’ operational and quality standards.",
+        result:
+          "The manufacturer established a reliable feedstock supply chain, reduced sourcing risks, and scaled sustainable jet fuel production efficiently."
+      },
+      {
+        title: "Market Access & Sales Channels: Cocoa Exporter",
+        body:
+          "A Ugandan coffee exporter aimed to enter the Japanese premium food market but struggled to identify credible distributors and gain exposure to potential buyers. TradeLink™ supported the exporter in accessing Japanese trade fairs and exhibitions, introduced them to qualified distributors and retail partners, and advised on marketing strategies tailored for Japanese consumers.",
+        result:
+          "The exporter launched in Tokyo and Osaka, secured long-term distribution agreements, and expanded their international footprint."
+      },
+      {
+        title: "Events, Seminars & Training: Investment Promotion Seminar",
+        body:
+          "A regional African business association sought to organize a seminar in Tokyo to promote investment opportunities. They faced difficulties finding reliable venues, vendors, and on-the-ground support. Through TradeLink™, Intellink Nippon Consulting handled end-to-end planning and coordination, including venue selection, vendor management, speaker liaison, and event logistics.",
+        result:
+          "The seminar attracted key Japanese investors and partners, increased regional visibility, and generated actionable investment opportunities."
+      }
+    ]
+  },
+  why: {
+    title: "Why TradeLink™ Works",
+    points: [
+      "TradeLink™ bridges the gap between strategic intent and practical execution. By combining local knowledge, credible partnerships, and hands-on support, we help businesses succeed in cross-border trade, reduce risk, and maximize efficiency."
     ]
   },
   cta: {
-    title: "Get Started Today",
-    desc: "Connect with the right trade partners and streamline your operations.",
-    button: "Connect With Local Partners Now →"
+    title: "Ready to Connect?",
+    desc:
+      "Reach out today to discover how TradeLink™ can support your business growth across Japan and Africa.",
+    button: "Connect with a Partner"
   }
 },
 services: {
@@ -290,38 +397,40 @@ services: {
 
 marketLink: {
   hero: {
-    title: "MarketLink™",
-    desc: "Helping businesses unlock opportunities with actionable insights and strategies.",
-    button: "Find Out Where Your Business Can Grow"
+    title: "MarketIntel™",
+    desc: "Insight-Driven Decisions for Cross-Border Success.",
+    body: "Make informed business decisions in Japan and Africa with MarketIntel™. Our consultancy provides actionable insights through market research, consumer surveys, feasibility studies, and regulatory guidance to help you navigate complex cross-border business environments.",
+    button: "Get Market Insights Today"
   },
   intro: {
-    text: "Expanding into new markets requires more than ambition — it requires insight, strategy, and trusted local knowledge. MarketLink™ provides businesses with the intelligence and practical tools to confidently explore and establish themselves across Japan and Africa. Our approach combines local expertise with global insights to ensure your expansion is informed, practical, and actionable."
+    text: "Success in cross-border business requires more than ambition—it demands deep market knowledge, reliable data, and informed strategy. MarketIntel™ equips businesses with practical insights and expert guidance, enabling them to make decisions confidently and minimize risk. Whether entering a new market, assessing investment opportunities, or navigating regulatory frameworks, MarketIntel™ delivers tailored intelligence for your Japan–Africa business ventures."
   },
   offer: {
     title: "Solutions Offered",
     points: [
-      "Market Feasibility Studies & Demand Analysis",
-      "Consumer Surveys & Product Testing",
-      "Regulatory Guidance & Compliance Advisory",
-      "Market Entry Strategy & Localization",
-      "Local Partner Identification"
+      "Market Research & Consumer Surveys Understanding your target market is essential. MarketIntel™ conducts quantitative and qualitative research, including consumer surveys, retail audits, and competitor analysis, to uncover opportunities and gaps. We provide actionable insights that help you design products, marketing strategies, and business models tailored to local preferences and market dynamics.",
+      "Feasibility Studies & Business Assessments Before committing to new markets or investments, it’s crucial to evaluate viability and risk. MarketIntel™ delivers comprehensive feasibility studies, including market sizing, cost analysis, and operational assessments. Our studies help businesses determine the potential for success, optimize resource allocation, and identify the most effective entry strategies. Explore a Feasibility Study for Your Project",
+      "Regulatory & Policy Advisory Navigating cross-border regulations can be complex. MarketIntel™ offers expert advisory on legal, regulatory, and policy matters to ensure compliance and smooth market entry. From import/export requirements to industry-specific regulations, we provide guidance that reduces risk and speeds up decision-making, while aligning your strategy with local and international frameworks."
     ]
   },
   cases: {
     title: "Use Cases",
     items: [
-      "A Japanese consumer electronics company wants to launch its products in Kenya. Using MarketLink™, the company conducted market research, analyzed demand, tested products with focus groups, and identified reliable local partners. Within six months, they successfully launched their products with strong adoption and minimal compliance issues.",
-      "A Japanese manufacturer considering expansion into East Africa engages MarketLink™. We conduct a feasibility study, test products with consumers, and connect them with local distributors. Within months, the company has a validated entry strategy and reliable partners to launch."
+
+      { subtitle: "Japanese SME Entering African Consumer Market",
+       description: "A Japanese cosmetics company lacked insights into Kenyan consumer preferences and distribution channels. MarketIntel™ ran consumer surveys, retail audits, and competitor analysis, delivering data-driven recommendations for positioning and pricing. Result: Successful launch with high initial acceptance and distribution agreements with key retailers." },
+      { subtitle: "African Agribusiness Feasibility Study for Japan",
+       description: "A Ghanaian cocoa cooperative was uncertain about market size, compliance, and logistics. MarketIntel™ delivered a detailed feasibility study including market sizing, cost analysis, and regulatory guidance. Result: Clear visibility on opportunities and risks, enabling a strategic and cost-effective entry plan." },
+      { subtitle: "Regulatory & Policy Advisory for Cross-Border Trade",
+       description: "A regional African agency sought to attract Japanese investors in renewable energy. MarketIntel™ provided regulatory and policy insights with benchmarks and investment-friendly recommendations. Result: A clear policy framework that increased investor confidence and attracted multiple Japanese investors." }
     ]
   },
   ideal: {
-    title: "Ideal Users",
+    title: "Why MarketIntel™ Works",
     items: [
-      "Companies seeking expansion into Japan or African markets",
-      "Startups exploring international growth opportunities",
-      "Trade & investment institutions needing market validation",
-      "Manufacturers seeking local distributors or partners",
-      "Businesses needing regulatory compliance and market insights"
+      "Deliver data-driven insights for market entry, growth, and investment",
+      "Reduce risk and uncertainty in unfamiliar markets",
+      "Combine local knowledge and global perspective for Japan–Africa success"
     ]
   },
   africaJapan: {

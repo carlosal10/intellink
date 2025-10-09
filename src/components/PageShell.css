@@ -1,6 +1,5 @@
 .pageshell {
-  font-family: 'Segoe UI', sans-serif;
-  margin-top: 10%;
+  font-family: nunito, "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 /* HERO */
@@ -22,7 +21,8 @@
 }
 
 .pageshell-hero h1 {
-  font-size: 5rem;
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 100;
   margin-bottom: 1rem;
   color: #F1C40F;
 }
@@ -49,7 +49,7 @@
 
 /* INTRO */
 .pageshell-intro {
-  padding: 3rem 15%;
+  padding: 3rem 2.5%;
   background: #F5F5F5;
   font-size: 1.1rem;
   text-align: center;
@@ -65,7 +65,7 @@
 .pageshell-about {
   display: flex;
   flex-wrap: wrap;
-  padding: 3rem 10%;
+  padding: 3rem 2.5%;
   align-items: center;
 }
 
@@ -97,7 +97,7 @@
 
 /* SERVICES */
 .pageshell-services {
-  padding: 3rem 10%;
+  padding: 3rem 2.5%;
   text-align: center;
 }
 
@@ -132,7 +132,7 @@
   position: relative;
   background: #0B2545;
   color: white;
-  padding: 3rem 15%;
+  padding: 3rem 2.5%;
   overflow: hidden;
   border-radius: 50px;
 }
@@ -151,7 +151,7 @@
 
 /* IDEAL */
 .pageshell-ideal {
-  padding: 3rem 10%;
+  padding: 3rem 2.5%;
   text-align: center;
 }
 
@@ -176,7 +176,7 @@
   padding: 4rem 2rem;
   border-radius: 2rem;
   box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-  max-width: 1200px;
+  max-width: 95vw;
   margin: 3rem auto;
   display: flex;
   flex-direction: column;

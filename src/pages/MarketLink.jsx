@@ -64,11 +64,15 @@ export default function MarketLink() {
     <div className="marketlink-page">
       {/* HERO */}
       <section className="marketlink-hero" data-aos="fade-up" style={{
-          backgroundImage: `url('/images/MarketLink1.jpg')`,
+          backgroundImage: `url('/images/1p.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
         }}>
         <div className="marketlink-overlay">
           <h1>{hero?.title}</h1>
           <p>{hero?.desc}</p>
+          <p className="hero-body">{hero?.body}</p>
           <Link to="/contact" className="hero-cta">{hero?.button}</Link>
         </div>
       </section>
@@ -79,36 +83,40 @@ export default function MarketLink() {
       </section>
 
       {/* OFFER / SOLUTIONS */}
-      <section className="marketlink-offer" data-aos="fade-up" style={{
-          backgroundImage: `url('/images/MarketLink.jpg')`,
-          backgroundRepeat:'no-repeat',
-          backgroundSize: 'cover'
-        }}>
+      <section className="marketlink-offer" data-aos="fade-up" >
         <h2>{offer?.title}</h2>
-        <ul>
+        <ul style={{ listStyle: "none", padding: 0, marginTop: "1rem", }}>
           {(offer?.points || []).map((point, i) => (
-            <li key={i}><FaCheckCircle /> {point}</li>
+            <li style={{fontSize: "clamp(1rem, 2vw, 1.5rem)", color: "#fff" }} key={i}><FaCheckCircle /> {point}</li>
           ))}
         </ul>
+        <button onClick={() => setShowForm(!showForm)} className="cta-btn">
+            Get Regulatory and Policy Guidance
+          </button>
       </section>
 
       {/* CASES / USE CASES */}
       <section className="marketlink-cases" data-aos="fade-up">
-        <h2>{casesData?.title}</h2>
+        <h2 style={{ fontSize: "clamp(1.5rem, 2.5vw, 3.5rem)", color: "#F11" }}>{casesData?.title}</h2>
+        
         <ul>
+
           {(casesData?.items || []).map((item, i) => (
-            <li key={i}>{item}</li>
+            <li style={{listStyle: "none", padding: 0, marginTop: "1rem"}} key={i}>
+              <h4 style={{ fontSize: "clamp(1.2rem, 2vw, 1.5rem)", color: "#000", fontStyle: "italic", fontWeight: "bold" }}>{item.subtitle}</h4>
+              <p>{item.description}</p>
+            </li>
           ))}
         </ul>
       </section>
 
      {/* IDEAL USERS */}
 <section className="marketlink-ideal" data-aos="fade-up">
-  <h2>{ideal?.title}</h2>
+  <h2 style={{ fontSize: "clamp(1.5rem, 2.5vw, 3.5rem)", color: "#F11" }}>{ideal?.title}</h2>
   <div className="ideal-grid">
     {(ideal?.items || []).map((item, i) => (
       <div key={i} className="ideal-card" data-aos="zoom-in">
-        <h3>{item}</h3>
+        <h3 style={{ fontSize: "clamp(1.5rem, 2.5vw, 1.5rem)", color: "#243149" }}>{item}</h3>
       </div>
     ))}
   </div>
@@ -118,10 +126,10 @@ export default function MarketLink() {
     
       
         <section className="page-cta" data-aos="fade-up">
-          <h3> Get the Insights You Need to Expand</h3>
-          <p> From feasibility studies to consumer testing, MarketLink™ equips you with the intelligence to make confident, data-driven decisions before entering new markets.</p>
+          <h3 style={{ fontSize: "clamp(1.5rem, 2.5vw, 3.5rem)", color: "#f11" }}>Contact Us to Make Informed Business Decisions</h3>
+          <p>MarketIntel™ provides data-driven insights for market entry, growth, and investment across Japan and Africa.</p>
           <button onClick={() => setShowForm(!showForm)} className="cta-btn">
-            Discover Your Market Potential
+            Get Market Insights Today
           </button>
         </section>
     

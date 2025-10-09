@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { FaGlobeAfrica, FaFlag, FaBolt } from "react-icons/fa";
+
 
 export default function Sectors() {
   const t = useTranslate();
@@ -80,7 +80,7 @@ export default function Sectors() {
       <div className="sectors-hero">
          <video
           className="bridge-video"
-          src="/images/Sectors.mp4"
+          src="/images/Sector.mp4"
           autoPlay
           loop
           muted
@@ -144,6 +144,8 @@ export default function Sectors() {
         className="why-wrapper"
         style={{
           backgroundImage: "url('/images/whyafrikawhyjapan.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         <div className="why-overlay" />
@@ -155,11 +157,9 @@ export default function Sectors() {
           <div className="why-grid">
             {/* Africa card */}
             <div className="why-card" data-aos="fade-up" data-aos-delay="50">
-              <div className="why-icon badge-africa">
-                <FaGlobeAfrica />
-              </div>
+              
               <h3>Africa: The 21st Century’s Great Frontier</h3>
-              <p>
+              <p style={{fontSize: "clamp(1rem, 2vw, 1.5rem)", fontFamily: "Nunito, 'Nunito Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif", color: "#1ecfc6ff"}}>
                 Africa is rapidly emerging as a global growth engine. With a
                 young, dynamic population, expanding urban infrastructure, and
                 soaring demand for technology, clean energy, and advanced
@@ -170,11 +170,9 @@ export default function Sectors() {
 
             {/* Japan card */}
             <div className="why-card" data-aos="fade-up" data-aos-delay="120">
-              <div className="why-icon badge-japan">
-                <FaFlag />
-              </div>
+              
               <h3>Japan: Innovation Meets Opportunity</h3>
-              <p>
+              <p style={{fontSize: "clamp(1rem, 2vw, 1.5rem)", fontFamily: "Nunito, 'Nunito Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif", color: "#1ecfc6ff"}}>
                 Japan’s expertise in technology, quality management, and
                 strategic planning is a powerful asset for businesses expanding
                 into emerging markets. Precision, reliability, and innovation
@@ -184,11 +182,9 @@ export default function Sectors() {
 
             {/* Now card */}
             <div className="why-card" data-aos="fade-up" data-aos-delay="190">
-              <div className="why-icon badge-now">
-                <FaBolt />
-              </div>
+             
               <h3>Why Now</h3>
-              <p>
+              <p style={{fontSize: "clamp(1rem, 2vw, 1.5rem)", fontFamily: "Nunito, 'Nunito Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif", color: "#1ecfc6ff"}}>
                 The convergence of Africa’s growth and Japan’s global ambitions
                 creates a timely moment for partnership. Acting today enables
                 early market presence, trusted networks, and long-term

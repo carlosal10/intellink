@@ -20,7 +20,7 @@ export default function Footer() {
     { href: "https://facebook.com", icon: "fab fa-facebook", label: "Facebook" },
     { href: "https://wa.me/818056431501", icon: "fab fa-whatsapp", label: "WhatsApp" },
     { href: "https://github.com", icon: "fab fa-github", label: "GitHub" },
-    { href: "mailto:g-owuor@intellink-nippon.co.jp", icon: "fas fa-envelope", label: "Email" },
+    { href: "mailto:info@intellink-nippon.co.jp", icon: "fas fa-envelope", label: "Email" },
   ];
 
   return (

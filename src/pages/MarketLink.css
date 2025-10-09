@@ -1,6 +1,6 @@
 /* ---------------- MARKETLINK PAGE ---------------- */
 .marketlink-page {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: nunito, "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: #333;
   margin-top: 12.5%; /* Adjusted for fixed navbar */
   overflow: hidden;
@@ -32,7 +32,8 @@
 }
 
 .marketlink-hero h1 {
-  font-size: 5rem;
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 100;
   margin-bottom: 1rem;
   color: #F1C40F;
 }
@@ -59,7 +60,7 @@
 
 /* ---------------- INTRO ---------------- */
 .marketlink-intro {
-  padding: 3rem 15%;
+  padding: 3rem 2.5%;
   background: #F5F5F5;
   font-size: 1.1rem;
   text-align: center;
@@ -73,7 +74,7 @@
 
 /* ---------------- OFFER / SOLUTIONS ---------------- */
 .marketlink-offer {
-  padding: 3rem 10%;
+  padding: 3rem 2.5%;
   text-align: center;
   margin-bottom: 3rem;
   background: rgba(0, 0, 0, 0.7);
@@ -86,11 +87,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 2rem;
 }
 
 .marketlink-offer h2 {
-  color: #0B2545;
+  color: #F1C40F;
   margin-bottom: 2rem;
 }
 
@@ -99,23 +99,28 @@
   padding: 0;
   margin: 0 auto;
   max-width: 800px;
+  text-align: left;
+  width: 100%;
 }
 
 .marketlink-offer li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 0.75rem;
   margin-bottom: 1rem;
   font-size: 1.1rem;
+  text-align: left;
 }
 
 .marketlink-offer li svg {
-  margin-right: 0.5rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
   color: #F1C40F;
 }
 
 /* ---------------- CASES ---------------- */
 .marketlink-cases {
-  padding: 3rem 10%;
+  padding: 3rem 2.5%;
   margin-bottom: 3rem;
 }
 
@@ -385,7 +390,7 @@ button[type="submit"]:hover {
 
 /* ---------------- FINAL CTA ---------------- */
 .marketlink-finalcta {
-  padding: 3rem 10%;
+  padding: 3rem 2.5%;
   text-align: center;
   background: #F5F5F5;
 }
@@ -475,5 +480,93 @@ button[type="submit"]:hover {
   }
   .marketlink-hero h1{
     font-size: 2rem;
+  }
+}
+
+/* ---------------- MOBILE TWEAKS ---------------- */
+@media (max-width: 768px) {
+  .marketlink-page {
+    margin-top: 18%;
+  }
+
+  .marketlink-hero {
+    height: auto;
+    min-height: 60vh;
+    padding: 3.5rem 1.5rem;
+  }
+
+  .marketlink-overlay {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .marketlink-hero h1 {
+    font-size: 2.7rem;
+    line-height: 1.2;
+  }
+
+  .marketlink-hero p {
+    font-size: 1.2rem;
+  }
+
+  .marketlink-intro {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .marketlink-offer {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .marketlink-offer ul {
+    max-width: 100%;
+  }
+
+  .marketlink-offer li {
+    font-size: 1rem;
+  }
+
+  .marketlink-about {
+    flex-direction: column;
+  }
+
+  .marketlink-africa-japan {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .marketlink-overlay h1,
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .africa-section h3,
+  .japan-section h3,
+  .whynow-section h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .marketlink-page {
+    margin-top: 22%;
+  }
+
+  .marketlink-hero {
+    padding: 3rem 1.25rem;
+  }
+
+  .marketlink-overlay {
+    padding: 2rem 1.25rem;
+  }
+
+  .marketlink-hero h1 {
+    font-size: 2rem;
+  }
+
+  .marketlink-hero p {
+    font-size: 1rem;
   }
 }
