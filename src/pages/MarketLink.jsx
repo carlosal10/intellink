@@ -64,7 +64,7 @@ export default function MarketLink() {
     <div className="marketlink-page">
       {/* HERO */}
       <section className="marketlink-hero" data-aos="fade-up" style={{
-          backgroundImage: `url('/images/MarketLink1.jpg')`,
+          backgroundImage: `url('/images/1p.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat"
@@ -72,6 +72,7 @@ export default function MarketLink() {
         <div className="marketlink-overlay">
           <h1>{hero?.title}</h1>
           <p>{hero?.desc}</p>
+          <p className="hero-body">{hero?.body}</p>
           <Link to="/contact" className="hero-cta">{hero?.button}</Link>
         </div>
       </section>
@@ -82,25 +83,29 @@ export default function MarketLink() {
       </section>
 
       {/* OFFER / SOLUTIONS */}
-      <section className="marketlink-offer" data-aos="fade-up" style={{
-          backgroundImage: `url('/images/MarketLink.jpg')`,
-          backgroundRepeat:'no-repeat',
-          backgroundSize: 'cover'
-        }}>
+      <section className="marketlink-offer" data-aos="fade-up" >
         <h2>{offer?.title}</h2>
         <ul style={{ listStyle: "none", padding: 0, marginTop: "1rem", }}>
           {(offer?.points || []).map((point, i) => (
             <li style={{fontSize: "clamp(1rem, 2vw, 1.5rem)", color: "#fff" }} key={i}><FaCheckCircle /> {point}</li>
           ))}
         </ul>
+        <button onClick={() => setShowForm(!showForm)} className="cta-btn">
+            Get Regulatory and Policy Guidance
+          </button>
       </section>
 
       {/* CASES / USE CASES */}
       <section className="marketlink-cases" data-aos="fade-up">
         <h2 style={{ fontSize: "clamp(1.5rem, 2.5vw, 3.5rem)", color: "#F11" }}>{casesData?.title}</h2>
+        
         <ul>
+
           {(casesData?.items || []).map((item, i) => (
-            <li key={i}>{item}</li>
+            <li style={{listStyle: "none", padding: 0, marginTop: "1rem"}} key={i}>
+              <h4 style={{ fontSize: "clamp(1.2rem, 2vw, 1.5rem)", color: "#000", fontStyle: "italic", fontWeight: "bold" }}>{item.subtitle}</h4>
+              <p>{item.description}</p>
+            </li>
           ))}
         </ul>
       </section>

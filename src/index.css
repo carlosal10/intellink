@@ -86,7 +86,7 @@ html, body, #root {
 
 :root{
   --brand-navy: #0B2545;
-  --brand-red: rgba(59, 2, 2, 1);          /* Red / Maroon */
+  --brand-red: rgba(59, 2, 2, 0.973);          /* Red / Maroon */
   --brand-gold: #F1C40F;         /* Yellow */
   --brand-maroon: #8B1E2D;       /* Optional deeper accent */
   --bg-white: #ffffff;

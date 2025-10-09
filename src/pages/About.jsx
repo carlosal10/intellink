@@ -24,7 +24,7 @@ export default function About() {
         className="about-hero"
         style={{
           backgroundImage:
-            "linear-gradient(180deg, rgba(11,37,69,.55), rgba(0,0,0,.65)), url('/images/1p.jpg')",
+            "linear-gradient(180deg, rgba(11,37,69,.55), rgba(0,0,0,.65)), url('/images/about.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

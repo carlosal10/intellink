@@ -116,7 +116,7 @@
   .why-grid{grid-template-columns:1fr}
 }
 .why-card{
-  background:linear-gradient(180deg, rgba(14, 13, 13, 0.404) 0%, rgba(255, 255, 255, 0.322) 100%);
+  background:linear-gradient(180deg, rgba(14, 13, 13, 0.404) 0%, rgba(0, 0, 0, 0.493) 100%);
   border:1px solid rgba(255,255,255,.22);
   border-radius:16px;padding:18px 16px 20px;
   box-shadow:0 10px 30px rgba(0,0,0,.18);

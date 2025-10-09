@@ -306,7 +306,7 @@ tradeLink: {
   },
   intro: {
     text:
-      "Cross-Border Business Made Simple. Doing business across borders requires precision, trust, and efficiency. At Intellink Nippon Consulting, we help businesses achieve all three by connecting them with the right partners in Japan and Africa. TradeLink™ addresses the common challenges companies face when entering new markets or sourcing partners, including finding reliable contacts, navigating local regulations, and securing on-the-ground support."
+      "Doing business across borders requires precision, trust, and efficiency. At Intellink Nippon Consulting, we help businesses achieve all three by connecting them with the right partners in Japan and Africa. TradeLink™ addresses the common challenges companies face when entering new markets or sourcing partners, including finding reliable contacts, navigating local regulations, and securing on-the-ground support."
   },
   offer: {
     title: "Services",
@@ -369,7 +369,6 @@ tradeLink: {
     title: "Ready to Connect?",
     desc:
       "Reach out today to discover how TradeLink™ can support your business growth across Japan and Africa.",
-    contactInfo: "www.intellink-nippon.co.jp · info@intellink-nippon.co.jp",
     button: "Connect with a Partner"
   }
 },
@@ -399,26 +398,31 @@ services: {
 marketLink: {
   hero: {
     title: "MarketIntel™",
-    desc: "Insight-Driven Decisions for Cross-Border Success. Make informed business decisions in Japan and Africa with MarketIntel™. Our consultancy provides actionable insights through market research, consumer surveys, feasibility studies, and regulatory guidance to help you navigate complex cross-border business environments.",
+    desc: "Insight-Driven Decisions for Cross-Border Success.",
+    body: "Make informed business decisions in Japan and Africa with MarketIntel™. Our consultancy provides actionable insights through market research, consumer surveys, feasibility studies, and regulatory guidance to help you navigate complex cross-border business environments.",
     button: "Get Market Insights Today"
   },
   intro: {
-    text: "MarketIntel: Your Strategic Intelligence Partner. Success in cross-border business requires more than ambition—it demands deep market knowledge, reliable data, and informed strategy. MarketIntel™ equips businesses with practical insights and expert guidance, enabling them to make decisions confidently and minimize risk. Whether entering a new market, assessing investment opportunities, or navigating regulatory frameworks, MarketIntel™ delivers tailored intelligence for your Japan–Africa business ventures."
+    text: "Success in cross-border business requires more than ambition—it demands deep market knowledge, reliable data, and informed strategy. MarketIntel™ equips businesses with practical insights and expert guidance, enabling them to make decisions confidently and minimize risk. Whether entering a new market, assessing investment opportunities, or navigating regulatory frameworks, MarketIntel™ delivers tailored intelligence for your Japan–Africa business ventures."
   },
   offer: {
     title: "Solutions Offered",
     points: [
-      "Market Research & Consumer Surveys — Understanding your target market is essential. MarketIntel™ conducts quantitative and qualitative research, including consumer surveys, retail audits, and competitor analysis, to uncover opportunities and gaps. We provide actionable insights that help you design products, marketing strategies, and business models tailored to local preferences and market dynamics. CTA: Request a Market Research Project Today",
-      "Feasibility Studies & Business Assessments — Before committing to new markets or investments, it’s crucial to evaluate viability and risk. MarketIntel™ delivers comprehensive feasibility studies, including market sizing, cost analysis, and operational assessments. Our studies help businesses determine the potential for success, optimize resource allocation, and identify the most effective entry strategies. CTA: Explore a Feasibility Study for Your Project",
-      "Regulatory & Policy Advisory — Navigating cross-border regulations can be complex. MarketIntel™ offers expert advisory on legal, regulatory, and policy matters to ensure compliance and smooth market entry. From import/export requirements to industry-specific regulations, we provide guidance that reduces risk and speeds up decision-making, while aligning your strategy with local and international frameworks. CTA: Get Regulatory and Policy Guidance"
+      "Market Research & Consumer Surveys Understanding your target market is essential. MarketIntel™ conducts quantitative and qualitative research, including consumer surveys, retail audits, and competitor analysis, to uncover opportunities and gaps. We provide actionable insights that help you design products, marketing strategies, and business models tailored to local preferences and market dynamics.",
+      "Feasibility Studies & Business Assessments Before committing to new markets or investments, it’s crucial to evaluate viability and risk. MarketIntel™ delivers comprehensive feasibility studies, including market sizing, cost analysis, and operational assessments. Our studies help businesses determine the potential for success, optimize resource allocation, and identify the most effective entry strategies. Explore a Feasibility Study for Your Project",
+      "Regulatory & Policy Advisory Navigating cross-border regulations can be complex. MarketIntel™ offers expert advisory on legal, regulatory, and policy matters to ensure compliance and smooth market entry. From import/export requirements to industry-specific regulations, we provide guidance that reduces risk and speeds up decision-making, while aligning your strategy with local and international frameworks."
     ]
   },
   cases: {
     title: "Use Cases",
     items: [
-      "Japanese SME Entering African Consumer Market — A Japanese cosmetics company lacked insights into Kenyan consumer preferences and distribution channels. MarketIntel™ ran consumer surveys, retail audits, and competitor analysis, delivering data-driven recommendations for positioning and pricing. Result: Successful launch with high initial acceptance and distribution agreements with key retailers.",
-      "African Agribusiness Feasibility Study for Japan — A Ghanaian cocoa cooperative was uncertain about market size, compliance, and logistics. MarketIntel™ delivered a detailed feasibility study including market sizing, cost analysis, and regulatory guidance. Result: Clear visibility on opportunities and risks, enabling a strategic and cost-effective entry plan.",
-      "Regulatory & Policy Advisory for Cross-Border Trade — A regional African agency sought to attract Japanese investors in renewable energy. MarketIntel™ provided regulatory and policy insights with benchmarks and investment-friendly recommendations. Result: A clear policy framework that increased investor confidence and attracted multiple Japanese investors."
+
+      { subtitle: "Japanese SME Entering African Consumer Market",
+       description: "A Japanese cosmetics company lacked insights into Kenyan consumer preferences and distribution channels. MarketIntel™ ran consumer surveys, retail audits, and competitor analysis, delivering data-driven recommendations for positioning and pricing. Result: Successful launch with high initial acceptance and distribution agreements with key retailers." },
+      { subtitle: "African Agribusiness Feasibility Study for Japan",
+       description: "A Ghanaian cocoa cooperative was uncertain about market size, compliance, and logistics. MarketIntel™ delivered a detailed feasibility study including market sizing, cost analysis, and regulatory guidance. Result: Clear visibility on opportunities and risks, enabling a strategic and cost-effective entry plan." },
+      { subtitle: "Regulatory & Policy Advisory for Cross-Border Trade",
+       description: "A regional African agency sought to attract Japanese investors in renewable energy. MarketIntel™ provided regulatory and policy insights with benchmarks and investment-friendly recommendations. Result: A clear policy framework that increased investor confidence and attracted multiple Japanese investors." }
     ]
   },
   ideal: {
