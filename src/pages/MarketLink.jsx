@@ -63,12 +63,19 @@ export default function MarketLink() {
   return (
     <div className="marketlink-page">
       {/* HERO */}
-      <section className="marketlink-hero" data-aos="fade-up" style={{
-          backgroundImage: `url('/images/1p.jpg')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat"
-        }}>
+      <section className="marketlink-hero" data-aos="fade-up" 
+      >
+        <video className="bridge-video"
+          src="/images/expert-hero.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          width="100%"
+          height="100%"
+          objectFit="cover"
+        />  
+          
         <div className="marketlink-overlay">
           <h1>{hero?.title}</h1>
           <p>{hero?.desc}</p>
