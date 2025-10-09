@@ -691,15 +691,12 @@ export default function ExpertConnectPage() {
         className="ec-hero"
         style={{ display: isLoading ? "none" : "block" }}
       >
-        <video className="ec-hero-video"
-        autoPlay 
-        loop 
-        muted 
-        playsInline 
-        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          src="/images/expert-hero.mp4" type="video/mp4" 
+        <img className="ec-hero-video"
+          src="/images/1p.jpg"
+          alt="ExpertConnect Hero"
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
-        
+
         <div className="ec-hero-overlay">
          
           <h1 className="ec-hero-title">{t?.title || "ExpertConnect™"}</h1>
