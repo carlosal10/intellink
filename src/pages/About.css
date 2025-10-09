@@ -194,7 +194,7 @@
 }
 .abtn-primary:hover{ filter:brightness(1.06); transform:translateY(-1px) }
 .abtn-outline{
-  color:#0B2545; border-color:#0B2545; background:transparent;
+  color:#cad1da; border-color:#0B2545; background:transparent;
 }
 .abtn-outline:hover{ background:rgba(11,37,69,.06) }
 .abtn-link{

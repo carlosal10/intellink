@@ -30,20 +30,15 @@ export default function Services() {
   return (
     <main className="services-page" aria-labelledby="svc-heading">
       {/* Hero */}
-      <header className="services-header" role="banner">
+      <header className="services-header">
         <div className="services-hero-bg" aria-hidden="true" style={{
-          background: 'url("/images/iso-113.jpg")',
-          position: 'absolute; inset: 0',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'saturate(1.05)',
-          zIndex: -1,
-          backgroundRepeat: 'no-repeat',
-          height: '70vh',
+          backgroundImage: 'url("/images/iso-113.jpg")',
+         
+          
         }} />
         <div className="services-hero-overlay" aria-hidden="true" >
         <div className="services-header-inner">
-          <span className="svc-chip">Intellink Nippon Consulting</span>
+          
           <h1 id="svc-heading" className="services-title"
           style={{ color: '#F1C40F' }}>
             {t("services.headerTitle")}

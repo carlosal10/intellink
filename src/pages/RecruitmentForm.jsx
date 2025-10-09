@@ -114,7 +114,7 @@ export default function AfricaToJapanRecruitment() {
         
         <div className="aj-hero-overlay" />
         <div className="aj-hero-inner">
-          <span className="aj-chip">Africa ⇄ Japan</span>
+          
           <h1 className="aj-title">
             {t("careers.hero.header") || "Global Careers. Enduring Impact."}
           </h1>
@@ -208,22 +208,22 @@ export default function AfricaToJapanRecruitment() {
           className="aj-banner-media"
         />
         <div className="aj-banner-overlay">
-          <p className="aj-banner-text">Where ambition meets execution.</p>
+          <p style={{fontSize: "clamp(1rem, 2vw, 1.5rem)", color: "#000"}} className="aj-banner-text">Where ambition meets execution.</p>
         </div>
       </section>
 
       {/* ===== CARDS: Positions ===== */}
       <section className="aj-section aj-section-alt">
         <div className="aj-container">
-          <h2 className="aj-h2">{t("careers.positions.title") || "Positions"}</h2>
+          <h2 style={{fontSize: "clamp(2.5rem, 2vw, 4.5rem)", color: "#f1c401"}} className="aj-h2">{t("careers.positions.title") || "Positions"}</h2>
           <div className="aj-grid">
             {(t("careers.positions.sampleRoles") || []).map((p, i) => (
               <div className="aj-card aj-card-soft" key={`pos-${i}`}>
-                <p className="aj-body">{p}</p>
+                <p style={{fontSize: "clamp(1rem, 2vw, 1.5rem)", color: "#000"}} className="aj-body">{p}</p>
               </div>
             ))}
           </div>
-          <p className="aj-note">{t("careers.positions.note")}</p>
+          <p style={{fontSize: "clamp(1rem, 2vw, 1.5rem)", color: "#fff"}} className="aj-note">{t("careers.positions.note")}</p>
         </div>
       </section>
 

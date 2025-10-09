@@ -14,31 +14,39 @@
 
 /* ===== Page shell ===== */
 .services-page{
-  background: var(--svc-bg);
   color: var(--svc-text);
+  background: var(--svc-bg);
   font-family: nunito, "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   overflow-x: hidden;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ===== Hero ===== */
-.services-header{
-  position: relative;
-  min-height: 48vh;
-  display: grid;
-  place-items: end;
-  padding: 32px 2.5% 64px;
-  color: #fff;
-  isolation: isolate;
-}
+.services-page .services-header{ 
 
+  min-height: 62vh;
+  color: #fff;
+  position: relative;
+  overflow: hidden; 
+  z-index: 1; 
+  text-align: center;
+  background: var(--svc-primary);
+  width: 100%;
+}
 .services-hero-bg{
-  position: absolute; inset: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
-  filter: saturate(1.05);
+  filter: saturate(1.05) brightness(0.75);
   z-index: -1;
-  background-repeat: no-repeat;
-  
 }
 
 .services-hero-overlay{
@@ -79,9 +87,10 @@
   line-height: 1.8;
 }
 
-/* ===== Grid ===== */
-.services-section{
-  padding: 56px 2.5%;
+.services-subtext p{
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  font-weight: 300;
+  margin: 0 auto;
 }
 
 .services-grid{

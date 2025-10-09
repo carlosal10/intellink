@@ -116,7 +116,7 @@
   .why-grid{grid-template-columns:1fr}
 }
 .why-card{
-  background:linear-gradient(180deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,.06) 100%);
+  background:linear-gradient(180deg, rgba(14, 13, 13, 0.404) 0%, rgba(255, 255, 255, 0.322) 100%);
   border:1px solid rgba(255,255,255,.22);
   border-radius:16px;padding:18px 16px 20px;
   box-shadow:0 10px 30px rgba(0,0,0,.18);
@@ -133,7 +133,7 @@
   margin-bottom:10px;font-size:1.1rem;color:#10243a;font-weight:700;
   background:#fff;box-shadow:0 8px 20px rgba(255,255,255,.18);
 }
-.badge-africa{background:linear-gradient(135deg,#fff,#e0f4ff)}
+.badge-africa{background:linear-gradient(135deg,#f0f4ff,#e0f4ff)}
 .badge-japan{background:linear-gradient(135deg,#fff,#ffe6ea)}
 .badge-now{background:linear-gradient(135deg,#fff,#fff6db)}
 

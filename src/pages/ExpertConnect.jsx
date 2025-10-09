@@ -697,7 +697,7 @@ export default function ExpertConnectPage() {
         muted 
         playsInline 
         style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          src="/images/expert-hero1.mp4" type="video/mp4" 
+          src="/images/expert-hero.mp4" type="video/mp4" 
         />
         
         <div className="ec-hero-overlay">

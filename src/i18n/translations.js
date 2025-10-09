@@ -35,6 +35,18 @@ const translations = {
     headerDescription:
       "At Intellink Nippon Consulting, we help companies, governments, and innovators bridge opportunities between Japan and Africa. Our services are designed to simplify market entry, connect you with the right expertise, and make cross-border trade seamless.",
 
+       expertConnect: {
+      title: "ExpertConnect™",
+      description: "Connecting you with the expertise you need to succeed.",
+      points: [
+        "Access to sector specialists and thought leaders",
+        "Knowledge bank with curated insights & reports",
+        "Tailored business advisory sessions",
+        "Strategic workshops & cultural orientation"
+      ],
+      cta: "Get Connected →"
+    },
+
     marketLinks: {
       title: "MarketLink™",
       description: "Helping businesses unlock opportunities with actionable insights and strategies.",
@@ -48,17 +60,7 @@ const translations = {
       cta: "Learn More →"
     },
 
-    expertConnect: {
-      title: "ExpertConnect™",
-      description: "Connecting you with the expertise you need to succeed.",
-      points: [
-        "Access to sector specialists and thought leaders",
-        "Knowledge bank with curated insights & reports",
-        "Tailored business advisory sessions",
-        "Strategic workshops & cultural orientation"
-      ],
-      cta: "Get Connected →"
-    },
+   
 
     tradeLinks: {
       title: "TradeLink™",
@@ -114,7 +116,7 @@ const translations = {
 
   aboutUs: "About Us",
   aboutText:
-    "Intellink Nippon Consulting was founded in in Tokyo, with a clear mission: to facilitate meaningful business collaboration between Japan and Africa. We recognized the untapped potential of African markets and the growing interest from Japanese companies to expand internationally. Our vision is to serve as a trusted partner, providing insights, advisory, and trade solutions that enable businesses to navigate cross-border opportunities with confidence.",
+    "Intellink Nippon Consulting was founded in Tokyo, with a clear mission: to facilitate meaningful business collaboration between Japan and Africa. We recognized the untapped potential of African markets and the growing interest from Japanese companies to expand internationally. Our vision is to serve as a trusted partner, providing insights, advisory, and trade solutions that enable businesses to navigate cross-border opportunities with confidence.",
 
   whyChooseUs: {
     title: "Why Choose Us",
@@ -264,7 +266,7 @@ const translations = {
       },
       catalog: [
         { slug: "renewable-energy-africa-2025", title: "Japanese Renewable Energy Market in Africa – 2025 Outlook", abstract: "Opportunities, regulatory landscape, and partner ecosystem across key African markets.", sector: "Energy", geography: "Pan-Africa", format: "PDF", year: 2025, length: "48 pages", lastUpdated: "Mar 2025", paid: true, editorsPick: true, reads: 1280, image: "/images/RenewableEnergy.jpg" },
-        { slug: "consumer-electronics-west-africa", title: "Consumer Electronics Trends in West Africa", abstract: "Demand patterns, distribution channels, and competitor positioning in Nigeria and Ghana.", sector: "Consumer", geography: "West Africa", format: "PDF", year: 2024, length: "32 pages", lastUpdated: "Nov 2024", paid: false, editorsPick: false, reads: 980, image: "/images/ist94.jpg" },
+        { slug: "consumer-electronics-west-africa", title: "Consumer Electronics Trends in West Africa", abstract: "Demand patterns, distribution channels, and competitor positioning in Nigeria and Ghana.", sector: "Consumer", geography: "West Africa", format: "PDF", year: 2024, length: "32 pages", lastUpdated: "Nov 2024", paid: false, editorsPick: false, reads: 980, image: "/images/consumerelec.avif" },
         { slug: "agri-exports-to-japan-guide", title: "African Agricultural Exports to Japan: Market Entry Guide", abstract: "Requirements, pricing corridors, and logistics for cocoa, coffee, and horticulture.", sector: "Agriculture", geography: "Japan", format: "Interactive", year: 2024, length: "Interactive", lastUpdated: "Oct 2024", paid: true, editorsPick: false, reads: 640, image: "/images/Agritech.jpg" },
         { slug: "fintech-east-africa-landscape", title: "Fintech Landscape in East Africa – 2025", abstract: "Mobile money, regulatory shifts, and partnership routes for Japanese entrants.", sector: "Finance", geography: "East Africa", format: "PDF", year: 2025, length: "40 pages", lastUpdated: "Feb 2025", paid: true, editorsPick: true, reads: 1510, image: "/images/ict.jpg" }
       ],

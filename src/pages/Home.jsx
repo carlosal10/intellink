@@ -51,6 +51,17 @@ export default function Home() {
   };
 
   const services = [
+
+     {
+      key: 'expertConnect',
+      title: t('home.services.expertConnect.title'),
+      description: t('home.services.expertConnect.description'),
+      points: t('home.services.expertConnect.points'),
+      link: '/expertconnect',
+      cta: t('home.services.expertConnect.cta'),
+      image: '/images/ExpertConnect.jpg',
+      alt: 'Expert connection services',
+    },
     {
       key: 'marketLinks',
       title: t('home.services.marketLinks.title'),
@@ -61,16 +72,7 @@ export default function Home() {
       image: '/images/MarketLink.jpg',
       alt: 'Market links between Japan and Africa',
     },
-    {
-      key: 'expertConnect',
-      title: t('home.services.expertConnect.title'),
-      description: t('home.services.expertConnect.description'),
-      points: t('home.services.expertConnect.points'),
-      link: '/expertconnect',
-      cta: t('home.services.expertConnect.cta'),
-      image: '/images/ExpertConnect.jpg',
-      alt: 'Expert connection services',
-    },
+   
     {
       key: 'tradeLinks',
       title: t('home.services.tradeLinks.title'),

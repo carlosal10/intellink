@@ -17,7 +17,7 @@ const CardGrid = ({ items }) => (
     {items.map((item, idx) => (
       <div key={idx} className="article-card">
         <span className="article-title">{item.title}</span>
-        <p>{item.desc}</p>
+        <p style={{fontSize: "clamp(1rem, 2vw, 1.5rem)", color: "#000"}}>{item.desc}</p>
       </div>
     ))}
   </div>
@@ -128,8 +128,8 @@ export default function Insights() {
       {/* Subscription & Access plans */}
       <section className="insights-section world-mesh" id="plans">
         <div className="section-title">
-          <h2 className="gradient-title">Subscription & Access</h2>
-          <p className="subtitle">Choose the access that fits your strategy.</p>
+          <h2 style={{fontSize: "clamp(1.5rem, 2vw, 3rem)", color: "#2D2D2D"}} className="gradient-title">Subscription & Access</h2>
+          <p style={{fontSize: "clamp(1rem, 2vw, 1.5rem)", color: "#000"}} className="subtitle">Choose the access that fits your strategy.</p>
         </div>
         <div className="plans-grid">
           {(plans || []).map((p, i) => {
@@ -166,7 +166,7 @@ export default function Insights() {
                 {r.image && <img src={r.image} alt={r.title} loading="lazy" />}
                 <div className="sample-overlay">
                   <div className="sample-title">{r.title}</div>
-                  <p className="sample-abstract">{r.abstract}</p>
+                  <p style={{fontSize: "clamp(1rem, 2vw, 1.5rem)", color: "#f1c401"}} className="sample-abstract">{r.abstract}</p>
                   <button className="sample-cta">Preview →</button>
                 </div>
               </div>
@@ -181,17 +181,17 @@ export default function Insights() {
           <div className="split-audience">
             <div className="audience-card business">
               <div className="audience-illustration" />
-              <h3>{forBusiness.title || 'For Businesses'}</h3>
+              <h3 style={{fontSize: "clamp(1.5rem, 2vw, 3rem)", color: "#2D2D2D"}}>{forBusiness.title || 'For Businesses'}</h3>
               <ul>
-                {(forBusiness.items || []).slice(0,3).map((it, idx) => (<li key={idx}><FaCheckCircle /> {it}</li>))}
+                {(forBusiness.items || []).slice(0,3).map((it, idx) => (<li style={{fontSize: "clamp(1rem, 2vw, 1.5rem)", color: "#000"}} key={idx}><FaCheckCircle /> {it}</li>))}
               </ul>
               {forBusiness.cta && <button className="cta-btn">{forBusiness.cta}</button>}
             </div>
             <div className="audience-card analysts">
               <div className="audience-illustration" />
-              <h3>{forAnalysts.title || 'For Analysts & Contributors'}</h3>
+              <h3 style={{fontSize: "clamp(1.5rem, 2vw, 3rem)", color: "#2D2D2D"}}>{forAnalysts.title || 'For Analysts & Contributors'}</h3>
               <ul>
-                {(forAnalysts.items || []).slice(0,3).map((it, idx) => (<li key={idx}><FaCheckCircle /> {it}</li>))}
+                {(forAnalysts.items || []).slice(0,3).map((it, idx) => (<li style={{fontSize: "clamp(1rem, 2vw, 1.5rem)", color: "#000"}} key={idx}><FaCheckCircle /> {it}</li>))}
               </ul>
               {forAnalysts.cta && <button className="cta-btn">{forAnalysts.cta}</button>}
             </div>
@@ -206,10 +206,11 @@ export default function Insights() {
           <div className="trust-grid">
             {whyUse.items.map((msg, i) => {
               const Icon = i===0 ? FaShieldAlt : i===1 ? FaExchangeAlt : FaChartLine;
+
               return (
                 <div className="trust-tile" key={i} style={{ animationDelay: `${i*80}ms` }}>
                   <div className="trust-icon"><Icon /></div>
-                  <div className="trust-text">{msg}</div>
+                  <div style={{fontFamily: 'Nunito, "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif', fontWeight: 200, lineHeight: 1.5, fontSize: '1.4rem'}} className="trust-text">{msg}</div>
                 </div>
               );
             })}
@@ -223,7 +224,7 @@ export default function Insights() {
           <div className="product-grid">
             {productsExplainer.map((p, i) => (
               <div className="product-card" key={i}>
-                <h3 className="product-title">{p.title}</h3>
+                <h3  className="product-title">{p.title}</h3>
                 <ul style={{ listStyle: "none", padding: 0, }} className="product-bullets">
                   {(p.bullets || []).map((b, j) => (<li style={{ fontSize: "clamp(1rem, 2vw, 1.5rem)", color: "#000" }} key={j}>{b}</li>))}
                 </ul>
