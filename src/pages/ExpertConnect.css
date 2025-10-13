@@ -224,12 +224,12 @@ position: absolute;
 .ec-cta-right{display:flex;gap:10px;flex-wrap:wrap}
 
 /* Application Form (altered section) */
-.ec-form{display:grid;gap:14px}
+.ec-form{display:grid;gap:14px;font-size:clamp(0.9rem, 1.7vw, 0.98rem);line-height:1.55}
 .ec-field{display:grid;gap:6px}
 .ec-field label{
   font-weight:600;
   color:#243149;
-  font-size:clamp(1rem, 2.3vw, 1.5rem);
+  font-size:clamp(0.95rem, 1.8vw, 1.2rem);
 }
 .ec-field input,.ec-field textarea,.ec-field select{
   padding:12px;
@@ -239,7 +239,7 @@ position: absolute;
   outline:none;
   transition:border .15s, box-shadow .15s;
   background:#fff;
-  font-size:1rem;
+  font-size:0.95rem;
   color:var(--ec-text);
   box-shadow:var(--shadow-soft);
 }

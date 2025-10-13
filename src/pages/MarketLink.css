@@ -355,6 +355,8 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   max-width: 900px;
   margin: 3rem auto;
+  font-size: clamp(0.9rem, 1.8vw, 0.96rem);
+  line-height: 1.55;
 }
 
 .application-form input,
@@ -363,7 +365,7 @@
   padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 0.95em;
   transition: all 0.3s ease;
 }
 
@@ -386,7 +388,7 @@ button[type="submit"] {
   padding: 0.9rem 1.5rem;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: bold;
   cursor: pointer;
   align-self: flex-start;
