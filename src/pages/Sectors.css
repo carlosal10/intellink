@@ -34,12 +34,12 @@
   padding:3.5rem 2.5% 4.5rem;max-width:95vw;
 }
 .sectors-hero-inner h1{
-  font-size: clamp(2rem, 6vw, 5rem);
+  font-size: clamp(1.9rem, 4.2vw, 3.5rem);
   margin:0 0 .5rem;font-weight:100;color:#F1C40F;
 }
 .sectors-hero-inner p{
   margin:0 auto;max-width:95vw;opacity:.95;line-height:1.7;
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
   color: #d7e7fb;
 }
 
@@ -80,7 +80,7 @@
   padding:10px 14px;
   color:#000000;
   box-shadow:0 4px 12px rgba(0,0,0,.04);
-  font-size: 1.4rem;
+  font-size: 1.05rem;
 }
 
 /* WHY — Africa / Japan / Now */

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { FaUserAlt, FaPaperclip, FaLock } from "react-icons/fa";
 import useTranslate from "../hooks/useTranslate";
 import "./RecruitmentForm.css";
@@ -58,6 +58,30 @@ export default function AfricaToJapanRecruitment() {
 
   const [files, setFiles] = useState({ cv: null, coverLetter: null });
   const [showForm, setShowForm] = useState(false);
+  const formRef = useRef(null);
+
+  const scrollFormIntoView = useCallback(() => {
+    if (formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (showForm) {
+      scrollFormIntoView();
+    }
+  }, [showForm, scrollFormIntoView]);
+
+  const openForm = (type) => {
+    if (type) {
+      setFormType(type);
+    }
+    if (!showForm) {
+      setShowForm(true);
+    } else {
+      scrollFormIntoView();
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -123,10 +147,10 @@ export default function AfricaToJapanRecruitment() {
               "We place exceptional talent on high-value projects across Africa and Japan."}
           </p>
           <div className="aj-cta-row">
-            <button onClick={() => { setFormType('full'); setShowForm(true); }} className="aj-btn aj-btn-primary">
+            <button onClick={() => openForm('full')} className="aj-btn aj-btn-primary">
               {t("careers.ctaSection.button") || "Apply Now"}
             </button>
-            <button onClick={() => { setFormType('intern'); setShowForm(true); }} className="aj-btn aj-btn-ghost">Apply for Internship / Graduate</button>
+            <button onClick={() => openForm('intern')} className="aj-btn aj-btn-ghost">Apply for Internship / Graduate</button>
           </div>
         </div>
       </section>
@@ -161,7 +185,7 @@ export default function AfricaToJapanRecruitment() {
               We match talent and teams to pressing business needs across two dynamic regions—enabling
               market entry, product localization, capital readiness, and operational excellence.
             </p>
-            <button className="aj-link" onClick={() => setShowForm(true)}>Start your application →</button>
+            <button className="aj-link" onClick={() => openForm()}>Start your application →</button>
           </div>
         </div>
       </section>
@@ -241,7 +265,7 @@ export default function AfricaToJapanRecruitment() {
 
           <div className="aj-cta-stack">
             <p className="aj-body-strong">{t("careers.ctaSection.text")}</p>
-            <button onClick={() => setShowForm(!showForm)} className="aj-btn aj-btn-primary" id="apply">
+            <button onClick={() => openForm()} className="aj-btn aj-btn-primary" id="apply">
               {t("careers.ctaSection.button") || "Apply Now"}
             </button>
           </div>
@@ -255,6 +279,7 @@ export default function AfricaToJapanRecruitment() {
           className="aj-form"
           encType="multipart/form-data"
           aria-labelledby="appFormTitle"
+          ref={formRef}
         >
           <h2 id="appFormTitle" className="aj-form-title">
             <FaUserAlt /> {formType === 'full' ? 'Join Our Team – Application Form' : 'Internship / Graduate Program Positions'}

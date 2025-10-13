@@ -108,7 +108,7 @@ html, body, #root {
 .insights-hero,
 .insights-container {
   font-family: nunito, "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(1rem, 2.3vw, 2rem);
+  font-size: clamp(0.98rem, calc(1rem + 0.15vw), 1.15rem);
   font-weight: 200;
   line-height: 1.5;
 }
@@ -405,7 +405,7 @@ html, body, #root {
 
 /* Button sizing globally reduced */
 .btn, .abtn, .aj-btn, .hero-cta, .cta-btn, .cta-button, .submit-btn, .svc-link, .ec-card .btn-card {
-  font-size: clamp(0.9rem, 1.4vw, 1.15rem) !important;
+  font-size: clamp(0.85rem, calc(0.95rem + 0.1vw), 1.05rem) !important;
 }
 
 /* Consistent hero subtitle sizing (max 3rem) */
@@ -417,7 +417,7 @@ html, body, #root {
 .sectors-hero-inner p,
 .aj-sub,
 .insights-hero p {
-  font-size: clamp(1rem, 3vw, 2rem) !important;
+  font-size: clamp(1rem, 2.4vw, 1.6rem) !important;
   font-weight: 200;
 }
 
@@ -429,17 +429,17 @@ html, body, #root {
 /* Responsive scaling nudges */
 @media (max-width: 1200px){
   .marketlink-page, .ec-shell, .about2, .services-page, .sectors-page, .pageshell, .home, .aj-shell, .contact, .insights-section, .insights-hero, .insights-container {
-    font-size: clamp(1rem, 2vw, 1.8rem);
+    font-size: clamp(0.97rem, calc(0.98rem + 0.12vw), 1.08rem);
   }
 }
 @media (max-width: 900px){
   .marketlink-page, .ec-shell, .about2, .services-page, .sectors-page, .pageshell, .home, .aj-shell, .contact, .insights-section, .insights-hero, .insights-container {
-    font-size: clamp(0.95rem, 2.2vw, 1.4rem);
+    font-size: clamp(0.95rem, calc(0.95rem + 0.14vw), 1.05rem);
   }
 }
 @media (max-width: 600px){
   .marketlink-page, .ec-shell, .about2, .services-page, .sectors-page, .pageshell, .home, .aj-shell, .contact, .insights-section, .insights-hero, .insights-container {
-    font-size: 1.05rem;
+    font-size: clamp(0.94rem, calc(0.92rem + 0.18vw), 1rem);
   }
 }
 

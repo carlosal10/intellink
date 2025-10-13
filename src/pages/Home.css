@@ -82,13 +82,13 @@ body {
 
 .bridge-overlay h1{
   color: #F1C40F;
-  font-size: 4rem;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
   margin-bottom: 1rem;
 }
 
 .bridge-overlay p{
   color: #eef6ff;
-  font-size: 1.7rem;
+  font-size: clamp(1.05rem, 2.5vw, 1.6rem);
   margin-bottom: 2rem;
 }
 
@@ -105,8 +105,8 @@ body {
       rgba(0,0,0,0.2) 100%
     );
   }
-  .bridge-overlay h1 { font-size: 2.5rem; }
-  .bridge-overlay p  { font-size: 1.1rem; }
+  .bridge-overlay h1 { font-size: 2.2rem; }
+  .bridge-overlay p  { font-size: 1.05rem; }
 }
 
 /* =========================
@@ -165,14 +165,14 @@ body {
 
 
 .hr-overlay .hro-text h2 {
-  font-size: 3.5rem;
+  font-size: clamp(1.9rem, 4vw, 3.4rem);
   color: #F1C40F;
   font-weight: 100;
   font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 .hr-overlay .hro-text p{
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2.4vw, 1.4rem);
   color: #fff;
   line-height: 1.85rem;
   font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -191,7 +191,7 @@ body {
 
 @media (max-width: 700px) {
   .hro-text h2 {
-    font-size: 3.5rem;
+    font-size: 2rem;
     text-align: center;
     font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-weight: 100;
@@ -278,7 +278,7 @@ body {
   box-shadow: var(--shadow-soft);
 }
 .text-box h2 {
-  font-size: 4.5rem;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
   margin-bottom: 1rem;
   color: var(--primary-bg);
   font-weight: 200;
@@ -286,7 +286,7 @@ body {
 }
 @media (max-width: 700px) {
   .text-box h2 {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
     text-align: center;
   }
   
@@ -318,7 +318,7 @@ body {
 
 .text-box ul {
   list-style: disc inside;
-  font-size: 2rem;
+  font-size: clamp(1.05rem, 2.5vw, 1.5rem);
   line-height: 1.6;
   color: #000;
   margin-bottom: 2rem;
@@ -345,14 +345,14 @@ body {
   box-shadow: var(--shadow-soft);
 }
 .phy-box h2 {
-  font-size: 4.5rem;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
   margin-bottom: 1rem;
   color: var(--primary-bg);
   font-weight: 200;
   font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 .phy-box p {
-  font-size: 2rem;
+  font-size: clamp(1rem, 2.4vw, 1.4rem);
   line-height: 1.85rem;
   color: #000;
   font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -364,7 +364,7 @@ body {
 }
 @media (max-width: 700px) {
   .phy-box h2 {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
     text-align: center; 
   }
   .modern-section.reverse .phy-image img {
@@ -498,7 +498,7 @@ body {
 
 /* Services Section Alignment Tweaks */
 .services-header h2 {
-  font-size: clamp(2rem, 5vw, 5.25rem);
+  font-size: clamp(1.8rem, 3.8vw, 3.2rem);
   font-weight:200;
   line-height:1.1;
   text-align: center;
@@ -525,8 +525,8 @@ body {
 
 
   .services-header h2 {
-    margin-right: 8rem;
-    font-size: 2.5rem;
+    margin-right: 0;
+    font-size: 2.1rem;
     text-align: center;
   }
   
@@ -747,8 +747,8 @@ body {
     padding: 1rem 2rem;
   }
 
-  .bridge-overlay p { font-size: 1.23rem; }
-  .bridge-overlay h1 { font-size: 2.5rem; }
+  .bridge-overlay p { font-size: 1.1rem; }
+  .bridge-overlay h1 { font-size: 2.2rem; }
 
   .hr-overlay .hro-text h2 {
     font-size: 1.5rem;
