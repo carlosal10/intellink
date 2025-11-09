@@ -1,0 +1,152 @@
+:root{
+  --sec-primary:#0B2545;
+  --sec-accent:#E63946;
+  --sec-gold:#F1C40F;
+  --sec-ink:#162235;
+  --sec-text:#2a3445;
+  --sec-muted:#5a6a80;
+  --sec-bg:#f6f8fb;
+
+  --shadow-soft:0 10px 24px rgba(0,0,0,.08);
+  --shadow-card:0 14px 34px rgba(11,37,69,.14);
+}
+
+.sectors-page{
+  font-family: nunito, "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color:var(--sec-text);
+  background:var(--sec-bg);
+  overflow-x:hidden;
+}
+
+/* Hero */
+.sectors-hero{
+  position:relative;
+  min-height:52vh;
+  
+  display:flex;align-items:flex-end;justify-content:center;
+}
+.sectors-hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(11,37,69,.15) 0%, rgba(11,37,69,.65) 55%, rgba(11,37,69,.95) 100%);
+}
+.sectors-hero-inner{
+  position:relative;z-index:1;color:#F1C40F;text-align:center;
+  padding:3.5rem 2.5% 4.5rem;max-width:95vw;
+}
+.sectors-hero-inner h1{
+  font-size: clamp(1.9rem, 4.2vw, 3.5rem);
+  margin:0 0 .5rem;font-weight:100;color:#F1C40F;
+}
+.sectors-hero-inner p{
+  margin:0 auto;max-width:95vw;opacity:.95;line-height:1.7;
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
+  color: #d7e7fb;
+}
+
+/* Industries */
+.industries-section{padding:56px 0}
+.industries-grid{
+  max-width:95vw;margin:0 auto;padding:0 2.5%;
+  display:grid;gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+.industry-card{
+  background:#fff;border-radius:16px;overflow:hidden;
+  border:1px solid #eef1f5;box-shadow:var(--shadow-soft);
+  transition:.25s ease;display:flex;flex-direction:column;
+}
+.industry-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-card)}
+.industry-media img{width:100%;height:190px;object-fit:cover;display:block}
+.industry-body{padding:16px 16px 18px}
+.industry-body h3{margin:2px 0 6px;color:var(--sec-primary);font-size:1.15rem}
+.industry-body p{margin:0;color:var(--sec-muted);line-height:1.6}
+
+/* Clients */
+.clients-section{
+  padding:18px 0 56px;text-align:center;
+}
+.clients-section h2{
+  color:var(--sec-primary);margin-bottom:12px;
+}
+.client-list{
+  list-style:none;margin:0 auto;max-width:95vw;padding:0 2.5%;
+  display:grid;gap:10px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+.client-list li{
+
+  border:1px solid #eef1f5;
+  border-radius:999px;
+  padding:10px 14px;
+  color:#000000;
+  box-shadow:0 4px 12px rgba(0,0,0,.04);
+  font-size: 1.05rem;
+}
+
+/* WHY — Africa / Japan / Now */
+.why-wrapper{
+  position:relative;overflow:hidden;margin:10px auto 64px;
+  border-radius:20px;max-width:95vw;
+  background-position:center;background-size:cover;background-repeat:no-repeat;
+}
+
+.why-inner{
+  position:relative;z-index:1;color:#fff;padding:56px 20px 64px;
+}
+.why-title{
+  text-align:center;font-size: clamp(1.8rem, 4.2vw, 2.4rem);
+  font-weight:800;margin:0 0 22px;color:#F1C40F;
+}
+.bridge-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Why grid cards */
+.why-grid{
+  display:grid;gap:18px;max-width:95vw;margin:0 auto 24px;
+  grid-template-columns:repeat(3,1fr);
+}
+@media (max-width: 960px){
+  .why-grid{grid-template-columns:1fr}
+}
+.why-card{
+  background:linear-gradient(180deg, rgba(14, 13, 13, 0.404) 0%, rgba(0, 0, 0, 0.493) 100%);
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:16px;padding:18px 16px 20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.18);
+  backdrop-filter: blur(6px);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.why-card:hover{transform:translateY(-4px)}
+.why-card h3{margin:4px 0 8px;font-size:1.15rem;color:#0B2545}
+.why-card p{margin:0;color:#000;line-height:1.7}
+
+/* Icon badges */
+.why-icon{
+  width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  margin-bottom:10px;font-size:1.1rem;color:#10243a;font-weight:700;
+  background:#fff;box-shadow:0 8px 20px rgba(255,255,255,.18);
+}
+.badge-africa{background:linear-gradient(135deg,#f0f4ff,#e0f4ff)}
+.badge-japan{background:linear-gradient(135deg,#fff,#ffe6ea)}
+.badge-now{background:linear-gradient(135deg,#fff,#fff6db)}
+
+/* CTA inside why */
+.cta-section{
+  text-align:center;margin-top:16px;
+}
+.cta-section h3{
+  margin:0 0 12px;color:#fff;font-weight:700;
+}
+.cta-button{
+  display:inline-block;background:linear-gradient(135deg,var(--sec-accent),#c9303e);
+  color:#fff;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700;
+  box-shadow:0 10px 24px rgba(0,0,0,.2);transition:transform .2s ease, filter .2s ease;
+}
+.cta-button:hover{transform:translateY(-2px);filter:brightness(1.05)}

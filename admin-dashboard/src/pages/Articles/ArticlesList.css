@@ -1,0 +1,33 @@
+.articles-list {
+  padding: 1rem;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.article-card {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 1rem;
+  background-color: white;
+}
+
+.article-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.article-meta {
+  color: #6c757d;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-preview {
+  color: #212529;
+  margin-bottom: 1rem;
+}

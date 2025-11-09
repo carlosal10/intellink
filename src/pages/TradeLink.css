@@ -1,0 +1,56 @@
+/* TradeLink page specific tweaks built on ExpertConnect styles */
+.ec-shell{
+  margin-top: 12.5%; /* align with navbar spacing, consistent with MarketLink */
+}
+
+.tl-hero-overlay{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  max-width: 820px;
+}
+.tl-hero-overlay .ec-hero-desc{
+  margin-bottom: 0;
+}
+.tl-hero-cta{
+  justify-content: center;
+  align-items: center;
+}
+
+/* Slightly larger lead for this page */
+.ec-lead{ font-size: 1.08rem; }
+
+/* Case cards spacing */
+.ec-card p { line-height: 1.65; }
+
+/* Ensure hero overlay text remains readable on TradeLink images */
+.ec-hero-desc{ max-width: 900px; }
+
+/* Compact CTA buttons on service cards */
+.ec-card .btn-card{
+  width: auto;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+.ec-card .btn-card svg{ font-size: 0.85rem; }
+
+/* Use cases: result tag overlay containing full text, overlapping downward */
+.tl-case-card{ position: relative; margin-bottom: 64px; padding-bottom: 40px; }
+.tl-result-badge{
+  position: absolute; left: 16px; top: 100%; transform: translateY(-24px); z-index: 1;
+  background:#F1C40F; color:#0B2545; font-weight:300;
+  
+  letter-spacing:.02em; padding:14px 16px; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.12);
+  max-width: 70%; min-height: 72px;
+  line-height: 1.6; word-wrap: break-word; white-space: normal;
+}
+
+@media (max-width: 720px){
+  .tl-result-badge{ left: 12px; right: 12px; max-width: unset; width: auto; transform: translateY(-16px); }
+}

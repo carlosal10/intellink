@@ -1,0 +1,58 @@
+/* Layout.css */
+
+:root {
+  --sidebar-width: 240px;
+  --header-height: 64px;
+  --bg-color: #f9fafb;
+  --text-color: #1f2937;
+  --content-bg: #ffffff;
+  --border-color: #e5e7eb;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: #111827;
+  color: #f9fafb;
+  padding: 1rem;
+  border-right: 1px solid var(--border-color);
+  overflow-y: auto;
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+  background-color: var(--content-bg);
+  overflow-y: auto;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+}

@@ -1,0 +1,763 @@
+/* =========================
+   Base & Variables
+========================= */
+:root {
+  --primary-bg: #0B2545;
+  --accent: #E63946;
+  --light-bg: #eef6ff;
+  --text-dark: #141212;
+  --text-light: #fff;
+  --overlay-bg: rgba(255, 255, 255, 0.95);
+  --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-medium: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+body {
+  font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.home{
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+/* =========================
+   Bridge / Hero Video
+========================= */
+.bridge {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+
+/* Fullscreen video */
+.bridge-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Gradient overlay tint */
+.bridge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.75) 0%,
+    rgba(0,0,0,0.55) 50%,
+    rgba(0,0,0,0.35) 100%
+  );
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+/* Text layer */
+.bridge-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  max-width: 900px;
+}
+
+.bridge-overlay h1{
+  color: #F1C40F;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  margin-bottom: 1rem;
+}
+
+.bridge-overlay p{
+  color: #eef6ff;
+  font-size: clamp(1.05rem, 2.5vw, 1.6rem);
+  margin-bottom: 2rem;
+}
+
+/* Mobile tweaks for bridge */
+@media (max-width: 768px) {
+  .bridge {
+    height: 80vh;
+  }
+  .bridge::before {
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.6) 0%,
+      rgba(0,0,0,0.4) 50%,
+      rgba(0,0,0,0.2) 100%
+    );
+  }
+  .bridge-overlay h1 { font-size: 2.2rem; }
+  .bridge-overlay p  { font-size: 1.05rem; }
+}
+
+/* =========================
+   Intro Section (.robo)
+   -> Image left, text right
+========================= */
+.robo{
+  height: 100vh;
+  display: flex;   
+  flex-direction: column;         /* parent grid (ok) */
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fff;
+  gap: 24px;
+}
+@media (max-width: 900px) {
+  .robo { 
+    height: auto;
+    margin-top: 2rem;
+    padding: 1rem;  
+    overflow: hidden;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+  .hr-overlay { flex-direction: column; }
+}
+
+/* Two-column wrapper inside .robo */
+.hr-overlay{
+
+  color: white;
+  border-radius: 10px;
+  background-color: rgb(59, 2, 2);
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* two columns */
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 100vh;
+  width: 100%;
+  padding-right: 5rem;
+  overflow: hidden;
+  overflow-x: hidden;
+
+} 
+
+/* Force column order: image left (1), text right (2) */
+.hero-image { order: 1; flex: 1 1 0; min-width: 0; }
+.hro-text   { order: 2; flex: 1 1 0; }
+
+
+
+.hr-overlay .hro-text h2 {
+  font-size: clamp(1.9rem, 4vw, 3.4rem);
+  color: #F1C40F;
+  font-weight: 100;
+  font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.hr-overlay .hro-text p{
+  font-size: clamp(1rem, 2.4vw, 1.4rem);
+  color: #fff;
+  line-height: 1.85rem;
+  font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 100;
+  word-spacing: normal;
+  
+  
+  
+}
+
+.hr-overlay .hro-text{
+  width: 100%;
+  height: 90vh; /* match section height */
+  }
+
+
+@media (max-width: 700px) {
+  .hro-text h2 {
+    font-size: 2rem;
+    text-align: center;
+    font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 100;
+  }
+  .hr-overlay .hro-text p {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    width: 100%;
+    padding: 0.5rem 0;
+    height: auto;
+  }
+  
+  .hr-overlay{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin-top: 2rem;
+    overflow: hidden;
+    overflow-x: hidden;
+  }
+  .hr-overlay .hero-image img {
+    height: 50vh;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Image sizing: fill column cleanly */
+.hero-image img {
+  width: 100%;          /* override older 60% */
+  height: 100vh;         /* almost full height */  
+  display: block;
+  border-radius: 1px;
+  object-fit: cover;
+
+}
+
+  
+
+/* Stack on tablets/phones (keep image first by default) */
+@media (max-width: 900px) {
+  .hr-overlay { flex-direction: column; }
+
+
+}
+
+/* =========================
+   Modern Section (Reusable)
+   -> Row on desktop, reverse with .reverse
+========================= */
+.modern-section {
+  height: 70vh;
+  display: flex;
+  flex-direction: row;          /* was column */
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  gap: 24px;
+}
+.who-we-are{
+  margin-bottom: 4rem;
+  padding: 0 2rem;
+  overflow: hidden;
+  overflow-x: hidden;
+  background-color: maroon;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 70vh;
+  margin-top: 5rem;
+  padding-top: .5rem;
+}
+.text-box {
+  width: 100%;
+  height: 70vh;
+  padding: 2rem;
+  background: var(--overlay-bg);
+  box-shadow: var(--shadow-soft);
+}
+.text-box h2 {
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  margin-bottom: 1rem;
+  color: var(--primary-bg);
+  font-weight: 200;
+  font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (max-width: 700px) {
+  .text-box h2 {
+    font-size: 2.1rem;
+    text-align: center;
+  }
+  
+  .who-we-are .text-box ul {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    
+    
+  }
+  .who-we-are{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin-top: 2rem;
+    overflow: hidden;
+    overflow-x: hidden;
+    padding-top: 1rem;
+  }
+  .who-we-are .who-image img {
+    height: 50vh;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.text-box ul {
+  list-style: disc inside;
+  font-size: clamp(1.05rem, 2.5vw, 1.5rem);
+  line-height: 1.6;
+  color: #000;
+  margin-bottom: 2rem;
+  font-weight: 100;
+  font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  padding: 0 1rem;
+}
+
+.modern-section.reverse {
+  flex-direction: row-reverse;
+  background-color: moccasin;
+  height: 70vh;
+  margin-top: 5rem;
+  overflow: hidden;
+  overflow-x: hidden;
+  padding: 0 2rem;
+  display: flex;
+}
+.phy-box{
+  width: 100%;
+  height: 60vh;
+  padding: 2rem;
+  background: var(--overlay-bg);
+  box-shadow: var(--shadow-soft);
+}
+.phy-box h2 {
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  margin-bottom: 1rem;
+  color: var(--primary-bg);
+  font-weight: 200;
+  font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.phy-box p {
+  font-size: clamp(1rem, 2.4vw, 1.4rem);
+  line-height: 1.85rem;
+  color: #000;
+  font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 200;
+  word-spacing: normal;
+  padding: 1rem 0;
+  text-align: justify;
+  text-justify: inter-word;
+}
+@media (max-width: 700px) {
+  .phy-box h2 {
+    font-size: 2.1rem;
+    text-align: center; 
+  }
+  .modern-section.reverse .phy-image img {
+    height: 30vh;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    flex-direction: column;
+  }
+  .modern-section.reverse .phy-box p {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4rem;
+    font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 100;
+    text-align: center;
+    text-justify: inter-word;
+  }
+  .modern-section.reverse{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin-top: 2rem;
+    overflow: hidden;
+    overflow-x: hidden;
+    padding-top: 1rem;
+  }
+}
+ 
+
+.phy-image img,
+.who-image img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  height: 70vh;
+  padding-left: 1rem;
+}
+
+
+
+/* =========================
+   Services Section
+========================= */
+.services-section {
+  background: rgb(59, 2, 2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  justify-items: center;
+  padding: 0 2rem;
+}
+
+.services-section .services-grid .service-card {  
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+}
+
+.services-grid .service-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+
+}
+@media (max-width: 768px) {
+  .service-card {
+    flex-direction: column;
+    width: 80%;
+    max-width: 400px;
+    margin-right: 2rem;
+  } 
+}
+.services-section .services-grid .service-card h1 {
+  font-size: 1.25rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.services-section .services-grid .service-card p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.services-section .services-grid .service-card .btn {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: var(--text-light);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 100;
+  box-shadow: var(--shadow-soft);
+
+
+}
+
+.services-grid .service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Services Section Alignment Tweaks */
+.services-header h2 {
+  font-size: clamp(1.8rem, 3.8vw, 3.2rem);
+  font-weight:200;
+  line-height:1.1;
+  text-align: center;
+  font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #F1C40F;
+  margin-right: 8rem;
+  
+}
+.services-header {
+  margin-bottom: 2rem;
+  max-width: 700px;
+  align-content: center;
+  background-color: rgba(59, 2, 2, 0.555);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+@media screen and (max-width: 768px) {
+  .services-header {
+    margin: 0 auto 2rem;
+    padding: 1rem;
+    border-radius: 12px;
+    max-width: 100%;
+  }
+
+
+  .services-header h2 {
+    margin-right: 0;
+    font-size: 2.1rem;
+    text-align: center;
+  }
+  
+}
+
+.services-header .services-subtext,
+.services-header p {
+  font-size: 2.2rem;
+  color: #fff;
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+  line-height: 1.5;
+  font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 100;
+  padding: 0 1rem;
+  letter-spacing: 0.5px;
+  word-spacing: normal;
+  opacity: 0.95;
+
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  margin: 1rem 0 0.5rem;
+  color: var(--accent);
+  text-align: center;
+}
+
+/* =========================
+   Buttons (single source of truth)
+========================= */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: var(--text-light) !important;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.btn.primary:hover {
+  background: #b0212c; /* darker accent */
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid var(--primary-bg);
+  color: var(--primary-bg);
+}
+
+.btn.secondary:hover {
+  background: #eef6ff;
+}
+
+/* =========================
+   Blog / Insights Section
+========================= */
+.blog-section {
+  background-color: maroon;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.blog-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-section .container .blog-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.blog-section .container .blog-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.blog-section .container .blog-card ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 20px;
+  font-size: 1.75rem;
+  font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 100;
+  color: #000;
+}
+
+.blog-section .container .blog-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #0073e6;
+  font-weight: bold;
+}
+
+.blog-card {
+  background: #ece4e4;
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.blog-section .blog-card .btn-link {
+  display: inline-block;
+  color: #0073e6;
+  font-weight: 300;
+  transition: color 0.2s ease;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  font-family: "Nunito", "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  text-decoration: none;
+  font-style: italic;
+}
+
+.blog-section .blog-card .btn-link:hover {
+  color: #005bb5;
+}
+
+/* Grid for blog cards */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* CTA Block */
+.contact-cta {
+  background: #0073e6;
+  color: #fff;
+  padding: 40px 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.contact-cta h3 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.contact-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   Additional Mobile Tweaks
+========================= */
+@media (max-width: 768px) {
+  .hero-section { text-align: center; }
+
+  /* Hide intro image on small screens if desired */
+  
+
+  .bridge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    border-radius: 12px;
+    background: var(--overlay-bg);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+  }
+
+  .home{
+    margin-top: 14.5%;
+    padding: 0;
+    overflow: hidden;
+    overflow-x: hidden;
+  }
+
+  .hr-overlay .hro-text p {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    width: 100%;
+    padding: 0.5rem 0;
+    height: auto;
+  }
+
+  .hro-text {
+    max-width: 900px;
+    width: 100%;
+    height: 86vh;
+    padding: 1rem 2rem;
+  }
+
+  .bridge-overlay p { font-size: 1.1rem; }
+  .bridge-overlay h1 { font-size: 2.2rem; }
+
+  .hr-overlay .hro-text h2 {
+    font-size: 1.5rem;
+    color: #F1C40F;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  .services-section {
+    padding: 2rem 1rem;
+    flex-direction: column;
+  }
+}
